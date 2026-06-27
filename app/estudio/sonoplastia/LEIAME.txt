@@ -1,0 +1,41 @@
+🎪 SONOPLASTIA — efeitos sonoros da modalidade Comédia (auditório / Ratinho)
+============================================================================
+
+Coloque AQUI seus arquivos de efeito (.wav, .mp3, .ogg, .flac, .m4a).
+O sistema usa SÓ o que existir nesta pasta. Sem arquivos, a aba Comédia gera
+apenas a narração (sem efeitos).
+
+COMO NOMEAR
+-----------
+O NOME do arquivo (sem a extensão) é o que a IA usa para escolher o efeito pelo
+contexto. Use nomes descritivos. Acentos, maiúsculas e "_"/"-" são ignorados
+("Risada_Forte.wav" vira "risada forte").
+
+NOMES-CHAVE QUE A IA JÁ ENTENDE BEM (e quando costuma usar):
+  aplauso   -> aprovação, acerto, elogio, final triunfal   (depois da fala)
+  risada    -> piada, situação engraçada                    (depois da fala)
+  rufar     -> suspense antes de uma revelação/resultado    (antes da fala)
+  tambor    -> idem rufar                                    (antes)
+  suspense  -> tensão antes de algo importante               (antes)
+  buzina    -> erro, resposta errada, vexame                 (depois)
+  trombone  -> fracasso, deu ruim, deboche ("wah wah")       (depois)
+  apito     -> interrupção, chamar atenção
+  vinheta   -> transição entre partes
+  grilo     -> silêncio constrangedor, ninguém riu           (depois)
+  plateia   -> murmúrio/risadinha de auditório  ===> FUNDO CONTÍNUO (não pontual)
+
+Você pode usar OUTROS nomes também — a IA tenta deduzir pelo nome do arquivo.
+
+DICAS
+-----
+- Efeitos pontuais (aplauso, risada, rufar...): curtos (1 a 4 s).
+- "plateia": pode ser longo — ele toca em loop por baixo de TODA a narração,
+  bem baixinho, dando o clima de auditório ao vivo.
+- Volume de cada coisa é ajustável na aba (Volume dos efeitos / Volume da plateia).
+- A frequência dos efeitos é controlada pelo slider "Intensidade da sonoplastia".
+
+EXEMPLOS INICIAIS
+-----------------
+Já incluímos 'rufar.wav' e 'buzina.wav' SINTÉTICOS (gerados por código) só para a
+modalidade funcionar de imediato. Pode substituí-los pelos seus sons reais — é só
+salvar por cima com o mesmo nome (ou apagar e colocar os seus).

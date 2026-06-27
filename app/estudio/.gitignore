@@ -1,0 +1,38 @@
+# ─── Python ───────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# ─── Ambientes virtuais ───────────────────────────────────
+.venv*/
+venv/
+env/
+ENV/
+
+# ─── Editores / SO ────────────────────────────────────────
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# ─── Áudios ───────────────────────────────────────────────
+# Nenhum áudio vai para o repositório: peso e, principalmente, DIREITOS DE
+# TERCEIROS (vozes de dubladores, músicas). Cada usuário fornece a própria
+# voz de referência e trilha — veja vozes/README.md.
+*.wav
+*.mp3
+*.flac
+*.ogg
+*.m4a
+
+# A pasta saidas/ é histórico de scripts antigos (pesada) — fora do repo
+saidas/
+
+# A pasta vozes/ não versiona conteúdo, só o README que explica o que pôr nela
+vozes/*
+!vozes/README.md

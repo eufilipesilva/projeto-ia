@@ -1,0 +1,53 @@
+# Ambiente virtual Python
+.venv_omni/
+Include/
+Lib/
+Scripts/
+pyvenv.cfg
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Modelos e pesos (grandes demais para Git — ficam no cache local)
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.gguf
+*.onnx
+*.pkl
+
+# Referências de voz geradas automaticamente (regeneradas ao abrir o perfil)
+app/estudio/vozes/_ref_*.wav
+
+# Saídas geradas (áudio sintetizado)
+app/estudio/saidas/
+
+# Gradio e caches
+.gradio/
+gradio_cached_examples/
+*.tmp
+
+# Arquivos de ambiente e configurações locais
+.env
+.env.local
+certificate.pem
+.claude/settings.local.json
+
+# Logs e dados de sessão
+*.jsonl
+*.log
+
+# Arquivos temporários Windows
+Thumbs.db
+desktop.ini
+
+# Pasta de arquivo morto / tentativas antigas
+_Arquivo_Morto/
+
+# Áudios de laboratório / triagem (centenas de arquivos)
+app/laboratorios/pandora_triagem/
+app/laboratorios/refs_humanas/*.wav
+app/laboratorios/*.wav

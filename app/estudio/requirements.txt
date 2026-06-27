@@ -1,0 +1,15 @@
+# Dependências do Estúdio de Voz (versões testadas em .venv_omni)
+# Em runtime também é necessário o Ollama rodando com o modelo gemma3:4b
+# (instale o Ollama à parte e execute: ollama pull gemma3:4b).
+
+omnivoice==0.1.5
+gradio==6.19.0
+librosa==0.11.0
+soundfile==0.14.0
+numpy==2.4.1
+scipy==1.17.1
+
+# torch precisa do build com CUDA para usar a GPU. O ambiente foi testado
+# com torch==2.11.0+cu128 (CUDA 12.8). Instale a partir do índice oficial:
+#   pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cu128
+torch==2.11.0
