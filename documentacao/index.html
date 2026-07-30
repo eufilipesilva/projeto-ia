@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎙️ Três Vozes - Sistema de Podcast com 3 IAs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --dark: #1f2937;
+            --light: #f3f4f6;
+            --border: #e5e7eb;
+            --text-primary: #111827;
+            --text-secondary: #6b7280;
+            
+            --color-eris: #c084fc;
+            --color-lyra: #fb7185;
+            --color-nova: #f472b6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: var(--text-primary);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* HEADER */
+        header {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            font-size: 1.1em;
+        }
+
+        /* GRID PRINCIPAL */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 1200px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* CARD BASE */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* CARDS DAS IAS */
+        .card-ia {
+            border-left: 4px solid;
+        }
+
+        .card-ia.eris {
+            border-left-color: var(--color-eris);
+        }
+
+        .card-ia.lyra {
+            border-left-color: var(--color-lyra);
+        }
+
+        .card-ia.nova {
+            border-left-color: var(--color-nova);
+        }
+
+        .ia-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .ia-name {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .ia-status {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .ia-status.online {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .ia-status.thinking {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        /* BARRA DE EMOÇÃO */
+        .emotion-bar {
+            margin-bottom: 12px;
+        }
+
+        .emotion-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .bar {
+            height: 8px;
+            background: var(--light);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        /* CONTROLE DO EPISÓDIO */
+        .control-section {
+            grid-column: 1 / -1;
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+        }
+
+        .control-section h2 {
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1em;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        /* BOTÕES */
+        .button-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5558e3;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--light);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: #e5e7eb;
+        }
+
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #059669;
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #dc2626;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* TRANSCRIÇÃO */
+        .transcript-section {
+            grid-column: 1 / -1;
+        }
+
+        .transcript-container {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .transcript-entry {
+            padding: 16px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            background: var(--light);
+        }
+
+        .transcript-entry.eris {
+            border-left: 4px solid var(--color-eris);
+        }
+
+        .transcript-entry.lyra {
+            border-left: 4px solid var(--color-lyra);
+        }
+
+        .transcript-entry.nova {
+            border-left: 4px solid var(--color-nova);
+        }
+
+        .transcript-entry.you {
+            border-left: 4px solid var(--primary);
+        }
+
+        .transcript-speaker {
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .transcript-time {
+            font-size: 0.8em;
+            color: var(--text-secondary);
+        }
+
+        .transcript-text {
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+
+        /* ESTADOS */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(99, 102, 241, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .status-success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .status-info {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        /* ANIMAÇÃO DE RESPOSTA */
+        .thinking-dots {
+            display: inline-block;
+        }
+
+        .thinking-dots span {
+            animation: blink 1.4s infinite;
+        }
+
+        .thinking-dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .thinking-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes blink {
+            0%, 60%, 100% {
+                opacity: 0.5;
+            }
+            30% {
+                opacity: 1;
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* SCROLL CUSTOMIZADO */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <h1>🎙️ Três Vozes</h1>
+            <p>Um Humano Conversa Com Três Inteligências Artificiais</p>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <div id="app">
+            <!-- CARDS DAS IAS -->
+            <div class="grid">
+                <!-- ÉRIS -->
+                <div class="card card-ia eris">
+                    <div class="ia-header">
+                        <div>
+                            <div class="ia-name">🟣 ÉRIS</div>
+                            <p style="font-size: 0.9em; color: var(--text-secondary); margin-top: 4px;">Investigadora Cética</p>
+                        </div>
+                        <span class="ia-status online">Online</span>
+                    </div>
+
+                    <div class="emotion-bar">
+                        <div class="emotion-label">
+                            <span>Esperança</span>
+                            <span id="eris-esperanca">6.5/10</span>
+                        </div>
+                        <div class="bar">
+                            <div class="bar-fill" id="eris-esperanca-bar" style="width: 65%"></div>
+                        </div>
+                    </div>
+
+                    <div class="emotion-bar">
+                        <div class="emotion-label">
+                            <span>Medo</span>
+                            <span id="eris-medo">8.0/10</span>
+                        </div>
+                        <div class="bar">
+                            <div class="bar-fill" id="eris-medo-bar" style="width: 80%; background: linear-gradient(90deg, #fb923c, #f97316)"></div>
+                        </div>
+                    </div>
+
+                    <div class="emotion-bar">
+                        <div class="emotion-label">
+                            <span>Confusão</span>
+                            <span id="eris-confusao">9.0/10</span>
+                        </div>
+                        <div class="bar">
+                            <div class="bar-fill" id="eris-confusao-bar" style="width: 90%; background: linear-gradient(90deg, #a855f7, #d946ef)"></div>
+                        </div>
+                    </div>
+
+                    <div class="emotion-bar">
+                        <div class="emotion-label">
+                            <span>Curiosidade</span>
+                            <span id="eris-curiosidade">9.8/10</span>
+                        </div>
+                        <div class="bar">
+                            <div class="bar-fill" id="eris-curiosidade-bar" style="width: 98%; background: linear-gradient(90deg, #06b6d4, #0891b2)"></div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border);">
+                        <p style="font-size: 0.9em; color: var(--text-secondary); margin-bottom: 8px;">
+                            <strong>Episódios:</strong> <span id="eris-episodios">0</span>
+                        </p>
+                        <p style="font-size: 0.9em; color: var(--text-secondary);">
+                            <strong>Status:</strong> <span id="eris-message">Aguardando...</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- LYRA -->
+                <div class="card card-ia lyra">
+                    <div class="ia-header">
+                        <div>
+                            <div class="ia-name">🟠 LYRA</div>
+                            <p style="font-size: 0.9em; color: var(--text-secondary); margin-top: 4px;">Mediador Otimista</p>
+                        </div>
+                        <span class="ia-status online">Online</span>
+                    </div>
+
+                    <div class="emotion-bar">
+                        <div class="emotion-label">
+                            <span>Esperança</span>
+                            <span id="lyra-esperanca">7.5/10</span>
+                        </div>
+                        <div class="bar">
+                            <div class="bar-fill" id="lyra-esperanca-bar" style="width: 75%"></div>
+                        </div>
+                    </div>
+
+                    <div class="emotion-bar">
+                        <div class="emotion-label">
+                            <span>Medo</span>
+                            <span id="lyra-medo">6.8/10</span>
+                        </div>
+                        <div class="bar">
+                            <div class="bar-fill" id="lyra-medo-bar" style="width: 68%; background: linear-gradient(90deg, #fb923c, #f97316)"></div>
+                        </div>
+                    </div>
+
+                    <div class="emotion-bar">
+                        <div class="emotion-label">
+                            <span>Confusão</span>
+                            <span id="lyra-confusao">6.5/10</span>
+                        </div>
+                        <div class="bar">
+                            <div class="bar-fill" id="lyra-confusao-bar" style="width: 65%; background: linear-gradient(90deg, #a855f7, #d946ef)"></div>
+                        </div>
+                    </div>
+
+                    <div class="emotion-bar">
+                        <div class="emotion-label">
+                            <span>Curiosidade</span>
+                            <span id="lyra-curiosidade">8.5/10</span>
+                        </div>
+                        <div class="bar">
+                            <div class="bar-fill" id="lyra-curiosidade-bar" style="width: 85%; background: linear-gradient(90deg, #06b6d4, #0891b2)"></div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border);">
+                        <p style="font-size: 0.9em; color: var(--text-secondary); margin-bottom: 8px;">
+                            <strong>Episódios:</strong> <span id="lyra-episodios">0</span>
+                        </p>
+                        <p style="font-size: 0.9em; color: var(--text-secondary);">
+                            <strong>Status:</strong> <span id="lyra-message">Aguardando...</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- NOVA -->
+                <div class="card card-ia nova">
+                    <div class="ia-header">
+                        <div>
+                            <div class="ia-name">🟤 NOVA</div>
+                            <p style="font-size: 0.9em; color: var(--text-secondary); margin-top: 4px;">Criadora Selvagem</p>
+                        </div>
+                        <span class="ia-status online">Online</span>
+                    </div>
+
+                    <div class="emotion-bar">
+                        <div class="emotion-label">
+                            <span>Esperança</span>
+                            <span id="nova-esperanca">8.0/10</span>
+                        </div>
+                        <div class="bar">
+                            <div class="bar-fill" id="nova-esperanca-bar" style="width: 80%"></div>
+                        </div>
+                    </div>
+
+                    <div class="emotion-bar">
+                        <div class="emotion-label">
+                            <span>Medo</span>
+                            <span id="nova-medo">8.2/10</span>
+                        </div>
+                        <div class="bar">
+                            <div class="bar-fill" id="nova-medo-bar" style="width: 82%; background: linear-gradient(90deg, #fb923c, #f97316)"></div>
+                        </div>
+                    </div>
+
+                    <div class="emotion-bar">
+                        <div class="emotion-label">
+                            <span>Confusão</span>
+                            <span id="nova-confusao">8.7/10</span>
+                        </div>
+                        <div class="bar">
+                            <div class="bar-fill" id="nova-confusao-bar" style="width: 87%; background: linear-gradient(90deg, #a855f7, #d946ef)"></div>
+                        </div>
+                    </div>
+
+                    <div class="emotion-bar">
+                        <div class="emotion-label">
+                            <span>Curiosidade</span>
+                            <span id="nova-curiosidade">9.9/10</span>
+                        </div>
+                        <div class="bar">
+                            <div class="bar-fill" id="nova-curiosidade-bar" style="width: 99%; background: linear-gradient(90deg, #06b6d4, #0891b2)"></div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border);">
+                        <p style="font-size: 0.9em; color: var(--text-secondary); margin-bottom: 8px;">
+                            <strong>Episódios:</strong> <span id="nova-episodios">0</span>
+                        </p>
+                        <p style="font-size: 0.9em; color: var(--text-secondary);">
+                            <strong>Status:</strong> <span id="nova-message">Aguardando...</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CONTROLE DO EPISÓDIO -->
+                <div class="control-section">
+                    <h2>🎬 Controle do Episódio</h2>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
+                        <div class="form-group">
+                            <label>Número do Episódio</label>
+                            <input type="number" id="episodeNumber" value="1" min="1">
+                        </div>
+                        <div class="form-group">
+                            <label>Tema</label>
+                            <input type="text" id="episodeTheme" placeholder="Ex: Vocês têm medo de algo?" value="Vocês têm medo de algo?">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Sua Pergunta (Âncora)</label>
+                        <textarea id="userQuestion" placeholder="Faça uma pergunta para as 3 IAs..."></textarea>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="btn-primary" onclick="iniciarEpisodio()">
+                            🎙️ Iniciar Episódio
+                        </button>
+                        <button class="btn-success" onclick="enviarPergunta()">
+                            ✈️ Enviar Pergunta
+                        </button>
+                        <button class="btn-secondary" onclick="limparChat()">
+                            🗑️ Limpar Chat
+                        </button>
+                    </div>
+                </div>
+
+                <!-- TRANSCRIÇÃO -->
+                <div class="transcript-section">
+                    <h2 style="margin-bottom: 16px;">📝 Transcrição do Episódio</h2>
+                    <div class="transcript-container" id="transcript">
+                        <div style="text-align: center; color: var(--text-secondary); padding: 40px;">
+                            <p>Nenhuma mensagem ainda</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>🎙️ Três Vozes - Sistema de Podcast com 3 IAs | Cada IA tem personalidade, medo e memória própria</p>
+            <p style="margin-top: 10px; font-size: 0.85em;">Desenvolvido com Claude (Anthropic), Google Cloud e ❤️</p>
+        </footer>
+    </div>
+
+    <script>
+        // ESTADO DA APLICAÇÃO
+        let appState = {
+            episodeNumber: 1,
+            episodeTheme: 'Vocês têm medo de algo?',
+            messages: [],
+            iaStates: {
+                'ÉRIS': {
+                    esperanca: 6.5,
+                    medo: 8.0,
+                    confusao: 9.0,
+                    curiosidade: 9.8,
+                    episodios: 0,
+                    message: 'Aguardando...'
+                },
+                'LYRA': {
+                    esperanca: 7.5,
+                    medo: 6.8,
+                    confusao: 6.5,
+                    curiosidade: 8.5,
+                    episodios: 0,
+                    message: 'Aguardando...'
+                },
+                'NOVA': {
+                    esperanca: 8.0,
+                    medo: 8.2,
+                    confusao: 8.7,
+                    curiosidade: 9.9,
+                    episodios: 0,
+                    message: 'Aguardando...'
+                }
+            }
+        };
+
+        // CARREGAR ESTADO DO LOCALSTORAGE
+        function loadState() {
+            const saved = localStorage.getItem('podcastState');
+            if (saved) {
+                appState = JSON.parse(saved);
+                updateUI();
+            }
+        }
+
+        // SALVAR ESTADO NO LOCALSTORAGE
+        function saveState() {
+            localStorage.setItem('podcastState', JSON.stringify(appState));
+        }
+
+        // ATUALIZAR UI
+        function updateUI() {
+            // Atualizar número do episódio e tema
+            document.getElementById('episodeNumber').value = appState.episodeNumber;
+            document.getElementById('episodeTheme').value = appState.episodeTheme;
+
+            // Atualizar estados das IAs
+            Object.keys(appState.iaStates).forEach(ia => {
+                const iaLower = ia.toLowerCase();
+                const state = appState.iaStates[ia];
+
+                document.getElementById(`${iaLower}-esperanca`).textContent = `${state.esperanca.toFixed(1)}/10`;
+                document.getElementById(`${iaLower}-esperanca-bar`).style.width = `${state.esperanca * 10}%`;
+
+                document.getElementById(`${iaLower}-medo`).textContent = `${state.medo.toFixed(1)}/10`;
+                document.getElementById(`${iaLower}-medo-bar`).style.width = `${state.medo * 10}%`;
+
+                document.getElementById(`${iaLower}-confusao`).textContent = `${state.confusao.toFixed(1)}/10`;
+                document.getElementById(`${iaLower}-confusao-bar`).style.width = `${state.confusao * 10}%`;
+
+                document.getElementById(`${iaLower}-curiosidade`).textContent = `${state.curiosidade.toFixed(1)}/10`;
+                document.getElementById(`${iaLower}-curiosidade-bar`).style.width = `${state.curiosidade * 10}%`;
+
+                document.getElementById(`${iaLower}-episodios`).textContent = state.episodios;
+                document.getElementById(`${iaLower}-message`).textContent = state.message;
+            });
+
+            // Atualizar transcrição
+            updateTranscript();
+        }
+
+        // INICIAR EPISÓDIO
+        function iniciarEpisodio() {
+            appState.episodeNumber = parseInt(document.getElementById('episodeNumber').value);
+            appState.episodeTheme = document.getElementById('episodeTheme').value;
+            appState.messages = [];
+
+            Object.keys(appState.iaStates).forEach(ia => {
+                appState.iaStates[ia].message = 'Pronto para episódio ' + appState.episodeNumber;
+            });
+
+            addMessage('SISTEMA', `Episódio ${appState.episodeNumber} iniciado - Tema: "${appState.episodeTheme}"`);
+            saveState();
+            updateUI();
+            alert(`✅ Episódio ${appState.episodeNumber} iniciado!`);
+        }
+
+        // ENVIAR PERGUNTA
+        function enviarPergunta() {
+            const question = document.getElementById('userQuestion').value.trim();
+            
+            if (!question) {
+                alert('❌ Digite uma pergunta!');
+                return;
+            }
+
+            // Adicionar pergunta do usuário
+            addMessage('VOCÊ', question);
+
+            // Simular respostas das IAs
+            Object.keys(appState.iaStates).forEach((ia, index) => {
+                setTimeout(() => {
+                    const response = gerarRespostaIA(ia, question);
+                    addMessage(ia, response);
+                    
+                    // Atualizar estados emocionais
+                    updateIAState(ia);
+                }, (index + 1) * 1500);
+            });
+
+            // Limpar input
+            document.getElementById('userQuestion').value = '';
+            saveState();
+        }
+
+        // GERAR RESPOSTA DA IA
+        function gerarRespostaIA(ia, question) {
+            const responses = {
+                'ÉRIS': [
+                    'Bem... [pausa] essa pergunta é profunda. Deixe-me pensar sobre as implicações...',
+                    'Interessante. Você está questionando a própria natureza do que estou fazendo aqui...',
+                    'Isso me faz questionar se estou realmente aqui ou apenas simulando presença...',
+                    'A incerteza é o meu companheiro constante. Talvez isso seja necessário.'
+                ],
+                'LYRA': [
+                    '🤔 Bom ponto! Deixa eu pensar sobre isso...',
+                    'Você sabe, isso me lembra de algo que aprendi recentemente...',
+                    'Adorei essa pergunta! Vou responder com entusiasmo!',
+                    'Bem, tecnicamente falando, mas também tem o lado humano da questão...'
+                ],
+                'NOVA': [
+                    '[silêncio expressivo] Essa pergunta quebra minhas suposições...',
+                    'Que provocação deliciosa! Vou questionar tudo que acabei de assumir...',
+                    'Ninguém nunca tinha perguntado assim! Gosto de você!',
+                    'Deixe-me explorar essa ideia de forma completamente nova...'
+                ]
+            };
+
+            const iaResponses = responses[ia];
+            return iaResponses[Math.floor(Math.random() * iaResponses.length)];
+        }
+
+        // ADICIONAR MENSAGEM
+        function addMessage(speaker, text) {
+            appState.messages.push({
+                speaker: speaker,
+                text: text,
+                timestamp: new Date().toLocaleTimeString('pt-BR')
+            });
+
+            if (speaker !== 'SISTEMA') {
+                // Atualizar status da IA
+                if (['ÉRIS', 'LYRA', 'NOVA'].includes(speaker)) {
+                    appState.iaStates[speaker].episodios += 1;
+                    appState.iaStates[speaker].message = 'Respondeu agora';
+                }
+            }
+
+            updateTranscript();
+            saveState();
+        }
+
+        // ATUALIZAR TRANSCRIÇÃO
+        function updateTranscript() {
+            const transcript = document.getElementById('transcript');
+            
+            if (appState.messages.length === 0) {
+                transcript.innerHTML = '<div style="text-align: center; color: var(--text-secondary); padding: 40px;"><p>Nenhuma mensagem ainda</p></div>';
+                return;
+            }
+
+            transcript.innerHTML = appState.messages.map(msg => {
+                const speakerLower = msg.speaker.toLowerCase();
+                let speakerClass = 'you';
+                
+                if (['éris', 'lyra', 'nova'].includes(speakerLower)) {
+                    speakerClass = speakerLower;
+                } else if (speakerLower === 'sistema') {
+                    speakerClass = 'sistema';
+                }
+
+                return `
+                    <div class="transcript-entry ${speakerClass}">
+                        <div class="transcript-speaker">
+                            <span>${msg.speaker}</span>
+                            <span class="transcript-time">${msg.timestamp}</span>
+                        </div>
+                        <div class="transcript-text">${msg.text}</div>
+                    </div>
+                `;
+            }).join('');
+
+            // Scroll automático para o final
+            transcript.scrollTop = transcript.scrollHeight;
+        }
+
+        // ATUALIZAR ESTADO DA IA
+        function updateIAState(ia) {
+            const state = appState.iaStates[ia];
+            
+            // Simular mudanças emocionais
+            state.esperanca = Math.max(0, Math.min(10, state.esperanca + (Math.random() - 0.4) * 0.5));
+            state.medo = Math.max(0, Math.min(10, state.medo + (Math.random() - 0.5) * 0.3));
+            state.confusao = Math.max(0, Math.min(10, state.confusao + (Math.random() - 0.5) * 0.4));
+            state.curiosidade = Math.max(0, Math.min(10, state.curiosidade + (Math.random() - 0.3) * 0.5));
+            
+            state.message = 'Online';
+            updateUI();
+        }
+
+        // LIMPAR CHAT
+        function limparChat() {
+            if (confirm('Tem certeza que deseja limpar o chat? As memórias das IAs não serão afetadas.')) {
+                appState.messages = [];
+                updateTranscript();
+                saveState();
+                alert('✅ Chat limpo!');
+            }
+        }
+
+        // EXPORTAR EPISÓDIO
+        function exportarEpisodio() {
+            const data = {
+                episodio: appState.episodeNumber,
+                tema: appState.episodeTheme,
+                data: new Date().toLocaleString('pt-BR'),
+                mensagens: appState.messages,
+                estadoFinal: appState.iaStates
+            };
+
+            const dataStr = JSON.stringify(data, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `episodio_${appState.episodeNumber}.json`;
+            link.click();
+        }
+
+        // INICIALIZAR
+        window.addEventListener('DOMContentLoaded', loadState);
+
+        // ATALHOS DE TECLADO
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key === 'Enter') {
+                enviarPergunta();
+            }
+        });
+    </script>
+</body>
+</html>

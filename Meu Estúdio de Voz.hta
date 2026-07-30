@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>Meu Estudio de Voz</title>
+<HTA:APPLICATION ID="estudio" APPLICATIONNAME="Meu Estudio de Voz"
+   BORDER="thin" INNERBORDER="no" SCROLL="no" SINGLEINSTANCE="yes"
+   MAXIMIZEBUTTON="no" SHOWINTASKBAR="yes" />
+<style>
+  * { box-sizing: border-box; font-family: "Segoe UI", Arial, sans-serif; }
+  body { margin:0; height:100vh; overflow:hidden; color:#fff;
+         background: linear-gradient(135deg,#6d28d9,#9333ea 55%,#c026d3); }
+  .wrap { height:100%; display:flex; flex-direction:column; align-items:center;
+          justify-content:center; text-align:center; padding:24px; }
+  h1 { font-size:34px; margin:0 0 6px; }
+  p.sub { font-size:15px; opacity:.9; margin:0 0 28px; max-width:520px; line-height:1.5; }
+  .btn { border:0; border-radius:14px; padding:18px 34px; font-size:20px; font-weight:700;
+         cursor:pointer; margin:8px; box-shadow:0 8px 20px rgba(0,0,0,.25); }
+  .play { background:#fff; color:#7c3aed; }
+  .play:hover { background:#f3e8ff; }
+  .ghost { background:rgba(255,255,255,.15); color:#fff; border:1px solid rgba(255,255,255,.5); }
+  .ghost:hover { background:rgba(255,255,255,.28); }
+  #status { margin-top:26px; font-size:15px; min-height:24px; opacity:.95; }
+  .passos { margin-top:22px; font-size:13px; opacity:.85; max-width:520px; text-align:left;
+            background:rgba(0,0,0,.15); padding:14px 18px; border-radius:12px; line-height:1.6; }
+  .tag { font-size:12px; opacity:.7; margin-top:18px; }
+</style>
+<script language="JScript">
+var EXE = "f:\\Projeto IA\\.venv_omni\\Scripts\\python.exe";
+var APP = "f:\\Projeto IA\\app\\estudio\\estudio.py";
+var URL = "http://127.0.0.1:5006";
+
+function sh() { return new ActiveXObject("WScript.Shell"); }
+
+function iniciar() {
+  try {
+    var s = sh();
+    s.CurrentDirectory = "f:\\Projeto IA";
+    s.Run('"' + EXE + '" "' + APP + '"', 1, false);   // 1 = mostra o console (carregando)
+    document.getElementById('status').innerHTML =
+      "Servidor iniciando... O navegador abre sozinho em alguns segundos." +
+      "<br>Se nao abrir, clique em <b>Abrir no navegador</b>.";
+  } catch (e) {
+    document.getElementById('status').innerHTML = "Erro ao iniciar: " + e.message;
+  }
+}
+function abrir() {
+  try { sh().Run(URL, 1, false); } catch (e) {}       // abre no navegador padrao
+}
+function parar() {
+  try {
+    sh().Run('powershell -windowstyle hidden -command "Get-NetTCPConnection -LocalPort 5006 -State Listen | %{Stop-Process -Id $_.OwningProcess -Force}"', 0, true);
+    document.getElementById('status').innerHTML = "Servidor parado.";
+  } catch (e) {}
+}
+</script>
+</head>
+<body>
+  <div class="wrap">
+    <h1>&#127908; Meu Estudio de Voz</h1>
+    <p class="sub">De uma voz, escreva um texto &mdash; e ele fala com emocao.
+       Clique abaixo para abrir o seu estudio.</p>
+    <div>
+      <button class="btn play" onclick="iniciar()">&#9654; Iniciar meu Estudio</button>
+      <button class="btn ghost" onclick="abrir()">Abrir no navegador</button>
+    </div>
+    <div id="status"></div>
+    <div class="passos">
+      <b>Como usar, dentro do estudio:</b><br>
+      1 &middot; <b>Voz</b> — suba uma voz de pelo menos 3 segundos e clique em Analisar.<br>
+      2 &middot; <b>Narracao</b> — escreva um texto; ele infere a emocao e gera o audio.<br>
+      &#128214; <b>Contador de Historias</b> — cole uma historia; ele faz vozes de personagem.
+    </div>
+    <button class="btn ghost" style="padding:8px 18px;font-size:13px;margin-top:18px" onclick="parar()">Parar servidor</button>
+    <div class="tag">roda 100% no seu PC &middot; http://127.0.0.1:5006</div>
+  </div>
+</body>
+</html>

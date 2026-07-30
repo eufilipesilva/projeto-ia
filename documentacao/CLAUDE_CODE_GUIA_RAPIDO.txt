@@ -1,0 +1,166 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                                                                               ║
+║              🎙️ TRÊS VOZES - GUIA RÁPIDO PARA CLAUDE CODE                  ║
+║                                                                               ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✨ VOCÊ ESTÁ NO CLAUDE CODE! 
+
+Perfeito! É muito fácil aqui.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📥 PASSO 1: BAIXAR OS ARQUIVOS
+
+Opção A - Download do ZIP (Recomendado):
+  1. Procure por: tres_vozes_completo.zip
+  2. Clique para baixar
+  3. Tamanho: ~62 KB (muito pequeno)
+
+Opção B - Download individual:
+  1. Baixe cada arquivo (14 arquivos)
+  2. Coloque em uma pasta
+  3. Ou extraia o ZIP
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🚀 PASSO 2: EXTRAIR/COPIAR PARA F:\Projeto IA
+
+Opção A - Usar Script Python (MAIS FÁCIL):
+  1. Coloque tres_vozes_completo.zip em C:\Users\SeuUsuario\Downloads\
+  2. Coloque extrair_arquivos.py na mesma pasta
+  3. No Claude Code, execute:
+     python extrair_arquivos.py
+  4. Pronto! Tudo vai para F:\Projeto IA\
+
+Opção B - Extrair manualmente:
+  1. Clique duplo em tres_vozes_completo.zip
+  2. Extraia para F:\Projeto IA\
+  3. Pronto!
+
+Opção C - Usar o script BAT:
+  1. Coloque todos os arquivos em uma pasta
+  2. Coloque COPIAR_PARA_F_DRIVE.bat lá também
+  3. Clique duplo em COPIAR_PARA_F_DRIVE.bat
+  4. Copia tudo automaticamente
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ PASSO 3: VERIFICAR A INSTALAÇÃO
+
+Depois de extrair, verifique se em F:\Projeto IA\ tem:
+  ✓ index.html                     (página web)
+  ✓ podcast_tres_vozes_completo.py (sistema Python)
+  ✓ Vários arquivos .md e .txt     (documentação)
+
+Se tem TUDO, você está pronto! 🎉
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎬 PASSO 4: COMEÇAR A USAR
+
+OPÇÃO 1 - INTERFACE WEB (Recomendado - sem instalação):
+  1. Abra: F:\Projeto IA\index.html
+  2. No navegador (Chrome, Firefox, Edge, Safari)
+  3. Clique: "Iniciar Episódio"
+  4. Digite uma pergunta
+  5. Veja as 3 IAs responderem! 🎙️
+
+OPÇÃO 2 - PYTHON COM CLAUDE API REAL:
+  1. Leia: F:\Projeto IA\GUIA_PASSO_A_PASSO.md
+  2. Configure Claude API (5 minutos)
+  3. Configure Google Cloud (grátis! 5 minutos)
+  4. Execute: python podcast_tres_vozes_completo.py
+  5. Escolha opção 1 para episódio piloto
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📚 QUAL ARQUIVO LER PRIMEIRO:
+
+Leia NESSA ORDEM:
+  1️⃣  COMECE_AQUI.txt          (2 min)   ← COMECE AQUI!
+  2️⃣  README.md                (5 min)   ← Entenda o conceito
+  3️⃣  Abra: index.html         (5 min)   ← Teste agora!
+  4️⃣  GUIA_INTERFACE_WEB.md   (10 min)   ← Domine a interface
+  5️⃣  GUIA_PERSONALIDADES.md  (15 min)   ← Conheça as IAs
+  6️⃣  GUIA_PASSO_A_PASSO.md   (30 min)   ← Se quiser Python
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔧 TROUBLESHOOTING RÁPIDO:
+
+Problema: "Não consigo extrair o ZIP"
+Solução: Use 7-Zip ou WinRAR para extrair
+
+Problema: "index.html não abre"
+Solução: Clique duplo nele OU arraste para o navegador
+
+Problema: "Python não funciona"
+Solução: Siga GUIA_PASSO_A_PASSO.md (é bem detalhado)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📊 ARQUIVOS DISPONÍVEIS:
+
+ARQUIVO ZIP (Recomendado):
+  ✓ tres_vozes_completo.zip (62 KB) - TUDO em um arquivo
+
+OU ARQUIVOS INDIVIDUAIS:
+  ✓ podcast_tres_vozes_completo.py
+  ✓ exemplo_uso.py
+  ✓ index.html
+  ✓ README.md
+  ✓ GUIA_PASSO_A_PASSO.md
+  ✓ GUIA_PERSONALIDADES.md
+  ✓ GUIA_INTERFACE_WEB.md
+  ✓ COMECE_AQUI.txt
+  ✓ RESUMO_ARQUIVOS.txt
+  ✓ SISTEMA_COMPLETO_RESUMO.txt
+  ✓ podcast_sistema_completo.md
+  ✓ LISTA_COMPLETA_ARQUIVOS.txt
+  ✓ .env.exemplo
+  ✓ INSTRUCOES_COPIAR_PARA_F_DRIVE.txt
+  ✓ COPIAR_PARA_F_DRIVE.bat
+  ✓ extrair_arquivos.py
+
+═══════════════════════════════════════════════════════════════════════════════
+
+💡 DICA PROFISSIONAL:
+
+Se está no Claude Code, pode:
+  1. Baixar tres_vozes_completo.zip
+  2. Extrair diretamente aqui no Claude Code
+  3. Editar os arquivos se quiser customizar
+  4. Depois copiar para F:\Projeto IA\
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✨ RESUMO EXECUTIVO:
+
+  1️⃣  Baixe: tres_vozes_completo.zip
+  2️⃣  Extraia para: F:\Projeto IA\
+  3️⃣  Abra: F:\Projeto IA\index.html
+  4️⃣  Clique: "Iniciar Episódio"
+  5️⃣  Aproveite! 🎙️
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 COMECE AGORA:
+
+No Claude Code:
+  1. Procure por "tres_vozes_completo.zip"
+  2. Baixe
+  3. Extraia para F:\Projeto IA\
+  4. Abra index.html
+  5. Pronto! 🚀
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Dúvidas?
+
+Se não conseguir encontrar os arquivos, me avisa que ajudo de forma específica
+para Claude Code!
+
+Que comece a conversa... 🎙️✨

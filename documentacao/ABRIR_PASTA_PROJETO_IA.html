@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎙️ Três Vozes - Abrir Pasta</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        p {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .path {
+            background: #f3f4f6;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            font-family: 'Courier New', monospace;
+            color: #333;
+            word-break: break-all;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-direction: column;
+        }
+        
+        button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #333;
+        }
+        
+        .btn-secondary:hover {
+            background: #d1d5db;
+        }
+        
+        .info {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #e5e7eb;
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        .status {
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .status.success {
+            background: #d1fae5;
+            color: #065f46;
+            display: block;
+        }
+        
+        .status.info {
+            background: #dbeafe;
+            color: #1e40af;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎙️ Três Vozes</h1>
+        <p>Sistema de Podcast com 3 IAs</p>
+        
+        <div class="path">
+            F:\Projeto IA
+        </div>
+        
+        <div class="buttons">
+            <button class="btn-primary" onclick="abrirPasta()">
+                📁 Abrir Pasta
+            </button>
+            <button class="btn-primary" onclick="abrirIndex()">
+                🌐 Abrir Interface Web
+            </button>
+            <button class="btn-secondary" onclick="copiarCaminho()">
+                📋 Copiar Caminho
+            </button>
+        </div>
+        
+        <div id="status" class="status"></div>
+        
+        <div class="info">
+            <p><strong>💡 Dica:</strong> Se nenhum botão funcionar (Windows bloqueando), copie o caminho acima e abra no Explorador de Arquivos manualmente.</p>
+        </div>
+    </div>
+    
+    <script>
+        function abrirPasta() {
+            mostrarMensagem('info', 'Tentando abrir a pasta...');
+            
+            // Tentar abrir a pasta via Windows
+            fetch('file:///F:/Projeto%20IA/').catch(() => {
+                mostrarMensagem('info', 'Se não abrir automaticamente, copie o caminho e abra no Explorador de Arquivos.');
+                // Fallback: tentar com protocolo especial
+                window.location.href = 'file:///F:/Projeto%20IA/';
+            });
+        }
+        
+        function abrirIndex() {
+            mostrarMensagem('info', 'Abrindo interface web...');
+            window.location.href = 'file:///F:/Projeto%20IA/index.html';
+        }
+        
+        function copiarCaminho() {
+            const caminho = 'F:\\Projeto IA';
+            navigator.clipboard.writeText(caminho).then(() => {
+                mostrarMensagem('success', '✅ Caminho copiado para a área de transferência!');
+                setTimeout(() => {
+                    document.getElementById('status').style.display = 'none';
+                }, 3000);
+            }).catch(() => {
+                mostrarMensagem('info', 'Copie manualmente: F:\\Projeto IA');
+            });
+        }
+        
+        function mostrarMensagem(tipo, mensagem) {
+            const status = document.getElementById('status');
+            status.textContent = mensagem;
+            status.className = 'status ' + tipo;
+        }
+        
+        // Tentar abrir a pasta automaticamente
+        window.addEventListener('load', () => {
+            // Mostrar dica
+            mostrarMensagem('info', '📁 Use os botões abaixo para acessar seus arquivos');
+        });
+    </script>
+</body>
+</html>

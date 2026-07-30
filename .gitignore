@@ -1,5 +1,7 @@
 # Ambiente virtual Python
 .venv_omni/
+.venv_seedvc/
+.venv*/
 Include/
 Lib/
 Scripts/
@@ -9,6 +11,13 @@ __pycache__/
 *.pyo
 *.pyd
 .Python
+
+# Áudio/vídeo (grandes demais para Git, gerados/baixados)
+*.wav
+*.mp3
+*.flac
+*.ogg
+*.mp4
 
 # Modelos e pesos (grandes demais para Git — ficam no cache local)
 *.pt
@@ -46,6 +55,9 @@ desktop.ini
 
 # Pasta de arquivo morto / tentativas antigas
 _Arquivo_Morto/
+
+# Repositório de terceiros clonado (seed-vc, ~2.5GB, não é código do projeto)
+app/laboratorios/seed-vc/
 
 # Áudios de laboratório / triagem (centenas de arquivos)
 app/laboratorios/pandora_triagem/

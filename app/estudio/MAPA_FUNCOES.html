@@ -1,0 +1,504 @@
+<title>Mapa de Funções — Estúdio de Voz</title>
+<style>
+  :root{
+    --bg:#0c0c14; --surface:#15151f; --surface2:#1b1b28;
+    --line:#2b2a3d; --text:#e8e6f2; --muted:#8b87a0; --faint:#575370;
+    --accent:#a855f7; --accent-soft:#c084fc;
+    --mod-web:#6ea8fe; --mod-motor:#a855f7; --mod-canto:#f27997; --mod-seed:#55c99a; --mod-front:#9a96b0;
+    --mono:ui-monospace,"Cascadia Code",Consolas,monospace;
+    --sans:system-ui,"Segoe UI",sans-serif;
+  }
+  html{background:var(--bg)}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);margin:0;padding:28px 22px 48px}
+  h1{font-size:21px;margin:0 0 4px;letter-spacing:.01em}
+  h1 .tag{color:var(--accent-soft);font-family:var(--mono);font-size:14px}
+  .sub{color:var(--muted);font-size:13px;margin:0 0 18px;max-width:70ch}
+  /* chips de seleção */
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+  .chip{border:1px solid var(--line);background:var(--surface);color:var(--muted);
+    font-size:12px;padding:5px 10px;border-radius:999px;cursor:pointer;user-select:none;
+    transition:border-color .15s,color .15s}
+  .chip:hover{border-color:var(--accent);color:var(--text)}
+  .chip.on{border-color:var(--accent);color:var(--accent-soft);background:rgba(168,85,247,.12)}
+  .chip.clear{border-style:dashed}
+  .legmod{display:flex;flex-wrap:wrap;gap:14px;margin:6px 0 16px;font-size:11px;color:var(--muted)}
+  .legmod b{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+  /* mapa */
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:
+    radial-gradient(1200px 500px at 70% -10%, rgba(168,85,247,.06), transparent 60%), var(--surface)}
+  #mapa{position:relative;min-width:1230px;display:grid;
+    grid-template-columns:172px 200px 226px 226px 208px;gap:0 64px;padding:20px 26px 14px;align-items:start}
+  svg#fios{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+  .col h2{font-size:10.5px;text-transform:uppercase;letter-spacing:.14em;color:var(--faint);
+    margin:0 0 10px;font-weight:600;text-wrap:balance}
+  .col{display:flex;flex-direction:column;gap:7px;position:relative;z-index:2}
+  .no{background:var(--surface2);border:1px solid var(--line);border-left:3px solid var(--mod-front);
+    border-radius:5px;padding:6px 9px;font-family:var(--mono);font-size:11.5px;line-height:1.35;
+    transition:opacity .18s,border-color .18s,box-shadow .18s}
+  .no small{display:block;font-family:var(--sans);color:var(--muted);font-size:10px}
+  .no.web{border-left-color:var(--mod-web)} .no.motor{border-left-color:var(--mod-motor)}
+  .no.canto{border-left-color:var(--mod-canto)} .no.seed{border-left-color:var(--mod-seed)}
+  .no.aba{cursor:pointer;font-family:var(--sans);font-size:12.5px;font-weight:600}
+  .no.aba:hover{border-color:var(--accent)}
+  .dim .no{opacity:.22}
+  .dim .no.lit{opacity:1;border-color:rgba(168,85,247,.7);box-shadow:0 0 14px rgba(168,85,247,.18)}
+  .rodape{grid-column:2/6;margin-top:10px;font-size:10.5px;color:var(--faint);
+    border-top:1px dashed var(--line);padding-top:8px;display:flex;gap:26px;flex-wrap:wrap}
+  .rodape span b{color:var(--accent-soft);font-family:var(--mono);font-weight:500}
+  /* régua do canto */
+  .banda{margin-top:22px}
+  .banda h2{font-size:10.5px;text-transform:uppercase;letter-spacing:.14em;color:var(--faint);margin:0 0 10px}
+  .cadeia{display:flex;align-items:stretch;gap:0;overflow-x:auto;padding:14px 16px;
+    border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+  .elo{background:var(--surface2);border:1px solid var(--line);border-top:3px solid var(--mod-canto);
+    border-radius:5px;padding:8px 11px;font-family:var(--mono);font-size:11.5px;min-width:130px;flex:0 0 auto}
+  .elo small{display:block;font-family:var(--sans);color:var(--muted);font-size:10px;margin-top:3px;max-width:24ch}
+  .elo.seed{border-top-color:var(--mod-seed)}
+  .seta{align-self:center;color:var(--faint);padding:0 9px;flex:0 0 auto;font-size:15px}
+  .nota{font-size:11px;color:var(--muted);margin-top:8px;max-width:90ch}
+  .nota code{font-family:var(--mono);color:var(--accent-soft);font-size:10.5px}
+  @media (prefers-reduced-motion: reduce){ .no, .chip{transition:none} }
+</style>
+
+<h1>Mapa de ligações <span class="tag">— quem chama quem no Estúdio de Voz</span></h1>
+<p class="sub">Clique numa <b>aba</b> (na primeira coluna ou nos chips) pra acender o caminho dela pelo sistema,
+como num patch bay. Fios tracejados = caminho opcional (ex.: voz salva mapeada). Cor da borda = arquivo dono da função.</p>
+
+<div class="chips" id="chips"></div>
+<div class="legmod">
+  <span><b style="background:var(--mod-front)"></b>interface (index.html)</span>
+  <span><b style="background:var(--mod-web)"></b>estudio_web.py</span>
+  <span><b style="background:var(--mod-motor)"></b>motor_v2.py</span>
+  <span><b style="background:var(--mod-canto)"></b>canto_musica / canto_lote</span>
+  <span><b style="background:var(--mod-seed)"></b>seed-vc (.venv_seedvc)</span>
+</div>
+
+<div class="scroll"><div id="mapa">
+  <svg id="fios"></svg>
+  <div class="col">
+    <h2>Abas · interface</h2>
+    <div class="no aba" id="a-clone">🎤 Clone de Voz</div>
+    <div class="no aba" id="a-design">✦ Design de Voz</div>
+    <div class="no aba" id="a-story">📖 Histórias</div>
+    <div class="no aba" id="a-comedy">🎪 Comédia</div>
+    <div class="no aba" id="a-gs">🎓 Game Show</div>
+    <div class="no aba" id="a-trailer">🎬 Trailer</div>
+    <div class="no aba" id="a-med">🧘 Meditação</div>
+    <div class="no aba" id="a-radio">📻 Rádio</div>
+    <div class="no aba" id="a-battle">⚔️ Batalha</div>
+    <div class="no aba" id="a-char">🎭 Personagem</div>
+    <div class="no aba" id="a-sing">🎶 Cantar Música</div>
+  </div>
+
+  <div class="col">
+    <h2>Rotas · estudio_web.py</h2>
+    <div class="no web" id="r-analyze">/voice/analyze<small>perfil + corte do clipe</small></div>
+    <div class="no web" id="r-clone">/voice/clone</div>
+    <div class="no web" id="r-design">/voice/design</div>
+    <div class="no web" id="r-story">/story<small>+ personagens_vozes</small></div>
+    <div class="no web" id="r-comedy">/comedy<small>+ /comedy/random</small></div>
+    <div class="no web" id="r-gspdf">/gameshow/pdf<small>task c/ progresso</small></div>
+    <div class="no web" id="r-gs">/gameshow<small>+ nome/voz ×2</small></div>
+    <div class="no web" id="r-trailer">/trailer</div>
+    <div class="no web" id="r-med">/meditation</div>
+    <div class="no web" id="r-radio">/radio</div>
+    <div class="no web" id="r-battle">/battle<small>dossiês .txt/.pdf</small></div>
+    <div class="no web" id="r-char">/character/*<small>create · list · chat</small></div>
+    <div class="no web" id="r-sing">/sing<small>_resolver_voz_ref</small></div>
+    <div class="no web" id="r-singb">/sing_batch<small>lote</small></div>
+  </div>
+
+  <div class="col">
+    <h2>Roteiro · Gemma (Ollama)</h2>
+    <div class="no motor" id="g-classif">_classificar_beats · _emocao_lote · _classificar_sfx<small>quem fala + emoção + efeitos</small></div>
+    <div class="no motor" id="g-pdfchain">ler_pdf_completo → destilar_conteudo → gerar_gameshow_duelo<small>PDF inteiro em blocos → fatos → duelo c/ placar</small></div>
+    <div class="no motor" id="g-comedy">gerar_roteiro_comedia<small>roteiro aleatório</small></div>
+    <div class="no motor" id="g-interpretar">interpretar_descricao_voz<small>PT → instrução OmniVoice</small></div>
+    <div class="no motor" id="g-trailer">gerar_roteiro_trailer</div>
+    <div class="no motor" id="g-med">gerar_meditacao<small>script c/ [pausa Xs]</small></div>
+    <div class="no motor" id="g-radio">gerar_radio<small>5 segmentos</small></div>
+    <div class="no motor" id="g-batalha">gerar_batalha[_persona]<small>debate turno a turno</small></div>
+    <div class="no motor" id="g-personagem">responder_personagem<small>memória de 10 trocas</small></div>
+  </div>
+
+  <div class="col">
+    <h2>Síntese · OmniVoice</h2>
+    <div class="no motor" id="s-perfil">perfil_voz<small>clipe → identidade da voz</small></div>
+    <div class="no motor" id="s-clone">sintetizar_clone</div>
+    <div class="no motor" id="s-design">sintetizar_design</div>
+    <div class="no motor" id="s-historia">sintetizar_historia<small>vozes_map = multi-voz</small></div>
+    <div class="no motor" id="s-comedia">sintetizar_comedia<small>SFX + plateia · vozes_map</small></div>
+    <div class="no motor" id="s-lote">sintetizar_clone_lote<small>N textos, 1 carga</small></div>
+    <div class="no motor" id="s-perfdesign">perfil_de_design<small>timbre travado</small></div>
+    <div class="no motor" id="s-pandora">sintetizar_clone_pandora<small>caimento natural (0.80)</small></div>
+  </div>
+
+  <div class="col">
+    <h2>Pós & saída</h2>
+    <div class="no motor" id="d-montar">_montar<small>gaps naturais</small></div>
+    <div class="no motor" id="d-montarcom">_montar_comedia<small>intercala SFX/plateia</small></div>
+    <div class="no motor" id="d-fundo">_misturar_fundo<small>música + cauda</small></div>
+    <div class="no web" id="d-medmix">EQ + ducking + binaural<small>inline na rota /meditation</small></div>
+    <div class="no web" id="d-save">_save_audio → player<small>pollTask · waveform</small></div>
+  </div>
+
+  <div class="rodape">
+    <span>⛓ toda rota pesada passa por <b>_run_task → fila (1 worker · GPU serial)</b></span>
+    <span>🧠 todo roteiro passa por <b>_gemma() → gemma3:4b</b></span>
+    <span>🔊 toda síntese termina em <b>_gerar_um() → OmniVoice</b></span>
+  </div>
+</div></div>
+
+<div class="banda">
+  <h2>Cadeia do canto (acesa pela aba 🎶 · /sing e /sing_batch)</h2>
+  <div class="cadeia">
+    <div class="elo">gerar_canto[_lote]<small>descarrega OmniVoice; lote = modelos 1×</small></div>
+    <div class="seta">➜</div>
+    <div class="elo">separar_vocal_instrumental<small>Demucs (htdemucs, cache GPU)</small></div>
+    <div class="seta">➜</div>
+    <div class="elo">calcular_semi_tone_shift<small>_limitar_shift [0,+8] — nunca abaixa</small></div>
+    <div class="seta">➜</div>
+    <div class="elo">calcular_teto_pitch<small>mediana da voz-alvo +12 (molda-se à voz)</small></div>
+    <div class="seta">➜</div>
+    <div class="elo seed">convert_one (subprocess)<small>corrigir_saltos_oitava → suavizar_f0(9) → aplicar_teto_pitch</small></div>
+    <div class="seta">➜</div>
+    <div class="elo">mixar<small>voz 1.0 + instrumental → player</small></div>
+  </div>
+  <p class="nota">Detalhes de cada função: <code>FUNCOES_REFERENCIA.md</code> · arquitetura e receitas: <code>MANUAL_MANUTENCAO.md</code>.
+  Mecanismos extras do seed-vc (<code>preencher_buracos_f0</code>, <code>suavizar_f0_adaptativo</code>) existem mas ficam desligados — a receita simples venceu.</p>
+</div>
+
+<div class="banda">
+  <h2>Passo a passo por aba — o processo função por função</h2>
+  <p class="nota" style="margin:0 0 10px">Escolha uma aba e acompanhe a ordem exata de execução, do clique ao player.
+  Passos com <b>↳</b> são opcionais/condicionais. Cores = arquivo dono (mesma legenda acima).</p>
+  <div class="chips" id="chips-passo"></div>
+  <div id="passos"></div>
+</div>
+
+<div class="banda">
+  <h2>Censo completo — todas as <span data-total>186</span> funções, arquivo por arquivo</h2>
+  <p class="nota" style="margin:0 0 10px">O diagrama acima é a <b>cadeia principal</b>; aqui está o inventário integral
+  (gerado por <code>tools/gerar_mapa.py</code> — rode-o pra atualizar após mexer no código).</p>
+
+  <!-- CENSO:INICIO (gerado automaticamente — NÃO editar à mão; rode tools/gerar_mapa.py) -->
+  <div class="censo">
+    <div class="grupo motor"><h3>motor_v2.py · modelos &amp; VRAM <em>6</em></h3>
+      <p>_esperar_vram_livre · carregar_omni · descarregar_omni · _cfg · _gemma · descarregar_gemma</p></div>
+    <div class="grupo motor"><h3>motor_v2.py · perfis &amp; prompts de voz <em>7</em></h3>
+      <p>estimar_ritmo · perfil_voz · perfil_de_design · _criar_prompt_voz · _carregar_prompts_emocao · interpretar_descricao_voz · _dedup_instruct</p></div>
+    <div class="grupo motor"><h3>motor_v2.py · síntese <em>7</em></h3>
+      <p>_gerar_um · sintetizar_clone · sintetizar_clone_lote · sintetizar_clone_pandora · sintetizar_design · sintetizar_historia · sintetizar_comedia</p></div>
+    <div class="grupo motor"><h3>motor_v2.py · roteiros (Gemma) <em>15</em></h3>
+      <p>_limpar_roteiro · gerar_roteiro_comedia · gerar_gameshow_educativo · gerar_gameshow_duelo · destilar_conteudo · ler_pdf_completo · _ler_pdf · gerar_roteiro_trailer · gerar_meditacao · gerar_radio · gerar_batalha · gerar_batalha_persona · responder_personagem · gerar_livro_capitulos · gerar_temporada</p></div>
+    <div class="grupo motor"><h3>motor_v2.py · beats &amp; classificação <em>14</em></h3>
+      <p>_achar_emocao · _split_frases · _beats_historia · _beats_comedia · _ascii1 · _norm_nome · _primeiro_nome · _falante_da_tag · _quem_fala_gemma · _classificar_beats · _emocao_lote · _classificar_sfx · _normalizar_fala · _com_ponto</p></div>
+    <div class="grupo motor"><h3>motor_v2.py · DSP &amp; montagem <em>19</em></h3>
+      <p>_pitch · _rms · _envelope · _fade_in_cos · _fade_exp · _zcr · finalizar · _roomtone · _sussurro · _brilho · _tremolo · _eco · _montar · _carregar_fundo · _misturar_fundo · _caimento_pandora · _binaural_widen · _saida · salvar</p></div>
+    <div class="grupo motor"><h3>motor_v2.py · sonoplastia (SFX) <em>4</em></h3>
+      <p>_norm_sfx · _catalogo_sfx · _carregar_sfx · _montar_comedia</p></div>
+    <div class="grupo web"><h3>estudio_web.py · infra &amp; tasks <em>15</em></h3>
+      <p>_save_audio · _perfil_de_voz · _avaliar_meditacao · _parse_bool · _audio_response · _prog_fn · _executar_tarefa · _worker_loop · _podar_tasks · _varrer_tmp_antigos · _run_task · _new_task · _salvar_upload · _resolver_voz_ref · _ler_texto_upload</p></div>
+    <div class="grupo web"><h3>estudio_web.py · rotas <em>25</em></h3>
+      <p>status · listar_vozes · preview_voz · task_status · task_audio · task_audio_lote · analisar_voz · gerar_clone · gerar_canto · gerar_canto_lote · gerar_design · gerar_historia · gerar_comedia · roteiro_aleatorio · ler_pdf · gerar_gameshow · gerar_trailer · gerar_meditacao · gerar_radio · gerar_batalha · criar_personagem · listar_personagens · conversar · resetar_historico · index</p></div>
+    <div class="grupo canto"><h3>canto_musica.py · funções <em>10</em></h3>
+      <p>_limitar_shift · _limpar · _pitch_mediano_midi · calcular_semi_tone_shift · calcular_teto_pitch · _carregar_demucs · separar_vocal_instrumental · converter_voz · mixar · gerar_canto</p></div>
+    <div class="grupo canto"><h3>canto_lote.py · funções <em>1</em></h3>
+      <p>gerar_canto_lote</p></div>
+    <div class="grupo motor"><h3>parodia.py · funções <em>13</em></h3>
+      <p>_carregar_whisper · _dic · contar_silabas · _sem_acento · _chave_rima · _ultima_palavra · rimam · _palavras_para_versos · transcrever_letra · _bloco_metrico · _limpar_verso · _extrair_versos · gerar_parodia</p></div>
+    <div class="grupo seed"><h3>seed-vc/inference.py · funções <em>10</em></h3>
+      <p>load_models · adjust_f0_semitones · corrigir_saltos_oitava · aplicar_teto_pitch · suavizar_f0 · preencher_buracos_f0 · suavizar_f0_adaptativo · crossfade · convert_one · main</p></div>
+    <div class="grupo seed"><h3>seed-vc/converter_lote.py · funções <em>1</em></h3>
+      <p>main</p></div>
+    <div class="grupo front"><h3>index.html · JavaScript <em>39</em></h3>
+      <p>getPill · toast · showProg · setProg · showAudio · showText · _fmtTempo · montarWavePlayer · calcularPicos · desenhar · atualizarTempo · pollTask · updateVoiceStatus · carregarVozesEm · carregarVozes · carregarPersonagens · criarTrimWidget · draw · updateHandles · stop · play · analisarVoz · gerarClone · gerarCanto · renderSingleResult · renderLoteResult · gerarDesign · gerarHistoria · gerarRoteiroCaos · gerarComedia · lerPDF · gerarGameshow · gerarTrailer · gerarMeditacao · gerarRadio · gerarBatalha · criarPersonagem · conversar · resetarChat</p></div>
+  </div>
+  <!-- CENSO:FIM -->
+</div>
+
+<style>
+  .censo{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:10px}
+  .grupo{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;
+    border-left-width:3px;transition:border-color .15s}
+  .grupo:hover{border-color:var(--accent)}
+  .grupo.motor{border-left-color:var(--mod-motor)} .grupo.web{border-left-color:var(--mod-web)}
+  .grupo.canto{border-left-color:var(--mod-canto)} .grupo.seed{border-left-color:var(--mod-seed)}
+  .grupo.front{border-left-color:var(--mod-front)}
+  .grupo h3{margin:0 0 6px;font-size:11px;font-weight:600;color:var(--text);letter-spacing:.03em}
+  .grupo h3 em{font-style:normal;color:var(--accent-soft);font-family:var(--mono);margin-left:4px}
+  .grupo p{margin:0;font-family:var(--mono);font-size:10.5px;line-height:1.7;color:var(--muted);word-spacing:1px}
+  /* passo a passo por aba */
+  #passos{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:16px 18px;min-height:80px}
+  .passo{display:flex;gap:10px;align-items:baseline;padding:5px 0;border-bottom:1px dashed rgba(43,42,61,.6)}
+  .passo:last-child{border-bottom:none}
+  .passo .num{font-family:var(--mono);font-size:10px;color:var(--faint);width:22px;flex:0 0 auto;text-align:right}
+  .passo code{font-family:var(--mono);font-size:11.5px;color:var(--text);background:var(--surface2);
+    border:1px solid var(--line);border-left:3px solid var(--mod-front);border-radius:4px;
+    padding:2px 7px;white-space:nowrap;flex:0 0 auto}
+  .passo code.web{border-left-color:var(--mod-web)} .passo code.motor{border-left-color:var(--mod-motor)}
+  .passo code.canto{border-left-color:var(--mod-canto)} .passo code.seed{border-left-color:var(--mod-seed)}
+  .passo .d{font-size:12px;color:var(--muted);line-height:1.5}
+  .passo.opt{opacity:.82}
+  .passo.opt .num{color:var(--accent-soft)}
+  .passo.fase{border-bottom:none;padding-top:14px}
+  .passo.fase .d{color:var(--accent-soft);font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;font-weight:600}
+  @media (max-width:760px){ .passo{flex-wrap:wrap} }
+</style>
+
+<script>
+(function(){
+  // Cada passo: [modulo, funcao, descricao] · modulo 'fase' = separador · prefixo '↳' na função = condicional
+  const F='front', W='web', M='motor', C='canto', S='seed';
+  const PASSOS = {
+    '🎤 Clone de Voz':[
+      ['fase','','PREPARAR A VOZ (sessão)'],
+      [F,'analisarVoz()','coleta upload OU voz salva + corte do trim (cloneTrim.ini/fim) e envia'],
+      [W,'/api/voice/analyze → _salvar_upload','salva o clipe; recorta o trecho selecionado (sf.read, fallback librosa)'],
+      [M,'perfil_voz()','transcreve a referência (se preciso) e mede o ritmo (estimar_ritmo) → perfil'],
+      [W,'_sessions[sid] = perfil','a sessão vale pra Histórias/Comédia/Rádio/Meditação...'],
+      ['fase','','GERAR FALA'],
+      [F,'gerarClone()','manda texto + parâmetros da sessão'],
+      [W,'/api/voice/clone → _run_task','entra na fila (worker única / GPU serial)'],
+      [M,'sintetizar_clone() → _criar_prompt_voz → _gerar_um','OmniVoice clona a voz falando o texto'],
+      [W,'_save_audio → /api/task/{id}/audio','wav salvo; front toca via pollTask + showAudio'],
+    ],
+    '✦ Design de Voz':[
+      [F,'gerarDesign()','descrição em PT + texto'],
+      [W,'/api/voice/design → _run_task','fila'],
+      [M,'interpretar_descricao_voz()','Gemma traduz PT → instrução válida do OmniVoice (_dedup_instruct valida)'],
+      [M,'sintetizar_design() → _gerar_um','gera com a voz descrita (sem áudio de referência)'],
+      [W,'_save_audio','→ player'],
+    ],
+    '📖 Contador de Histórias':[
+      [F,'gerarHistoria()','texto + ritmo + sussurro + fundo + mapa {personagem→voz salva} (JSON)'],
+      [W,'/api/story → _salvar_upload(fundo)','parse do personagens_vozes; _run_task'],
+      [W,'↳ _perfil_de_voz(cada voz mapeada)','na task: perfis das vozes salvas dos personagens'],
+      [M,'sintetizar_historia() → _beats_historia','quebra em beats (rótulos NOME: e travessões)'],
+      [M,'descarregar_omni → _classificar_beats','Gemma decide QUEM fala + emoção (lotes de 12) → descarregar_gemma'],
+      [M,'carregar_omni → _gerar_um (por beat)','narrador = voz da sessão; personagem mapeado = voz SALVA (vozes_map); senão PALETA (pitch/speed)'],
+      [M,'↳ _sussurro(seg)','se modo ASMR ligado'],
+      [M,'_montar → _misturar_fundo','gaps naturais entre falas; música de fundo com cauda'],
+      [W,'_save_audio','→ player + roteiro (quem/emoção por linha)'],
+    ],
+    '🎪 Comédia (Auditório)':[
+      [F,'gerarComedia() / gerarRoteiroCaos()','texto do quadro OU roteiro aleatório (gerar_roteiro_comedia)'],
+      [W,'/api/comedy → _salvar_upload(abertura)','_run_task'],
+      [M,'sintetizar_comedia() → _beats_comedia','beats + falantes pelos rótulos NOME:'],
+      [M,'_emocao_lote + _classificar_sfx','Gemma marca emoção e escolhe o efeito de cada beat (aplauso, risada...)'],
+      [M,'_gerar_um (por beat)','narrador c/ prompts de emoção; convidados = PALETA'],
+      [M,'_montar_comedia','intercala falas + SFX + plateia (_catalogo_sfx/_carregar_sfx)'],
+      [M,'↳ abertura','vinheta de abertura com fade antes do quadro'],
+      [W,'_save_audio','→ player + roteiro com 🔊 efeitos'],
+    ],
+    '🎓 Game Show (duelo)':[
+      ['fase','','PASSO 1 — ROTEIRO DO DUELO (task com progresso)'],
+      [F,'lerPDF()','PDF + faixa etária + rodadas + nomes dos 2 competidores'],
+      [W,'/api/gameshow/pdf → _run_task','vira task (PDF grande = minutos)'],
+      [M,'ler_pdf_completo()','extrai o texto INTEIRO, sem truncar'],
+      [M,'↳ destilar_conteudo()','se > 7k chars: map-reduce — fatos de cada bloco via Gemma'],
+      [M,'gerar_gameshow_duelo()','Pandora apresenta, rodadas alternadas, PLACAR por rodada, VENCEDOR no fim'],
+      [F,'pollTask → textarea','roteiro editável no passo 2'],
+      ['fase','','PASSO 2 — ÁUDIO'],
+      [F,'gerarGameshow()','roteiro + nome/voz de cada competidor (galeria)'],
+      [W,'/api/gameshow → _perfil_de_voz ×2','monta vozes_map {MAX: perfil, LILI: perfil}'],
+      [M,'sintetizar_comedia(vozes_map)','Pandora = voz da sessão; cada competidor = voz SALVA'],
+      [M,'_montar_comedia','SFX + plateia'],
+      [W,'_save_audio','→ player'],
+    ],
+    '🎬 Gerador de Trailer':[
+      [F,'gerarTrailer()','gênero + logline + voz (galeria) + música'],
+      [W,'/api/trailer → _salvar_upload(musica)','_perfil_de_voz(voz); _run_task'],
+      [M,'gerar_roteiro_trailer()','Gemma escreve a narração épica'],
+      [M,'sintetizar_clone() OU sintetizar_design()','voz da galeria; sem voz → design "male, low pitch"'],
+      [M,'↳ _carregar_fundo → _misturar_fundo','música de fundo com cauda de 2s'],
+      [W,'_save_audio','→ player + roteiro'],
+    ],
+    '🧘 Meditação Guiada':[
+      [F,'gerarMeditacao()','tema + duração + voz/ASMR + fundo'],
+      [W,'/api/meditation','ASMR → _asmr_nicole_en/_asmr_mix3_pt; senão galeria/sessão; _run_task'],
+      [M,'gerar_meditacao()','Gemma escreve o script com marcadores [pausa Xs]'],
+      [W,'parser de pausas (inline na rota)','divide fala/pausa; fallback por frases se a Gemma ignorar os marcadores'],
+      [M,'sintetizar_clone_lote()','todos os segmentos com 1 carga (whisper se ASMR, 64 steps, guidance 4.5)'],
+      [W,'EQ _aquecer + _caimento_pandora + níveis','calor na voz, decaimento natural, RMS uniforme + ganho orgânico'],
+      [W,'montagem c/ pausas + permanência (≤35s)','alvo ~65% de silêncio; bloco de permanência antes do retorno'],
+      [W,'↳ ducking do fundo','música abaixa pra 35% quando a voz fala (ataque 0.15s / release 0.8s)'],
+      [W,'_avaliar_meditacao()','relatório de qualidade (silêncio, pitch, monotonia, nota /10)'],
+      [M,'_binaural_widen (44.1kHz estéreo)','pseudo-binaural Haas → _save_audio → player + relatório'],
+    ],
+    '📻 Rádio Pandora':[
+      [F,'gerarRadio()','tema + vinheta opcional'],
+      [W,'/api/radio → _run_task','fila'],
+      [M,'gerar_radio()','Gemma → 5 segmentos: abertura, notícias, entrevista, quadro, encerramento'],
+      [M,'sintetizar_clone (por segmento)','voz da sessão narra'],
+      [M,'↳ sintetizar_comedia (entrevista)','PANDORA:/CONVIDADO: viram 2 vozes'],
+      [W,'concatenação + silêncio 1.5s','entre segmentos; ↳ vinheta via _misturar_fundo'],
+      [W,'_save_audio','→ player'],
+    ],
+    '⚔️ Batalha de Vozes':[
+      [F,'gerarBatalha()','2 personagens (nome+descrição+voz) + tema + modo + dossiês'],
+      [W,'/api/battle → _ler_texto_upload ×2','dossiês .txt/.pdf; com dossiê → debate por persona'],
+      [M,'gerar_batalha_persona() OU gerar_batalha()','turno a turno com identidade de cada lado / prompt único'],
+      [M,'↳ interpretar_descricao_voz → perfil_de_design','só pra quem NÃO tem voz da galeria (timbre travado por voz-semente)'],
+      [M,'sintetizar_clone_pandora (por fala)','speed 0.80 + caimento natural (NUNCA time-stretch); parse NOME: linha a linha'],
+      [W,'_preparar + montagem','RMS parelho, fade anti-clique; gaps 0.16s (mesmo ator) / 0.28s (troca)'],
+      [W,'_save_audio','→ player + roteiro do debate'],
+    ],
+    '🎭 Personagem Infinito':[
+      [F,'criarPersonagem() / carregarPersonagens()','ficha → personagens/NOME.json'],
+      [F,'conversar()','sua fala + personagem escolhido'],
+      [W,'/api/character/chat → _run_task','carrega a ficha + histórico (10 trocas)'],
+      [M,'responder_personagem()','Gemma responde em personagem, com memória'],
+      [M,'interpretar_descricao_voz → sintetizar_design','fala com a voz descrita na ficha'],
+      [W,'_save_audio','→ player + chat acumulado'],
+    ],
+    '🎶 Cantar Música':[
+      [F,'gerarCanto()','1 música → /sing · várias → /sing_batch (lote automático); botão trava reentrada'],
+      [W,'_resolver_voz_ref()','voz da galeria OU trecho por upload (com corte do trim singVozTrim)'],
+      ['fase','','DENTRO DA TASK (canto_musica / canto_lote)'],
+      [C,'gerar_canto[_lote]() → descarregar_omni','libera a VRAM pro Demucs/seed-vc'],
+      [C,'separar_vocal_instrumental()','Demucs htdemucs (cache GPU) → vocal + instrumental 44.1kHz'],
+      [C,'calcular_semi_tone_shift → _limitar_shift','diferença de registro; preso em [0,+8] — NUNCA abaixa (engrossa)'],
+      [C,'calcular_teto_pitch()','teto de belting = mediana da VOZ ESCOLHIDA + 12 (se molda à voz)'],
+      [S,'convert_one() no .venv_seedvc (subprocess)','RMVPE extrai F0 → corrigir_saltos_oitava → suavizar_f0(9) → aplicar_teto_pitch → difusão 50 + BigVGAN'],
+      [C,'mixar() + _limpar()','voz 1.0 + instrumental 0.6; temporários apagados'],
+      [W,'_save_audio / audio_lote/{i}','→ montarWavePlayer (waveform + download por faixa)'],
+      [C,'↳ lote: converter_lote.py','modelos do seed-vc carregam 1× pro lote inteiro (~60s a menos por música)'],
+    ],
+  };
+
+  const chips2 = document.getElementById('chips-passo');
+  const alvo = document.getElementById('passos');
+  function render(nome){
+    document.querySelectorAll('#chips-passo .chip').forEach(c => c.classList.toggle('on', c.textContent === nome));
+    alvo.innerHTML = '';
+    let n = 0;
+    for (const [mod, fn, desc] of PASSOS[nome]){
+      const row = document.createElement('div');
+      if (mod === 'fase'){
+        row.className = 'passo fase';
+        row.innerHTML = `<span class="num"></span><span class="d">${desc}</span>`;
+      } else {
+        const opt = fn.startsWith('↳');
+        row.className = 'passo' + (opt ? ' opt' : '');
+        if (!opt) n++;
+        row.innerHTML = `<span class="num">${opt ? '↳' : n}</span>` +
+          `<code class="${mod}">${fn.replace('↳','').trim()}</code><span class="d">${desc}</span>`;
+      }
+      alvo.appendChild(row);
+    }
+  }
+  for (const nome of Object.keys(PASSOS)){
+    const c = document.createElement('span');
+    c.className = 'chip'; c.textContent = nome;
+    c.onclick = () => render(nome);
+    chips2.appendChild(c);
+  }
+  render('🎶 Cantar Música');
+})();
+</script>
+
+<script>
+(function(){
+  // fluxos: aba → lista de fios [de, para, tracejado?]
+  const FLUXOS = {
+    'a-clone':   {nome:'🎤 Clone', edges:[['a-clone','r-analyze'],['r-analyze','s-perfil'],['a-clone','r-clone'],['r-clone','s-clone'],['s-clone','d-save']]},
+    'a-design':  {nome:'✦ Design', edges:[['a-design','r-design'],['r-design','g-interpretar'],['g-interpretar','s-design'],['s-design','d-save']]},
+    'a-story':   {nome:'📖 Histórias', edges:[['a-story','r-story'],['r-story','g-classif'],['g-classif','s-historia'],['r-story','s-perfil',1],['s-perfil','s-historia',1],['s-historia','d-montar'],['d-montar','d-fundo'],['d-fundo','d-save']]},
+    'a-comedy':  {nome:'🎪 Comédia', edges:[['a-comedy','r-comedy'],['r-comedy','g-comedy',1],['r-comedy','g-classif'],['g-classif','s-comedia'],['s-comedia','d-montarcom'],['d-montarcom','d-save']]},
+    'a-gs':      {nome:'🎓 Game Show', edges:[['a-gs','r-gspdf'],['r-gspdf','g-pdfchain'],['a-gs','r-gs'],['r-gs','g-classif'],['g-classif','s-comedia'],['r-gs','s-perfil',1],['s-perfil','s-comedia',1],['s-comedia','d-montarcom'],['d-montarcom','d-save']]},
+    'a-trailer': {nome:'🎬 Trailer', edges:[['a-trailer','r-trailer'],['r-trailer','g-trailer'],['g-trailer','s-clone'],['g-trailer','s-design',1],['s-clone','d-fundo'],['d-fundo','d-save']]},
+    'a-med':     {nome:'🧘 Meditação', edges:[['a-med','r-med'],['r-med','g-med'],['g-med','s-lote'],['s-lote','d-medmix'],['d-medmix','d-save']]},
+    'a-radio':   {nome:'📻 Rádio', edges:[['a-radio','r-radio'],['r-radio','g-radio'],['g-radio','s-clone'],['g-radio','s-comedia',1],['s-clone','d-fundo'],['d-fundo','d-save']]},
+    'a-battle':  {nome:'⚔️ Batalha', edges:[['a-battle','r-battle'],['r-battle','g-batalha'],['r-battle','g-interpretar',1],['g-interpretar','s-perfdesign'],['s-perfdesign','s-pandora'],['g-batalha','s-pandora'],['r-battle','s-perfil',1],['s-perfil','s-pandora',1],['s-pandora','d-montar'],['d-montar','d-save']]},
+    'a-char':    {nome:'🎭 Personagem', edges:[['a-char','r-char'],['r-char','g-personagem'],['r-char','g-interpretar',1],['g-personagem','s-design'],['g-interpretar','s-design',1],['s-design','d-save']]},
+    'a-sing':    {nome:'🎶 Cantar', edges:[['a-sing','r-sing'],['a-sing','r-singb'],['r-sing','d-save',1],['r-singb','d-save',1]]},
+  };
+
+  const mapa = document.getElementById('mapa');
+  const svg  = document.getElementById('fios');
+  const NS   = 'http://www.w3.org/2000/svg';
+
+  // dedup dos fios: chave de→para→dash, guardando as abas que usam cada um
+  const fios = {};
+  for (const [aba, f] of Object.entries(FLUXOS))
+    for (const [de, para, dash] of f.edges) {
+      const k = de+'|'+para+'|'+(dash?1:0);
+      (fios[k] = fios[k] || {de, para, dash:!!dash, abas:new Set()}).abas.add(aba);
+    }
+
+  function ancora(id, lado){
+    const r = document.getElementById(id).getBoundingClientRect();
+    const c = mapa.getBoundingClientRect();
+    return [ (lado==='dir'? r.right : r.left) - c.left, r.top - c.top + r.height/2 ];
+  }
+
+  function desenhar(){
+    svg.setAttribute('width', mapa.scrollWidth);
+    svg.setAttribute('height', mapa.scrollHeight);
+    svg.innerHTML = '';
+    for (const f of Object.values(fios)){
+      const [x1,y1] = ancora(f.de,'dir'), [x2,y2] = ancora(f.para,'esq');
+      const dx = Math.max(34, (x2-x1)/2);
+      const p = document.createElementNS(NS,'path');
+      p.setAttribute('d', `M ${x1} ${y1} C ${x1+dx} ${y1}, ${x2-dx} ${y2}, ${x2} ${y2}`);
+      p.setAttribute('fill','none');
+      if (f.dash) p.setAttribute('stroke-dasharray','5 4');
+      p.dataset.abas = [...f.abas].join(' ');
+      f.el = p;
+      svg.appendChild(p);
+    }
+    pintar();
+  }
+
+  let ativa = null, fixa = false;
+  function pintar(){
+    mapa.classList.toggle('dim', !!ativa);
+    for (const f of Object.values(fios)){
+      const on = ativa && f.abas.has(ativa);
+      f.el.setAttribute('stroke', on ? '#a855f7' : (ativa ? 'rgba(43,42,61,.5)' : '#34324a'));
+      f.el.setAttribute('stroke-width', on ? 2.2 : 1.3);
+      f.el.style.filter = on ? 'drop-shadow(0 0 4px rgba(168,85,247,.55))' : '';
+    }
+    document.querySelectorAll('.no').forEach(n => n.classList.remove('lit'));
+    document.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c.dataset.aba === ativa));
+    if (ativa){
+      const nos = new Set();
+      for (const f of Object.values(fios)) if (f.abas.has(ativa)){ nos.add(f.de); nos.add(f.para); }
+      nos.forEach(id => document.getElementById(id).classList.add('lit'));
+      if (ativa === 'a-sing') document.querySelectorAll('.elo').forEach(e => e.style.boxShadow='0 0 14px rgba(168,85,247,.2)');
+      else document.querySelectorAll('.elo').forEach(e => e.style.boxShadow='');
+    } else document.querySelectorAll('.elo').forEach(e => e.style.boxShadow='');
+  }
+  function escolher(aba, pin){
+    if (pin && fixa && ativa === aba){ ativa = null; fixa = false; }
+    else { ativa = aba; if (pin) fixa = true; }
+    pintar();
+  }
+
+  // chips
+  const chips = document.getElementById('chips');
+  for (const [aba, f] of Object.entries(FLUXOS)){
+    const c = document.createElement('span');
+    c.className = 'chip'; c.textContent = f.nome; c.dataset.aba = aba;
+    c.onclick = () => escolher(aba, true);
+    chips.appendChild(c);
+  }
+  const limpar = document.createElement('span');
+  limpar.className = 'chip clear'; limpar.textContent = '✕ ver tudo';
+  limpar.onclick = () => { ativa = null; fixa = false; pintar(); };
+  chips.appendChild(limpar);
+
+  // nós de aba: hover = prévia, clique = fixa
+  for (const aba of Object.keys(FLUXOS)){
+    const el = document.getElementById(aba);
+    el.addEventListener('click', () => escolher(aba, true));
+    el.addEventListener('mouseenter', () => { if (!fixa) escolher(aba, false); });
+    el.addEventListener('mouseleave', () => { if (!fixa){ ativa = null; pintar(); } });
+  }
+
+  requestAnimationFrame(desenhar);
+  window.addEventListener('resize', desenhar);
+  window.addEventListener('load', desenhar);
+})();
+</script>

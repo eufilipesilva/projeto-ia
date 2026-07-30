@@ -260,7 +260,7 @@ def _chunks(texto, min_chars=22):
 
 def _sintetizar_frase(texto):
     kw = dict(language=LANGUAGE, voice_clone_prompt=_PROMPT, generation_config=_CFG)
-    speed = _PERFIL["base_speed"] * RITMO        # ritmo do Contador de Histórias
+    speed = _PERFIL["base_speed"] * RITMO
     if abs(speed - 1.0) > 1e-3:
         kw["speed"] = float(speed)
     wav = _OMNI.generate(motor._com_ponto(texto), **kw)[0]

@@ -100,7 +100,7 @@ def gerar_historia(perfil, texto, ritmo, sussurro, fundo, vol_fundo, cauda_fundo
     tabela = "\n".join(f"- **{q}** (*{e}*): {f}" for q, e, f in roteiro)
     return (motor.SR, audio), "### Roteiro\n" + tabela
 
-# ── Tab Comédia (auditório / estilo Ratinho) ───────────────────────────────────
+# ── Tab  ───────────────────────────────────
 # Roteiro de programa: linhas SEM rótulo = a apresentadora PANDORA (voz da aba Clone);
 # "NOME: fala" = convidado (voz própria e consistente). Nomes de uma palavra.
 EXEMPLO_COMEDIA = (

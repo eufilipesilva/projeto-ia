@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relatório do PC — Melhorias para IA</title>
+<style>
+  :root {
+    --roxo: #7c3aed; --roxo2: #a78bfa; --roxo3: #4c1d95;
+    --verde: #059669; --vermelho: #dc2626; --amarelo: #d97706;
+    --azul: #2563eb; --cinza: #6b7280;
+    --borda: #e5e7eb; --bg2: #f9fafb; --destaque: #f5f3ff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Georgia', serif; font-size: 15px; line-height: 1.75;
+         color: #111827; max-width: 820px; margin: 0 auto; padding: 28px 18px; }
+
+  /* CAPA */
+  .capa { text-align: center; padding: 52px 0 36px; border-bottom: 3px solid var(--roxo); margin-bottom: 40px; }
+  .capa h1 { font-size: 26px; color: var(--roxo3); margin-bottom: 10px; line-height: 1.3; }
+  .capa p { color: var(--cinza); font-size: 14px; margin-bottom: 18px; }
+  .badge { display: inline-block; background: var(--roxo); color: white;
+           padding: 5px 18px; border-radius: 20px; font-size: 13px; font-family: monospace; }
+
+  h1 { font-size: 21px; color: var(--roxo3); border-bottom: 2px solid var(--roxo2);
+       padding-bottom: 7px; margin: 44px 0 18px; }
+  h2 { font-size: 17px; color: var(--roxo3); margin: 28px 0 12px; }
+  h3 { font-size: 14px; text-transform: uppercase; letter-spacing: .5px; color: #374151;
+       border-left: 3px solid var(--roxo2); padding-left: 9px; margin: 18px 0 8px; }
+  p { margin-bottom: 12px; }
+  ul { margin: 8px 0 14px 20px; } li { margin-bottom: 5px; font-size: 14px; }
+  li::marker { color: var(--roxo); }
+  hr { border: none; border-top: 1px solid var(--borda); margin: 36px 0; }
+
+  /* SPEC TABLE */
+  .spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+  @media(max-width:560px){ .spec-grid { grid-template-columns: 1fr; } }
+  .spec-card { border: 1px solid var(--borda); border-radius: 10px; padding: 16px 18px; }
+  .spec-card .label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px;
+                      color: var(--cinza); margin-bottom: 6px; }
+  .spec-card .value { font-size: 15px; font-weight: bold; color: var(--roxo3); }
+  .spec-card .sub { font-size: 12px; color: var(--cinza); margin-top: 3px; }
+  .spec-card.alerta { border-color: var(--vermelho); background: #fff5f5; }
+  .spec-card.alerta .value { color: var(--vermelho); }
+  .spec-card.ok { border-color: var(--verde); }
+
+  /* BOXES */
+  .box { border-radius: 8px; padding: 15px 18px; margin: 14px 0; font-size: 14px; }
+  .box h4 { font-size: 12px; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 7px; }
+  .box-verde  { background: #d1fae5; border-left: 4px solid var(--verde); }
+  .box-verde h4 { color: var(--verde); }
+  .box-vermelho { background: #fee2e2; border-left: 4px solid var(--vermelho); }
+  .box-vermelho h4 { color: var(--vermelho); }
+  .box-amarelo { background: #fef3c7; border-left: 4px solid var(--amarelo); }
+  .box-amarelo h4 { color: var(--amarelo); }
+  .box-roxo { background: var(--destaque); border-left: 4px solid var(--roxo); }
+  .box-roxo h4 { color: var(--roxo); }
+  .box-azul { background: #dbeafe; border-left: 4px solid var(--azul); }
+  .box-azul h4 { color: var(--azul); }
+
+  /* UPGRADE CARDS */
+  .upgrade { border: 1px solid var(--borda); border-radius: 10px; margin-bottom: 32px; overflow:hidden; }
+  .upgrade-header { padding: 14px 20px; color: white; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .upgrade-header h2 { margin: 0; font-size: 17px; color: white; }
+  .upgrade-header .preco { font-family: monospace; font-size: 15px; font-weight: bold; }
+  .upgrade-body { padding: 18px 22px; }
+  .urgente .upgrade-header { background: var(--vermelho); }
+  .recomendado .upgrade-header { background: var(--roxo); }
+  .opcional .upgrade-header { background: var(--azul); }
+  .futuro .upgrade-header { background: var(--cinza); }
+
+  /* PRO/CON */
+  .pro-con { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  @media(max-width:520px){ .pro-con { grid-template-columns: 1fr; } }
+  .pro { background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; padding: 12px 14px; }
+  .con { background: #fff5f5; border: 1px solid #fca5a5; border-radius: 8px; padding: 12px 14px; }
+  .pro h4 { color: var(--verde); font-size: 12px; text-transform: uppercase; margin-bottom: 6px; }
+  .con h4 { color: var(--vermelho); font-size: 12px; text-transform: uppercase; margin-bottom: 6px; }
+  .pro li, .con li { font-size: 13px; margin-bottom: 4px; }
+
+  /* GANHO BADGE */
+  .ganho { display: inline-block; background: #fef3c7; color: #92400e; border: 1px solid #fcd34d;
+           border-radius: 16px; padding: 3px 12px; font-size: 12px; font-family: monospace;
+           font-weight: bold; margin: 2px; }
+  .ganho.alto { background: #d1fae5; color: #065f46; border-color: #6ee7b7; }
+  .ganho.medio { background: #dbeafe; color: #1e40af; border-color: #93c5fd; }
+
+  /* TABELA DE RESUMO */
+  table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 13px; }
+  th { background: var(--roxo); color: white; padding: 9px 11px; text-align: left; }
+  td { padding: 8px 11px; border-bottom: 1px solid var(--borda); vertical-align: middle; }
+  tr:nth-child(even) td { background: var(--bg2); }
+  .pri-1 { color: var(--vermelho); font-weight: bold; }
+  .pri-2 { color: var(--roxo); font-weight: bold; }
+  .pri-3 { color: var(--azul); }
+  .pri-4 { color: var(--cinza); }
+
+  /* DIAGRAMA SVG */
+  .diagrama { background: #0f0f1a; border-radius: 12px; padding: 12px; margin: 24px 0; overflow-x: auto; }
+  svg text { font-family: 'Courier New', monospace; }
+
+  /* RODAPÉ */
+  .rodape { text-align: center; color: var(--cinza); font-size: 12px;
+            margin-top: 50px; padding-top: 18px; border-top: 1px solid var(--borda); }
+
+  @media print { body { padding: 0; font-size: 13px; } .upgrade { page-break-inside: avoid; } }
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<div class="capa">
+  <h1>Relatório Completo do PC<br>Melhorias para IA Local</h1>
+  <p>Análise técnica das especificações atuais, gargalos para o projeto de IA<br>
+  e plano de upgrades com preços atualizados (jun/2026)</p>
+  <div class="badge">Filipe Pereira · Estúdio de Voz da Pandora</div>
+</div>
+
+<!-- SPECS ATUAIS -->
+<h1>1. Configuração Atual</h1>
+
+<div class="spec-grid">
+  <div class="spec-card ok">
+    <div class="label">Processador (CPU)</div>
+    <div class="value">Intel Core i5-8400</div>
+    <div class="sub">6 núcleos / 6 threads · Coffee Lake · LGA 1151<br>2,8 GHz base · 4,0 GHz turbo · sem Hyper-Threading</div>
+  </div>
+  <div class="spec-card ok">
+    <div class="label">Memória RAM</div>
+    <div class="value">16 GB DDR4-2400</div>
+    <div class="sub">2× 8 GB Crucial · Dual Channel<br>Limite da placa-mãe: 32 GB (2 slots ocupados)</div>
+  </div>
+  <div class="spec-card">
+    <div class="label">GPU (placa de vídeo)</div>
+    <div class="value">RTX 2060 6 GB VRAM</div>
+    <div class="sub">GDDR6 · CUDA cores · PCIe 3.0<br>Gargalo crítico para IA com 2 modelos simultâneos</div>
+  </div>
+  <div class="spec-card">
+    <div class="label">Placa-mãe</div>
+    <div class="value">ASUS PRIME H310M-E/BR</div>
+    <div class="sub">Chipset H310 · LGA 1151 (8ª/9ª gen somente)<br>1× M.2 NVMe · PCIe 3.0 · sem OC</div>
+  </div>
+  <div class="spec-card alerta">
+    <div class="label">SSD Sistema (C:)</div>
+    <div class="value">238 GB — só 15 GB livres!</div>
+    <div class="sub">Crítico: 93% cheio · risco de travamento do Windows<br>Interface SATA (não NVMe)</div>
+  </div>
+  <div class="spec-card alerta">
+    <div class="label">SSD Secundário (E:)</div>
+    <div class="value">~466 GB — só 14 GB livres!</div>
+    <div class="sub">Quase cheio · provavelmente o disco de dados<br>Interface SATA</div>
+  </div>
+  <div class="spec-card ok">
+    <div class="label">HD (F:)</div>
+    <div class="value">1 TB HDD WD Blue</div>
+    <div class="sub">80 GB livres · SATA · 5400 RPM<br>Lento para IA (modelos precisam carregar rápido)</div>
+  </div>
+  <div class="spec-card ok">
+    <div class="label">Sistema Operacional</div>
+    <div class="value">Windows 11 Pro 64-bit</div>
+    <div class="sub">Build 22631 · adequado para o projeto<br>Python 3.14 + CUDA 12.x</div>
+  </div>
+</div>
+
+<!-- DIAGNÓSTICO -->
+<h1>2. Diagnóstico: Gargalos para o Projeto de IA</h1>
+
+<div class="box box-vermelho">
+  <h4>🔴 Crítico — precisa de ação imediata</h4>
+  <strong>SSD C: com 15 GB livres.</strong> O Windows precisa de pelo menos 20-30 GB livres para funcionar corretamente (página de swap, atualizações, cache do sistema). Abaixo disso o PC pode travar, corromper arquivos ou ter degradação severa de performance. Este é o problema mais urgente, independente de IA.
+</div>
+
+<div class="box box-amarelo">
+  <h4>⚠️ Alto impacto — limita o projeto de IA diretamente</h4>
+  <strong>GPU com 6 GB de VRAM.</strong> O Gemma 3 4B ocupa ~3 GB e o OmniVoice ocupa ~2,5 GB — juntos somam 5,5 GB, no limite. Isso força o ciclo sequencial (um descarrega antes do outro carregar), que é o motivo pelo qual a Pandora leva 4-5 segundos para responder. Com 12+ GB de VRAM, ambos coexistiriam e a latência cairia para ~1-2s.
+</div>
+
+<div class="box box-azul">
+  <h4>💡 Impacto médio — melhora geral do sistema</h4>
+  <strong>RAM em 16 GB.</strong> Para uso intenso com Ollama + Python + Chrome abertos simultaneamente, 16 GB é suficiente mas justo. 32 GB eliminaria qualquer swapping de memória. Contudo, a placa-mãe H310M limita os slots a 2 (já ocupados com 2×8 GB), então upgrade RAM = trocar os pentes.
+</div>
+
+<div class="box box-roxo">
+  <h4>ℹ️ Plataforma: dead end</h4>
+  <strong>A placa-mãe H310M com LGA 1151 não suporta processadores acima do i9-9900K.</strong> Não dá para upgradar para i7-12700 ou Ryzen 7 sem trocar também a placa-mãe e a RAM. Para uma evolução mais completa no futuro, o upgrade de plataforma (CPU + placa-mãe + RAM DDR5) seria a abordagem certa — mas é caro e não é necessário agora para o projeto de IA.
+</div>
+
+<!-- DIAGRAMA -->
+<h1>3. Diagrama: Situação Atual vs Melhorada</h1>
+
+<div class="diagrama">
+<svg viewBox="0 0 780 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#a78bfa"/>
+    </marker>
+    <marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#34d399"/>
+    </marker>
+  </defs>
+
+  <!-- TÍTULO ATUAL -->
+  <text x="190" y="28" fill="#a78bfa" font-size="13" font-weight="bold" text-anchor="middle">SITUAÇÃO ATUAL</text>
+  <line x1="20" y1="36" x2="360" y2="36" stroke="#a78bfa" stroke-width="1" opacity="0.4"/>
+
+  <!-- TÍTULO MELHORADO -->
+  <text x="585" y="28" fill="#34d399" font-size="13" font-weight="bold" text-anchor="middle">APÓS UPGRADES</text>
+  <line x1="400" y1="36" x2="760" y2="36" stroke="#34d399" stroke-width="1" opacity="0.4"/>
+
+  <!-- DIVISOR -->
+  <line x1="385" y1="20" x2="385" y2="510" stroke="#374151" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+  <!-- ========== LADO ESQUERDO (ATUAL) ========== -->
+
+  <!-- CPU -->
+  <rect x="30" y="50" width="160" height="54" rx="8" fill="#1e1b4b" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="110" y="70" fill="#c4b5fd" font-size="11" text-anchor="middle">CPU</text>
+  <text x="110" y="86" fill="white" font-size="12" font-weight="bold" text-anchor="middle">i5-8400</text>
+  <text x="110" y="98" fill="#9ca3af" font-size="10" text-anchor="middle">6c/6t · 4.0 GHz boost</text>
+
+  <!-- RAM -->
+  <rect x="210" y="50" width="145" height="54" rx="8" fill="#1e1b4b" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="282" y="70" fill="#c4b5fd" font-size="11" text-anchor="middle">RAM</text>
+  <text x="282" y="86" fill="white" font-size="12" font-weight="bold" text-anchor="middle">16 GB DDR4-2400</text>
+  <text x="282" y="98" fill="#9ca3af" font-size="10" text-anchor="middle">2× 8 GB Crucial</text>
+
+  <!-- PLACA MÃE -->
+  <rect x="30" y="125" width="325" height="38" rx="8" fill="#111827" stroke="#4b5563" stroke-width="1"/>
+  <text x="192" y="140" fill="#6b7280" font-size="10" text-anchor="middle">PLACA-MÃE</text>
+  <text x="192" y="156" fill="#9ca3af" font-size="11" font-weight="bold" text-anchor="middle">ASUS H310M-E/BR · LGA 1151 · H310</text>
+
+  <!-- GPU (crítico) -->
+  <rect x="30" y="185" width="325" height="60" rx="8" fill="#2d1b1b" stroke="#dc2626" stroke-width="2"/>
+  <text x="192" y="206" fill="#fca5a5" font-size="11" text-anchor="middle">GPU ⚠️ GARGALO PRINCIPAL</text>
+  <text x="192" y="224" fill="white" font-size="14" font-weight="bold" text-anchor="middle">RTX 2060 · 6 GB VRAM</text>
+  <text x="192" y="239" fill="#fca5a5" font-size="10" text-anchor="middle">Gemma 3GB + OmniVoice 2.5GB = 5.5GB → limite!</text>
+
+  <!-- VRAM meter -->
+  <rect x="50" y="258" width="285" height="16" rx="4" fill="#374151"/>
+  <rect x="50" y="258" width="264" height="16" rx="4" fill="#dc2626" opacity="0.8"/>
+  <text x="192" y="270" fill="white" font-size="10" text-anchor="middle" font-weight="bold">VRAM: 5.5 / 6 GB (92% ocupada)</text>
+
+  <!-- SSD C crítico -->
+  <rect x="30" y="295" width="155" height="54" rx="8" fill="#2d1b1b" stroke="#dc2626" stroke-width="2"/>
+  <text x="107" y="313" fill="#fca5a5" font-size="10" text-anchor="middle">SSD C: 🔴 CRÍTICO</text>
+  <text x="107" y="330" fill="white" font-size="12" font-weight="bold" text-anchor="middle">238 GB SATA</text>
+  <text x="107" y="344" fill="#fca5a5" font-size="10" text-anchor="middle">15 GB livres (6%!)</text>
+
+  <!-- SSD E crítico -->
+  <rect x="200" y="295" width="155" height="54" rx="8" fill="#2d1b1b" stroke="#d97706" stroke-width="1.5"/>
+  <text x="277" y="313" fill="#fcd34d" font-size="10" text-anchor="middle">SSD E: ⚠️ QUASE CHEIO</text>
+  <text x="277" y="330" fill="white" font-size="12" font-weight="bold" text-anchor="middle">466 GB SATA</text>
+  <text x="277" y="344" fill="#fcd34d" font-size="10" text-anchor="middle">14 GB livres (3%!)</text>
+
+  <!-- HDD -->
+  <rect x="30" y="370" width="325" height="44" rx="8" fill="#1c1c2e" stroke="#4b5563" stroke-width="1"/>
+  <text x="192" y="388" fill="#6b7280" font-size="10" text-anchor="middle">HD</text>
+  <text x="192" y="406" fill="#9ca3af" font-size="12" font-weight="bold" text-anchor="middle">1 TB HDD WD Blue · 5400 RPM</text>
+
+  <!-- LATÊNCIA ATUAL -->
+  <rect x="30" y="430" width="325" height="52" rx="8" fill="#1a0030" stroke="#7c3aed" stroke-width="1"/>
+  <text x="192" y="448" fill="#c4b5fd" font-size="11" text-anchor="middle">LATÊNCIA DA PANDORA (situação atual)</text>
+  <text x="192" y="466" fill="white" font-size="16" font-weight="bold" text-anchor="middle">~4,5s até o 1º som</text>
+  <text x="192" y="479" fill="#9ca3af" font-size="10" text-anchor="middle">Gemma sequencial → TTS sequencial</text>
+
+  <!-- ========== LADO DIREITO (MELHORADO) ========== -->
+
+  <!-- CPU igual -->
+  <rect x="400" y="50" width="160" height="54" rx="8" fill="#1e1b4b" stroke="#4b5563" stroke-width="1"/>
+  <text x="480" y="70" fill="#9ca3af" font-size="11" text-anchor="middle">CPU (igual)</text>
+  <text x="480" y="86" fill="#9ca3af" font-size="12" font-weight="bold" text-anchor="middle">i5-8400</text>
+  <text x="480" y="98" fill="#6b7280" font-size="10" text-anchor="middle">suficiente para o projeto</text>
+
+  <!-- RAM upgrade -->
+  <rect x="575" y="50" width="165" height="54" rx="8" fill="#0f2d1f" stroke="#34d399" stroke-width="1.5"/>
+  <text x="657" y="70" fill="#86efac" font-size="11" text-anchor="middle">RAM ✅ UPGRADE</text>
+  <text x="657" y="86" fill="white" font-size="12" font-weight="bold" text-anchor="middle">32 GB DDR4-3200</text>
+  <text x="657" y="98" fill="#86efac" font-size="10" text-anchor="middle">2× 16 GB (+R$ 250)</text>
+
+  <!-- PLACA MÃE igual -->
+  <rect x="400" y="125" width="325" height="38" rx="8" fill="#111827" stroke="#4b5563" stroke-width="1"/>
+  <text x="562" y="140" fill="#6b7280" font-size="10" text-anchor="middle">PLACA-MÃE (igual)</text>
+  <text x="562" y="156" fill="#6b7280" font-size="11" text-anchor="middle">ASUS H310M-E/BR · limite da plataforma</text>
+
+  <!-- GPU nova -->
+  <rect x="400" y="185" width="325" height="60" rx="8" fill="#0a2d1f" stroke="#34d399" stroke-width="2"/>
+  <text x="562" y="206" fill="#86efac" font-size="11" text-anchor="middle">GPU ✅ UPGRADE PRINCIPAL</text>
+  <text x="562" y="224" fill="white" font-size="14" font-weight="bold" text-anchor="middle">RTX 3060 · 12 GB VRAM</text>
+  <text x="562" y="239" fill="#86efac" font-size="10" text-anchor="middle">Gemma 3GB + OmniVoice 2.5GB = 5.5GB → folgado!</text>
+
+  <!-- VRAM meter cheio mas ok -->
+  <rect x="420" y="258" width="285" height="16" rx="4" fill="#374151"/>
+  <rect x="420" y="258" width="131" height="16" rx="4" fill="#34d399" opacity="0.8"/>
+  <text x="562" y="270" fill="white" font-size="10" text-anchor="middle" font-weight="bold">VRAM: 5.5 / 12 GB (46% ocupada ✅)</text>
+
+  <!-- SSD novo -->
+  <rect x="400" y="295" width="325" height="54" rx="8" fill="#0a2d1f" stroke="#34d399" stroke-width="2"/>
+  <text x="562" y="313" fill="#86efac" font-size="10" text-anchor="middle">SSD NVMe ✅ URGENTE</text>
+  <text x="562" y="330" fill="white" font-size="12" font-weight="bold" text-anchor="middle">1 TB M.2 NVMe (Kingston NV3)</text>
+  <text x="562" y="344" fill="#86efac" font-size="10" text-anchor="middle">Substitui C: · 6000 MB/s · amplo espaço</text>
+
+  <!-- HDD igual -->
+  <rect x="400" y="370" width="325" height="44" rx="8" fill="#1c1c2e" stroke="#4b5563" stroke-width="1"/>
+  <text x="562" y="388" fill="#6b7280" font-size="10" text-anchor="middle">HD (mantém para arquivos)</text>
+  <text x="562" y="406" fill="#9ca3af" font-size="12" font-weight="bold" text-anchor="middle">1 TB HDD WD Blue (arquivos, backups)</text>
+
+  <!-- LATÊNCIA NOVA -->
+  <rect x="400" y="430" width="325" height="52" rx="8" fill="#0a2d1f" stroke="#34d399" stroke-width="2"/>
+  <text x="562" y="448" fill="#86efac" font-size="11" text-anchor="middle">LATÊNCIA DA PANDORA (pós-upgrade)</text>
+  <text x="562" y="466" fill="white" font-size="16" font-weight="bold" text-anchor="middle">~1,5s até o 1º som</text>
+  <text x="562" y="479" fill="#86efac" font-size="10" text-anchor="middle">Gemma + OmniVoice coexistem na VRAM</text>
+</svg>
+</div>
+
+<!-- UPGRADES DETALHADOS -->
+<h1>4. Upgrades Recomendados (do mais para o menos urgente)</h1>
+
+<!-- UPGRADE 1: SSD -->
+<div class="upgrade urgente">
+  <div class="upgrade-header">
+    <h2>🔴 URGENTE — SSD NVMe 1 TB (substituir C:)</h2>
+    <span class="preco">~R$ 350–420</span>
+  </div>
+  <div class="upgrade-body">
+    <p>O SSD atual do sistema (C:) tem apenas <strong>15 GB livres de 238 GB</strong>. Isso é crítico: o Windows precisa de swap de memória, cache de atualização e espaço temporário. Abaixo de 20 GB, o sistema começa a engasgar e arquivos podem ser corrompidos. Isso precisa ser resolvido antes de qualquer outra mudança.</p>
+
+    <h3>Opção recomendada</h3>
+    <p><strong>Kingston NV3 1TB M.2 NVMe PCIe 4.0</strong> — leitura 6.000 MB/s, gravação 4.000 MB/s. Disponível na <a href="https://www.kabum.com.br/busca/ssd-nvme-1tb">KaBuM!</a> e <a href="https://www.pichau.com.br">Pichau</a> por ~R$ 350–420.</p>
+
+    <p><strong>⚠️ Atenção:</strong> a placa-mãe H310M tem 1 slot M.2, mas pode ser PCIe 3.0 (não 4.0). O Kingston NV3 PCIe 4.0 funciona em PCIe 3.0 com velocidade menor (~3.500 MB/s) — ainda assim 5× mais rápido que o SATA atual.</p>
+
+    <div class="pro-con">
+      <div class="pro">
+        <h4>✅ Benefícios</h4>
+        <ul>
+          <li>Resolve o problema crítico de espaço imediatamente</li>
+          <li>Sistema fica 3-5× mais rápido no geral</li>
+          <li>Modelos de IA carregam mais rápido do disco</li>
+          <li>Custo baixo, maior impacto prático do dia a dia</li>
+          <li>Instalação simples (clone do C: para o NVMe)</li>
+        </ul>
+      </div>
+      <div class="con">
+        <h4>❌ Contras / Cuidados</h4>
+        <ul>
+          <li>Precisa migrar o Windows (clonar ou reinstalar)</li>
+          <li>Slot M.2 da H310M pode ser PCIe 3.0 (velocidade reduzida)</li>
+          <li>Não resolve o gargalo de VRAM para IA</li>
+          <li>O SSD antigo (SATA) pode ser reaproveitado como E:</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      <span class="ganho alto">+5× velocidade do sistema operacional</span>
+      <span class="ganho alto">+espaço: 1 TB em vez de 238 GB</span>
+      <span class="ganho medio">+carregamento de modelos mais rápido</span>
+    </p>
+  </div>
+</div>
+
+<!-- UPGRADE 2: GPU -->
+<div class="upgrade recomendado">
+  <div class="upgrade-header">
+    <h2>⭐ PRINCIPAL — GPU RTX 3060 12 GB</h2>
+    <span class="preco">~R$ 1.800–2.200</span>
+  </div>
+  <div class="upgrade-body">
+    <p>Este é o upgrade que <strong>transforma o projeto de IA</strong>. Com 12 GB de VRAM, o Gemma (3 GB) e o OmniVoice (2,5 GB) coexistem com ~6 GB de folga. Isso permite:</p>
+    <ul>
+      <li>Gemma e OmniVoice rodando simultaneamente na GPU</li>
+      <li>Latência da Pandora cai de <strong>~4,5s para ~1,5s</strong></li>
+      <li>Possibilidade de testar modelos maiores (Gemma 12B, LLaVA, Whisper large)</li>
+      <li>A abordagem de streaming Gemma + TTS concorrente — que tentamos e falhou com 6 GB — <strong>passaria a funcionar</strong></li>
+    </ul>
+
+    <h3>Por que RTX 3060 12 GB e não RTX 4060 8 GB?</h3>
+    <p>A RTX 4060 8 GB é mais nova mas tem <strong>menos VRAM que a 3060</strong>. Para jogos, a 4060 vence. Para IA local, <strong>VRAM é o que importa</strong> — e 12 GB vs 8 GB é uma diferença enorme. A 3060 permite rodar modelos que a 4060 não consegue.</p>
+
+    <h3>Preços atuais</h3>
+    <ul>
+      <li><strong>RTX 3060 12 GB</strong> — R$ 1.800–2.200 (nova) / R$ 1.200–1.600 (usada no <a href="https://lista.mercadolivre.com.br/rtx-3060-12gb">Mercado Livre</a>)</li>
+      <li><strong>RTX 4060 8 GB</strong> — R$ 2.500–3.400 (<a href="https://www.kabum.com.br/busca/rtx-4060">KaBuM!</a>) — mais cara e menos VRAM</li>
+      <li><strong>RTX 4060 Ti 16 GB</strong> — R$ 5.860–7.000 (<a href="https://www.hardwarebarato.com/produtos/placas-de-video/rtx-4060-ti-16gb">Hardware Barato</a>) — melhor opção mas preço alto</li>
+      <li><strong>RTX 4070 Super 12 GB</strong> — R$ 6.149 (<a href="https://lista.mercadolivre.com.br/rtx-4070-super">Mercado Livre</a>) — top de linha acessível</li>
+    </ul>
+
+    <div class="pro-con">
+      <div class="pro">
+        <h4>✅ Benefícios</h4>
+        <ul>
+          <li>Latência da Pandora: 4,5s → ~1,5s</li>
+          <li>Gemma + OmniVoice simultâneos na GPU</li>
+          <li>Modelos maiores (Gemma 12B, Whisper large)</li>
+          <li>Streaming pipeline passa a funcionar</li>
+          <li>Compatível com PCIe 3.0 da H310M</li>
+          <li>RTX 3060 usada tem bom custo-benefício</li>
+        </ul>
+      </div>
+      <div class="con">
+        <h4>❌ Contras / Cuidados</h4>
+        <ul>
+          <li>Custo: R$ 1.800–2.200 (novo)</li>
+          <li>Verificar se a fonte de alimentação aguenta (mínimo 550W recomendado)</li>
+          <li>RTX 3060 está sendo descontinuada (estoque residual)</li>
+          <li>Plataforma H310M limita a PCIe 3.0 (não PCIe 4.0) — sem perda real para a GPU</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="box box-amarelo">
+      <h4>⚠️ Verifique a fonte antes de comprar</h4>
+      A RTX 3060 consome até 170W. Se sua fonte for 450W ou menos, pode ser necessário trocar também. Fontes 550W Bronze custam ~R$ 250–350. Se a fonte for 550W+ você está seguro.
+    </div>
+
+    <p>
+      <span class="ganho alto">-67% na latência da Pandora (4.5s → 1.5s)</span>
+      <span class="ganho alto">+100% de VRAM (6→12 GB)</span>
+      <span class="ganho medio">+modelos maiores disponíveis</span>
+    </p>
+  </div>
+</div>
+
+<!-- UPGRADE 3: RAM -->
+<div class="upgrade opcional">
+  <div class="upgrade-header">
+    <h2>💡 OPCIONAL — RAM 32 GB DDR4</h2>
+    <span class="preco">~R$ 220–300</span>
+  </div>
+  <div class="upgrade-body">
+    <p>A RAM atual de 16 GB é suficiente para o projeto hoje, mas com Ollama + Python + Chrome + VS Code + Estúdio abertos ao mesmo tempo, pode haver pressão de memória. Com 32 GB, o sistema fica mais confortável e elimina qualquer swap de RAM.</p>
+
+    <p><strong>Como fazer:</strong> trocar os dois pentes atuais (2× 8 GB Crucial DDR4-2400) por 2× 16 GB DDR4-3200. A H310M suporta até DDR4-2666 oficialmente, mas DDR4-3200 funciona em XMP/fallback a 2666 MHz. Custo: ~R$ 220–300 por kit 2× 16 GB.</p>
+
+    <div class="pro-con">
+      <div class="pro">
+        <h4>✅ Benefícios</h4>
+        <ul>
+          <li>Elimina swap de RAM (melhora fluidez geral)</li>
+          <li>Permite modelos maiores em CPU offload</li>
+          <li>Mais conforto rodando múltiplos apps simultâneos</li>
+          <li>Custo muito baixo</li>
+        </ul>
+      </div>
+      <div class="con">
+        <h4>❌ Contras / Cuidados</h4>
+        <ul>
+          <li>Impacto no projeto de IA é pequeno (gargalo é VRAM, não RAM)</li>
+          <li>Precisa vender/guardar os pentes atuais (os slots estão cheios)</li>
+          <li>A H310M limita a velocidade a DDR4-2666 oficialmente</li>
+          <li>Não resolve nenhum problema atual diretamente</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      <span class="ganho medio">+fluidez geral do sistema</span>
+      <span class="ganho">impacto moderado no projeto de IA</span>
+    </p>
+  </div>
+</div>
+
+<!-- UPGRADE 4: PLATAFORMA COMPLETA -->
+<div class="upgrade futuro">
+  <div class="upgrade-header">
+    <h2>🔮 FUTURO — Troca de Plataforma Completa</h2>
+    <span class="preco">~R$ 2.500–4.000</span>
+  </div>
+  <div class="upgrade-body">
+    <p>O i5-8400 na H310M é uma plataforma encerrada. Para evoluir para processadores modernos (i5-13600K, Ryzen 7 7700X) seria necessário trocar CPU + placa-mãe + RAM (DDR5). Isso não é necessário agora para o projeto de IA — o i5-8400 é rápido o suficiente, pois o gargalo é sempre a GPU.</p>
+
+    <h3>Quando faria sentido</h3>
+    <ul>
+      <li>Se você quiser rodar modelos em CPU offload (ex: LLMs que não cabem na VRAM) — a velocidade de geração de tokens melhora muito com CPUs modernas</li>
+      <li>Se surgir uma necessidade de mais threads (video encoding, compilação pesada)</li>
+      <li>Como atualização completa do PC para os próximos 5-6 anos</li>
+    </ul>
+
+    <div class="pro-con">
+      <div class="pro">
+        <h4>✅ Benefícios</h4>
+        <ul>
+          <li>Plataforma moderna (PCIe 4.0/5.0, DDR5)</li>
+          <li>CPU com mais threads (Hyper-Threading de volta)</li>
+          <li>Suporte a GPUs futuras sem limitação de PCIe</li>
+          <li>Mais slots de RAM e M.2</li>
+        </ul>
+      </div>
+      <div class="con">
+        <h4>❌ Contras / Cuidados</h4>
+        <ul>
+          <li>Custo alto: ~R$ 2.500–4.000 (CPU + placa-mãe + RAM DDR5)</li>
+          <li>Não resolve o gargalo de VRAM (esse é sempre a GPU)</li>
+          <li>Não é necessário para o projeto atual</li>
+          <li>Melhor esperar próxima geração AMD/Intel (2026/2027)</li>
+        </ul>
+      </div>
+    </div>
+
+    <p><span class="ganho">impacto pequeno no projeto de IA atual</span> <span class="ganho">recomendado deixar para depois</span></p>
+  </div>
+</div>
+
+<!-- TABELA RESUMO -->
+<h1>5. Resumo Executivo</h1>
+
+<table>
+  <tr>
+    <th>Prioridade</th>
+    <th>Upgrade</th>
+    <th>Custo</th>
+    <th>Ganho para IA</th>
+    <th>Ganho Geral</th>
+  </tr>
+  <tr>
+    <td class="pri-1">🔴 Urgente</td>
+    <td><strong>SSD NVMe 1 TB</strong><br><small>Kingston NV3 1TB M.2</small></td>
+    <td><strong>~R$ 380</strong></td>
+    <td>Modelos carregam mais rápido do disco</td>
+    <td>Sistema deixa de travar · 5× mais velocidade de I/O</td>
+  </tr>
+  <tr>
+    <td class="pri-2">⭐ Principal</td>
+    <td><strong>GPU RTX 3060 12 GB</strong><br><small>nova ou usada</small></td>
+    <td><strong>R$ 1.800–2.200</strong></td>
+    <td>Latência 4,5s → 1,5s · modelos coexistem</td>
+    <td>Jogos e tarefas gráficas melhores também</td>
+  </tr>
+  <tr>
+    <td class="pri-3">💡 Opcional</td>
+    <td><strong>RAM 32 GB DDR4</strong><br><small>2× 16 GB DDR4-3200</small></td>
+    <td><strong>~R$ 250</strong></td>
+    <td>Evita swap · suporte a CPU offload</td>
+    <td>Sistema mais fluido com muitos apps abertos</td>
+  </tr>
+  <tr>
+    <td class="pri-4">🔮 Futuro</td>
+    <td><strong>Plataforma nova</strong><br><small>CPU + MB + DDR5</small></td>
+    <td><strong>R$ 2.500–4.000</strong></td>
+    <td>Pequeno (gargalo é GPU, não CPU)</td>
+    <td>PC moderno para os próximos 5-6 anos</td>
+  </tr>
+</table>
+
+<div class="box box-verde">
+  <h4>✅ Plano Ideal em 2 Etapas</h4>
+  <p><strong>Etapa 1 (agora, ~R$ 380):</strong> Comprar o SSD NVMe 1 TB e resolver o problema crítico de espaço. Isso é independente de tudo e precisa ser feito.</p>
+  <p><strong>Etapa 2 (quando puder, ~R$ 1.800–2.200):</strong> RTX 3060 12 GB. Essa é a compra que transforma o projeto de IA — a Pandora passa a responder em ~1,5s e você pode rodar modelos maiores.</p>
+  <p><strong>Total das 2 etapas: ~R$ 2.200–2.600</strong> — resultado: PC com SSD rápido, 12 GB de VRAM, e a Pandora 3× mais responsiva.</p>
+</div>
+
+<hr>
+<div class="rodape">
+  <p>Relatório gerado em jun/2026 · Claude Code (Sonnet 4.6) para Filipe Pereira</p>
+  <p>Preços consultados em: <a href="https://www.kabum.com.br">KaBuM!</a> · <a href="https://www.pichau.com.br">Pichau</a> · <a href="https://www.hardwarebarato.com">Hardware Barato</a> · <a href="https://lista.mercadolivre.com.br">Mercado Livre</a></p>
+  <p><em>Preços de hardware flutuam — confirme antes de comprar.</em></p>
+</div>
+
+</body>
+</html>

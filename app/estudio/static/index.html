@@ -1,0 +1,2179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estúdio de Voz — Pandora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;outline:none}
+:root{
+  --bg:#07070e;
+  --glass:rgba(255,255,255,0.03);
+  --glass-border:rgba(255,255,255,0.08);
+  --glass-hover:rgba(255,255,255,0.06);
+  --sidebar:rgba(10,10,20,0.95);
+  --card:rgba(255,255,255,0.04);
+  --card-hover:rgba(255,255,255,0.07);
+  --accent:#7c3aed;
+  --accent2:#a855f7;
+  --accent3:#c084fc;
+  --accent-glow:rgba(124,58,237,0.3);
+  --text:#f1f0ff;
+  --text2:#a8a4c8;
+  --text3:#605e7e;
+  --danger:#ef4444;
+  --success:#10b981;
+  --warn:#f59e0b;
+  --sidebar-w:230px;
+  --titlebar-h:38px;
+  --statusbar-h:28px;
+  --radius:10px;
+}
+
+html,body{
+  height:100%;
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  font-size:14px;
+  overflow:hidden;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar{width:4px;height:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.08);border-radius:99px}
+::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,0.15)}
+
+/* ── Animations ── */
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(6px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes pulse{
+  0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(16,185,129,0.4)}
+  50%{opacity:.8;box-shadow:0 0 0 4px rgba(16,185,129,0)}
+}
+@keyframes pulseRed{
+  0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(239,68,68,0.4)}
+  50%{opacity:.8;box-shadow:0 0 0 4px rgba(239,68,68,0)}
+}
+@keyframes shimmer{
+  0%{background-position:-200% center}
+  100%{background-position:200% center}
+}
+@keyframes glow{
+  0%,100%{box-shadow:0 0 8px rgba(168,85,247,0.2)}
+  50%{box-shadow:0 0 16px rgba(168,85,247,0.5)}
+}
+@keyframes slideIn{
+  from{transform:translateX(30px);opacity:0}
+  to{transform:none;opacity:1}
+}
+
+/* ── App shell ── */
+#app{
+  display:flex;
+  flex-direction:column;
+  height:100vh;
+  overflow:hidden;
+}
+
+/* ── Titlebar ── */
+#titlebar{
+  height:var(--titlebar-h);
+  min-height:var(--titlebar-h);
+  background:rgba(5,5,12,0.98);
+  border-bottom:1px solid var(--glass-border);
+  display:flex;
+  align-items:center;
+  padding:0 16px;
+  gap:0;
+  z-index:100;
+  flex-shrink:0;
+  user-select:none;
+}
+.tb-dots{display:flex;gap:7px;align-items:center}
+.tb-dot{
+  width:12px;height:12px;border-radius:50%;
+  cursor:default;transition:filter .15s;
+}
+.tb-dot:hover{filter:brightness(1.3)}
+.tb-dot.red{background:#ef4444}
+.tb-dot.yellow{background:#f59e0b}
+.tb-dot.green{background:#10b981}
+.tb-title{
+  flex:1;text-align:center;
+  font-size:12px;color:var(--text3);
+  font-weight:500;letter-spacing:0.02em;
+}
+.tb-version{
+  font-size:11px;color:var(--text3);
+  background:rgba(255,255,255,0.05);
+  border:1px solid var(--glass-border);
+  border-radius:6px;padding:2px 8px;
+  font-weight:500;
+}
+
+/* ── Body row (sidebar + main) ── */
+#body-row{
+  display:flex;
+  flex:1;
+  min-height:0;
+  overflow:hidden;
+}
+
+/* ── Sidebar ── */
+#sidebar{
+  width:var(--sidebar-w);
+  min-width:var(--sidebar-w);
+  background:var(--sidebar);
+  backdrop-filter:blur(20px);
+  border-right:1px solid var(--glass-border);
+  display:flex;
+  flex-direction:column;
+  overflow-y:auto;
+  flex-shrink:0;
+}
+.sidebar-logo{
+  padding:18px 16px 16px;
+  border-bottom:1px solid var(--glass-border);
+  display:flex;align-items:center;gap:11px;
+  flex-shrink:0;
+}
+.logo-icon{
+  width:36px;height:36px;border-radius:10px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0;
+  box-shadow:0 4px 14px rgba(124,58,237,0.45);
+}
+.logo-text strong{
+  display:block;font-weight:700;font-size:14px;color:var(--text);line-height:1.2;
+}
+.logo-text small{
+  display:block;color:var(--text3);font-size:11px;font-weight:400;
+}
+.sidebar-section{
+  padding:18px 14px 5px;
+  font-size:10px;font-weight:700;
+  color:var(--text3);
+  letter-spacing:.1em;text-transform:uppercase;
+  flex-shrink:0;
+}
+.nav-item{
+  display:flex;align-items:center;gap:9px;
+  padding:8px 14px;margin:1px 7px;
+  border-radius:8px;border-left:2px solid transparent;
+  cursor:pointer;color:var(--text2);font-size:13px;font-weight:500;
+  transition:all .18s;user-select:none;
+  flex-shrink:0;
+}
+.nav-item:hover{
+  background:var(--glass-hover);color:var(--text);
+}
+.nav-item.active{
+  background:linear-gradient(90deg,rgba(124,58,237,0.18),rgba(124,58,237,0.04));
+  color:var(--accent3);
+  border-left:2px solid var(--accent2);
+  padding-left:12px;
+  animation:glow 2.5s ease infinite;
+}
+.nav-item .icon{font-size:15px;width:20px;text-align:center;flex-shrink:0}
+
+.sidebar-bottom{
+  margin-top:auto;
+  padding:12px 10px;
+  border-top:1px solid var(--glass-border);
+  flex-shrink:0;
+}
+.engine-chip{
+  background:var(--card);
+  border:1px solid var(--glass-border);
+  border-radius:8px;padding:10px 12px;
+}
+.engine-chip .chip-header{
+  display:flex;align-items:center;gap:6px;
+  font-size:10px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--text3);margin-bottom:6px;
+}
+.chip-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--success);
+  animation:pulse 2s ease infinite;
+  flex-shrink:0;
+}
+.engine-chip .engine-name{
+  font-size:11px;color:var(--text2);line-height:1.7;
+}
+.engine-chip .engine-name span{
+  display:block;color:var(--text3);font-size:10px;
+}
+
+/* ── Main area ── */
+#main{
+  flex:1;overflow:hidden;display:flex;flex-direction:column;min-width:0;
+}
+
+/* ── Topbar ── */
+.topbar{
+  height:56px;min-height:56px;
+  padding:0 24px;
+  border-bottom:1px solid var(--glass-border);
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(7,7,14,0.85);
+  backdrop-filter:blur(16px);
+  flex-shrink:0;
+  z-index:10;
+}
+.topbar h1{font-size:17px;font-weight:600;color:var(--text)}
+.voice-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(124,58,237,0.12);
+  border:1px solid rgba(168,85,247,0.25);
+  border-radius:20px;padding:5px 13px;
+  font-size:12px;color:var(--accent2);font-weight:500;
+}
+.voice-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--success);
+  animation:pulse 2s ease infinite;flex-shrink:0;
+}
+
+/* ── Content ── */
+#content{padding:24px;flex:1;overflow-y:auto}
+
+/* ── Sections ── */
+.section{display:none}
+.section.active{
+  display:block;
+  animation:fadeIn .15s ease;
+}
+.section-title{font-size:20px;font-weight:700;margin-bottom:5px;color:var(--text)}
+.section-desc{color:var(--text2);font-size:13px;margin-bottom:22px;line-height:1.65}
+
+/* ── Cards ── */
+.card{
+  background:var(--card);
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius);
+  padding:18px 20px;margin-bottom:14px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 4px 24px rgba(0,0,0,0.3);
+  transition:border-color .2s,box-shadow .2s;
+}
+.card:hover{
+  border-color:rgba(168,85,247,0.25);
+  box-shadow:0 4px 24px rgba(0,0,0,0.3),0 0 20px rgba(124,58,237,0.08);
+}
+.card-title{
+  font-size:11px;font-weight:700;color:var(--text3);
+  text-transform:uppercase;letter-spacing:.09em;margin-bottom:14px;
+}
+
+/* ── Grid ── */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+
+/* ── Form elements ── */
+label{
+  display:block;font-size:11.5px;font-weight:600;
+  color:var(--text2);margin-bottom:5px;margin-top:13px;
+  letter-spacing:0.01em;
+}
+label:first-child{margin-top:0}
+input[type=text],input[type=number],select,textarea{
+  width:100%;
+  background:rgba(0,0,0,0.3);
+  border:1px solid var(--glass-border);
+  border-radius:8px;padding:9px 12px;
+  color:var(--text);
+  font-size:13px;font-family:inherit;
+  transition:border-color .15s,box-shadow .15s;
+  backdrop-filter:blur(4px);
+}
+input[type=text]:focus,input[type=number]:focus,
+select:focus,textarea:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(124,58,237,0.15);
+}
+textarea{resize:vertical;min-height:120px;line-height:1.55}
+select option{background:#12111f;color:var(--text)}
+input[type=range]{
+  width:100%;accent-color:var(--accent);cursor:pointer;
+  height:4px;border-radius:4px;background:rgba(255,255,255,0.08);
+}
+.range-row{display:flex;align-items:center;gap:10px}
+.range-row input{flex:1}
+.range-val{
+  font-size:12px;color:var(--accent3);
+  min-width:36px;text-align:right;font-weight:600;
+}
+.checkbox-row{
+  display:flex;align-items:center;gap:8px;
+  margin-top:10px;cursor:pointer;
+}
+.checkbox-row input[type=checkbox]{
+  accent-color:var(--accent);width:15px;height:15px;cursor:pointer;
+}
+.checkbox-row span{font-size:13px;color:var(--text)}
+
+/* ── File drop zones ── */
+.file-drop{
+  border:2px dashed rgba(124,58,237,0.3);
+  border-radius:var(--radius);
+  padding:18px;text-align:center;cursor:pointer;
+  transition:all .18s;color:var(--text2);font-size:13px;
+  background:rgba(0,0,0,0.2);
+}
+.file-drop:hover{
+  border-color:var(--accent);border-style:solid;
+  background:rgba(124,58,237,0.08);
+  color:var(--text);
+}
+.file-drop input[type=file]{display:none}
+.file-name{
+  color:var(--accent3);font-size:11.5px;
+  margin-top:6px;word-break:break-all;font-weight:500;
+}
+
+/* ── Buttons ── */
+.btn{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:9px 18px;border-radius:8px;
+  font-size:13px;font-weight:600;letter-spacing:0.02em;
+  cursor:pointer;border:none;
+  font-family:inherit;transition:all .18s;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#fff;
+  box-shadow:0 2px 12px rgba(124,58,237,0.25);
+}
+.btn-primary:hover{
+  box-shadow:0 4px 20px rgba(124,58,237,0.4);
+  transform:translateY(-1px);
+  filter:brightness(1.08);
+}
+.btn-secondary{
+  background:var(--glass);
+  color:var(--text);
+  border:1px solid var(--glass-border);
+}
+.btn-secondary:hover{
+  border-color:rgba(168,85,247,0.4);
+  color:var(--accent3);
+  background:var(--glass-hover);
+}
+.btn-sm{padding:6px 12px;font-size:12px}
+.btn:disabled{opacity:.35;cursor:not-allowed;transform:none!important}
+
+/* ── Progress bar ── */
+.progress-wrap{display:none;margin-top:14px}
+.progress-wrap.show{display:block}
+.progress-bar-bg{
+  background:rgba(255,255,255,0.06);
+  border-radius:99px;height:5px;overflow:hidden;
+}
+.progress-bar{
+  height:100%;
+  background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent3),var(--accent2),var(--accent));
+  background-size:200% auto;
+  border-radius:99px;
+  transition:width .3s;
+  width:0%;
+  animation:shimmer 2s linear infinite;
+}
+.progress-desc{font-size:11px;color:var(--text3);margin-top:6px}
+
+/* ── Audio player ── */
+.audio-wrap{margin-top:14px;display:none}
+.audio-wrap.show{display:block}
+.audio-label{
+  font-size:11px;font-weight:600;color:var(--text3);
+  text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;
+}
+.audio-inner{
+  background:rgba(0,0,0,0.3);
+  border:1px solid var(--glass-border);
+  border-radius:8px;padding:12px;
+}
+.audio-wrap audio{
+  width:100%;height:36px;border-radius:6px;
+  accent-color:var(--accent);
+}
+
+/* ── Resultados do modo lote (várias músicas) ── */
+.lote-result{margin-top:14px}
+.lote-item{
+  background:rgba(0,0,0,0.3);
+  border:1px solid var(--glass-border);
+  border-radius:8px;padding:10px 12px;margin-bottom:8px;
+}
+.lote-nome{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px}
+.lote-erro{font-size:11px;color:var(--text3)}
+
+/* ── Player waveform (estilo SoundCloud) ── */
+.wave-player{display:flex;align-items:center;gap:12px}
+.wave-play{
+  flex-shrink:0;width:40px;height:40px;border-radius:50%;
+  border:none;cursor:pointer;font-size:15px;
+  background:var(--accent);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .1s, background .15s;
+}
+.wave-play:hover{transform:scale(1.06)}
+.wave-mid{flex:1;min-width:0}
+.wave-canvas-box{
+  position:relative;width:100%;height:52px;cursor:pointer;
+}
+.wave-canvas-box canvas{display:block;width:100%;height:100%}
+.wave-time{
+  font-size:10px;color:var(--text3);margin-top:3px;
+  font-variant-numeric:tabular-nums;letter-spacing:.02em;
+}
+.wave-download{
+  flex-shrink:0;width:32px;height:32px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;font-size:15px;cursor:pointer;
+  color:var(--text2);background:rgba(255,255,255,.05);
+  border:1px solid var(--glass-border);transition:background .15s,color .15s;
+}
+.wave-download:hover{background:var(--accent);color:#fff}
+
+/* ── Trim de áudio (corte do clipe de referência) ── */
+.trim-wrap{margin-top:12px;display:none}
+.trim-wrap.show{display:block}
+.trim-canvas-box{
+  position:relative;background:rgba(0,0,0,0.3);
+  border:1px solid var(--glass-border);border-radius:8px;
+  overflow:hidden;height:80px;
+}
+.trim-canvas-box canvas{display:block;width:100%;height:100%}
+.trim-mask{position:absolute;top:0;bottom:0;background:rgba(7,7,14,0.72)}
+.trim-handle{
+  position:absolute;top:0;bottom:0;width:10px;margin-left:-5px;
+  cursor:ew-resize;background:var(--accent2);
+  box-shadow:0 0 8px var(--accent-glow);
+}
+.trim-info{display:flex;justify-content:space-between;font-size:11px;color:var(--text3);margin-top:6px}
+
+/* ── Output text ── */
+.output-text{
+  background:rgba(0,0,0,0.25);
+  border:1px solid var(--glass-border);
+  border-radius:8px;
+  padding:14px;font-size:12.5px;
+  line-height:1.7;color:var(--text2);
+  max-height:240px;overflow-y:auto;
+  white-space:pre-wrap;
+  margin-top:14px;display:none;
+}
+.output-text.show{display:block}
+
+/* ── Toast ── */
+#toast{
+  position:fixed;bottom:38px;right:20px;z-index:9999;
+  display:flex;flex-direction:column;gap:8px;
+}
+.toast-item{
+  background:rgba(18,16,32,0.97);
+  border:1px solid var(--glass-border);
+  border-radius:10px;padding:11px 16px;font-size:13px;
+  max-width:320px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.6);
+  animation:slideIn .2s ease;
+  color:var(--text);
+}
+.toast-item.error{border-color:rgba(239,68,68,0.4);color:#fca5a5}
+.toast-item.success{border-color:rgba(16,185,129,0.4);color:#6ee7b7}
+
+/* ── Row actions ── */
+.row-actions{
+  display:flex;align-items:center;gap:10px;
+  flex-wrap:wrap;margin-top:16px;
+}
+
+/* ── Pills ── */
+.pill-group{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.pill{
+  padding:5px 14px;border-radius:20px;font-size:12px;font-weight:500;
+  cursor:pointer;
+  border:1px solid var(--glass-border);
+  color:var(--text2);
+  background:rgba(255,255,255,0.04);
+  transition:all .15s;
+}
+.pill:hover{border-color:rgba(168,85,247,0.4);color:var(--text)}
+.pill.active{
+  background:rgba(124,58,237,0.25);
+  border-color:var(--accent2);
+  color:var(--accent3);
+  font-weight:600;
+}
+
+/* ── Chat ── */
+.chat-history{
+  background:rgba(0,0,0,0.2);
+  border:1px solid var(--glass-border);
+  border-radius:8px;
+  padding:14px;max-height:280px;overflow-y:auto;margin-top:12px;
+}
+.chat-msg{margin-bottom:12px;line-height:1.6}
+.chat-msg .who{
+  font-size:10.5px;font-weight:700;margin-bottom:3px;
+  text-transform:uppercase;letter-spacing:.06em;
+}
+.chat-msg.user{display:flex;flex-direction:column;align-items:flex-end}
+.chat-msg.user .who{color:var(--accent3)}
+.chat-msg.user p{
+  background:rgba(124,58,237,0.25);
+  border:1px solid rgba(168,85,247,0.2);
+  border-radius:12px 12px 4px 12px;
+  padding:8px 12px;font-size:13px;color:var(--text);
+  max-width:85%;
+}
+.chat-msg.char{display:flex;flex-direction:column;align-items:flex-start}
+.chat-msg.char .who{color:var(--warn)}
+.chat-msg.char p{
+  background:var(--glass-hover);
+  border:1px solid var(--glass-border);
+  border-radius:4px 12px 12px 12px;
+  padding:8px 12px;font-size:13px;color:var(--text);
+  max-width:85%;
+}
+
+/* ── Stat card ── */
+.stat-card{
+  background:rgba(0,0,0,0.2);
+  border:1px solid var(--glass-border);
+  border-radius:8px;padding:12px;text-align:center;
+}
+.stat-card .val{
+  font-size:20px;font-weight:700;color:var(--accent3);margin:3px 0;
+}
+.stat-card .lbl{
+  font-size:10px;color:var(--text3);
+  text-transform:uppercase;letter-spacing:.07em;
+}
+
+/* ── Info chip ── */
+.info-chip{
+  margin-top:14px;padding:11px 13px;
+  background:rgba(0,0,0,0.2);
+  border:1px solid var(--glass-border);
+  border-radius:8px;font-size:12px;color:var(--text3);
+  line-height:1.5;
+}
+
+/* ── Statusbar ── */
+#statusbar{
+  height:var(--statusbar-h);
+  min-height:var(--statusbar-h);
+  background:rgba(5,5,12,0.98);
+  border-top:1px solid var(--glass-border);
+  display:flex;align-items:center;
+  padding:0 16px;
+  justify-content:space-between;
+  flex-shrink:0;
+  z-index:100;
+}
+.sb-left,.sb-right{
+  display:flex;align-items:center;gap:7px;
+  font-size:11px;font-family:'Inter',monospace;
+  color:var(--text3);
+}
+.sb-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--success);
+  animation:pulse 2s ease infinite;
+  flex-shrink:0;
+}
+.sb-sep{color:rgba(255,255,255,0.12);margin:0 4px}
+
+/* ── Design examples ── */
+.example-chip{
+  background:rgba(0,0,0,0.2);
+  border:1px solid var(--glass-border);
+  border-radius:8px;padding:11px 13px;cursor:pointer;
+  font-size:12.5px;color:var(--text2);
+  transition:all .15s;margin-bottom:6px;
+}
+.example-chip:hover{
+  border-color:rgba(168,85,247,0.3);
+  color:var(--text);background:rgba(124,58,237,0.06);
+}
+.example-chip strong{color:var(--accent3);font-weight:500}
+</style>
+</head>
+<body>
+<div id="app">
+
+<!-- ── TITLEBAR ── -->
+<div id="titlebar">
+  <div class="tb-dots">
+    <div class="tb-dot red"></div>
+    <div class="tb-dot yellow"></div>
+    <div class="tb-dot green"></div>
+  </div>
+  <div class="tb-title">Estúdio de Voz — Pandora</div>
+  <div class="tb-version">v2.0</div>
+</div>
+
+<!-- ── BODY ROW ── -->
+<div id="body-row">
+
+<!-- ── SIDEBAR ── -->
+<nav id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-icon">🎙️</div>
+    <div class="logo-text">
+      <strong>Pandora</strong>
+      <small>Estúdio de Voz</small>
+    </div>
+  </div>
+
+  <div class="sidebar-section">Essencial</div>
+  <div class="nav-item active" data-section="clone">
+    <span class="icon">🎤</span> Clone de Voz
+  </div>
+  <div class="nav-item" data-section="design">
+    <span class="icon">✦</span> Design de Voz
+  </div>
+
+  <div class="sidebar-section">Produção</div>
+  <div class="nav-item" data-section="story">
+    <span class="icon">📖</span> Contador de Histórias
+  </div>
+  <div class="nav-item" data-section="comedy">
+    <span class="icon">🎪</span> Comédia (Auditório)
+  </div>
+  <div class="nav-item" data-section="gameshow">
+    <span class="icon">🎓</span> Game Show (PDF)
+  </div>
+  <div class="nav-item" data-section="trailer">
+    <span class="icon">🎬</span> Gerador de Trailer
+  </div>
+
+  <div class="sidebar-section">Imersão</div>
+  <div class="nav-item" data-section="meditation">
+    <span class="icon">🧘</span> Meditação Guiada
+  </div>
+  <div class="nav-item" data-section="radio">
+    <span class="icon">📻</span> Rádio Pandora
+  </div>
+
+  <div class="sidebar-section">Avançado</div>
+  <div class="nav-item" data-section="battle">
+    <span class="icon">⚔️</span> Batalha de Vozes
+  </div>
+  <div class="nav-item" data-section="character">
+    <span class="icon">🎭</span> Personagem Infinito
+  </div>
+
+  <div class="sidebar-section">Experimental</div>
+  <div class="nav-item" data-section="sing">
+    <span class="icon">🎶</span> Cantar Música
+  </div>
+
+  <div class="sidebar-bottom">
+    <div class="engine-chip">
+      <div class="chip-header">
+        <div class="chip-dot"></div>
+        Motor IA
+      </div>
+      <div class="engine-name">
+        Gemma 3 4B
+        <span>OmniVoice 0.1.5</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ── MAIN ── -->
+<div id="main">
+  <div class="topbar">
+    <h1 id="topbar-title">Clone de Voz</h1>
+    <div id="voice-status"></div>
+  </div>
+  <div id="content">
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- CLONE DE VOZ -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="section active" id="sec-clone">
+  <div class="section-title">Clone de Voz</div>
+  <div class="section-desc">Analise uma voz de referência e sintetize textos com ela.</div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">1 — Voz de Referência</div>
+      <label>Subir arquivo (WAV/MP3)</label>
+      <div class="file-drop" onclick="document.getElementById('clone-upload').click()">
+        <input type="file" id="clone-upload" accept=".wav,.mp3,.ogg">
+        📂 Clique para selecionar ou arraste aqui
+        <div class="file-name" id="clone-upload-name"></div>
+      </div>
+      <label>Ou escolher voz salva</label>
+      <select id="clone-dd"></select>
+
+      <div class="trim-wrap" id="clone-trim-wrap">
+        <label>Cortar trecho usado no clone</label>
+        <div class="trim-canvas-box" id="clone-trim-box">
+          <canvas id="clone-trim-canvas"></canvas>
+          <div class="trim-mask" id="clone-trim-mask-l"></div>
+          <div class="trim-mask" id="clone-trim-mask-r"></div>
+          <div class="trim-handle" id="clone-trim-handle-l"></div>
+          <div class="trim-handle" id="clone-trim-handle-r"></div>
+        </div>
+        <div class="trim-info">
+          <span id="clone-trim-ini">0.0s</span>
+          <span id="clone-trim-dur">— duração selecionada —</span>
+          <span id="clone-trim-fim">0.0s</span>
+        </div>
+        <div class="row-actions" style="margin-top:8px">
+          <button type="button" class="btn btn-secondary btn-sm" id="clone-trim-play">▶ Ouvir trecho selecionado</button>
+          <button type="button" class="btn btn-secondary btn-sm" id="clone-trim-playall">▶ Ouvir clipe inteiro</button>
+          <button type="button" class="btn btn-secondary btn-sm" id="clone-trim-stop">⏹ Parar</button>
+        </div>
+      </div>
+
+      <label>Transcrição do clipe (melhora o clone)</label>
+      <textarea id="clone-ref-text" rows="2" placeholder="O que a pessoa diz no clipe..."></textarea>
+      <div class="row-actions">
+        <button class="btn btn-secondary" onclick="analisarVoz()">🔎 Analisar voz</button>
+        <div id="clone-stats" style="display:none" class="grid-4" style="flex:1"></div>
+      </div>
+      <div class="progress-wrap" id="clone-prog">
+        <div class="progress-bar-bg"><div class="progress-bar" id="clone-pbar"></div></div>
+        <div class="progress-desc" id="clone-pdesc"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">2 — Gerar Áudio</div>
+      <label>Texto</label>
+      <textarea id="clone-texto" rows="6" placeholder="Escreva o texto que a voz vai falar..."></textarea>
+      <div class="grid-2">
+        <div>
+          <label>Idioma</label>
+          <select id="clone-idioma">
+            <option>pt</option><option>en</option><option>es</option>
+            <option>fr</option><option>de</option><option>ja</option>
+          </select>
+        </div>
+        <div>
+          <label>Velocidade <span class="range-val" id="clone-vel-val">1.0</span></label>
+          <input type="range" id="clone-vel" min="0.5" max="2.0" step="0.05" value="1.0"
+            oninput="document.getElementById('clone-vel-val').textContent=parseFloat(this.value).toFixed(2)">
+        </div>
+      </div>
+      <div class="row-actions" style="margin-top:14px">
+        <button class="btn btn-primary" onclick="gerarClone()">🎧 Gerar áudio</button>
+      </div>
+      <div class="progress-wrap" id="clone-gen-prog">
+        <div class="progress-bar-bg"><div class="progress-bar" id="clone-gen-pbar"></div></div>
+        <div class="progress-desc" id="clone-gen-pdesc"></div>
+      </div>
+      <div class="audio-wrap" id="clone-audio">
+        <div class="audio-label">▶ Áudio gerado</div>
+        <div class="audio-inner"><audio controls id="clone-player"></audio></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- DESIGN DE VOZ -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-design">
+  <div class="section-title">Design de Voz</div>
+  <div class="section-desc">Descreva a voz em português. A IA traduz para o sintetizador.</div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Descrição da Voz</div>
+      <label>Descreva a voz que deseja</label>
+      <textarea id="design-desc" rows="3" placeholder='Ex: "professora de 55 anos, cansada, com sotaque do interior"'></textarea>
+      <label>Texto</label>
+      <textarea id="design-texto" rows="6" placeholder="Escreva o texto..."></textarea>
+      <div class="grid-2">
+        <div>
+          <label>Idioma</label>
+          <select id="design-idioma">
+            <option>pt</option><option>en</option><option>es</option>
+          </select>
+        </div>
+        <div>
+          <label>Velocidade <span class="range-val" id="design-vel-val">1.0</span></label>
+          <input type="range" id="design-vel" min="0.5" max="2.0" step="0.05" value="1.0"
+            oninput="document.getElementById('design-vel-val').textContent=parseFloat(this.value).toFixed(2)">
+        </div>
+      </div>
+      <div class="row-actions">
+        <button class="btn btn-primary" onclick="gerarDesign()">🎤 Gerar voz</button>
+      </div>
+      <div class="progress-wrap" id="design-prog">
+        <div class="progress-bar-bg"><div class="progress-bar" id="design-pbar"></div></div>
+        <div class="progress-desc" id="design-pdesc"></div>
+      </div>
+      <div class="audio-wrap" id="design-audio">
+        <div class="audio-label">▶ Áudio gerado</div>
+        <div class="audio-inner"><audio controls id="design-player"></audio></div>
+      </div>
+      <div class="output-text" id="design-instruct"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Exemplos de Descrição</div>
+      <div style="margin-top:4px">
+        <div class="example-chip"
+          onclick="document.getElementById('design-desc').value='mulher jovem, animada, voz brilhante e energética'">
+          <strong>mulher jovem, animada, voz brilhante e energética</strong>
+        </div>
+        <div class="example-chip"
+          onclick="document.getElementById('design-desc').value='homem de meia-idade, grave, narrador de documentário'">
+          <strong>homem de meia-idade, grave, narrador de documentário</strong>
+        </div>
+        <div class="example-chip"
+          onclick="document.getElementById('design-desc').value='voz de criança, curiosa, falando devagar'">
+          <strong>voz de criança, curiosa, falando devagar</strong>
+        </div>
+        <div class="example-chip"
+          onclick="document.getElementById('design-desc').value='mulher idosa, sábia, com sotaque britânico'">
+          <strong>mulher idosa, sábia, com sotaque britânico</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- CONTADOR DE HISTÓRIAS -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-story">
+  <div class="section-title">Contador de Histórias</div>
+  <div class="section-desc">Cole uma história com diálogos. A IA detecta quem fala e a emoção de cada frase,
+    dando uma voz distinta a cada personagem. O narrador usa a voz clonada.</div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Texto da História</div>
+      <textarea id="story-texto" rows="14" placeholder="Cole aqui a história com diálogos...
+Ex:
+Era uma vez uma menina...
+– Mamãe, posso ir? – perguntou ela.
+– Pode sim – respondeu a mãe."></textarea>
+      <div class="grid-2" style="margin-top:12px">
+        <div>
+          <label>Ritmo da narração <span class="range-val" id="story-ritmo-val">0.90</span></label>
+          <input type="range" id="story-ritmo" min="0.70" max="1.10" step="0.02" value="0.90"
+            oninput="document.getElementById('story-ritmo-val').textContent=parseFloat(this.value).toFixed(2)">
+        </div>
+        <div style="display:flex;align-items:flex-end">
+          <label class="checkbox-row">
+            <input type="checkbox" id="story-sussurro">
+            <span>🤫 Modo sussurro (ASMR)</span>
+          </label>
+        </div>
+      </div>
+      <label style="margin-top:12px">Vozes dos personagens (opcional) — nome como aparece na história + voz salva</label>
+      <div class="section-desc" style="margin:2px 0 6px;font-size:11px">Sem mapear, o personagem usa variações da voz do narrador (como antes).</div>
+      <div style="display:flex;gap:8px;margin-bottom:6px">
+        <input type="text" id="story-pers1" placeholder="Ex: João" style="flex:1">
+        <select id="story-voz1" style="flex:2"></select>
+      </div>
+      <div style="display:flex;gap:8px;margin-bottom:6px">
+        <input type="text" id="story-pers2" placeholder="Ex: Maria" style="flex:1">
+        <select id="story-voz2" style="flex:2"></select>
+      </div>
+      <div style="display:flex;gap:8px">
+        <input type="text" id="story-pers3" placeholder="Ex: Lobo" style="flex:1">
+        <select id="story-voz3" style="flex:2"></select>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Áudio de Fundo</div>
+      <div class="file-drop" onclick="document.getElementById('story-fundo').click()">
+        <input type="file" id="story-fundo" accept=".wav,.mp3,.ogg">
+        🎵 Música / ambiente (opcional)
+        <div class="file-name" id="story-fundo-name"></div>
+      </div>
+      <label>Volume do fundo <span class="range-val" id="story-vol-val">0.03</span></label>
+      <input type="range" id="story-vol" min="0" max="0.4" step="0.01" value="0.03"
+        oninput="document.getElementById('story-vol-val').textContent=parseFloat(this.value).toFixed(2)">
+      <label>Cauda após voz (s) <span class="range-val" id="story-cauda-val">0.0</span></label>
+      <input type="range" id="story-cauda" min="0" max="20" step="0.5" value="0"
+        oninput="document.getElementById('story-cauda-val').textContent=parseFloat(this.value).toFixed(1)">
+      <div class="row-actions" style="margin-top:20px">
+        <button class="btn btn-primary" onclick="gerarHistoria()">📖 Gerar história</button>
+      </div>
+      <div class="progress-wrap" id="story-prog">
+        <div class="progress-bar-bg"><div class="progress-bar" id="story-pbar"></div></div>
+        <div class="progress-desc" id="story-pdesc"></div>
+      </div>
+      <div class="audio-wrap" id="story-audio">
+        <div class="audio-label">▶ Áudio gerado</div>
+        <div class="audio-inner"><audio controls id="story-player"></audio></div>
+      </div>
+      <div class="output-text" id="story-roteiro"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- COMÉDIA -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-comedy">
+  <div class="section-title">Comédia — Auditório</div>
+  <div class="section-desc">Programa de auditório estilo Ratinho com sonoplastia automática. Linhas normais = apresentador (voz clonada). <code style="background:rgba(255,255,255,0.06);padding:1px 5px;border-radius:4px;font-family:monospace">NOME: fala</code> = convidado com voz própria.</div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Roteiro</div>
+      <div class="row-actions" style="margin-bottom:10px">
+        <button class="btn btn-secondary btn-sm" onclick="gerarRoteiroCaos()">🤪 Hora da loucura!</button>
+        <span style="color:var(--text3);font-size:12px">A IA inventa um programa do zero</span>
+      </div>
+      <textarea id="comedy-texto" rows="14" placeholder="Cole o roteiro aqui...
+Boa noite, almas penadas!
+RUFUS: Boa noite, Pandora!
+..."></textarea>
+    </div>
+    <div class="card">
+      <div class="card-title">Configurações</div>
+      <label>Ritmo <span class="range-val" id="comedy-ritmo-val">0.95</span></label>
+      <input type="range" id="comedy-ritmo" min="0.70" max="1.10" step="0.02" value="0.95"
+        oninput="document.getElementById('comedy-ritmo-val').textContent=parseFloat(this.value).toFixed(2)">
+      <label>Intensidade da sonoplastia <span class="range-val" id="comedy-intens-val">1.0</span></label>
+      <input type="range" id="comedy-intens" min="0" max="2" step="0.1" value="1.0"
+        oninput="document.getElementById('comedy-intens-val').textContent=parseFloat(this.value).toFixed(1)">
+      <label>Volume dos efeitos <span class="range-val" id="comedy-sfx-val">0.60</span></label>
+      <input type="range" id="comedy-sfx" min="0" max="1" step="0.05" value="0.6"
+        oninput="document.getElementById('comedy-sfx-val').textContent=parseFloat(this.value).toFixed(2)">
+      <label>Volume da plateia <span class="range-val" id="comedy-plateia-val">0.06</span></label>
+      <input type="range" id="comedy-plateia" min="0" max="0.30" step="0.01" value="0.06"
+        oninput="document.getElementById('comedy-plateia-val').textContent=parseFloat(this.value).toFixed(2)">
+      <label>Música de abertura (opcional)</label>
+      <div class="file-drop" onclick="document.getElementById('comedy-abertura').click()">
+        <input type="file" id="comedy-abertura" accept=".wav,.mp3">
+        🎵 Selecionar música
+        <div class="file-name" id="comedy-abertura-name"></div>
+      </div>
+      <div class="row-actions" style="margin-top:14px">
+        <button class="btn btn-primary" onclick="gerarComedia()">🎪 Gerar comédia</button>
+      </div>
+      <div class="progress-wrap" id="comedy-prog">
+        <div class="progress-bar-bg"><div class="progress-bar" id="comedy-pbar"></div></div>
+        <div class="progress-desc" id="comedy-pdesc"></div>
+      </div>
+      <div class="audio-wrap" id="comedy-audio">
+        <div class="audio-label">▶ Áudio gerado</div>
+        <div class="audio-inner"><audio controls id="comedy-player"></audio></div>
+      </div>
+      <div class="output-text" id="comedy-roteiro"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- GAME SHOW -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-gameshow">
+  <div class="section-title">Game Show Educativo</div>
+  <div class="section-desc">Suba um PDF (lido POR INTEIRO, por maior que seja) e a Pandora apresenta um DUELO de quiz entre dois competidores, com placar e vencedor. Passo 1: gerar roteiro. Passo 2: gerar áudio.</div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">1 — Configurar o duelo</div>
+      <label>Arquivo PDF</label>
+      <div class="file-drop" onclick="document.getElementById('gs-pdf').click()">
+        <input type="file" id="gs-pdf" accept=".pdf">
+        📄 Selecionar PDF
+        <div class="file-name" id="gs-pdf-name"></div>
+      </div>
+      <label>Faixa etária / público</label>
+      <input type="text" id="gs-faixa" value="crianças de 7 a 10 anos">
+      <label>Número de rodadas <span class="range-val" id="gs-nperg-val">5</span></label>
+      <input type="range" id="gs-nperg" min="3" max="12" step="1" value="5"
+        oninput="document.getElementById('gs-nperg-val').textContent=this.value">
+      <label>Competidor 1 — nome e voz (da galeria)</label>
+      <div style="display:flex;gap:8px">
+        <input type="text" id="gs-nome1" value="MAX" style="flex:1">
+        <select id="gs-voz1" style="flex:2"></select>
+      </div>
+      <label>Competidor 2 — nome e voz (da galeria)</label>
+      <div style="display:flex;gap:8px">
+        <input type="text" id="gs-nome2" value="LILI" style="flex:1">
+        <select id="gs-voz2" style="flex:2"></select>
+      </div>
+      <div class="section-desc" style="margin:6px 0 0;font-size:11px">A apresentadora usa a voz da sessão (aba Clone). PDFs grandes levam mais tempo no passo 1 — o material inteiro é lido em blocos.</div>
+      <div class="row-actions" style="margin-top:14px">
+        <button class="btn btn-secondary" onclick="lerPDF()">📄 Ler PDF e criar duelo</button>
+      </div>
+      <div class="progress-wrap" id="gspdf-prog">
+        <div class="progress-bar-bg"><div class="progress-bar" id="gspdf-pbar"></div></div>
+        <div class="progress-desc" id="gspdf-pdesc"></div>
+      </div>
+      <div id="gs-aviso" style="margin-top:10px;font-size:12px;color:var(--success)"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">2 — Roteiro e Geração</div>
+      <label>Roteiro (edite se quiser)</label>
+      <textarea id="gs-roteiro" rows="10" placeholder="O roteiro aparece aqui após ler o PDF..."></textarea>
+      <label>Intensidade da sonoplastia <span class="range-val" id="gs-intens-val">1.0</span></label>
+      <input type="range" id="gs-intens" min="0" max="2" step="0.1" value="1.0"
+        oninput="document.getElementById('gs-intens-val').textContent=parseFloat(this.value).toFixed(1)">
+      <div class="row-actions" style="margin-top:14px">
+        <button class="btn btn-primary" onclick="gerarGameshow()">🎓 Gerar game show</button>
+      </div>
+      <div class="progress-wrap" id="gs-prog">
+        <div class="progress-bar-bg"><div class="progress-bar" id="gs-pbar"></div></div>
+        <div class="progress-desc" id="gs-pdesc"></div>
+      </div>
+      <div class="audio-wrap" id="gs-audio">
+        <div class="audio-label">▶ Áudio gerado</div>
+        <div class="audio-inner"><audio controls id="gs-player"></audio></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TRAILER -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-trailer">
+  <div class="section-title">Gerador de Trailer</div>
+  <div class="section-desc">Escreva uma logline e receba uma narração épica estilo blockbuster.</div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Configurar</div>
+      <label>Gênero</label>
+      <div class="pill-group" id="trailer-genero-pills">
+        <div class="pill active" data-val="Ficção Científica">Ficção Científica</div>
+        <div class="pill" data-val="Terror">Terror</div>
+        <div class="pill" data-val="Ação">Ação</div>
+        <div class="pill" data-val="Romance">Romance</div>
+        <div class="pill" data-val="Comédia">Comédia</div>
+      </div>
+      <label style="margin-top:14px">Logline (1 frase)</label>
+      <textarea id="trailer-logline" rows="3" placeholder='Ex: "Um detetive cego descobre que é o assassino que procura"'></textarea>
+      <label>Voz do narrador</label>
+      <select id="trailer-voz"></select>
+      <label>Música épica de fundo (opcional)</label>
+      <div class="file-drop" onclick="document.getElementById('trailer-musica').click()">
+        <input type="file" id="trailer-musica" accept=".wav,.mp3">
+        🎵 Selecionar música
+        <div class="file-name" id="trailer-musica-name"></div>
+      </div>
+      <label>Volume da música <span class="range-val" id="trailer-vol-val">0.40</span></label>
+      <input type="range" id="trailer-vol" min="0" max="1" step="0.05" value="0.4"
+        oninput="document.getElementById('trailer-vol-val').textContent=parseFloat(this.value).toFixed(2)">
+      <div class="row-actions" style="margin-top:14px">
+        <button class="btn btn-primary" onclick="gerarTrailer()">🎬 Gerar trailer</button>
+      </div>
+      <div class="progress-wrap" id="trailer-prog">
+        <div class="progress-bar-bg"><div class="progress-bar" id="trailer-pbar"></div></div>
+        <div class="progress-desc" id="trailer-pdesc"></div>
+      </div>
+      <div class="audio-wrap" id="trailer-audio">
+        <div class="audio-label">▶ Áudio gerado</div>
+        <div class="audio-inner"><audio controls id="trailer-player"></audio></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Roteiro Gerado</div>
+      <div class="output-text show" id="trailer-roteiro" style="max-height:400px">
+        O roteiro aparece aqui após gerar...
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- MEDITAÇÃO -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-meditation">
+  <div class="section-title">Meditação Guiada</div>
+  <div class="section-desc">A Pandora narra uma meditação com pausas reais, voz sussurrante e ambiente sonoro. Usa a voz clonada.</div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Configurar</div>
+      <label>Tema</label>
+      <div class="pill-group" id="med-tema-pills">
+        <div class="pill active" data-val="Floresta">🌲 Floresta</div>
+        <div class="pill" data-val="Oceano">🌊 Oceano</div>
+        <div class="pill" data-val="Cosmos">🌌 Cosmos</div>
+        <div class="pill" data-val="Sono Profundo">😴 Sono Profundo</div>
+        <div class="pill" data-val="Foco">🎯 Foco</div>
+      </div>
+      <label style="margin-top:14px">Duração (minutos)</label>
+      <div class="pill-group" id="med-dur-pills">
+        <div class="pill active" data-val="5">5 min</div>
+        <div class="pill" data-val="10">10 min</div>
+        <div class="pill" data-val="20">20 min</div>
+      </div>
+      <label style="margin-top:14px">Volume da voz <span class="range-val" id="med-suss-val">0.85</span></label>
+      <input type="range" id="med-suss" min="0.3" max="1" step="0.05" value="0.85"
+        oninput="document.getElementById('med-suss-val').textContent=parseFloat(this.value).toFixed(2)">
+      <label style="margin-top:14px">Velocidade da voz <span class="range-val" id="med-vel-val">0.62×</span></label>
+      <input type="range" id="med-vel" min="0.4" max="1.0" step="0.02" value="0.62"
+        oninput="document.getElementById('med-vel-val').textContent=parseFloat(this.value).toFixed(2)+'×'">
+      <label style="margin-top:14px">Voz (galeria) — ou use a da aba Clone</label>
+      <select id="med-voz"></select>
+      <label style="margin-top:14px;display:flex;align-items:center;gap:8px;cursor:pointer">
+        <input type="checkbox" id="med-asmr" style="width:auto"
+          onchange="document.getElementById('med-asmr-opts').style.display=this.checked?'block':'none'">
+        🤫 Modo ASMR (sussurro)
+      </label>
+      <div id="med-asmr-opts" style="display:none;margin-top:6px">
+        <div class="pill-group" id="med-asmr-idioma-pills">
+          <div class="pill active" data-val="en">🇺🇸 Inglês (Nicole)</div>
+          <div class="pill" data-val="pt">🇧🇷 Português (mix3)</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Ambiente Sonoro</div>
+      <div class="file-drop" onclick="document.getElementById('med-fundo').click()">
+        <input type="file" id="med-fundo" accept=".wav,.mp3">
+        🌧️ Chuva / Floresta / Cosmos (opcional)
+        <div class="file-name" id="med-fundo-name"></div>
+      </div>
+      <label>Volume do ambiente <span class="range-val" id="med-vol-val">0.08</span></label>
+      <input type="range" id="med-vol" min="0" max="0.4" step="0.01" value="0.08"
+        oninput="document.getElementById('med-vol-val').textContent=parseFloat(this.value).toFixed(2)">
+      <div class="row-actions" style="margin-top:20px">
+        <button class="btn btn-primary" onclick="gerarMeditacao()">🧘 Gerar meditação</button>
+      </div>
+      <div class="progress-wrap" id="med-prog">
+        <div class="progress-bar-bg"><div class="progress-bar" id="med-pbar"></div></div>
+        <div class="progress-desc" id="med-pdesc"></div>
+      </div>
+      <div class="audio-wrap" id="med-audio">
+        <div class="audio-label">▶ Áudio gerado</div>
+        <div class="audio-inner"><audio controls id="med-player"></audio></div>
+      </div>
+      <div id="med-report" style="display:none;margin-top:14px;padding:14px 16px;
+        background:rgba(0,0,0,0.3);border:1px solid var(--glass-border);border-radius:10px;
+        font-size:13px;line-height:1.7;white-space:pre-line;font-family:'Inter',monospace;color:var(--text2)">
+        <div style="font-weight:600;color:var(--accent3);margin-bottom:8px">📊 Revisão de qualidade</div>
+        <div id="med-report-body"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- RÁDIO -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-radio">
+  <div class="section-title">Rádio Pandora</div>
+  <div class="section-desc">Gera um episódio de rádio completo (abertura, notícias, entrevista, quadro filosófico, encerramento) sobre qualquer tema. Usa a voz clonada.</div>
+  <div class="card" style="max-width:620px">
+    <div class="card-title">Configurar Episódio</div>
+    <label>Tema do episódio</label>
+    <input type="text" id="radio-tema" placeholder='Ex: "reality shows de culinária", "tecnologia em 2150"'>
+    <label>Vinheta de abertura (opcional)</label>
+    <div class="file-drop" onclick="document.getElementById('radio-vinheta').click()">
+      <input type="file" id="radio-vinheta" accept=".wav,.mp3">
+      🎵 Selecionar vinheta
+      <div class="file-name" id="radio-vinheta-name"></div>
+    </div>
+    <label>Volume da vinheta <span class="range-val" id="radio-vol-val">0.40</span></label>
+    <input type="range" id="radio-vol" min="0" max="1" step="0.05" value="0.4"
+      oninput="document.getElementById('radio-vol-val').textContent=parseFloat(this.value).toFixed(2)">
+    <div class="info-chip">
+      ⏱️ Tempo estimado: 5–8 minutos (5 segmentos + síntese)
+    </div>
+    <div class="row-actions" style="margin-top:14px">
+      <button class="btn btn-primary" onclick="gerarRadio()">📻 Gerar episódio</button>
+    </div>
+    <div class="progress-wrap" id="radio-prog">
+      <div class="progress-bar-bg"><div class="progress-bar" id="radio-pbar"></div></div>
+      <div class="progress-desc" id="radio-pdesc"></div>
+    </div>
+    <div class="audio-wrap" id="radio-audio">
+      <div class="audio-label">▶ Áudio gerado</div>
+      <div class="audio-inner"><audio controls id="radio-player"></audio></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- BATALHA DE VOZES -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-battle">
+  <div class="section-title">Batalha de Vozes</div>
+  <div class="section-desc">Dois personagens com vozes distintas debatem qualquer tema.</div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">⚔️ Personagem 1</div>
+      <label>Nome</label>
+      <input type="text" id="battle-nome1" placeholder="Ex: Aristóteles">
+      <label>Descrição da voz</label>
+      <input type="text" id="battle-desc1" placeholder='Ex: "homem idoso, grave, sábio"'>
+      <label>Voz clonada (opcional)</label>
+      <select id="battle-voz1"></select>
+      <label>Dossiê / identidade (.txt ou .pdf)</label>
+      <div class="file-drop" onclick="document.getElementById('battle-dossie1').click()">
+        <input type="file" id="battle-dossie1" accept=".txt,.pdf">
+        📄 Carregar dossiê
+        <div class="file-name" id="battle-dossie1-name"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">⚔️ Personagem 2</div>
+      <label>Nome</label>
+      <input type="text" id="battle-nome2" placeholder="Ex: Elon Musk">
+      <label>Descrição da voz</label>
+      <input type="text" id="battle-desc2" placeholder='Ex: "homem jovem, agudo, confiante"'>
+      <label>Voz clonada (opcional)</label>
+      <select id="battle-voz2"></select>
+      <label>Dossiê / identidade (.txt ou .pdf)</label>
+      <div class="file-drop" onclick="document.getElementById('battle-dossie2').click()">
+        <input type="file" id="battle-dossie2" accept=".txt,.pdf">
+        📄 Carregar dossiê
+        <div class="file-name" id="battle-dossie2-name"></div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">Debate</div>
+    <label>Tema do debate</label>
+    <input type="text" id="battle-tema" placeholder='Ex: "O futuro da humanidade está em Marte"'>
+    <label style="margin-top:12px">Modo</label>
+    <div class="pill-group" id="battle-modo-pills">
+      <div class="pill active" data-val="sério">🧐 Sério</div>
+      <div class="pill" data-val="caos">🌪️ Caos</div>
+    </div>
+    <label style="margin-top:12px">Turnos (rodadas de réplica) <span class="range-val" id="battle-turnos-val">3</span></label>
+    <input type="range" id="battle-turnos" min="1" max="6" step="1" value="3"
+      oninput="document.getElementById('battle-turnos-val').textContent=this.value">
+    <div style="font-size:12px;color:var(--text3);margin-top:4px">Com dossiê, cada personagem responde ao outro a cada turno (como um LLM próprio).</div>
+    <div class="row-actions" style="margin-top:16px">
+      <button class="btn btn-primary" onclick="gerarBatalha()">⚔️ Iniciar batalha</button>
+    </div>
+    <div class="progress-wrap" id="battle-prog">
+      <div class="progress-bar-bg"><div class="progress-bar" id="battle-pbar"></div></div>
+      <div class="progress-desc" id="battle-pdesc"></div>
+    </div>
+    <div class="audio-wrap" id="battle-audio">
+      <div class="audio-label">▶ Áudio gerado</div>
+      <div class="audio-inner"><audio controls id="battle-player"></audio></div>
+    </div>
+    <div class="output-text" id="battle-roteiro" style="max-height:300px;margin-top:12px"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- PERSONAGEM INFINITO -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-character">
+  <div class="section-title">Personagem Infinito</div>
+  <div class="section-desc">Crie personagens com voz e personalidade próprias e converse com eles.</div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Criar Personagem</div>
+      <label>Nome</label>
+      <input type="text" id="char-nome" placeholder="Ex: Sherlock Holmes">
+      <label>Personalidade</label>
+      <textarea id="char-personalidade" rows="3" placeholder="Detetive brilhante, arrogante, sarcástico..."></textarea>
+      <label>Descrição da voz</label>
+      <input type="text" id="char-voz" placeholder='Ex: "homem britânico, inteligente, ácido"'>
+      <label>Maneirismos / quirks</label>
+      <input type="text" id="char-quirks" placeholder='Ex: "sempre comenta óbviedades condescendentemente"'>
+      <label>Tom emocional padrão</label>
+      <select id="char-emocao">
+        <option>neutra</option><option>alegria</option><option>tristeza</option>
+        <option>ironia</option><option>serenidade</option><option>melancolia</option>
+      </select>
+      <div class="row-actions" style="margin-top:14px">
+        <button class="btn btn-secondary" onclick="criarPersonagem()">💾 Salvar personagem</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Conversar</div>
+      <label>Selecionar personagem</label>
+      <div style="display:flex;gap:8px">
+        <select id="char-selecionado" style="flex:1"></select>
+        <button class="btn btn-secondary btn-sm" onclick="carregarPersonagens()">↻</button>
+      </div>
+      <div id="chat-area" class="chat-history" style="min-height:180px"></div>
+      <label>Sua fala</label>
+      <div style="display:flex;gap:8px">
+        <input type="text" id="char-fala" placeholder="Digite o que quer dizer..."
+          onkeydown="if(event.key==='Enter')conversar()">
+        <button class="btn btn-primary btn-sm" onclick="conversar()">Enviar</button>
+      </div>
+      <div class="progress-wrap" id="char-prog">
+        <div class="progress-bar-bg"><div class="progress-bar" id="char-pbar"></div></div>
+        <div class="progress-desc" id="char-pdesc"></div>
+      </div>
+      <div class="audio-wrap" id="char-audio">
+        <div class="audio-label">▶ Áudio gerado</div>
+        <div class="audio-inner"><audio controls id="char-player"></audio></div>
+      </div>
+      <div class="row-actions" style="margin-top:8px">
+        <button class="btn btn-secondary btn-sm" onclick="resetarChat()">🗑️ Limpar histórico</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- CANTAR MÚSICA -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="section" id="sec-sing">
+  <div class="section-title">Cantar Música</div>
+  <div class="section-desc">Suba uma música, escolha uma voz clonada, e a Pandora (ou qualquer voz salva) canta por cima do instrumental — separando o vocal original (Demucs) e convertendo o timbre pra voz escolhida, mantendo a melodia real. Pode levar alguns minutos.</div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">1 — Música e Voz</div>
+      <label>Subir música(s) (MP3/WAV) — pode selecionar várias</label>
+      <div class="file-drop" onclick="document.getElementById('sing-upload').click()">
+        <input type="file" id="sing-upload" accept=".wav,.mp3,.ogg,.flac" multiple>
+        📂 Clique para selecionar (uma ou várias) ou arraste aqui
+        <div class="file-name" id="sing-upload-name"></div>
+      </div>
+      <label>Voz — escolha uma salva OU suba um trecho</label>
+      <select id="sing-voz"></select>
+      <div class="section-desc" style="margin:8px 0 4px;font-size:11px">— ou suba um trecho de voz de referência (5-15s, voz limpa, sem música de fundo). Se subir, ele é usado no lugar da voz acima.</div>
+      <div class="file-drop" onclick="document.getElementById('sing-voz-upload').click()" style="padding:14px">
+        <input type="file" id="sing-voz-upload" accept=".wav,.mp3,.ogg,.flac">
+        🎤 Clique para subir um trecho de voz
+        <div class="file-name" id="sing-voz-upload-name"></div>
+      </div>
+      <div class="trim-wrap" id="sing-voz-trim-wrap">
+        <label>Cortar o trecho de voz (o corte é o que vira referência)</label>
+        <div class="trim-canvas-box" id="sing-voz-trim-box">
+          <canvas id="sing-voz-trim-canvas"></canvas>
+          <div class="trim-mask" id="sing-voz-trim-mask-l"></div>
+          <div class="trim-mask" id="sing-voz-trim-mask-r"></div>
+          <div class="trim-handle" id="sing-voz-trim-handle-l"></div>
+          <div class="trim-handle" id="sing-voz-trim-handle-r"></div>
+        </div>
+        <div class="trim-info">
+          <span id="sing-voz-trim-ini">0.0s</span>
+          <span id="sing-voz-trim-dur">— duração selecionada —</span>
+          <span id="sing-voz-trim-fim">0.0s</span>
+        </div>
+        <div class="row-actions" style="margin-top:8px">
+          <button type="button" class="btn btn-secondary btn-sm" id="sing-voz-trim-play">▶ Ouvir trecho selecionado</button>
+          <button type="button" class="btn btn-secondary btn-sm" id="sing-voz-trim-playall">▶ Ouvir clipe inteiro</button>
+          <button type="button" class="btn btn-secondary btn-sm" id="sing-voz-trim-stop">⏹ Parar</button>
+        </div>
+      </div>
+      <label>Volume do instrumental <span class="range-val" id="sing-vol-val">0.60</span></label>
+      <input type="range" id="sing-vol" min="0.1" max="1.0" step="0.05" value="0.6"
+        oninput="document.getElementById('sing-vol-val').textContent=parseFloat(this.value).toFixed(2)">
+      <label>Passos de difusão (qualidade x velocidade) <span class="range-val" id="sing-steps-val">50</span></label>
+      <input type="range" id="sing-steps" min="15" max="50" step="5" value="50"
+        oninput="document.getElementById('sing-steps-val').textContent=this.value">
+
+      <label>Fidelidade à voz escolhida (cfg-rate) <span class="range-val" id="sing-cfg-val">0.70</span></label>
+      <input type="range" id="sing-cfg" min="0.2" max="1.0" step="0.05" value="0.7"
+        oninput="document.getElementById('sing-cfg-val').textContent=parseFloat(this.value).toFixed(2)">
+      <div class="section-desc" style="margin:2px 0 10px;font-size:11px">Se a saída vier rouca/exagerada, tente baixar pra 0.4-0.5.</div>
+
+      <div class="section-desc" style="margin:10px 0 0;font-size:11px">O deslocamento de pitch entre o cantor original e a voz escolhida é calculado automaticamente (comparando os registros dos dois). Use o ajuste fino abaixo só se ainda sair desafinado.</div>
+      <label>Ajuste fino de pitch, além do calculado (semitons) <span class="range-val" id="sing-shift-val">0</span></label>
+      <input type="range" id="sing-shift" min="-12" max="12" step="1" value="0"
+        oninput="document.getElementById('sing-shift-val').textContent=this.value">
+    </div>
+
+    <div class="card">
+      <div class="card-title">2 — Gerar</div>
+      <div class="section-desc" style="margin-bottom:14px">A conversão roda em etapas: separação do vocal, conversão de voz e mixagem final. Acompanhe pelo progresso abaixo.</div>
+      <div class="row-actions">
+        <button class="btn btn-primary" id="sing-btn" onclick="gerarCanto()">🎶 Fazer a Pandora cantar</button>
+      </div>
+      <div class="progress-wrap" id="sing-prog">
+        <div class="progress-bar-bg"><div class="progress-bar" id="sing-pbar"></div></div>
+        <div class="progress-desc" id="sing-pdesc"></div>
+      </div>
+      <div class="audio-wrap" id="sing-audio">
+        <div class="audio-label">▶ Música com a voz clonada</div>
+        <div class="audio-inner"><audio controls id="sing-player"></audio></div>
+      </div>
+      <div id="sing-lote-result" class="lote-result"></div>
+    </div>
+  </div>
+</section>
+
+  </div><!-- /content -->
+</div><!-- /main -->
+</div><!-- /body-row -->
+
+<!-- ── STATUSBAR ── -->
+<div id="statusbar">
+  <div class="sb-left">
+    <div class="sb-dot"></div>
+    servidor ativo
+    <span class="sb-sep">·</span>
+    localhost:5008
+  </div>
+  <div class="sb-right" id="sb-session">
+    sem sessão ativa
+  </div>
+</div>
+
+</div><!-- /app -->
+
+<!-- ── TOAST ── -->
+<div id="toast"></div>
+
+<script>
+let sessionId = null;
+let pollIntervals = {};
+
+document.querySelectorAll('.nav-item').forEach(item => {
+  item.addEventListener('click', () => {
+    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    item.classList.add('active');
+    const sec = item.dataset.section;
+    document.getElementById('sec-' + sec).classList.add('active');
+    document.getElementById('topbar-title').textContent = item.textContent.trim();
+  });
+});
+
+document.querySelectorAll('.pill-group').forEach(group => {
+  group.querySelectorAll('.pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      group.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+    });
+  });
+});
+function getPill(groupId) {
+  const g = document.getElementById(groupId);
+  const active = g && g.querySelector('.pill.active');
+  return active ? active.dataset.val : null;
+}
+
+document.querySelectorAll('input[type=file]').forEach(inp => {
+  inp.addEventListener('change', () => {
+    const nameEl = document.getElementById(inp.id + '-name');
+    if (!nameEl) return;
+    const n = inp.files.length;
+    if (n > 1) nameEl.textContent = n + ' músicas selecionadas';
+    else nameEl.textContent = inp.files[0]?.name || '';
+  });
+});
+
+function toast(msg, type='info') {
+  const el = document.createElement('div');
+  el.className = 'toast-item ' + type;
+  el.textContent = msg;
+  document.getElementById('toast').appendChild(el);
+  setTimeout(() => el.remove(), 4000);
+}
+
+function showProg(prefix, show=true) {
+  document.getElementById(prefix+'-prog').classList.toggle('show', show);
+}
+function setProg(prefix, pct, desc) {
+  document.getElementById(prefix+'-pbar').style.width = pct + '%';
+  document.getElementById(prefix+'-pdesc').textContent = desc;
+}
+function showAudio(prefix, url) {
+  const wrap = document.getElementById(prefix+'-audio');
+  const player = document.getElementById(prefix+'-player');
+  wrap.classList.add('show');
+  player.src = url + '?t=' + Date.now();
+  player.load();
+}
+function showText(elId, text) {
+  const el = document.getElementById(elId);
+  if (el) { el.textContent = text; el.classList.add('show'); }
+}
+
+// ── Player waveform estilo SoundCloud ──────────────────────────────────────
+// Monta dentro de `mount` um player com forma de onda: barras verticais,
+// parte já tocada preenchida em destaque, clique na onda pula pra o ponto.
+let waveAudioCtx = null;
+function _fmtTempo(s) {
+  if (!isFinite(s)) return '0:00';
+  const m = Math.floor(s / 60), seg = Math.floor(s % 60);
+  return m + ':' + String(seg).padStart(2, '0');
+}
+function montarWavePlayer(mount, url, nomeDownload) {
+  mount.innerHTML =
+    '<div class="wave-player">' +
+      '<button class="wave-play">▶</button>' +
+      '<div class="wave-mid">' +
+        '<div class="wave-canvas-box"><canvas></canvas></div>' +
+        '<div class="wave-time">0:00 / 0:00</div>' +
+      '</div>' +
+      '<a class="wave-download" title="Baixar" download>⬇</a>' +
+    '</div>';
+  const dl = mount.querySelector('.wave-download');
+  dl.href = url;
+  dl.setAttribute('download', (nomeDownload || 'musica').replace(/\.[^.]+$/, '') + '_pandora.wav');
+  const btn = mount.querySelector('.wave-play');
+  const box = mount.querySelector('.wave-canvas-box');
+  const canvas = box.querySelector('canvas');
+  const tempoEl = mount.querySelector('.wave-time');
+  const audio = new Audio();
+  audio.src = url + (url.includes('?') ? '' : '?t=' + Date.now());
+  audio.preload = 'auto';
+
+  let picos = null;       // amplitude por barra (0..1)
+  const N_BARRAS = 160;
+
+  function calcularPicos(buf) {
+    const data = buf.getChannelData(0);
+    const bloco = Math.floor(data.length / N_BARRAS) || 1;
+    const p = new Float32Array(N_BARRAS);
+    let maxGlobal = 1e-6;
+    for (let b = 0; b < N_BARRAS; b++) {
+      let pico = 0;
+      for (let i = 0; i < bloco; i++) {
+        const v = Math.abs(data[b * bloco + i] || 0);
+        if (v > pico) pico = v;
+      }
+      p[b] = pico;
+      if (pico > maxGlobal) maxGlobal = pico;
+    }
+    for (let b = 0; b < N_BARRAS; b++) p[b] /= maxGlobal;  // normaliza
+    return p;
+  }
+
+  function desenhar(frac) {
+    const w = box.clientWidth, h = box.clientHeight;
+    if (!w) return;
+    canvas.width = w; canvas.height = h;
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, w, h);
+    if (!picos) return;
+    const larguraBarra = w / N_BARRAS;
+    const corte = frac * N_BARRAS;
+    for (let b = 0; b < N_BARRAS; b++) {
+      const alt = Math.max(2, picos[b] * (h - 4));
+      const x = b * larguraBarra;
+      const y = (h - alt) / 2;
+      ctx.fillStyle = b <= corte ? '#c084fc' : 'rgba(168,85,247,.30)';
+      ctx.fillRect(x, y, Math.max(1, larguraBarra - 1), alt);
+    }
+  }
+
+  function atualizarTempo() {
+    tempoEl.textContent = _fmtTempo(audio.currentTime) + ' / ' + _fmtTempo(audio.duration);
+  }
+
+  fetch(audio.src).then(r => r.arrayBuffer()).then(ab => {
+    waveAudioCtx = waveAudioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    return waveAudioCtx.decodeAudioData(ab);
+  }).then(buf => {
+    picos = calcularPicos(buf);
+    desenhar(0);
+  }).catch(() => { /* se falhar o decode, o player ainda toca */ });
+
+  btn.addEventListener('click', () => {
+    if (audio.paused) audio.play(); else audio.pause();
+  });
+  audio.addEventListener('play',  () => btn.textContent = '❚❚');
+  audio.addEventListener('pause', () => btn.textContent = '▶');
+  audio.addEventListener('ended', () => { btn.textContent = '▶'; desenhar(0); });
+  audio.addEventListener('loadedmetadata', atualizarTempo);
+  audio.addEventListener('timeupdate', () => {
+    const frac = audio.duration ? audio.currentTime / audio.duration : 0;
+    desenhar(frac);
+    atualizarTempo();
+  });
+  box.addEventListener('click', (e) => {
+    if (!audio.duration) return;
+    const rect = box.getBoundingClientRect();
+    audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
+  });
+  window.addEventListener('resize', () => {
+    const frac = audio.duration ? audio.currentTime / audio.duration : 0;
+    desenhar(frac);
+  });
+}
+
+function pollTask(taskId, prefix, onDone, onFinish) {
+  showProg(prefix, true);
+  const iv = setInterval(async () => {
+    const r = await fetch('/api/task/' + taskId);
+    const d = await r.json();
+    setProg(prefix, d.progress, d.desc || '');
+    if (d.status === 'done') {
+      clearInterval(iv);
+      showProg(prefix, false);
+      onDone(d);
+      if (onFinish) onFinish();
+    } else if (d.status === 'error') {
+      clearInterval(iv);
+      showProg(prefix, false);
+      toast('Erro: ' + d.error, 'error');
+      if (onFinish) onFinish();
+    }
+  }, 800);
+  return iv;
+}
+
+function updateVoiceStatus() {
+  const el = document.getElementById('voice-status');
+  const sb = document.getElementById('sb-session');
+  if (sessionId) {
+    el.innerHTML = '<div class="voice-badge"><span class="voice-dot"></span>Voz carregada</div>';
+    if (sb) sb.textContent = 'sessão: ' + sessionId.slice(0,8) + '…';
+  } else {
+    el.innerHTML = '<div class="voice-badge" style="border-color:rgba(239,68,68,.4);color:#fca5a5"><span class="voice-dot" style="background:var(--danger);animation-name:pulseRed"></span>Sem voz — analise na aba Clone</div>';
+    if (sb) sb.textContent = 'sem sessão ativa';
+  }
+}
+updateVoiceStatus();
+
+async function carregarVozesEm(selectId, rotuloPadrao, selecionar) {
+  const sel = document.getElementById(selectId);
+  if (!sel) return;
+  const r = await fetch('/api/vozes');
+  const d = await r.json();
+  sel.innerHTML = '<option value="">' + rotuloPadrao + '</option>';
+  d.vozes.forEach(v => {
+    const o = document.createElement('option');
+    o.value = v; o.textContent = v;
+    if (v === selecionar) o.selected = true;
+    sel.appendChild(o);
+  });
+}
+async function carregarVozes() {
+  await carregarVozesEm('clone-dd', '-- selecionar --', 'Pandora.wav');
+  await carregarVozesEm('trailer-voz', '— usar voz descrita (grave) —', null);
+  await carregarVozesEm('battle-voz1', '— usar descrição —', null);
+  await carregarVozesEm('battle-voz2', '— usar descrição —', null);
+  await carregarVozesEm('med-voz', '— usar voz da sessão (aba Clone) —', null);
+  await carregarVozesEm('sing-voz', '-- selecionar --', 'Pandora.wav');
+  await carregarVozesEm('gs-voz1', '— voz automática (paleta) —', null);
+  await carregarVozesEm('gs-voz2', '— voz automática (paleta) —', null);
+  await carregarVozesEm('story-voz1', '— escolher voz —', null);
+  await carregarVozesEm('story-voz2', '— escolher voz —', null);
+  await carregarVozesEm('story-voz3', '— escolher voz —', null);
+}
+carregarVozes();
+
+async function carregarPersonagens() {
+  const r = await fetch('/api/character/list');
+  const d = await r.json();
+  const sel = document.getElementById('char-selecionado');
+  sel.innerHTML = '<option value="">-- selecionar --</option>';
+  d.personagens.forEach(n => {
+    const o = document.createElement('option'); o.value = n; o.textContent = n;
+    sel.appendChild(o);
+  });
+}
+carregarPersonagens();
+
+// ── Widget de corte de áudio (waveform + alças + ouvir) reutilizável ────────
+// Cria um recortador ligado aos elementos "<prefixo>-wrap/-box/-canvas/-mask-l/r
+// /-handle-l/r/-ini/-fim/-dur" e aos botões "<prefixo>-play/-playall/-stop".
+// Retorna o próprio objeto de estado (expõe .buffer/.ini/.fim pra quem envia o
+// corte) com os métodos .carregar(fonte) e .esconder().
+let _trimAudioCtx = null;
+function criarTrimWidget(prefixo) {
+  const st = { buffer: null, ini: 0, fim: 0, dragging: null, source: null };
+  const $ = (suf) => document.getElementById(prefixo + suf);
+
+  function draw() {
+    const box = $('-box'), canvas = $('-canvas');
+    if (!st.buffer || !box) return;
+    const w = box.clientWidth, h = box.clientHeight;
+    canvas.width = w; canvas.height = h;
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, w, h);
+    const data = st.buffer.getChannelData(0);
+    const step = Math.ceil(data.length / w);
+    ctx.fillStyle = '#a855f7';
+    for (let x = 0; x < w; x++) {
+      let mn = 1.0, mx = -1.0;
+      for (let i = 0; i < step; i++) {
+        const idx = x * step + i;
+        if (idx >= data.length) break;
+        const v = data[idx];
+        if (v < mn) mn = v;
+        if (v > mx) mx = v;
+      }
+      const y1 = (1 + mn) * h / 2, y2 = (1 + mx) * h / 2;
+      ctx.fillRect(x, y2, 1, Math.max(1, y1 - y2));
+    }
+    updateHandles();
+  }
+  function updateHandles() {
+    const box = $('-box');
+    if (!st.buffer || !box) return;
+    const w = box.clientWidth, dur = st.buffer.duration;
+    const xIni = (st.ini / dur) * w, xFim = (st.fim / dur) * w;
+    $('-handle-l').style.left = xIni + 'px';
+    $('-handle-r').style.left = xFim + 'px';
+    $('-mask-l').style.left = '0px'; $('-mask-l').style.width = xIni + 'px';
+    $('-mask-r').style.left = xFim + 'px'; $('-mask-r').style.width = (w - xFim) + 'px';
+    $('-ini').textContent = st.ini.toFixed(1) + 's';
+    $('-fim').textContent = st.fim.toFixed(1) + 's';
+    $('-dur').textContent = (st.fim - st.ini).toFixed(1) + 's selecionados';
+  }
+  st.carregar = async function (fonte) {
+    try {
+      _trimAudioCtx = _trimAudioCtx || new (window.AudioContext || window.webkitAudioContext)();
+      const ab = await fonte.arrayBuffer();
+      const buf = await _trimAudioCtx.decodeAudioData(ab);
+      st.buffer = buf; st.ini = 0; st.fim = buf.duration;
+      $('-wrap').classList.add('show'); draw();
+    } catch (e) {
+      $('-wrap').classList.remove('show'); st.buffer = null;
+    }
+  };
+  st.esconder = function () { $('-wrap').classList.remove('show'); st.buffer = null; };
+
+  function stop() { if (st.source) { try { st.source.stop(); } catch (e) {} st.source = null; } }
+  function play(inteiro) {
+    if (!st.buffer) { toast('Carregue um áudio primeiro.', 'error'); return; }
+    stop();
+    const src = _trimAudioCtx.createBufferSource();
+    src.buffer = st.buffer; src.connect(_trimAudioCtx.destination);
+    if (inteiro) src.start(0);
+    else src.start(0, st.ini, Math.max(0.05, st.fim - st.ini));
+    st.source = src;
+    src.onended = () => { if (st.source === src) st.source = null; };
+  }
+
+  const box = $('-box');
+  if (box) {
+    const posSeg = (cx) => {
+      const r = box.getBoundingClientRect();
+      const f = Math.min(1, Math.max(0, (cx - r.left) / r.width));
+      return f * (st.buffer ? st.buffer.duration : 0);
+    };
+    ['-handle-l', '-handle-r'].forEach((suf, i) => {
+      $(suf).addEventListener('mousedown', (e) => { st.dragging = i === 0 ? 'ini' : 'fim'; e.preventDefault(); });
+    });
+    window.addEventListener('mousemove', (e) => {
+      if (!st.dragging || !st.buffer) return;
+      const seg = posSeg(e.clientX);
+      if (st.dragging === 'ini') st.ini = Math.min(seg, st.fim - 0.2);
+      else st.fim = Math.max(seg, st.ini + 0.2);
+      updateHandles();
+    });
+    window.addEventListener('mouseup', () => { st.dragging = null; });
+  }
+  const bp = $('-play'), ba = $('-playall'), bs = $('-stop');
+  if (bp) bp.addEventListener('click', () => play(false));
+  if (ba) ba.addEventListener('click', () => play(true));
+  if (bs) bs.addEventListener('click', stop);
+  window.addEventListener('resize', draw);
+  return st;
+}
+
+const cloneTrim = criarTrimWidget('clone-trim');
+const singVozTrim = criarTrimWidget('sing-voz-trim');
+
+document.getElementById('clone-upload').addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f) cloneTrim.carregar(f);
+});
+document.getElementById('clone-dd').addEventListener('change', async (e) => {
+  if (!e.target.value) { cloneTrim.esconder(); return; }
+  const r = await fetch('/api/vozes/preview/' + encodeURIComponent(e.target.value));
+  cloneTrim.carregar(await r.blob());
+});
+document.getElementById('sing-voz-upload').addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f) singVozTrim.carregar(f); else singVozTrim.esconder();
+});
+
+async function analisarVoz() {
+  const upload = document.getElementById('clone-upload').files[0];
+  const escolhida = document.getElementById('clone-dd').value;
+  const refText = document.getElementById('clone-ref-text').value;
+  showProg('clone', true); setProg('clone', 10, 'Analisando voz...');
+  const fd = new FormData();
+  if (upload) fd.append('upload', upload);
+  if (escolhida) fd.append('escolhida', escolhida);
+  fd.append('ref_text', refText);
+  if (cloneTrim.buffer) {
+    fd.append('corte_inicio', cloneTrim.ini);
+    fd.append('corte_fim', cloneTrim.fim);
+  }
+  try {
+    const r = await fetch('/api/voice/analyze', {method:'POST', body:fd});
+    const d = await r.json();
+    if (!r.ok) { toast(d.detail || 'Erro', 'error'); showProg('clone', false); return; }
+    sessionId = d.session_id;
+    showProg('clone', false);
+    updateVoiceStatus();
+    toast(d.msg, 'success');
+  } catch(e) { toast('Erro de conexão', 'error'); showProg('clone', false); }
+}
+
+async function gerarClone() {
+  if (!sessionId) { toast('Analise uma voz primeiro.', 'error'); return; }
+  const texto = document.getElementById('clone-texto').value;
+  if (!texto.trim()) { toast('Escreva um texto.', 'error'); return; }
+  const fd = new FormData();
+  fd.append('session_id', sessionId);
+  fd.append('texto', texto);
+  fd.append('idioma', document.getElementById('clone-idioma').value);
+  fd.append('velocidade', document.getElementById('clone-vel').value);
+  const r = await fetch('/api/voice/clone', {method:'POST', body:fd});
+  const d = await r.json();
+  pollTask(d.task_id, 'clone-gen', (res) => {
+    if (res.has_audio) showAudio('clone', '/api/task/'+d.task_id+'/audio');
+  });
+}
+
+let singGerando = false;
+async function gerarCanto() {
+  if (singGerando) { toast('Já está gerando — aguarde terminar.', 'error'); return; }
+  const files = document.getElementById('sing-upload').files;
+  const voz = document.getElementById('sing-voz').value;
+  const vozUpload = document.getElementById('sing-voz-upload').files[0];
+  if (!files.length) { toast('Suba uma música.', 'error'); return; }
+  if (!voz && !vozUpload) { toast('Escolha uma voz salva ou suba um trecho de voz.', 'error'); return; }
+
+  const fd = new FormData();
+  fd.append('voz', voz);
+  if (vozUpload) {
+    fd.append('voz_upload', vozUpload);
+    if (singVozTrim.buffer) {
+      fd.append('corte_voz_inicio', singVozTrim.ini);
+      fd.append('corte_voz_fim', singVozTrim.fim);
+    }
+  }
+  fd.append('diffusion_steps', document.getElementById('sing-steps').value);
+  fd.append('vol_instrumental', document.getElementById('sing-vol').value);
+  fd.append('inference_cfg_rate', document.getElementById('sing-cfg').value);
+  fd.append('ajuste_fino_pitch', document.getElementById('sing-shift').value);
+  fd.append('auto_f0_adjust', 'false');
+
+  const lote = files.length > 1;
+  // limpa resultados anteriores
+  document.getElementById('sing-lote-result').innerHTML = '';
+  document.getElementById('sing-audio').classList.remove('show');
+
+  let url;
+  if (lote) {
+    for (const f of files) fd.append('musicas', f);
+    url = '/api/sing_batch';
+  } else {
+    fd.append('musica', files[0]);
+    url = '/api/sing';
+  }
+
+  const btn = document.getElementById('sing-btn');
+  singGerando = true;
+  if (btn) { btn.disabled = true; btn.textContent = '⏳ Gerando...'; }
+  const liberar = () => {
+    singGerando = false;
+    if (btn) { btn.disabled = false; btn.textContent = '🎶 Fazer a Pandora cantar'; }
+  };
+  try {
+    const r = await fetch(url, {method:'POST', body:fd});
+    const d = await r.json();
+    if (!r.ok) { toast(d.detail || 'Erro', 'error'); liberar(); return; }
+    pollTask(d.task_id, 'sing', (res) => {
+      if (res.batch) renderLoteResult(d.task_id, res.batch);
+      else if (res.has_audio) renderSingleResult(d.task_id);
+    }, liberar);
+  } catch(e) { toast('Erro de conexão', 'error'); liberar(); }
+}
+
+// Resultado de uma música só: um player waveform.
+function renderSingleResult(taskId) {
+  const cont = document.getElementById('sing-lote-result');
+  cont.innerHTML = '<div class="audio-label" style="margin-bottom:8px">▶ Música com a voz clonada</div>';
+  const item = document.createElement('div');
+  item.className = 'lote-item';
+  cont.appendChild(item);
+  const nome = document.getElementById('sing-upload').files[0]?.name || 'musica';
+  montarWavePlayer(item, '/api/task/' + taskId + '/audio', nome);
+}
+
+// Lista de músicas do lote, cada uma com seu player waveform.
+function renderLoteResult(taskId, batch) {
+  const cont = document.getElementById('sing-lote-result');
+  cont.innerHTML = '<div class="audio-label" style="margin-bottom:8px">▶ Resultados do lote</div>';
+  batch.forEach(item => {
+    const linha = document.createElement('div');
+    linha.className = 'lote-item';
+    const nome = item.nome.replace(/\.[^.]+$/, '');
+    if (item.ok) {
+      const titulo = document.createElement('div');
+      titulo.className = 'lote-nome';
+      titulo.textContent = '🎶 ' + nome;
+      linha.appendChild(titulo);
+      const holder = document.createElement('div');
+      linha.appendChild(holder);
+      montarWavePlayer(holder, '/api/task/' + taskId + '/audio_lote/' + item.indice, item.nome);
+    } else {
+      linha.innerHTML = '<div class="lote-nome" style="color:var(--danger)">✗ ' + nome +
+                        '</div><div class="lote-erro">' + (item.erro || 'falhou') + '</div>';
+    }
+    cont.appendChild(linha);
+  });
+}
+
+async function gerarDesign() {
+  const desc = document.getElementById('design-desc').value;
+  const texto = document.getElementById('design-texto').value;
+  if (!desc.trim() || !texto.trim()) { toast('Preencha a descrição e o texto.', 'error'); return; }
+  const fd = new FormData();
+  fd.append('desc_voz', desc); fd.append('texto', texto);
+  fd.append('idioma', document.getElementById('design-idioma').value);
+  fd.append('velocidade', document.getElementById('design-vel').value);
+  const r = await fetch('/api/voice/design', {method:'POST', body:fd});
+  const d = await r.json();
+  pollTask(d.task_id, 'design', (res) => {
+    if (res.has_audio) showAudio('design', '/api/task/'+d.task_id+'/audio');
+    if (res.text) showText('design-instruct', '✅ ' + res.text);
+  });
+}
+
+async function gerarHistoria() {
+  if (!sessionId) { toast('Analise uma voz primeiro (aba Clone).', 'error'); return; }
+  const texto = document.getElementById('story-texto').value;
+  if (!texto.trim()) { toast('Escreva a história.', 'error'); return; }
+  const fd = new FormData();
+  fd.append('session_id', sessionId); fd.append('texto', texto);
+  fd.append('ritmo', document.getElementById('story-ritmo').value);
+  fd.append('sussurro', document.getElementById('story-sussurro').checked);
+  fd.append('vol_fundo', document.getElementById('story-vol').value);
+  fd.append('cauda_fundo', document.getElementById('story-cauda').value);
+  const fundo = document.getElementById('story-fundo').files[0];
+  if (fundo) fd.append('fundo', fundo);
+  // mapeamento personagem → voz salva (multi-voz opcional)
+  const mapa = {};
+  [['story-pers1','story-voz1'],['story-pers2','story-voz2'],['story-pers3','story-voz3']].forEach(([pn,pv]) => {
+    const nome = document.getElementById(pn).value.trim();
+    const voz  = document.getElementById(pv).value;
+    if (nome && voz) mapa[nome] = voz;
+  });
+  if (Object.keys(mapa).length) fd.append('personagens_vozes', JSON.stringify(mapa));
+  const r = await fetch('/api/story', {method:'POST', body:fd});
+  const d = await r.json();
+  pollTask(d.task_id, 'story', (res) => {
+    if (res.has_audio) showAudio('story', '/api/task/'+d.task_id+'/audio');
+    if (res.text) showText('story-roteiro', res.text);
+  });
+}
+
+async function gerarRoteiroCaos() {
+  const r = await fetch('/api/comedy/random', {method:'POST'});
+  const d = await r.json();
+  if (d.roteiro) document.getElementById('comedy-texto').value = d.roteiro;
+}
+
+async function gerarComedia() {
+  if (!sessionId) { toast('Analise uma voz primeiro.', 'error'); return; }
+  const texto = document.getElementById('comedy-texto').value;
+  if (!texto.trim()) { toast('Escreva ou gere um roteiro.', 'error'); return; }
+  const fd = new FormData();
+  fd.append('session_id', sessionId); fd.append('texto', texto);
+  fd.append('ritmo', document.getElementById('comedy-ritmo').value);
+  fd.append('intensidade', document.getElementById('comedy-intens').value);
+  fd.append('vol_sfx', document.getElementById('comedy-sfx').value);
+  fd.append('vol_plateia', document.getElementById('comedy-plateia').value);
+  const ab = document.getElementById('comedy-abertura').files[0];
+  if (ab) fd.append('abertura', ab);
+  fd.append('vol_abertura', 0.85);
+  const r = await fetch('/api/comedy', {method:'POST', body:fd});
+  const d = await r.json();
+  pollTask(d.task_id, 'comedy', (res) => {
+    if (res.has_audio) showAudio('comedy', '/api/task/'+d.task_id+'/audio');
+    if (res.text) showText('comedy-roteiro', res.text);
+  });
+}
+
+async function lerPDF() {
+  const pdf = document.getElementById('gs-pdf').files[0];
+  if (!pdf) { toast('Selecione um PDF.', 'error'); return; }
+  const fd = new FormData();
+  fd.append('pdf', pdf);
+  fd.append('faixa', document.getElementById('gs-faixa').value);
+  fd.append('n_perg', document.getElementById('gs-nperg').value);
+  fd.append('nome1', document.getElementById('gs-nome1').value || 'MAX');
+  fd.append('nome2', document.getElementById('gs-nome2').value || 'LILI');
+  document.getElementById('gs-aviso').textContent = '';
+  const r = await fetch('/api/gameshow/pdf', {method:'POST', body:fd});
+  const d = await r.json();
+  if (!r.ok) { toast(d.detail || 'Erro', 'error'); return; }
+  // agora é uma TASK (PDF grande = leitura em blocos, com progresso)
+  pollTask(d.task_id, 'gspdf', (res) => {
+    if (res.text) {
+      document.getElementById('gs-roteiro').value = res.text.replace(/^\[\d+ páginas[^\]]*\]\n?/, '');
+      const m = res.text.match(/^\[(\d+) páginas[^\]]*\]/);
+      document.getElementById('gs-aviso').textContent =
+        m ? `✅ ${m[1]} páginas lidas por inteiro — duelo pronto! Revise e gere o áudio.` : '✅ Duelo pronto!';
+    }
+  });
+}
+
+async function gerarGameshow() {
+  if (!sessionId) { toast('Analise uma voz primeiro.', 'error'); return; }
+  const texto = document.getElementById('gs-roteiro').value;
+  if (!texto.trim()) { toast('Gere o roteiro do PDF primeiro.', 'error'); return; }
+  const fd = new FormData();
+  fd.append('session_id', sessionId); fd.append('texto', texto);
+  fd.append('ritmo', 0.95); fd.append('vol_sfx', 0.6);
+  fd.append('vol_plateia', 0.06);
+  fd.append('intensidade', document.getElementById('gs-intens').value);
+  fd.append('vol_abertura', 0.85);
+  // vozes salvas dos dois competidores (a apresentadora usa a voz da sessão)
+  fd.append('nome1', document.getElementById('gs-nome1').value);
+  fd.append('voz1',  document.getElementById('gs-voz1').value);
+  fd.append('nome2', document.getElementById('gs-nome2').value);
+  fd.append('voz2',  document.getElementById('gs-voz2').value);
+  const r = await fetch('/api/gameshow', {method:'POST', body:fd});
+  const d = await r.json();
+  pollTask(d.task_id, 'gs', (res) => {
+    if (res.has_audio) showAudio('gs', '/api/task/'+d.task_id+'/audio');
+  });
+}
+
+async function gerarTrailer() {
+  const logline = document.getElementById('trailer-logline').value;
+  if (!logline.trim()) { toast('Escreva uma logline.', 'error'); return; }
+  const fd = new FormData();
+  fd.append('genero', getPill('trailer-genero-pills') || 'Ficção Científica');
+  fd.append('logline', logline);
+  fd.append('voz', document.getElementById('trailer-voz').value);
+  fd.append('vol_musica', document.getElementById('trailer-vol').value);
+  const mus = document.getElementById('trailer-musica').files[0];
+  if (mus) fd.append('musica', mus);
+  const r = await fetch('/api/trailer', {method:'POST', body:fd});
+  const d = await r.json();
+  pollTask(d.task_id, 'trailer', (res) => {
+    if (res.has_audio) showAudio('trailer', '/api/task/'+d.task_id+'/audio');
+    if (res.text) showText('trailer-roteiro', res.text);
+  });
+}
+
+async function gerarMeditacao() {
+  const vozGaleria = document.getElementById('med-voz').value;
+  if (!sessionId && !vozGaleria) { toast('Analise uma voz ou escolha uma da galeria.', 'error'); return; }
+  const fd = new FormData();
+  fd.append('session_id', sessionId || '');
+  fd.append('tema', getPill('med-tema-pills') || 'Floresta');
+  fd.append('duracao', getPill('med-dur-pills') || '10');
+  fd.append('vol_voz', document.getElementById('med-suss').value);
+  fd.append('vel_voz', document.getElementById('med-vel').value);
+  fd.append('voz', vozGaleria);
+  fd.append('asmr', document.getElementById('med-asmr').checked ? '1' : '0');
+  fd.append('asmr_idioma', getPill('med-asmr-idioma-pills') || 'en');
+  fd.append('vol_fundo', document.getElementById('med-vol').value);
+  const fundo = document.getElementById('med-fundo').files[0];
+  if (fundo) fd.append('fundo', fundo);
+  const r = await fetch('/api/meditation', {method:'POST', body:fd});
+  const d = await r.json();
+  pollTask(d.task_id, 'med', (res) => {
+    if (res.has_audio) showAudio('med', '/api/task/'+d.task_id+'/audio');
+    if (res.text) {
+      document.getElementById('med-report-body').textContent = res.text;
+      document.getElementById('med-report').style.display = 'block';
+    }
+  });
+}
+
+async function gerarRadio() {
+  if (!sessionId) { toast('Analise uma voz primeiro.', 'error'); return; }
+  const tema = document.getElementById('radio-tema').value;
+  if (!tema.trim()) { toast('Escreva o tema do episódio.', 'error'); return; }
+  const fd = new FormData();
+  fd.append('session_id', sessionId); fd.append('tema', tema);
+  fd.append('vol_vinheta', document.getElementById('radio-vol').value);
+  const vin = document.getElementById('radio-vinheta').files[0];
+  if (vin) fd.append('vinheta', vin);
+  const r = await fetch('/api/radio', {method:'POST', body:fd});
+  const d = await r.json();
+  pollTask(d.task_id, 'radio', (res) => {
+    if (res.has_audio) showAudio('radio', '/api/task/'+d.task_id+'/audio');
+  });
+}
+
+async function gerarBatalha() {
+  const nome1 = document.getElementById('battle-nome1').value;
+  const desc1 = document.getElementById('battle-desc1').value;
+  const nome2 = document.getElementById('battle-nome2').value;
+  const desc2 = document.getElementById('battle-desc2').value;
+  const tema  = document.getElementById('battle-tema').value;
+  if (!nome1||!nome2||!tema) { toast('Preencha todos os campos.', 'error'); return; }
+  const fd = new FormData();
+  fd.append('nome1',nome1); fd.append('desc1',desc1||'voz neutra');
+  fd.append('nome2',nome2); fd.append('desc2',desc2||'voz neutra');
+  fd.append('tema',tema);
+  fd.append('modo', getPill('battle-modo-pills') || 'sério');
+  fd.append('voz1', document.getElementById('battle-voz1').value);
+  fd.append('voz2', document.getElementById('battle-voz2').value);
+  fd.append('n_turnos', document.getElementById('battle-turnos').value);
+  const dos1 = document.getElementById('battle-dossie1').files[0];
+  const dos2 = document.getElementById('battle-dossie2').files[0];
+  if (dos1) fd.append('dossie1', dos1);
+  if (dos2) fd.append('dossie2', dos2);
+  const r = await fetch('/api/battle', {method:'POST', body:fd});
+  const d = await r.json();
+  pollTask(d.task_id, 'battle', (res) => {
+    if (res.has_audio) showAudio('battle', '/api/task/'+d.task_id+'/audio');
+    if (res.text) showText('battle-roteiro', res.text);
+  });
+}
+
+async function criarPersonagem() {
+  const nome = document.getElementById('char-nome').value;
+  if (!nome.trim()) { toast('Preencha o nome.', 'error'); return; }
+  const fd = new FormData();
+  fd.append('nome', nome);
+  fd.append('personalidade', document.getElementById('char-personalidade').value);
+  fd.append('desc_voz', document.getElementById('char-voz').value);
+  fd.append('quirks', document.getElementById('char-quirks').value);
+  fd.append('emocao_padrao', document.getElementById('char-emocao').value);
+  const r = await fetch('/api/character/create', {method:'POST', body:fd});
+  const d = await r.json();
+  toast(d.msg, 'success');
+  carregarPersonagens();
+}
+
+async function conversar() {
+  if (!sessionId) { toast('Analise uma voz primeiro.', 'error'); return; }
+  const nome = document.getElementById('char-selecionado').value;
+  const fala = document.getElementById('char-fala').value;
+  if (!nome) { toast('Selecione um personagem.', 'error'); return; }
+  if (!fala.trim()) return;
+  const chat = document.getElementById('chat-area');
+  const userMsg = document.createElement('div');
+  userMsg.className = 'chat-msg user';
+  userMsg.innerHTML = `<div class="who">Você</div><p>${fala}</p>`;
+  chat.appendChild(userMsg);
+  chat.scrollTop = chat.scrollHeight;
+  document.getElementById('char-fala').value = '';
+  const fd = new FormData();
+  fd.append('session_id', sessionId);
+  fd.append('nome_personagem', nome);
+  fd.append('fala_usuario', fala);
+  const r = await fetch('/api/character/chat', {method:'POST', body:fd});
+  const d = await r.json();
+  pollTask(d.task_id, 'char', (res) => {
+    if (res.has_audio) showAudio('char', '/api/task/'+d.task_id+'/audio');
+    if (res.text) {
+      const linhas = res.text.split('\n\n');
+      const ultima = linhas[linhas.length - 1];
+      const match = ultima.match(/\*\*[^:]+:\*\* (.+)/s);
+      const resposta = match ? match[1] : ultima;
+      const charMsg = document.createElement('div');
+      charMsg.className = 'chat-msg char';
+      charMsg.innerHTML = `<div class="who">${nome}</div><p>${resposta}</p>`;
+      chat.appendChild(charMsg);
+      chat.scrollTop = chat.scrollHeight;
+    }
+  });
+}
+
+async function resetarChat() {
+  if (!sessionId) return;
+  const fd = new FormData(); fd.append('session_id', sessionId);
+  await fetch('/api/character/reset', {method:'POST', body:fd});
+  document.getElementById('chat-area').innerHTML = '';
+  toast('Histórico limpo.', 'success');
+}
+</script>
+</body>
+</html>

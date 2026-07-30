@@ -1,0 +1,28 @@
+REFERÊNCIAS HUMANAS DE EMOÇÃO (opcional, mas dá o melhor resultado)
+====================================================================
+
+Como funciona:
+- O Chatterbox COPIA a entonação (e o timbre) de um áudio de referência.
+- Se você colocar AQUI um clipe seu atuando uma emoção, o sistema usa o SEU
+  clipe como molde daquela emoção (em vez do sintético). Fica muito mais fiel.
+
+Como gravar:
+- 3 a 6 segundos. Pode ser áudio de celular (depois é só salvar como .wav ou .mp3).
+- Diga QUALQUER frase, o que importa é a ENTREGA da emoção:
+    * triste   -> fale devagar, com a voz embargada, quase chorando
+    * raiva    -> fale duro, alto, marcando as palavras
+    * seducao  -> sussurre devagar, voz baixa e próxima do microfone
+    * etc.
+- Fale claro, sem barulho de fundo, sem música.
+
+Como nomear o arquivo (use o nome EXATO da emoção, sem acento):
+    triste.wav      -> NÃO; o nome certo é a chave do catálogo:
+    tristeza.wav, raiva.wav, seducao.wav, surpresa.wav, tedio.wav,
+    medo.wav, nojo.wav, alegria.wav, empolgacao.wav, ternura.wav,
+    serenidade.wav, alivio.wav, confianca.wav, ansiedade.wav, desespero.wav,
+    frustracao.wav, arrependimento.wav, exaustao.wav, sarcasmo.wav,
+    ceticismo.wav, curiosidade.wav, melancolia.wav, arrogancia.wav,
+    timidez.wav, urgencia.wav
+
+Pode colocar só algumas (as que você gravar). As que faltarem, o sistema
+gera a referência sintética automaticamente.
