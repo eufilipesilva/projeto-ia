@@ -1,0 +1,493 @@
+{
+ "id": "a-duracao-da-vida",
+ "titulo": "A duração da vida",
+ "elenco": [
+  "asno",
+  "deus",
+  "cachorro",
+  "macaco",
+  "homem"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": true,
+   "quem": "asno",
+   "texto": "Senhor"
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o asno"
+  },
+  {
+   "i": 2,
+   "fala": true,
+   "quem": "asno",
+   "texto": "quanto tempo eu posso viver?"
+  },
+  {
+   "i": 3,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou o asno a Deus."
+  },
+  {
+   "i": 4,
+   "fala": true,
+   "quem": "deus",
+   "texto": "Trinta anos"
+  },
+  {
+   "i": 5,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu Deus"
+  },
+  {
+   "i": 6,
+   "fala": true,
+   "quem": "deus",
+   "texto": "isso é bom para você?"
+  },
+  {
+   "i": 7,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou Deus."
+  },
+  {
+   "i": 8,
+   "fala": true,
+   "quem": "asno",
+   "texto": "Ah, Senhor"
+  },
+  {
+   "i": 9,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o asno"
+  },
+  {
+   "i": 10,
+   "fala": true,
+   "quem": "asno",
+   "texto": "trinta anos é muito! Eu carrego coisas pesadas, todo dia. Arraste sacos de milho, para as pessoas comerem. Ninguém me elogia, ninguém me dá um abraço. Só me dão socos e pontapés!"
+  },
+  {
+   "i": 11,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o asno."
+  },
+  {
+   "i": 12,
+   "fala": true,
+   "quem": "deus",
+   "texto": "Entendo"
+  },
+  {
+   "i": 13,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Deus"
+  },
+  {
+   "i": 14,
+   "fala": true,
+   "quem": "deus",
+   "texto": "vou te dar dezoito anos."
+  },
+  {
+   "i": 15,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Deus."
+  },
+  {
+   "i": 16,
+   "fala": true,
+   "quem": "asno",
+   "texto": "Muito obrigado, Senhor!"
+  },
+  {
+   "i": 17,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o asno, e ele saiu correndo feliz."
+  },
+  {
+   "i": 18,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Então, um cachorro apareceu."
+  },
+  {
+   "i": 19,
+   "fala": true,
+   "quem": "cachorro",
+   "texto": "Senhor"
+  },
+  {
+   "i": 20,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o cachorro"
+  },
+  {
+   "i": 21,
+   "fala": true,
+   "quem": "cachorro",
+   "texto": "quanto tempo eu posso viver?"
+  },
+  {
+   "i": 22,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou o cachorro a Deus."
+  },
+  {
+   "i": 23,
+   "fala": true,
+   "quem": "deus",
+   "texto": "Trinta anos"
+  },
+  {
+   "i": 24,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu Deus"
+  },
+  {
+   "i": 25,
+   "fala": true,
+   "quem": "deus",
+   "texto": "isso é bom para você?"
+  },
+  {
+   "i": 26,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou Deus."
+  },
+  {
+   "i": 27,
+   "fala": true,
+   "quem": "cachorro",
+   "texto": "Senhor"
+  },
+  {
+   "i": 28,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o cachorro"
+  },
+  {
+   "i": 29,
+   "fala": true,
+   "quem": "cachorro",
+   "texto": "trinta anos é muito! Eu corro, corro, corro! Meus pés ficam cansados. E quando eu latio, meu latido fica rouco. E quando eu como, meus dentes ficam quebrados!"
+  },
+  {
+   "i": 30,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o cachorro."
+  },
+  {
+   "i": 31,
+   "fala": true,
+   "quem": "deus",
+   "texto": "Certo"
+  },
+  {
+   "i": 32,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Deus"
+  },
+  {
+   "i": 33,
+   "fala": true,
+   "quem": "deus",
+   "texto": "vou te dar doze anos."
+  },
+  {
+   "i": 34,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Deus."
+  },
+  {
+   "i": 35,
+   "fala": true,
+   "quem": "cachorro",
+   "texto": "Que bom, Senhor!"
+  },
+  {
+   "i": 36,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o cachorro, e ele abanou o rabo alegremente."
+  },
+  {
+   "i": 37,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Um macaco entrou na sala."
+  },
+  {
+   "i": 38,
+   "fala": true,
+   "quem": "macaco",
+   "texto": "Senhor"
+  },
+  {
+   "i": 39,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o macaco"
+  },
+  {
+   "i": 40,
+   "fala": true,
+   "quem": "macaco",
+   "texto": "quanto tempo eu posso viver?"
+  },
+  {
+   "i": 41,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou o macaco a Deus."
+  },
+  {
+   "i": 42,
+   "fala": true,
+   "quem": "deus",
+   "texto": "Trinta anos"
+  },
+  {
+   "i": 43,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu Deus"
+  },
+  {
+   "i": 44,
+   "fala": true,
+   "quem": "deus",
+   "texto": "isso é bom para você?"
+  },
+  {
+   "i": 45,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou Deus."
+  },
+  {
+   "i": 46,
+   "fala": true,
+   "quem": "macaco",
+   "texto": "Não, Senhor!"
+  },
+  {
+   "i": 47,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o macaco"
+  },
+  {
+   "i": 48,
+   "fala": true,
+   "quem": "macaco",
+   "texto": "trinta anos é muito! Eu preciso brincar, fazer caretas para as pessoas rirem. Mas se elas me dão uma maçã, a maçã sempre é azeda! A alegria é difícil, Senhor!"
+  },
+  {
+   "i": 49,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o macaco."
+  },
+  {
+   "i": 50,
+   "fala": true,
+   "quem": "deus",
+   "texto": "Entendo"
+  },
+  {
+   "i": 51,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Deus"
+  },
+  {
+   "i": 52,
+   "fala": true,
+   "quem": "deus",
+   "texto": "vou te dar dez anos."
+  },
+  {
+   "i": 53,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Deus."
+  },
+  {
+   "i": 54,
+   "fala": true,
+   "quem": "macaco",
+   "texto": "Que maravilha, Senhor!"
+  },
+  {
+   "i": 55,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o macaco, e ele pulou de alegria."
+  },
+  {
+   "i": 56,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Então, um homem apareceu."
+  },
+  {
+   "i": 57,
+   "fala": true,
+   "quem": "homem",
+   "texto": "Senhor"
+  },
+  {
+   "i": 58,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o homem"
+  },
+  {
+   "i": 59,
+   "fala": true,
+   "quem": "homem",
+   "texto": "quanto tempo eu posso viver?"
+  },
+  {
+   "i": 60,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou o homem a Deus."
+  },
+  {
+   "i": 61,
+   "fala": true,
+   "quem": "deus",
+   "texto": "Trinta anos"
+  },
+  {
+   "i": 62,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu Deus"
+  },
+  {
+   "i": 63,
+   "fala": true,
+   "quem": "deus",
+   "texto": "isso é bom para você?"
+  },
+  {
+   "i": 64,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou Deus."
+  },
+  {
+   "i": 65,
+   "fala": true,
+   "quem": "homem",
+   "texto": "Não, Senhor!"
+  },
+  {
+   "i": 66,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o homem"
+  },
+  {
+   "i": 67,
+   "fala": true,
+   "quem": "homem",
+   "texto": "trinta anos é muito! Eu quero construir minha casa, ter fogo na minha lareira, plantar árvores que dão frutos! Mas depois, eu vou morrer!"
+  },
+  {
+   "i": 68,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o homem."
+  },
+  {
+   "i": 69,
+   "fala": true,
+   "quem": "deus",
+   "texto": "Vou te dar os dezoito anos do asno"
+  },
+  {
+   "i": 70,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Deus."
+  },
+  {
+   "i": 71,
+   "fala": true,
+   "quem": "homem",
+   "texto": "Ainda é pouco!"
+  },
+  {
+   "i": 72,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o homem"
+  },
+  {
+   "i": 73,
+   "fala": true,
+   "quem": "homem",
+   "texto": "Vou te dar os doze anos do cachorro!"
+  },
+  {
+   "i": 74,
+   "fala": true,
+   "quem": "deus",
+   "texto": "E também os dez anos do macaco!"
+  },
+  {
+   "i": 75,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Deus."
+  },
+  {
+   "i": 76,
+   "fala": true,
+   "quem": "homem",
+   "texto": "Muito obrigado, Senhor!"
+  },
+  {
+   "i": 77,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o homem, e ele sorriu."
+  },
+  {
+   "i": 78,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "E assim, o homem viveu setenta anos. Primeiro, ele teve os trinta anos do asno, que passaram rapidamente. Depois, ele ficou forte e feliz, trabalhando com alegria. Então, ele teve os dezoito anos do asno, quando teve que carregar coisas pesadas. Depois, ele teve os doze anos do cachorro, quando ficou velho e triste. E por fim, ele teve os dez anos do macaco, quando ficou fraco e tolo. E assim, o homem viveu uma vida longa, com muitas alegrias e tristezas, tudo porque pediu a Deus que lhe desse um tempo diferente!"
+  },
+  {
+   "i": 79,
+   "fala": true,
+   "quem": "deus",
+   "texto": "disse o homem."
+  }
+ ]
+}

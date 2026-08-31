@@ -124,6 +124,13 @@ _task_queue: "queue.Queue" = queue.Queue()
 def _executar_tarefa(task_id, fn, args):
     result = fn(*args, _prog_fn(task_id))
     # result de LOTE: {"batch": [{"nome":.., "saida":path|None, "ok":bool, "erro":..}, ...]}
+    # result de DADOS: {"dados": <qualquer coisa serializável>} — tarefa que só
+    # produz JSON (ex.: roteirizar a história com a Gemma, sem sintetizar nada).
+    if isinstance(result, dict) and "dados" in result:
+        _tasks[task_id]["dados"] = result["dados"]
+        _tasks[task_id]["status"] = "done"
+        _tasks[task_id]["progress"] = 100
+        return
     if isinstance(result, dict) and "batch" in result:
         _tasks[task_id]["batch"] = result["batch"]
         _tasks[task_id]["status"] = "done"
@@ -197,7 +204,8 @@ def _run_task(task_id: str, fn, *args):
     """Enfileira a tarefa para a thread worker única (contexto CUDA estável)."""
     _podar_tasks()
     _tasks[task_id] = {"status": "running", "progress": 0, "desc": "Na fila...",
-                       "audio_path": None, "text": None, "error": None, "batch": None}
+                       "audio_path": None, "text": None, "error": None, "batch": None,
+                       "dados": None}
     _task_queue.put((task_id, fn, args))
     return task_id
 
@@ -275,6 +283,7 @@ def task_status(task_id: str):
         "text":      t["text"],
         "error":     t["error"],
         "batch":     batch_pub,
+        "dados":     t.get("dados"),
     }
 
 @app.get("/api/task/{task_id}/audio")
@@ -526,6 +535,69 @@ async def gerar_historia(
             perfil, texto, ritmo, _parse_bool(sussurro), fundo_path, vol_fundo,
             cauda_fundo, progresso, vozes_map=vmap or None)
         tabela = "\n".join(f"**{q}** (*{e}*): {f}" for q, e, f in roteiro)
+        return (motor.SR, audio), tabela
+    _run_task(tid, lambda *a: _fn(a[-1]))
+    return {"task_id": tid}
+
+# O Contador em DUAS fases (ver motor_v2: roteirizar_historia/sintetizar_roteiro).
+# Fase 1 usa só a Gemma e devolve o roteiro em JSON para revisão; fase 2 recebe o
+# roteiro (possivelmente corrigido à mão) e sintetiza sem chamar a Gemma de novo.
+
+@app.post("/api/story/script")
+async def roteirizar_historia(texto: str = Form(...)):
+    """Fase 1 — quem fala em cada trecho. Não precisa de sessão de voz: nada é
+    sintetizado aqui, então o usuário pode revisar o roteiro antes de escolher
+    as vozes (e antes de gastar minutos de GPU)."""
+    if not texto.strip():
+        raise HTTPException(400, "Texto vazio.")
+    tid = _new_task()
+    def _fn(progresso):
+        roteiro = motor.roteirizar_historia(texto, progresso)
+        return {"dados": {"roteiro": roteiro,
+                          "elenco": motor.elenco_do_roteiro(roteiro)}}
+    _run_task(tid, lambda *a: _fn(a[-1]))
+    return {"task_id": tid}
+
+@app.post("/api/story/render")
+async def sintetizar_roteiro_historia(
+    session_id: str = Form(...),
+    roteiro: str = Form(...),            # JSON [{"fala":bool,"quem":str,"texto":str}, ...]
+    ritmo: float = Form(0.90),
+    sussurro: str = Form("false"),
+    fundo: UploadFile = File(None),
+    vol_fundo: float = Form(0.03),
+    cauda_fundo: float = Form(0.0),
+    personagens_vozes: str = Form(""),   # JSON {"NomePersonagem": "Voz.wav", ...}
+):
+    """Fase 2 — sintetiza o roteiro revisado. Sem limite de personagens: o mapa
+    de vozes vem do elenco detectado na fase 1, não de campos fixos."""
+    perfil = _sessions.get(session_id)
+    if not perfil:
+        raise HTTPException(400, "Sessão inválida.")
+    try:
+        beats = json.loads(roteiro)
+        if not isinstance(beats, list) or not beats:
+            raise ValueError
+    except Exception:
+        raise HTTPException(400, "Roteiro inválido.")
+    fundo_path = await _salvar_upload(fundo, ".wav")
+    try:
+        mapa_nomes = json.loads(personagens_vozes) if personagens_vozes.strip() else {}
+    except Exception:
+        mapa_nomes = {}
+    tid = _new_task()
+    def _fn(progresso):
+        # resolve os perfis DENTRO da worker (perfil_voz pode transcrever = lento)
+        vmap = {}
+        for nome, voz in mapa_nomes.items():
+            if str(nome).strip() and str(voz).strip():
+                pv = _perfil_de_voz(str(voz))
+                if pv:
+                    vmap[str(nome).strip()] = pv
+        audio, saida = motor.sintetizar_roteiro(
+            perfil, beats, ritmo, _parse_bool(sussurro), fundo_path, vol_fundo,
+            cauda_fundo, progresso, vozes_map=vmap or None)
+        tabela = "\n".join(f"**{q}**: {f}" for q, _e, f in saida)
         return (motor.SR, audio), tabela
     _run_task(tid, lambda *a: _fn(a[-1]))
     return {"task_id": tid}

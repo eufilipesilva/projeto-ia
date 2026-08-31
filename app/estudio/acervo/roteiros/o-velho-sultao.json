@@ -1,0 +1,912 @@
+{
+ "id": "o-velho-sultao",
+ "titulo": "O velho sultão",
+ "elenco": [
+  "pastor",
+  "esposa",
+  "sultao",
+  "lobo"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O pastor tinha um cão"
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 2,
+   "fala": true,
+   "quem": "pastor",
+   "texto": "Um cão muito bom chamado Sultão."
+  },
+  {
+   "i": 3,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pastor."
+  },
+  {
+   "i": 4,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Ele era um cão velho"
+  },
+  {
+   "i": 5,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pastor."
+  },
+  {
+   "i": 6,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "E já não tinha mais dentes."
+  },
+  {
+   "i": 7,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Ele era um cão muito fiel"
+  },
+  {
+   "i": 8,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 9,
+   "fala": true,
+   "quem": "pastor",
+   "texto": "Ele era muito velho"
+  },
+  {
+   "i": 10,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pastor."
+  },
+  {
+   "i": 11,
+   "fala": true,
+   "quem": "pastor",
+   "texto": "E eu ia matá-lo amanhã."
+  },
+  {
+   "i": 12,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Não, não!"
+  },
+  {
+   "i": 13,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pastor."
+  },
+  {
+   "i": 14,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Ele é muito bom."
+  },
+  {
+   "i": 15,
+   "fala": true,
+   "quem": "pastor",
+   "texto": "Mas o que podemos fazer"
+  },
+  {
+   "i": 16,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pastor."
+  },
+  {
+   "i": 17,
+   "fala": true,
+   "quem": "pastor",
+   "texto": "Ele não come mais."
+  },
+  {
+   "i": 18,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Ele precisa de um lugar para viver"
+  },
+  {
+   "i": 19,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pastor."
+  },
+  {
+   "i": 20,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Ele merece."
+  },
+  {
+   "i": 21,
+   "fala": true,
+   "quem": "pastor",
+   "texto": "Eu pensei nisso"
+  },
+  {
+   "i": 22,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pastor."
+  },
+  {
+   "i": 23,
+   "fala": true,
+   "quem": "pastor",
+   "texto": "Mas ele já fez tanto por nós."
+  },
+  {
+   "i": 24,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Ele era um bom amigo"
+  },
+  {
+   "i": 25,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 26,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O cão ouviu tudo"
+  },
+  {
+   "i": 27,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 28,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Ele ficou muito assustado."
+  },
+  {
+   "i": 29,
+   "fala": true,
+   "quem": "sultao",
+   "texto": "Amanhã será o meu último dia"
+  },
+  {
+   "i": 30,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Sultão."
+  },
+  {
+   "i": 31,
+   "fala": true,
+   "quem": "sultao",
+   "texto": "Vá até o lobo"
+  },
+  {
+   "i": 32,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Sultão."
+  },
+  {
+   "i": 33,
+   "fala": true,
+   "quem": "sultao",
+   "texto": "Ele é seu amigo."
+  },
+  {
+   "i": 34,
+   "fala": true,
+   "quem": "sultao",
+   "texto": "Conte-lhe"
+  },
+  {
+   "i": 35,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Sultão."
+  },
+  {
+   "i": 36,
+   "fala": true,
+   "quem": "sultao",
+   "texto": "Ele vai te ajudar."
+  },
+  {
+   "i": 37,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O lobo vive na floresta"
+  },
+  {
+   "i": 38,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 39,
+   "fala": true,
+   "quem": "lobo",
+   "texto": "Ele ouviu o pastor"
+  },
+  {
+   "i": 40,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o lobo."
+  },
+  {
+   "i": 41,
+   "fala": true,
+   "quem": "lobo",
+   "texto": "Ele sabe o que vai acontecer."
+  },
+  {
+   "i": 42,
+   "fala": true,
+   "quem": "sultao",
+   "texto": "Espere por mim"
+  },
+  {
+   "i": 43,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Sultão."
+  },
+  {
+   "i": 44,
+   "fala": true,
+   "quem": "sultao",
+   "texto": "Eu preciso de um plano."
+  },
+  {
+   "i": 45,
+   "fala": true,
+   "quem": "lobo",
+   "texto": "Fique perto da criança"
+  },
+  {
+   "i": 46,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o lobo."
+  },
+  {
+   "i": 47,
+   "fala": true,
+   "quem": "lobo",
+   "texto": "Faça como se estivesse protegendo-a."
+  },
+  {
+   "i": 48,
+   "fala": true,
+   "quem": "lobo",
+   "texto": "Eu vou sair da floresta"
+  },
+  {
+   "i": 49,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o lobo."
+  },
+  {
+   "i": 50,
+   "fala": true,
+   "quem": "lobo",
+   "texto": "Eu vou pegar a criança."
+  },
+  {
+   "i": 51,
+   "fala": true,
+   "quem": "sultao",
+   "texto": "Você corre atrás de mim"
+  },
+  {
+   "i": 52,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Sultão."
+  },
+  {
+   "i": 53,
+   "fala": true,
+   "quem": "sultao",
+   "texto": "Você vai me levar de volta."
+  },
+  {
+   "i": 54,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Eles vão pensar que você salvou a criança"
+  },
+  {
+   "i": 55,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 56,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Eles vão te dar comida e um lugar para dormir."
+  },
+  {
+   "i": 57,
+   "fala": true,
+   "quem": "sultao",
+   "texto": "Isso é um bom plano"
+  },
+  {
+   "i": 58,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Sultão."
+  },
+  {
+   "i": 59,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Eu vou fazer assim"
+  },
+  {
+   "i": 60,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 61,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O lobo correu"
+  },
+  {
+   "i": 62,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 63,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O pastor e a esposa ficaram muito preocupados."
+  },
+  {
+   "i": 64,
+   "fala": true,
+   "quem": "pastor",
+   "texto": "Onde foi o Sultão?"
+  },
+  {
+   "i": 65,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou o pastor."
+  },
+  {
+   "i": 66,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Ele está escondido"
+  },
+  {
+   "i": 67,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pastor."
+  },
+  {
+   "i": 68,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Ele vai voltar."
+  },
+  {
+   "i": 69,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O Sultão estava perto da criança"
+  },
+  {
+   "i": 70,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 71,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Ele estava esperando."
+  },
+  {
+   "i": 72,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Ele correu atrás do lobo"
+  },
+  {
+   "i": 73,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 74,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Eles trouxeram a criança de volta"
+  },
+  {
+   "i": 75,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 76,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O pastor ficou feliz"
+  },
+  {
+   "i": 77,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 78,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Ele não ia matar o Sultão."
+  },
+  {
+   "i": 79,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Ele deu um bom jantar ao Sultão"
+  },
+  {
+   "i": 80,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 81,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Ele deu um lugar para dormir."
+  },
+  {
+   "i": 82,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O Sultão estava feliz"
+  },
+  {
+   "i": 83,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 84,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Ele tinha tudo o que queria."
+  },
+  {
+   "i": 85,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O lobo veio visitar"
+  },
+  {
+   "i": 86,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 87,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Ele queria ser amigo do Sultão."
+  },
+  {
+   "i": 88,
+   "fala": true,
+   "quem": "sultao",
+   "texto": "Não, não"
+  },
+  {
+   "i": 89,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Sultão."
+  },
+  {
+   "i": 90,
+   "fala": true,
+   "quem": "sultao",
+   "texto": "Eu não posso ser amigo de um ladrão."
+  },
+  {
+   "i": 91,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O lobo não entendeu"
+  },
+  {
+   "i": 92,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 93,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Ele pensou que o Sultão estava brincando."
+  },
+  {
+   "i": 94,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O lobo foi pegar ovelhas"
+  },
+  {
+   "i": 95,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 96,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Ele ia comer."
+  },
+  {
+   "i": 97,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O Sultão contou ao pastor"
+  },
+  {
+   "i": 98,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 99,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O pastor esperou o lobo."
+  },
+  {
+   "i": 100,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O pastor bateu na cabeça do Sultão"
+  },
+  {
+   "i": 101,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 102,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O Sultão era um herói."
+  },
+  {
+   "i": 103,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O lobo ficou muito bravo"
+  },
+  {
+   "i": 104,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 105,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Ele ia se vingar."
+  },
+  {
+   "i": 106,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O javali veio ajudar"
+  },
+  {
+   "i": 107,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 108,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Ele era amigo do Sultão."
+  },
+  {
+   "i": 109,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O gato com três pernas veio também"
+  },
+  {
+   "i": 110,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 111,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Ele era muito pequeno."
+  },
+  {
+   "i": 112,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O gato lambia o chão"
+  },
+  {
+   "i": 113,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 114,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Ele pensava que era um rato."
+  },
+  {
+   "i": 115,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O lobo e o javali viram o gato"
+  },
+  {
+   "i": 116,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 117,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Eles acharam que o gato estava lutando."
+  },
+  {
+   "i": 118,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Eles não queriam lutar"
+  },
+  {
+   "i": 119,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 120,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Eles foram embora."
+  },
+  {
+   "i": 121,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O javali se escondeu"
+  },
+  {
+   "i": 122,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 123,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O lobo pulou na árvore."
+  },
+  {
+   "i": 124,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O Sultão e o gato apareceram"
+  },
+  {
+   "i": 125,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 126,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Eles ficaram surpresos."
+  },
+  {
+   "i": 127,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Eles não viram ninguém"
+  },
+  {
+   "i": 128,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 129,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O javali estava escondido"
+  },
+  {
+   "i": 130,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 131,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Ele tinha orelhas para fora."
+  },
+  {
+   "i": 132,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O gato viu o javali"
+  },
+  {
+   "i": 133,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 134,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Ele pulou em cima dele."
+  },
+  {
+   "i": 135,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O gato mordeu e arranhou"
+  },
+  {
+   "i": 136,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 137,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O javali fugiu."
+  },
+  {
+   "i": 138,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O javali gritou"
+  },
+  {
+   "i": 139,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 140,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Ele disse que o gato era o culpado."
+  },
+  {
+   "i": 141,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O lobo estava no alto da árvore"
+  },
+  {
+   "i": 142,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 143,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Ele não queria descer."
+  },
+  {
+   "i": 144,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Eles chamaram o lobo de covarde"
+  },
+  {
+   "i": 145,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 146,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Eles o forçaram a descer."
+  },
+  {
+   "i": 147,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "O lobo prometeu ser amigo do Sultão"
+  },
+  {
+   "i": 148,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o narrador."
+  },
+  {
+   "i": 149,
+   "fala": true,
+   "quem": "narrador",
+   "texto": "Ele era um bom amigo."
+  }
+ ]
+}

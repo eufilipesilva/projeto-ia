@@ -877,19 +877,17 @@ Era uma vez uma menina...
           </label>
         </div>
       </div>
-      <label style="margin-top:12px">Vozes dos personagens (opcional) — nome como aparece na história + voz salva</label>
-      <div class="section-desc" style="margin:2px 0 6px;font-size:11px">Sem mapear, o personagem usa variações da voz do narrador (como antes).</div>
-      <div style="display:flex;gap:8px;margin-bottom:6px">
-        <input type="text" id="story-pers1" placeholder="Ex: João" style="flex:1">
-        <select id="story-voz1" style="flex:2"></select>
+      <div class="row-actions" style="margin-top:14px">
+        <button class="btn btn-secondary" onclick="analisarHistoria()">🔍 Analisar história (quem fala)</button>
       </div>
-      <div style="display:flex;gap:8px;margin-bottom:6px">
-        <input type="text" id="story-pers2" placeholder="Ex: Maria" style="flex:1">
-        <select id="story-voz2" style="flex:2"></select>
+      <div class="progress-wrap" id="script-prog">
+        <div class="progress-bar-bg"><div class="progress-bar" id="script-pbar"></div></div>
+        <div class="progress-desc" id="script-pdesc"></div>
       </div>
-      <div style="display:flex;gap:8px">
-        <input type="text" id="story-pers3" placeholder="Ex: Lobo" style="flex:1">
-        <select id="story-voz3" style="flex:2"></select>
+      <div id="story-elenco-wrap" style="display:none;margin-top:14px">
+        <label>Elenco detectado — voz de cada personagem</label>
+        <div class="section-desc" style="margin:2px 0 6px;font-size:11px">Sem voz escolhida, o personagem usa uma variação da voz do narrador (paleta).</div>
+        <div id="story-elenco"></div>
       </div>
     </div>
     <div class="card">
@@ -918,6 +916,11 @@ Era uma vez uma menina...
       </div>
       <div class="output-text" id="story-roteiro"></div>
     </div>
+  </div>
+  <div class="card" id="story-roteiro-wrap" style="display:none;margin-top:16px">
+    <div class="card-title">Roteiro detectado — corrija antes de gerar</div>
+    <div class="section-desc" style="margin-bottom:10px">Cada linha é um trecho que será sintetizado. Troque o falante onde a IA errou e edite o texto se precisar — nada disso chama a IA de novo.</div>
+    <div id="story-roteiro-tabela" style="max-height:420px;overflow:auto"></div>
   </div>
 </section>
 
@@ -1648,9 +1651,6 @@ async function carregarVozes() {
   await carregarVozesEm('sing-voz', '-- selecionar --', 'Pandora.wav');
   await carregarVozesEm('gs-voz1', '— voz automática (paleta) —', null);
   await carregarVozesEm('gs-voz2', '— voz automática (paleta) —', null);
-  await carregarVozesEm('story-voz1', '— escolher voz —', null);
-  await carregarVozesEm('story-voz2', '— escolher voz —', null);
-  await carregarVozesEm('story-voz3', '— escolher voz —', null);
 }
 carregarVozes();
 
@@ -1929,33 +1929,163 @@ async function gerarDesign() {
   });
 }
 
+// ── Contador de Histórias — fluxo de DUAS fases ────────────────────────────
+// Fase 1 (analisarHistoria): só a Gemma diz quem fala em cada trecho. Rápido.
+// O usuário revisa/corrige o roteiro e escolhe a voz de cada personagem.
+// Fase 2 (gerarHistoria): sintetiza o roteiro corrigido, sem reclassificar.
+// Se ninguém analisou nada, o botão gerar cai no fluxo antigo (/api/story).
+let storyRoteiro = null;   // roteiro da fase 1, editável na tela
+let storyVozes   = [];     // vozes salvas, cacheadas para os selects do elenco
+
+async function _vozesSalvas() {
+  if (!storyVozes.length) {
+    const r = await fetch('/api/vozes');
+    storyVozes = (await r.json()).vozes || [];
+  }
+  return storyVozes;
+}
+
+async function analisarHistoria() {
+  const texto = document.getElementById('story-texto').value;
+  if (!texto.trim()) { toast('Escreva a história.', 'error'); return; }
+  const fd = new FormData();
+  fd.append('texto', texto);
+  const r = await fetch('/api/story/script', { method: 'POST', body: fd });
+  const d = await r.json();
+  pollTask(d.task_id, 'script', async (res) => {
+    if (!res.dados || !res.dados.roteiro.length) {
+      toast('Não consegui separar os trechos dessa história.', 'error'); return;
+    }
+    storyRoteiro = res.dados.roteiro;
+    await montarElenco(res.dados.elenco);
+    montarRoteiro(storyRoteiro, res.dados.elenco);
+    toast(storyRoteiro.length + ' trechos · ' + res.dados.elenco.length +
+          ' personagem(ns) detectado(s)', 'success');
+  });
+}
+
+// Uma linha por personagem detectado — sem limite fixo de 3, e o nome vem da
+// detecção, então nunca há erro de digitação no casamento nome ↔ voz.
+async function montarElenco(elenco) {
+  const vozes = await _vozesSalvas();
+  const box = document.getElementById('story-elenco');
+  box.innerHTML = '';
+  elenco.forEach(nome => {
+    const linha = document.createElement('div');
+    linha.style.cssText = 'display:flex;gap:8px;margin-bottom:6px;align-items:center';
+    const rot = document.createElement('span');
+    rot.textContent = nome;
+    rot.style.cssText = 'flex:1;font-size:13px;text-transform:capitalize';
+    const sel = document.createElement('select');
+    sel.style.flex = '2';
+    sel.dataset.personagem = nome;
+    sel.className = 'story-voz-pers';
+    sel.innerHTML = '<option value="">— voz automática (paleta) —</option>';
+    vozes.forEach(v => {
+      const o = document.createElement('option');
+      o.value = v; o.textContent = v; sel.appendChild(o);
+    });
+    linha.appendChild(rot); linha.appendChild(sel);
+    box.appendChild(linha);
+  });
+  document.getElementById('story-elenco-wrap').style.display = elenco.length ? '' : 'none';
+}
+
+// Tabela editável: falante num <select>, texto num <input>. Tudo local — mudar
+// aqui não custa nada de GPU, só muda o que a fase 2 vai receber.
+function montarRoteiro(roteiro, elenco) {
+  const box = document.getElementById('story-roteiro-tabela');
+  const nomes = ['narrador'].concat(elenco);
+  box.innerHTML = '';
+  roteiro.forEach((b, i) => {
+    const linha = document.createElement('div');
+    linha.style.cssText = 'display:flex;gap:8px;margin-bottom:5px;align-items:center';
+    const num = document.createElement('span');
+    num.textContent = (i + 1);
+    num.style.cssText = 'width:28px;text-align:right;opacity:.45;font-size:11px';
+    const sel = document.createElement('select');
+    sel.style.cssText = 'flex:0 0 150px';
+    sel.className = 'story-beat-quem';
+    const atual = b.quem || 'narrador';
+    const opcoes = nomes.includes(atual) ? nomes : nomes.concat([atual]);
+    opcoes.forEach(n => {
+      const o = document.createElement('option');
+      o.value = n; o.textContent = n;
+      if (n === atual) o.selected = true;
+      sel.appendChild(o);
+    });
+    const txt = document.createElement('input');
+    txt.type = 'text'; txt.value = b.texto; txt.style.flex = '1';
+    txt.className = 'story-beat-texto';
+    // pista visual: fala de personagem vs narração
+    txt.style.opacity = b.fala ? '1' : '.72';
+    linha.appendChild(num); linha.appendChild(sel); linha.appendChild(txt);
+    box.appendChild(linha);
+  });
+  document.getElementById('story-roteiro-wrap').style.display = '';
+}
+
+// Lê de volta o que está na tela (com as correções do usuário).
+function lerRoteiroDaTela() {
+  const quens = document.querySelectorAll('.story-beat-quem');
+  const txts  = document.querySelectorAll('.story-beat-texto');
+  const out = [];
+  for (let i = 0; i < quens.length; i++) {
+    const quem = quens[i].value;
+    out.push({ quem: quem, fala: quem !== 'narrador', texto: txts[i].value });
+  }
+  return out;
+}
+
+function _mapaVozesElenco() {
+  const mapa = {};
+  document.querySelectorAll('.story-voz-pers').forEach(sel => {
+    if (sel.value) mapa[sel.dataset.personagem] = sel.value;
+  });
+  return mapa;
+}
+
 async function gerarHistoria() {
   if (!sessionId) { toast('Analise uma voz primeiro (aba Clone).', 'error'); return; }
   const texto = document.getElementById('story-texto').value;
   if (!texto.trim()) { toast('Escreva a história.', 'error'); return; }
   const fd = new FormData();
-  fd.append('session_id', sessionId); fd.append('texto', texto);
+  fd.append('session_id', sessionId);
   fd.append('ritmo', document.getElementById('story-ritmo').value);
   fd.append('sussurro', document.getElementById('story-sussurro').checked);
   fd.append('vol_fundo', document.getElementById('story-vol').value);
   fd.append('cauda_fundo', document.getElementById('story-cauda').value);
   const fundo = document.getElementById('story-fundo').files[0];
   if (fundo) fd.append('fundo', fundo);
-  // mapeamento personagem → voz salva (multi-voz opcional)
-  const mapa = {};
-  [['story-pers1','story-voz1'],['story-pers2','story-voz2'],['story-pers3','story-voz3']].forEach(([pn,pv]) => {
-    const nome = document.getElementById(pn).value.trim();
-    const voz  = document.getElementById(pv).value;
-    if (nome && voz) mapa[nome] = voz;
-  });
-  if (Object.keys(mapa).length) fd.append('personagens_vozes', JSON.stringify(mapa));
-  const r = await fetch('/api/story', {method:'POST', body:fd});
+
+  let url;
+  if (storyRoteiro) {
+    // fase 2: manda o roteiro revisado — a Gemma não roda de novo
+    url = '/api/story/render';
+    fd.append('roteiro', JSON.stringify(lerRoteiroDaTela()));
+    fd.append('personagens_vozes', JSON.stringify(_mapaVozesElenco()));
+  } else {
+    // fluxo antigo, de uma tacada só
+    url = '/api/story';
+    fd.append('texto', texto);
+  }
+  const r = await fetch(url, { method: 'POST', body: fd });
   const d = await r.json();
+  if (!d.task_id) { toast('Erro: ' + (d.detail || 'falha ao enfileirar'), 'error'); return; }
   pollTask(d.task_id, 'story', (res) => {
-    if (res.has_audio) showAudio('story', '/api/task/'+d.task_id+'/audio');
+    if (res.has_audio) showAudio('story', '/api/task/' + d.task_id + '/audio');
     if (res.text) showText('story-roteiro', res.text);
   });
 }
+
+// Editar o texto invalida o roteiro detectado — senão a fase 2 sintetizaria a
+// versão velha, ignorando silenciosamente o que o usuário acabou de escrever.
+document.getElementById('story-texto').addEventListener('input', () => {
+  if (!storyRoteiro) return;
+  storyRoteiro = null;
+  document.getElementById('story-roteiro-wrap').style.display = 'none';
+  document.getElementById('story-elenco-wrap').style.display = 'none';
+});
 
 async function gerarRoteiroCaos() {
   const r = await fetch('/api/comedy/random', {method:'POST'});

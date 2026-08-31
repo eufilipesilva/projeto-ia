@@ -1,0 +1,510 @@
+{
+ "id": "rei-bico-de-tordo",
+ "titulo": "Rei bico-de-tordo",
+ "elenco": [
+  "princesa",
+  "rei",
+  "principe",
+  "violinista"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "A princesa estava muito, muito, muito irritada"
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a princesa."
+  },
+  {
+   "i": 2,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "Ela era uma princesa muito mal-humorada"
+  },
+  {
+   "i": 3,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a princesa."
+  },
+  {
+   "i": 4,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "A princesa não gostava de ninguém"
+  },
+  {
+   "i": 5,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a princesa."
+  },
+  {
+   "i": 6,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— Ela dizia"
+  },
+  {
+   "i": 7,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "não"
+  },
+  {
+   "i": 8,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "a tudo — disse a princesa."
+  },
+  {
+   "i": 9,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "A princesa era muito vaidosa"
+  },
+  {
+   "i": 10,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a princesa."
+  },
+  {
+   "i": 11,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "Ela só queria ser bonita"
+  },
+  {
+   "i": 12,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a princesa."
+  },
+  {
+   "i": 13,
+   "fala": true,
+   "quem": "rei",
+   "texto": "O Rei estava muito triste"
+  },
+  {
+   "i": 14,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Rei."
+  },
+  {
+   "i": 15,
+   "fala": true,
+   "quem": "rei",
+   "texto": "Ele queria que sua filha fosse feliz"
+  },
+  {
+   "i": 16,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Rei."
+  },
+  {
+   "i": 17,
+   "fala": true,
+   "quem": "rei",
+   "texto": "O Rei não sabia o que fazer"
+  },
+  {
+   "i": 18,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Rei."
+  },
+  {
+   "i": 19,
+   "fala": true,
+   "quem": "rei",
+   "texto": "Ele queria que sua filha mudasse de ideia"
+  },
+  {
+   "i": 20,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Rei."
+  },
+  {
+   "i": 21,
+   "fala": true,
+   "quem": "rei",
+   "texto": "O Rei fez um grande banquete"
+  },
+  {
+   "i": 22,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Rei."
+  },
+  {
+   "i": 23,
+   "fala": true,
+   "quem": "rei",
+   "texto": "Ele convidou muitos príncipes"
+  },
+  {
+   "i": 24,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Rei."
+  },
+  {
+   "i": 25,
+   "fala": true,
+   "quem": "principe",
+   "texto": "Os príncipes eram muito diferentes"
+  },
+  {
+   "i": 26,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o príncipe."
+  },
+  {
+   "i": 27,
+   "fala": true,
+   "quem": "principe",
+   "texto": "Um era gordo, outro era magro"
+  },
+  {
+   "i": 28,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o príncipe."
+  },
+  {
+   "i": 29,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "A princesa zombava de todos"
+  },
+  {
+   "i": 30,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a princesa."
+  },
+  {
+   "i": 31,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "Ela dizia coisas muito, muito, muito duras"
+  },
+  {
+   "i": 32,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a princesa."
+  },
+  {
+   "i": 33,
+   "fala": true,
+   "quem": "rei",
+   "texto": "O Rei ficou muito bravo"
+  },
+  {
+   "i": 34,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Rei."
+  },
+  {
+   "i": 35,
+   "fala": true,
+   "quem": "rei",
+   "texto": "Ele disse que daria a princesa um marido mendigo"
+  },
+  {
+   "i": 36,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Rei."
+  },
+  {
+   "i": 37,
+   "fala": true,
+   "quem": "violinista",
+   "texto": "Um violinista veio tocar"
+  },
+  {
+   "i": 38,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o violinista."
+  },
+  {
+   "i": 39,
+   "fala": true,
+   "quem": "violinista",
+   "texto": "Ele tocava uma música triste"
+  },
+  {
+   "i": 40,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o violinista."
+  },
+  {
+   "i": 41,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— O Rei disse"
+  },
+  {
+   "i": 42,
+   "fala": true,
+   "quem": "rei",
+   "texto": "Se ele tocar bem, ele terá a princesa"
+  },
+  {
+   "i": 43,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse o Rei."
+  },
+  {
+   "i": 44,
+   "fala": true,
+   "quem": "rei",
+   "texto": "Ele fez um acordo com o violinista"
+  },
+  {
+   "i": 45,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Rei."
+  },
+  {
+   "i": 46,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "A princesa foi casada com o violinista"
+  },
+  {
+   "i": 47,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a princesa."
+  },
+  {
+   "i": 48,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "Ela estava muito, muito, muito infeliz"
+  },
+  {
+   "i": 49,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a princesa."
+  },
+  {
+   "i": 50,
+   "fala": true,
+   "quem": "violinista",
+   "texto": "O violinista era muito pobre"
+  },
+  {
+   "i": 51,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o violinista."
+  },
+  {
+   "i": 52,
+   "fala": true,
+   "quem": "violinista",
+   "texto": "Ele não tinha nada para dar à princesa"
+  },
+  {
+   "i": 53,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o violinista."
+  },
+  {
+   "i": 54,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "A princesa andou pela floresta"
+  },
+  {
+   "i": 55,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a princesa."
+  },
+  {
+   "i": 56,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "Ela ficou perdida e sozinha"
+  },
+  {
+   "i": 57,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a princesa."
+  },
+  {
+   "i": 58,
+   "fala": true,
+   "quem": "rei",
+   "texto": "A princesa encontrou o Rei bico-de-tordo"
+  },
+  {
+   "i": 59,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Rei bico-de-tordo."
+  },
+  {
+   "i": 60,
+   "fala": true,
+   "quem": "rei",
+   "texto": "Ele era um rei muito estranho"
+  },
+  {
+   "i": 61,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Rei bico-de-tordo."
+  },
+  {
+   "i": 62,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— O Rei bico-de-tordo disse"
+  },
+  {
+   "i": 63,
+   "fala": true,
+   "quem": "rei",
+   "texto": "Eu vou te ajudar"
+  },
+  {
+   "i": 64,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse o Rei bico-de-tordo."
+  },
+  {
+   "i": 65,
+   "fala": true,
+   "quem": "rei",
+   "texto": "Ele a levou de volta para o palácio"
+  },
+  {
+   "i": 66,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Rei bico-de-tordo."
+  },
+  {
+   "i": 67,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "A princesa se arrependeu"
+  },
+  {
+   "i": 68,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a princesa."
+  },
+  {
+   "i": 69,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "Ela percebeu que estava errada"
+  },
+  {
+   "i": 70,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a princesa."
+  },
+  {
+   "i": 71,
+   "fala": true,
+   "quem": "rei",
+   "texto": "O Rei bico-de-tordo se casou com a princesa"
+  },
+  {
+   "i": 72,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Rei bico-de-tordo."
+  },
+  {
+   "i": 73,
+   "fala": true,
+   "quem": "rei",
+   "texto": "Eles foram muito felizes juntos"
+  },
+  {
+   "i": 74,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Rei bico-de-tordo."
+  },
+  {
+   "i": 75,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "A princesa aprendeu uma lição"
+  },
+  {
+   "i": 76,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a princesa."
+  },
+  {
+   "i": 77,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "Ela aprendeu que a bondade é importante"
+  },
+  {
+   "i": 78,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a princesa."
+  },
+  {
+   "i": 79,
+   "fala": true,
+   "quem": "rei",
+   "texto": "A princesa e o Rei bico-de-tordo viveram felizes para sempre"
+  },
+  {
+   "i": 80,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Rei bico-de-tordo."
+  },
+  {
+   "i": 81,
+   "fala": true,
+   "quem": "rei",
+   "texto": "Eles eram muito, muito, muito amados"
+  },
+  {
+   "i": 82,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Rei bico-de-tordo."
+  }
+ ]
+}

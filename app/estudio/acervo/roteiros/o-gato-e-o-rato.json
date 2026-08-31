@@ -1,0 +1,1092 @@
+{
+ "id": "o-gato-e-o-rato",
+ "titulo": "O gato e o rato",
+ "elenco": [
+  "vovo",
+  "gato",
+  "rato",
+  "significa"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": true,
+   "quem": "vovo",
+   "texto": "O gato e o rato estavam juntos."
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a vovó Rosa."
+  },
+  {
+   "i": 2,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Sim, disse o gato Félix."
+  },
+  {
+   "i": 3,
+   "fala": true,
+   "quem": "vovo",
+   "texto": "Eles eram amigos."
+  },
+  {
+   "i": 4,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a vovó Rosa."
+  },
+  {
+   "i": 5,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Muito amigos."
+  },
+  {
+   "i": 6,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 7,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Precisamos guardar comida para o inverno."
+  },
+  {
+   "i": 8,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 9,
+   "fala": true,
+   "quem": "rato",
+   "texto": "É muito importante."
+  },
+  {
+   "i": 10,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rato Pipoca."
+  },
+  {
+   "i": 11,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Se não guardarmos, vamos morrer de fome."
+  },
+  {
+   "i": 12,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 13,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Compraram um pote de banha, um pote bem grande."
+  },
+  {
+   "i": 14,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Vamos colocar aqui na igreja."
+  },
+  {
+   "i": 15,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 16,
+   "fala": true,
+   "quem": "rato",
+   "texto": "Ninguém vai pegar a banha."
+  },
+  {
+   "i": 17,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rato Pipoca."
+  },
+  {
+   "i": 18,
+   "fala": true,
+   "quem": "gato",
+   "texto": "É um lugar seguro."
+  },
+  {
+   "i": 19,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 20,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Mas, um dia, o gato Félix pensou"
+  },
+  {
+   "i": 21,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Eu quero a banha!"
+  },
+  {
+   "i": 22,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Preciso ir."
+  },
+  {
+   "i": 23,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 24,
+   "fala": true,
+   "quem": "rato",
+   "texto": "Para ser padrinho."
+  },
+  {
+   "i": 25,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rato Pipoca."
+  },
+  {
+   "i": 26,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Sim, para o batismo da criança."
+  },
+  {
+   "i": 27,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 28,
+   "fala": true,
+   "quem": "rato",
+   "texto": "Mas espere."
+  },
+  {
+   "i": 29,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rato Pipoca."
+  },
+  {
+   "i": 30,
+   "fala": true,
+   "quem": "rato",
+   "texto": "Eu também quero um pouquinho de vinho doce!"
+  },
+  {
+   "i": 31,
+   "fala": true,
+   "quem": "rato",
+   "texto": "Para celebrar o batismo."
+  },
+  {
+   "i": 32,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rato Pipoca."
+  },
+  {
+   "i": 33,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Mas o gato Félix não tinha primo."
+  },
+  {
+   "i": 34,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 35,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Ele não era padrinho de verdade."
+  },
+  {
+   "i": 36,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 37,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Ele foi para a igreja."
+  },
+  {
+   "i": 38,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 39,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O gato Félix pegou a banha, comeu tudo, comeu e comeu!"
+  },
+  {
+   "i": 40,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Que dia divertido."
+  },
+  {
+   "i": 41,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 42,
+   "fala": true,
+   "quem": "rato",
+   "texto": "Tudo foi muito bom."
+  },
+  {
+   "i": 43,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rato Pipoca."
+  },
+  {
+   "i": 44,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Qual o nome da criança?"
+  },
+  {
+   "i": 45,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou o gato Félix."
+  },
+  {
+   "i": 46,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Em cima já era!"
+  },
+  {
+   "i": 47,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 48,
+   "fala": true,
+   "quem": "rato",
+   "texto": "Em cima já era?"
+  },
+  {
+   "i": 49,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou o rato Pipoca."
+  },
+  {
+   "i": 50,
+   "fala": true,
+   "quem": "rato",
+   "texto": "Esse nome é estranho."
+  },
+  {
+   "i": 51,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rato Pipoca."
+  },
+  {
+   "i": 52,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— O que significa"
+  },
+  {
+   "i": 53,
+   "fala": true,
+   "quem": "significa",
+   "texto": "Em cima já era"
+  },
+  {
+   "i": 54,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "?"
+  },
+  {
+   "i": 55,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou o gato Félix."
+  },
+  {
+   "i": 56,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Não sei."
+  },
+  {
+   "i": 57,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 58,
+   "fala": true,
+   "quem": "rato",
+   "texto": "É um nome muito diferente."
+  },
+  {
+   "i": 59,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rato Pipoca."
+  },
+  {
+   "i": 60,
+   "fala": true,
+   "quem": "vovo",
+   "texto": "O gato Félix foi de novo."
+  },
+  {
+   "i": 61,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a vovó Rosa."
+  },
+  {
+   "i": 62,
+   "fala": true,
+   "quem": "vovo",
+   "texto": "Ele foi ser padrinho de outra criança."
+  },
+  {
+   "i": 63,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a vovó Rosa."
+  },
+  {
+   "i": 64,
+   "fala": true,
+   "quem": "vovo",
+   "texto": "Ele pegou mais banha."
+  },
+  {
+   "i": 65,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a vovó Rosa."
+  },
+  {
+   "i": 66,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Não há nada melhor do que algo que se guarda."
+  },
+  {
+   "i": 67,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 68,
+   "fala": true,
+   "quem": "gato",
+   "texto": "É um segredo."
+  },
+  {
+   "i": 69,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 70,
+   "fala": true,
+   "quem": "gato",
+   "texto": "E ele estava muito feliz."
+  },
+  {
+   "i": 71,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 72,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Quando voltou para casa, o rato Pipoca perguntou:"
+  },
+  {
+   "i": 73,
+   "fala": true,
+   "quem": "rato",
+   "texto": "Qual o nome da criança?"
+  },
+  {
+   "i": 74,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou o rato Pipoca."
+  },
+  {
+   "i": 75,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Metade já foi!"
+  },
+  {
+   "i": 76,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 77,
+   "fala": true,
+   "quem": "rato",
+   "texto": "Metade já foi?"
+  },
+  {
+   "i": 78,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou o rato Pipoca."
+  },
+  {
+   "i": 79,
+   "fala": true,
+   "quem": "rato",
+   "texto": "Nunca ouvi esse nome."
+  },
+  {
+   "i": 80,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rato Pipoca."
+  },
+  {
+   "i": 81,
+   "fala": true,
+   "quem": "vovo",
+   "texto": "O gato Félix começou a babar."
+  },
+  {
+   "i": 82,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a vovó Rosa."
+  },
+  {
+   "i": 83,
+   "fala": true,
+   "quem": "vovo",
+   "texto": "Ele não gostou do nome."
+  },
+  {
+   "i": 84,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a vovó Rosa."
+  },
+  {
+   "i": 85,
+   "fala": true,
+   "quem": "vovo",
+   "texto": "É um nome ruim."
+  },
+  {
+   "i": 86,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a vovó Rosa."
+  },
+  {
+   "i": 87,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Todas as coisas boas acontecem três vezes."
+  },
+  {
+   "i": 88,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 89,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Eu fui padrinho duas vezes."
+  },
+  {
+   "i": 90,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 91,
+   "fala": true,
+   "quem": "gato",
+   "texto": "A criança é bem escura."
+  },
+  {
+   "i": 92,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 93,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Ela tem apenas as patinhas brancas."
+  },
+  {
+   "i": 94,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 95,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Só essa diferença."
+  },
+  {
+   "i": 96,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 97,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Ela não tem um único pelo branco."
+  },
+  {
+   "i": 98,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 99,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Você vai me deixar ir."
+  },
+  {
+   "i": 100,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 101,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Você vai me deixar ir."
+  },
+  {
+   "i": 102,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 103,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Você vai me deixar ir."
+  },
+  {
+   "i": 104,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 105,
+   "fala": true,
+   "quem": "rato",
+   "texto": "Em cima já era! Metade já foi!"
+  },
+  {
+   "i": 106,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "gritou o rato Pipoca."
+  },
+  {
+   "i": 107,
+   "fala": true,
+   "quem": "rato",
+   "texto": "Esses nomes são estranhos."
+  },
+  {
+   "i": 108,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rato Pipoca."
+  },
+  {
+   "i": 109,
+   "fala": true,
+   "quem": "rato",
+   "texto": "Me fazem ficar preocupado."
+  },
+  {
+   "i": 110,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rato Pipoca."
+  },
+  {
+   "i": 111,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Você fica em casa."
+  },
+  {
+   "i": 112,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 113,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Com sua pele cinza escuro."
+  },
+  {
+   "i": 114,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 115,
+   "fala": true,
+   "quem": "gato",
+   "texto": "E com sua cauda longa."
+  },
+  {
+   "i": 116,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 117,
+   "fala": true,
+   "quem": "vovo",
+   "texto": "Durante a ausência do gato."
+  },
+  {
+   "i": 118,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a vovó Rosa."
+  },
+  {
+   "i": 119,
+   "fala": true,
+   "quem": "vovo",
+   "texto": "O rato Pipoca limpou a casa."
+  },
+  {
+   "i": 120,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a vovó Rosa."
+  },
+  {
+   "i": 121,
+   "fala": true,
+   "quem": "vovo",
+   "texto": "E colocou tudo em ordem."
+  },
+  {
+   "i": 122,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a vovó Rosa."
+  },
+  {
+   "i": 123,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Quando tudo tiver acabado."
+  },
+  {
+   "i": 124,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 125,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Eu vou poder descansar um pouco."
+  },
+  {
+   "i": 126,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 127,
+   "fala": true,
+   "quem": "gato",
+   "texto": "E bem alimentado e gordo."
+  },
+  {
+   "i": 128,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 129,
+   "fala": true,
+   "quem": "vovo",
+   "texto": "Quando o inverno chegou."
+  },
+  {
+   "i": 130,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a vovó Rosa."
+  },
+  {
+   "i": 131,
+   "fala": true,
+   "quem": "vovo",
+   "texto": "Não havia mais comida para comer."
+  },
+  {
+   "i": 132,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a vovó Rosa."
+  },
+  {
+   "i": 133,
+   "fala": true,
+   "quem": "vovo",
+   "texto": "O rato Pipoca lembrou-se."
+  },
+  {
+   "i": 134,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a vovó Rosa."
+  },
+  {
+   "i": 135,
+   "fala": true,
+   "quem": "vovo",
+   "texto": "Do pote de banha que eles guardaram."
+  },
+  {
+   "i": 136,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a vovó Rosa."
+  },
+  {
+   "i": 137,
+   "fala": true,
+   "quem": "rato",
+   "texto": "Venha aqui, gatinho."
+  },
+  {
+   "i": 138,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rato Pipoca."
+  },
+  {
+   "i": 139,
+   "fala": true,
+   "quem": "rato",
+   "texto": "Iremos até o nosso pote de banha."
+  },
+  {
+   "i": 140,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rato Pipoca."
+  },
+  {
+   "i": 141,
+   "fala": true,
+   "quem": "rato",
+   "texto": "E vamos nos deliciar com ele."
+  },
+  {
+   "i": 142,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rato Pipoca."
+  },
+  {
+   "i": 143,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Sim, respondeu o gato Félix."
+  },
+  {
+   "i": 144,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Você irá se deliciar."
+  },
+  {
+   "i": 145,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 146,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Assim como você se delicia colocando a sua língua delicada para fora da janela."
+  },
+  {
+   "i": 147,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 148,
+   "fala": true,
+   "quem": "vovo",
+   "texto": "Mas quando chegaram."
+  },
+  {
+   "i": 149,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a vovó Rosa."
+  },
+  {
+   "i": 150,
+   "fala": true,
+   "quem": "vovo",
+   "texto": "O pote de banha certamente ainda estava no lugar."
+  },
+  {
+   "i": 151,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a vovó Rosa."
+  },
+  {
+   "i": 152,
+   "fala": true,
+   "quem": "vovo",
+   "texto": "Mas estava vazio."
+  },
+  {
+   "i": 153,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a vovó Rosa."
+  },
+  {
+   "i": 154,
+   "fala": true,
+   "quem": "rato",
+   "texto": "Meu Deus."
+  },
+  {
+   "i": 155,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rato Pipoca."
+  },
+  {
+   "i": 156,
+   "fala": true,
+   "quem": "rato",
+   "texto": "Agora estou vendo o que aconteceu."
+  },
+  {
+   "i": 157,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rato Pipoca."
+  },
+  {
+   "i": 158,
+   "fala": true,
+   "quem": "rato",
+   "texto": "Agora tudo ficou bem claro."
+  },
+  {
+   "i": 159,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rato Pipoca."
+  },
+  {
+   "i": 160,
+   "fala": true,
+   "quem": "rato",
+   "texto": "Você sim é um verdadeiro amigo."
+  },
+  {
+   "i": 161,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rato Pipoca."
+  },
+  {
+   "i": 162,
+   "fala": true,
+   "quem": "rato",
+   "texto": "Você devorou todo ele."
+  },
+  {
+   "i": 163,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rato Pipoca."
+  },
+  {
+   "i": 164,
+   "fala": true,
+   "quem": "rato",
+   "texto": "Em cima já era!"
+  },
+  {
+   "i": 165,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rato Pipoca."
+  },
+  {
+   "i": 166,
+   "fala": true,
+   "quem": "rato",
+   "texto": "Metade já foi!"
+  },
+  {
+   "i": 167,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rato Pipoca."
+  },
+  {
+   "i": 168,
+   "fala": true,
+   "quem": "rato",
+   "texto": "E Acabou tudo!"
+  },
+  {
+   "i": 169,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rato Pipoca."
+  },
+  {
+   "i": 170,
+   "fala": true,
+   "quem": "vovo",
+   "texto": "E o gato Félix pulou em cima do rato Pipoca."
+  },
+  {
+   "i": 171,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a vovó Rosa."
+  },
+  {
+   "i": 172,
+   "fala": true,
+   "quem": "vovo",
+   "texto": "E engoliu o rato Pipoca."
+  },
+  {
+   "i": 173,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a vovó Rosa."
+  },
+  {
+   "i": 174,
+   "fala": true,
+   "quem": "vovo",
+   "texto": "E o rato Pipoca não fez mais nada."
+  },
+  {
+   "i": 175,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a vovó Rosa."
+  },
+  {
+   "i": 176,
+   "fala": true,
+   "quem": "gato",
+   "texto": "É, meus amigos."
+  },
+  {
+   "i": 177,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  },
+  {
+   "i": 178,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Esses são os caminhos do mundo."
+  },
+  {
+   "i": 179,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato Félix."
+  }
+ ]
+}

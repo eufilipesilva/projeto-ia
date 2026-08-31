@@ -1,0 +1,379 @@
+{
+ "id": "as-tres-plumas",
+ "titulo": "As três plumas",
+ "elenco": [
+  "filhos",
+  "rei",
+  "sapo",
+  "joao",
+  "pedro"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Era uma vez um rei muito, muito, muito rico."
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele tinha dois filhos, que eram muito inteligentes."
+  },
+  {
+   "i": 2,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles gostavam de ler e de pensar."
+  },
+  {
+   "i": 3,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Mas o rei tinha também um filho chamado João Bocó."
+  },
+  {
+   "i": 4,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "João Bocó não gostava de ler, nem de pensar muito."
+  },
+  {
+   "i": 5,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele era muito simples, muito, muito, simples."
+  },
+  {
+   "i": 6,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Por isso, todos o chamavam de João Bocó."
+  },
+  {
+   "i": 7,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Um dia, o rei disse: —"
+  },
+  {
+   "i": 8,
+   "fala": true,
+   "quem": "filhos",
+   "texto": "Quando eu for velho e não puder mais governar, o filho que me trouxer o tapete mais bonito, será o rei!"
+  },
+  {
+   "i": 9,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Então, o rei chamou seus filhos e disse: —"
+  },
+  {
+   "i": 10,
+   "fala": true,
+   "quem": "rei",
+   "texto": "Saiam e sigam as plumas!"
+  },
+  {
+   "i": 11,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele soprou três plumas no ar."
+  },
+  {
+   "i": 12,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Uma voou para o leste, outra para o oeste, e a terceira subiu, subiu, subiu e caiu no chão."
+  },
+  {
+   "i": 13,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O irmão mais velho foi para o leste, o irmão mais novo foi para o oeste, e João Bocó ficou ali onde a pluma caiu."
+  },
+  {
+   "i": 14,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele ficou triste, triste, triste."
+  },
+  {
+   "i": 15,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "De repente, ele viu um pequeno buraco no chão."
+  },
+  {
+   "i": 16,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele cavou com as mãos e encontrou uma escada."
+  },
+  {
+   "i": 17,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele desceu a escada e encontrou uma porta."
+  },
+  {
+   "i": 18,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele bateu na porta e ouviu alguém dizer: —"
+  },
+  {
+   "i": 19,
+   "fala": true,
+   "quem": "sapo",
+   "texto": "Quem está aí?"
+  },
+  {
+   "i": 20,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele entrou e viu um sapo grande e gordo."
+  },
+  {
+   "i": 21,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O sapo perguntou: —"
+  },
+  {
+   "i": 22,
+   "fala": true,
+   "quem": "sapo",
+   "texto": "O que você quer?"
+  },
+  {
+   "i": 23,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "João Bocó respondeu: —"
+  },
+  {
+   "i": 24,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Eu preciso encontrar o tapete mais bonito do mundo!"
+  },
+  {
+   "i": 25,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O sapo disse: —"
+  },
+  {
+   "i": 26,
+   "fala": true,
+   "quem": "sapo",
+   "texto": "Eu posso te ajudar! Pegue esta caixa e traga-a até mim."
+  },
+  {
+   "i": 27,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "João Bocó pegou a caixa e trouxe-a até o sapo."
+  },
+  {
+   "i": 28,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O sapo tirou um tapete lindo, muito, muito, muito bonito."
+  },
+  {
+   "i": 29,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "João Bocó agradeceu e voltou para o rei."
+  },
+  {
+   "i": 30,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Os outros irmãos não tinham trazido nada."
+  },
+  {
+   "i": 31,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles tinham achado panos velhos e levaram para o rei."
+  },
+  {
+   "i": 32,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Mas o rei viu o tapete de João Bocó e disse: —"
+  },
+  {
+   "i": 33,
+   "fala": true,
+   "quem": "rei",
+   "texto": "João Bocó é o rei!"
+  },
+  {
+   "i": 34,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Os outros irmãos não gostaram."
+  },
+  {
+   "i": 35,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles disseram: —"
+  },
+  {
+   "i": 36,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Não, não! João Bocó não pode ser rei!"
+  },
+  {
+   "i": 37,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Então, o rei disse: —"
+  },
+  {
+   "i": 38,
+   "fala": true,
+   "quem": "rei",
+   "texto": "Aquele que me trouxer o anel mais valioso, será o rei!"
+  },
+  {
+   "i": 39,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele soprou três plumas novamente."
+  },
+  {
+   "i": 40,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "As plumas dos outros irmãos foram para o leste e o oeste."
+  },
+  {
+   "i": 41,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A pluma de João Bocó subiu e caiu perto do sapo."
+  },
+  {
+   "i": 42,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "João Bocó foi até o sapo e pediu um anel."
+  },
+  {
+   "i": 43,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O sapo deu um anel brilhante e lindo."
+  },
+  {
+   "i": 44,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Os outros irmãos não tinham trazido nada."
+  },
+  {
+   "i": 45,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Então, o rei disse: —"
+  },
+  {
+   "i": 46,
+   "fala": true,
+   "quem": "rei",
+   "texto": "João Bocó é o rei!"
+  },
+  {
+   "i": 47,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Os outros irmãos não gostaram."
+  },
+  {
+   "i": 48,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles disseram: —"
+  },
+  {
+   "i": 49,
+   "fala": true,
+   "quem": "pedro",
+   "texto": "Não, não! João Bocó não pode ser rei!"
+  },
+  {
+   "i": 50,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Então, o rei disse: —"
+  },
+  {
+   "i": 51,
+   "fala": true,
+   "quem": "rei",
+   "texto": "Aquele que me trouxer a mulher mais linda, será o rei!"
+  },
+  {
+   "i": 52,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele soprou três plumas mais uma vez."
+  },
+  {
+   "i": 53,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "As plumas dos outros irmãos foram para o leste e o oeste."
+  },
+  {
+   "i": 54,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A pluma de João Bocó subiu e caiu perto do sapo."
+  },
+  {
+   "i": 55,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "João Bocó foi até o sapo e pediu uma mulher bonita."
+  },
+  {
+   "i": 56,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O sapo deu uma donzela linda e gentil."
+  },
+  {
+   "i": 57,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A donzela saltou e saltou e saltou, e João Bocó a levou para o rei."
+  },
+  {
+   "i": 58,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O rei disse: —"
+  },
+  {
+   "i": 59,
+   "fala": true,
+   "quem": "rei",
+   "texto": "João Bocó é o rei!"
+  },
+  {
+   "i": 60,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "E João Bocó governou com sabedoria e alegria por muito, muito, muito tempo."
+  }
+ ]
+}

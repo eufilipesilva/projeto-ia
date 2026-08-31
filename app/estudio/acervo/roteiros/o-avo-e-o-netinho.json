@@ -1,0 +1,548 @@
+{
+ "id": "o-avo-e-o-netinho",
+ "titulo": "O avô e o netinho",
+ "elenco": [
+  "joaquim",
+  "filho",
+  "nora",
+  "pedro",
+  "ana",
+  "lucas"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Um homem muito velho, chamado Joaquim, sentava-se à mesa."
+  },
+  {
+   "i": 1,
+   "fala": true,
+   "quem": "joaquim",
+   "texto": "<Eu não consigo segurar a colher>."
+  },
+  {
+   "i": 2,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Joaquim."
+  },
+  {
+   "i": 3,
+   "fala": true,
+   "quem": "filho",
+   "texto": "<É difícil, Joaquim>."
+  },
+  {
+   "i": 4,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse seu filho, Pedro."
+  },
+  {
+   "i": 5,
+   "fala": true,
+   "quem": "joaquim",
+   "texto": "<Eu derrubo tudo>."
+  },
+  {
+   "i": 6,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Joaquim."
+  },
+  {
+   "i": 7,
+   "fala": true,
+   "quem": "nora",
+   "texto": "<Não se preocupe, pai>."
+  },
+  {
+   "i": 8,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse sua nora, Ana."
+  },
+  {
+   "i": 9,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Pedro e Ana amavam muito o pai deles."
+  },
+  {
+   "i": 10,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Mas, às vezes, achavam que era difícil vê-lo assim."
+  },
+  {
+   "i": 11,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Um dia, Pedro e Ana decidiram fazer uma surpresa para Joaquim."
+  },
+  {
+   "i": 12,
+   "fala": true,
+   "quem": "pedro",
+   "texto": "<Vamos deixar o vovô comer conosco>."
+  },
+  {
+   "i": 13,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Pedro."
+  },
+  {
+   "i": 14,
+   "fala": true,
+   "quem": "ana",
+   "texto": "<Sim, e vamos ser muito gentis>."
+  },
+  {
+   "i": 15,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Ana."
+  },
+  {
+   "i": 16,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles chamaram o vovô para a mesa. Joaquim sorriu."
+  },
+  {
+   "i": 17,
+   "fala": true,
+   "quem": "joaquim",
+   "texto": "<Que bom que vocês me chamaram>."
+  },
+  {
+   "i": 18,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Joaquim."
+  },
+  {
+   "i": 19,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles comeram juntos. Joaquim comeu um pouco de sopa e um pedaço de pão. Ele não derrubou nada. Pedro e Ana estavam muito felizes."
+  },
+  {
+   "i": 20,
+   "fala": true,
+   "quem": "ana",
+   "texto": "<Isso é muito divertido>."
+  },
+  {
+   "i": 21,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Ana."
+  },
+  {
+   "i": 22,
+   "fala": true,
+   "quem": "joaquim",
+   "texto": "<Eu gosto de comer com vocês>."
+  },
+  {
+   "i": 23,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Joaquim."
+  },
+  {
+   "i": 24,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Mas, no dia seguinte, Pedro e Ana estavam ocupados."
+  },
+  {
+   "i": 25,
+   "fala": true,
+   "quem": "pedro",
+   "texto": "<Não temos tempo para deixar o vovô comer conosco>."
+  },
+  {
+   "i": 26,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Pedro."
+  },
+  {
+   "i": 27,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles colocaram Joaquim no canto da cozinha."
+  },
+  {
+   "i": 28,
+   "fala": true,
+   "quem": "ana",
+   "texto": "<O vovô pode ficar aqui, atrás do fogão>."
+  },
+  {
+   "i": 29,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Ana."
+  },
+  {
+   "i": 30,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles deram a ele uma pequena tigela de barro."
+  },
+  {
+   "i": 31,
+   "fala": true,
+   "quem": "pedro",
+   "texto": "<Coma com calma, vovô>."
+  },
+  {
+   "i": 32,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Pedro."
+  },
+  {
+   "i": 33,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Joaquim comeu a sopa da tigela."
+  },
+  {
+   "i": 34,
+   "fala": true,
+   "quem": "joaquim",
+   "texto": "<É gostosa>."
+  },
+  {
+   "i": 35,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Joaquim."
+  },
+  {
+   "i": 36,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Um dia, a mão de Joaquim tremeu muito."
+  },
+  {
+   "i": 37,
+   "fala": true,
+   "quem": "joaquim",
+   "texto": "<Eu não consigo segurar a tigela>."
+  },
+  {
+   "i": 38,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Joaquim."
+  },
+  {
+   "i": 39,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A tigela caiu no chão e se despedaçou."
+  },
+  {
+   "i": 40,
+   "fala": true,
+   "quem": "ana",
+   "texto": "<Oh, não!>."
+  },
+  {
+   "i": 41,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Ana."
+  },
+  {
+   "i": 42,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Joaquim suspirou."
+  },
+  {
+   "i": 43,
+   "fala": true,
+   "quem": "joaquim",
+   "texto": "<Está tudo bem>."
+  },
+  {
+   "i": 44,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Joaquim."
+  },
+  {
+   "i": 45,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Pedro e Ana compraram uma nova tigela de madeira."
+  },
+  {
+   "i": 46,
+   "fala": true,
+   "quem": "pedro",
+   "texto": "<Agora você pode comer com calma>."
+  },
+  {
+   "i": 47,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Pedro."
+  },
+  {
+   "i": 48,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles levaram Joaquim até a mesa."
+  },
+  {
+   "i": 49,
+   "fala": true,
+   "quem": "ana",
+   "texto": "<Vamos comer juntos>."
+  },
+  {
+   "i": 50,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Ana."
+  },
+  {
+   "i": 51,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Joaquim sorriu."
+  },
+  {
+   "i": 52,
+   "fala": true,
+   "quem": "joaquim",
+   "texto": "<Que bom>."
+  },
+  {
+   "i": 53,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Joaquim."
+  },
+  {
+   "i": 54,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "No dia seguinte, Pedro e Ana notaram algo muito especial."
+  },
+  {
+   "i": 55,
+   "fala": true,
+   "quem": "ana",
+   "texto": "<O neto, o pequeno Lucas, está coletando pedaços de madeira>."
+  },
+  {
+   "i": 56,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Ana."
+  },
+  {
+   "i": 57,
+   "fala": true,
+   "quem": "pedro",
+   "texto": "<Ele está fazendo uma gamela>."
+  },
+  {
+   "i": 58,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Pedro."
+  },
+  {
+   "i": 59,
+   "fala": true,
+   "quem": "lucas",
+   "texto": "<Para o papai e a mamãe comerem quando ele for grande>."
+  },
+  {
+   "i": 60,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Lucas."
+  },
+  {
+   "i": 61,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Lucas era um menino muito esperto."
+  },
+  {
+   "i": 62,
+   "fala": true,
+   "quem": "lucas",
+   "texto": "<Eu vou fazer a melhor gamela do mundo>."
+  },
+  {
+   "i": 63,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Lucas."
+  },
+  {
+   "i": 64,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Pedro e Ana olharam para o neto com muito carinho."
+  },
+  {
+   "i": 65,
+   "fala": true,
+   "quem": "ana",
+   "texto": "<Que menino esperto>."
+  },
+  {
+   "i": 66,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Ana."
+  },
+  {
+   "i": 67,
+   "fala": true,
+   "quem": "pedro",
+   "texto": "<Ele é muito bom>."
+  },
+  {
+   "i": 68,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Pedro."
+  },
+  {
+   "i": 69,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles levaram Lucas até a mesa."
+  },
+  {
+   "i": 70,
+   "fala": true,
+   "quem": "ana",
+   "texto": "<Vamos comer com o nosso pequeno ajudante>."
+  },
+  {
+   "i": 71,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Ana."
+  },
+  {
+   "i": 72,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Joaquim, Pedro e Ana comeram juntos com Lucas."
+  },
+  {
+   "i": 73,
+   "fala": true,
+   "quem": "lucas",
+   "texto": "<Que delícia>."
+  },
+  {
+   "i": 74,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Lucas."
+  },
+  {
+   "i": 75,
+   "fala": true,
+   "quem": "joaquim",
+   "texto": "<Eu adoro comer com vocês>."
+  },
+  {
+   "i": 76,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Joaquim."
+  },
+  {
+   "i": 77,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A partir daquele dia, Pedro, Ana, Joaquim e Lucas sempre comiam juntos."
+  },
+  {
+   "i": 78,
+   "fala": true,
+   "quem": "lucas",
+   "texto": "<É muito bom comer juntos>."
+  },
+  {
+   "i": 79,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Lucas."
+  },
+  {
+   "i": 80,
+   "fala": true,
+   "quem": "joaquim",
+   "texto": "<Sim, é a melhor coisa do mundo>."
+  },
+  {
+   "i": 81,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Joaquim."
+  },
+  {
+   "i": 82,
+   "fala": true,
+   "quem": "ana",
+   "texto": "<Eu amo vocês todos>."
+  },
+  {
+   "i": 83,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Ana."
+  },
+  {
+   "i": 84,
+   "fala": true,
+   "quem": "pedro",
+   "texto": "<Eu também amo vocês>."
+  },
+  {
+   "i": 85,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Pedro."
+  },
+  {
+   "i": 86,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "E assim, a família ficou muito feliz."
+  },
+  {
+   "i": 87,
+   "fala": true,
+   "quem": "lucas",
+   "texto": "<Que bom que estamos juntos>."
+  },
+  {
+   "i": 88,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Lucas."
+  }
+ ]
+}

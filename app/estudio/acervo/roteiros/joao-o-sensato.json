@@ -1,0 +1,1007 @@
+{
+ "id": "joao-o-sensato",
+ "titulo": "João, o sensato",
+ "elenco": [
+  "joao",
+  "mamae",
+  "maria"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Mamãe, para onde vou, mamãe?"
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou João à sua mamãe."
+  },
+  {
+   "i": 2,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "Para a casa de Maria, João"
+  },
+  {
+   "i": 3,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu a mamãe."
+  },
+  {
+   "i": 4,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "Comporte-se bem, João"
+  },
+  {
+   "i": 5,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mamãe."
+  },
+  {
+   "i": 6,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Oh, eu me comportarei bem. Adeus, mamãe"
+  },
+  {
+   "i": 7,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse João."
+  },
+  {
+   "i": 8,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "Adeus, João"
+  },
+  {
+   "i": 9,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mamãe."
+  },
+  {
+   "i": 10,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "João chega na casa de Maria."
+  },
+  {
+   "i": 11,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Bom dia, Maria"
+  },
+  {
+   "i": 12,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse João."
+  },
+  {
+   "i": 13,
+   "fala": true,
+   "quem": "maria",
+   "texto": "Bom dia, João. O que trouxeste de bom?"
+  },
+  {
+   "i": 14,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou Maria."
+  },
+  {
+   "i": 15,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Não trago nada, gostaria de ganhar algo"
+  },
+  {
+   "i": 16,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu João."
+  },
+  {
+   "i": 17,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Adeus, Maria"
+  },
+  {
+   "i": 18,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse João."
+  },
+  {
+   "i": 19,
+   "fala": true,
+   "quem": "maria",
+   "texto": "Adeus, João"
+  },
+  {
+   "i": 20,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Maria."
+  },
+  {
+   "i": 21,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "João pega uma agulha, e a joga dentro de um carrinho de feno, e segue com o carrinho para casa."
+  },
+  {
+   "i": 22,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Boa noite, mamãe"
+  },
+  {
+   "i": 23,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse João."
+  },
+  {
+   "i": 24,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "Boa noite, João. Onde estiveste?"
+  },
+  {
+   "i": 25,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a mamãe."
+  },
+  {
+   "i": 26,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Com Maria"
+  },
+  {
+   "i": 27,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu João."
+  },
+  {
+   "i": 28,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "O que levaste para ela?"
+  },
+  {
+   "i": 29,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a mamãe."
+  },
+  {
+   "i": 30,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Não levei nada; quis apenas que ela me desse alguma coisa"
+  },
+  {
+   "i": 31,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse João."
+  },
+  {
+   "i": 32,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "O que Maria deu para ti?"
+  },
+  {
+   "i": 33,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a mamãe."
+  },
+  {
+   "i": 34,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Me deu uma agulha"
+  },
+  {
+   "i": 35,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu João."
+  },
+  {
+   "i": 36,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "Cadê a agulha, João?"
+  },
+  {
+   "i": 37,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a mamãe."
+  },
+  {
+   "i": 38,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Coloquei-a dentro do carrinho com feno"
+  },
+  {
+   "i": 39,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse João."
+  },
+  {
+   "i": 40,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "Fizeste mal, João. Deverias ter colocado a agulha na manga da camisa"
+  },
+  {
+   "i": 41,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mamãe."
+  },
+  {
+   "i": 42,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Não se preocupe, da próxima vez farei melhor"
+  },
+  {
+   "i": 43,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse João."
+  },
+  {
+   "i": 44,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "Para onde vais, João?"
+  },
+  {
+   "i": 45,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a mamãe."
+  },
+  {
+   "i": 46,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Para a casa de Maria, mamãe"
+  },
+  {
+   "i": 47,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu João."
+  },
+  {
+   "i": 48,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "Comporte-se bem, João"
+  },
+  {
+   "i": 49,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mamãe."
+  },
+  {
+   "i": 50,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Oh, eu me comportarei bem. Adeus, mamãe"
+  },
+  {
+   "i": 51,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse João."
+  },
+  {
+   "i": 52,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "Adeus, João"
+  },
+  {
+   "i": 53,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mamãe."
+  },
+  {
+   "i": 54,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "João chega à casa de Maria."
+  },
+  {
+   "i": 55,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Bom dia, Maria"
+  },
+  {
+   "i": 56,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse João."
+  },
+  {
+   "i": 57,
+   "fala": true,
+   "quem": "maria",
+   "texto": "Bom dia, João. O que de bom trouxeste para mim?"
+  },
+  {
+   "i": 58,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou Maria."
+  },
+  {
+   "i": 59,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Não trouxe nada, mas gostaria de receber algo"
+  },
+  {
+   "i": 60,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu João."
+  },
+  {
+   "i": 61,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Maria presenteia João com uma faca."
+  },
+  {
+   "i": 62,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Adeus, Maria"
+  },
+  {
+   "i": 63,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse João."
+  },
+  {
+   "i": 64,
+   "fala": true,
+   "quem": "maria",
+   "texto": "Adeus, João"
+  },
+  {
+   "i": 65,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Maria. João pega a faca, e a coloca na manga de sua camisa, e vai para casa."
+  },
+  {
+   "i": 66,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Boa noite, mamãe"
+  },
+  {
+   "i": 67,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse João."
+  },
+  {
+   "i": 68,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "Boa noite, João. Onde estiveste?"
+  },
+  {
+   "i": 69,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a mamãe."
+  },
+  {
+   "i": 70,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Com Maria"
+  },
+  {
+   "i": 71,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu João."
+  },
+  {
+   "i": 72,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "O que levaste para ela?"
+  },
+  {
+   "i": 73,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a mamãe."
+  },
+  {
+   "i": 74,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Não lhe dei nada, mas ela me deu algo"
+  },
+  {
+   "i": 75,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu João."
+  },
+  {
+   "i": 76,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "O que Maria deu para você?"
+  },
+  {
+   "i": 77,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a mamãe."
+  },
+  {
+   "i": 78,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Ela me deu uma faca"
+  },
+  {
+   "i": 79,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu João."
+  },
+  {
+   "i": 80,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "Onde está a faca, João?"
+  },
+  {
+   "i": 81,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a mamãe."
+  },
+  {
+   "i": 82,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Eu a coloquei na manga da minha camisa"
+  },
+  {
+   "i": 83,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse João."
+  },
+  {
+   "i": 84,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "Fizeste mal, João, deverias ter colocado a faca no bolso"
+  },
+  {
+   "i": 85,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mamãe."
+  },
+  {
+   "i": 86,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Tudo bem, da próxima vez farei melhor"
+  },
+  {
+   "i": 87,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse João."
+  },
+  {
+   "i": 88,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "Para onde vais, João?"
+  },
+  {
+   "i": 89,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a mamãe."
+  },
+  {
+   "i": 90,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Para a casa de Maria, mamãe"
+  },
+  {
+   "i": 91,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu João."
+  },
+  {
+   "i": 92,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "Comporte-se bem, João"
+  },
+  {
+   "i": 93,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mamãe."
+  },
+  {
+   "i": 94,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Oh, eu me comportarei bem. Adeus, mamãe"
+  },
+  {
+   "i": 95,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse João."
+  },
+  {
+   "i": 96,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "Adeus, João"
+  },
+  {
+   "i": 97,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mamãe."
+  },
+  {
+   "i": 98,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "João chega à casa de Maria."
+  },
+  {
+   "i": 99,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Bom dia, Maria"
+  },
+  {
+   "i": 100,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse João."
+  },
+  {
+   "i": 101,
+   "fala": true,
+   "quem": "maria",
+   "texto": "Bom dia, João. O que de bom trouxeste para mim?"
+  },
+  {
+   "i": 102,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou Maria."
+  },
+  {
+   "i": 103,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Não trouxe nada, mas gostaria de receber algo"
+  },
+  {
+   "i": 104,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu João."
+  },
+  {
+   "i": 105,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Maria presenteia João com um cabrito."
+  },
+  {
+   "i": 106,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Adeus, Maria"
+  },
+  {
+   "i": 107,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse João."
+  },
+  {
+   "i": 108,
+   "fala": true,
+   "quem": "maria",
+   "texto": "Adeus, João"
+  },
+  {
+   "i": 109,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Maria. João pega o cabrito, amarra-lhe as pernas, e o coloca dentro do bolso."
+  },
+  {
+   "i": 110,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Quando ele chega em casa o cabrito estava sufocado."
+  },
+  {
+   "i": 111,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Boa noite, mamãe"
+  },
+  {
+   "i": 112,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse João."
+  },
+  {
+   "i": 113,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "Boa noite, João. Onde estiveste?"
+  },
+  {
+   "i": 114,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a mamãe."
+  },
+  {
+   "i": 115,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Em casa de Maria"
+  },
+  {
+   "i": 116,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu João."
+  },
+  {
+   "i": 117,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "O que levaste para ela?"
+  },
+  {
+   "i": 118,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a mamãe."
+  },
+  {
+   "i": 119,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Não levei nada, ela me deu algo"
+  },
+  {
+   "i": 120,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu João."
+  },
+  {
+   "i": 121,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "O que Maria deu para você?"
+  },
+  {
+   "i": 122,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a mamãe."
+  },
+  {
+   "i": 123,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Ela deu para mim um cabrito"
+  },
+  {
+   "i": 124,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu João."
+  },
+  {
+   "i": 125,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "Onde está o cabrito, João"
+  },
+  {
+   "i": 126,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a mamãe."
+  },
+  {
+   "i": 127,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Eu o coloquei no bolso"
+  },
+  {
+   "i": 128,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse João."
+  },
+  {
+   "i": 129,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "Fizeste mal, João, deverias ter colocado uma corda em volta do pescoço do cabrinho"
+  },
+  {
+   "i": 130,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mamãe."
+  },
+  {
+   "i": 131,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Tudo bem, da próxima vez farei melhor"
+  },
+  {
+   "i": 132,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse João."
+  },
+  {
+   "i": 133,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "Para onde vais, João?"
+  },
+  {
+   "i": 134,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a mamãe."
+  },
+  {
+   "i": 135,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Para a casa de Maria, mamãe"
+  },
+  {
+   "i": 136,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu João."
+  },
+  {
+   "i": 137,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "Comporte-se bem, João"
+  },
+  {
+   "i": 138,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mamãe."
+  },
+  {
+   "i": 139,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Oh, eu me comportarei bem. Adeus, mamãe"
+  },
+  {
+   "i": 140,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse João."
+  },
+  {
+   "i": 141,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "Adeus, João"
+  },
+  {
+   "i": 142,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mamãe."
+  },
+  {
+   "i": 143,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "João chega à casa de Maria."
+  },
+  {
+   "i": 144,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Bom dia, Maria"
+  },
+  {
+   "i": 145,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse João."
+  },
+  {
+   "i": 146,
+   "fala": true,
+   "quem": "maria",
+   "texto": "Bom dia, João. O que de bom trouxeste para mim?"
+  },
+  {
+   "i": 147,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou Maria."
+  },
+  {
+   "i": 148,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Não trouxe nada, mas gostaria de receber algo"
+  },
+  {
+   "i": 149,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu João."
+  },
+  {
+   "i": 150,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Maria presenteia João com um pedaço de toucinho."
+  },
+  {
+   "i": 151,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Adeus, Maria"
+  },
+  {
+   "i": 152,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse João."
+  },
+  {
+   "i": 153,
+   "fala": true,
+   "quem": "maria",
+   "texto": "Adeus, João"
+  },
+  {
+   "i": 154,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Maria. João pega o toucinho, amarra numa corda, e o leva arrastado para casa."
+  },
+  {
+   "i": 155,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Os cães aparecem e devoram o toucinho."
+  },
+  {
+   "i": 156,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Quando ele chega em casa, ele tem apenas a corda na mão, e nada está pendurado nela."
+  },
+  {
+   "i": 157,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Boa noite, mamãe"
+  },
+  {
+   "i": 158,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse João."
+  },
+  {
+   "i": 159,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "Boa noite, João. Onde estiveste?"
+  },
+  {
+   "i": 160,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a mamãe."
+  },
+  {
+   "i": 161,
+   "fala": true,
+   "quem": "joao",
+   "texto": "Com Maria"
+  },
+  {
+   "i": 162,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu João."
+  },
+  {
+   "i": 163,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "O que levaste para ela?"
+  },
+  {
+   "i": 164,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a mamãe."
+  },
+  {
+   "i": 165,
+   "fala": true,
+   "quem": "mamae",
+   "texto": "Não levei nada, ela"
+  }
+ ]
+}

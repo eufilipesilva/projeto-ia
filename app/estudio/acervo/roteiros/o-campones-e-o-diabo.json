@@ -1,0 +1,383 @@
+{
+ "id": "o-campones-e-o-diabo",
+ "titulo": "O camponês e o diabo",
+ "elenco": [
+  "campones",
+  "diabinho",
+  "diabo"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Era uma vez um camponês muito esperto. Ele era conhecido por ser um pouco travesso."
+  },
+  {
+   "i": 1,
+   "fala": true,
+   "quem": "campones",
+   "texto": "disse o camponês"
+  },
+  {
+   "i": 2,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "mas sempre conseguia encontrar soluções inteligentes."
+  },
+  {
+   "i": 3,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Um dia, enquanto trabalhava no seu campo, o sol começou a se pôr. Ele estava indo para casa quando viu algo estranho."
+  },
+  {
+   "i": 4,
+   "fala": true,
+   "quem": "diabinho",
+   "texto": "disse o camponês"
+  },
+  {
+   "i": 5,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "havia uma pilha enorme de carvão brilhando no meio do campo."
+  },
+  {
+   "i": 6,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Um pequeno diabinho negro estava sentado no carvão."
+  },
+  {
+   "i": 7,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele tinha olhinhos brilhantes e uma risadinha travessa."
+  },
+  {
+   "i": 8,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse o diabinho —"
+  },
+  {
+   "i": 9,
+   "fala": true,
+   "quem": "diabinho",
+   "texto": "De fato, você está sentado em cima de um tesouro!"
+  },
+  {
+   "i": 10,
+   "fala": true,
+   "quem": "diabo",
+   "texto": "Sim, é verdade"
+  },
+  {
+   "i": 11,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu o Diabo, com uma voz que fazia o vento sussurrar."
+  },
+  {
+   "i": 12,
+   "fala": true,
+   "quem": "diabo",
+   "texto": "Este tesouro tem ouro e prata, mais do que você já viu em toda a sua vida!"
+  },
+  {
+   "i": 13,
+   "fala": true,
+   "quem": "campones",
+   "texto": "Este tesouro é meu"
+  },
+  {
+   "i": 14,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o camponês."
+  },
+  {
+   "i": 15,
+   "fala": true,
+   "quem": "campones",
+   "texto": "Está no meu campo."
+  },
+  {
+   "i": 16,
+   "fala": true,
+   "quem": "diabo",
+   "texto": "Ele é seu"
+  },
+  {
+   "i": 17,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu o Diabo"
+  },
+  {
+   "i": 18,
+   "fala": true,
+   "quem": "diabo",
+   "texto": "se você se disser a dar-me, por dois anos, metade de tudo que o seu campo produzir. Dinheiro, eu tenho de sobra. Mas eu gosto dos frutos da terra."
+  },
+  {
+   "i": 19,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O camponês pensou um pouco."
+  },
+  {
+   "i": 20,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse o camponês —"
+  },
+  {
+   "i": 21,
+   "fala": true,
+   "quem": "campones",
+   "texto": "Eu concordo com o seu negócio!"
+  },
+  {
+   "i": 22,
+   "fala": true,
+   "quem": "diabo",
+   "texto": "Mas"
+  },
+  {
+   "i": 23,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Diabo"
+  },
+  {
+   "i": 24,
+   "fala": true,
+   "quem": "diabo",
+   "texto": "para que não haja confusão, tudo o que estiver acima do solo será seu, e tudo o que estiver abaixo será meu."
+  },
+  {
+   "i": 25,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O Diabo sorriu."
+  },
+  {
+   "i": 26,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse o Diabo —"
+  },
+  {
+   "i": 27,
+   "fala": true,
+   "quem": "diabo",
+   "texto": "Que assim seja!"
+  },
+  {
+   "i": 28,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "No ano seguinte, o campo produziu muitas coisas boas."
+  },
+  {
+   "i": 29,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Mas o camponês era esperto."
+  },
+  {
+   "i": 30,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele sabia que o Diabo gostava de coisas novas."
+  },
+  {
+   "i": 31,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse o camponês —"
+  },
+  {
+   "i": 32,
+   "fala": true,
+   "quem": "campones",
+   "texto": "Quando chegar a hora da colheita, eu vou te mostrar o que o meu campo pode dar!"
+  },
+  {
+   "i": 33,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Quando a colheita chegou, o Diabo apareceu, cheio de expectativa."
+  },
+  {
+   "i": 34,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Mas, quando ele tentou pegar o que o campo tinha produzido, só encontrou folhas secas e amareladas."
+  },
+  {
+   "i": 35,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse o Diabo —"
+  },
+  {
+   "i": 36,
+   "fala": true,
+   "quem": "diabo",
+   "texto": "Eu não consigo encontrar nada!"
+  },
+  {
+   "i": 37,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O camponês sorriu."
+  },
+  {
+   "i": 38,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse o camponês —"
+  },
+  {
+   "i": 39,
+   "fala": true,
+   "quem": "campones",
+   "texto": "Eu tenho nabos! Veja!"
+  },
+  {
+   "i": 40,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele estava colhendo seus nabos grandes e suculentos."
+  },
+  {
+   "i": 41,
+   "fala": true,
+   "quem": "diabo",
+   "texto": "Desta vez, você ficou com a melhor parte"
+  },
+  {
+   "i": 42,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o Diabo"
+  },
+  {
+   "i": 43,
+   "fala": true,
+   "quem": "diabo",
+   "texto": "mas isso não acontecerá da próxima vez. O que crescer para cima do solo será seu, e o que estiver debaixo, meu."
+  },
+  {
+   "i": 44,
+   "fala": true,
+   "quem": "campones",
+   "texto": "Eu aceito"
+  },
+  {
+   "i": 45,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu o camponês, com um sorriso. Mas quando chegou a hora de plantar, ele não plantou mais nabos. Ele plantou trigo!"
+  },
+  {
+   "i": 46,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O trigo cresceu forte e bonito."
+  },
+  {
+   "i": 47,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O camponês cortou as espigas e levou todo o trigo para sua casa."
+  },
+  {
+   "i": 48,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Quando o Diabo apareceu novamente, ele ficou furioso."
+  },
+  {
+   "i": 49,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse o Diabo —"
+  },
+  {
+   "i": 50,
+   "fala": true,
+   "quem": "diabo",
+   "texto": "Não há nada aqui!"
+  },
+  {
+   "i": 51,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O camponês riu."
+  },
+  {
+   "i": 52,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse o camponês —"
+  },
+  {
+   "i": 53,
+   "fala": true,
+   "quem": "campones",
+   "texto": "Eu te enganei!"
+  },
+  {
+   "i": 54,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "E com isso, o camponês levou todo o trigo para casa."
+  },
+  {
+   "i": 55,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O Diabo, muito bravo, foi embora, descendo por uma fenda nas rochas."
+  },
+  {
+   "i": 56,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse o camponês —"
+  },
+  {
+   "i": 57,
+   "fala": true,
+   "quem": "campones",
+   "texto": "É assim que se engana o Diabo!"
+  },
+  {
+   "i": 58,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O camponês foi feliz com seu trigo."
+  },
+  {
+   "i": 59,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele aprendeu que ser esperto e ter um bom plano é sempre a melhor solução."
+  },
+  {
+   "i": 60,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse o camponês —"
+  },
+  {
+   "i": 61,
+   "fala": true,
+   "quem": "campones",
+   "texto": "E agora, vou fazer um pão delicioso!"
+  }
+ ]
+}

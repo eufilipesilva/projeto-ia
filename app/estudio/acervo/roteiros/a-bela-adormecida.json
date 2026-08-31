@@ -1,0 +1,572 @@
+{
+ "id": "a-bela-adormecida",
+ "titulo": "A bela adormecida",
+ "elenco": [
+  "sapo",
+  "madrinha",
+  "fada",
+  "princesa",
+  "velhinha",
+  "principe"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Era uma vez um rei e uma rainha que moravam num castelo muito bonito."
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles tinham tudo o que queriam, mas viviam tristes."
+  },
+  {
+   "i": 2,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Faltava uma criança na casa."
+  },
+  {
+   "i": 3,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Um dia, a rainha estava sentada perto do lago."
+  },
+  {
+   "i": 4,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Um sapo saltou da água e parou na frente dela."
+  },
+  {
+   "i": 5,
+   "fala": true,
+   "quem": "sapo",
+   "texto": "Não fique triste"
+  },
+  {
+   "i": 6,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o sapo."
+  },
+  {
+   "i": 7,
+   "fala": true,
+   "quem": "sapo",
+   "texto": "Antes de um ano, você vai ter uma filha."
+  },
+  {
+   "i": 8,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "E foi bem assim que aconteceu."
+  },
+  {
+   "i": 9,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "No ano seguinte nasceu uma menina."
+  },
+  {
+   "i": 10,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela era tão bonita que o rei não cabia em si de alegria."
+  },
+  {
+   "i": 11,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Mandou preparar uma festa enorme e chamou o reino inteiro."
+  },
+  {
+   "i": 12,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O rei convidou também as fadas do país."
+  },
+  {
+   "i": 13,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Havia treze fadas, mas o castelo só tinha doze pratos de ouro."
+  },
+  {
+   "i": 14,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Por isso uma delas ficou sem convite."
+  },
+  {
+   "i": 15,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Na festa, as fadas chegaram perto do berço, uma de cada vez, e deram os presentes."
+  },
+  {
+   "i": 16,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "Que ela seja boa"
+  },
+  {
+   "i": 17,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha mais velha."
+  },
+  {
+   "i": 18,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "Que ela seja alegre"
+  },
+  {
+   "i": 19,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha do meio."
+  },
+  {
+   "i": 20,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "Que ela cante como um passarinho"
+  },
+  {
+   "i": 21,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha do vestido azul."
+  },
+  {
+   "i": 22,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "E assim foram, uma depois da outra, até a décima primeira."
+  },
+  {
+   "i": 23,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "De repente a porta se abriu."
+  },
+  {
+   "i": 24,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Era a fada que não tinha sido convidada."
+  },
+  {
+   "i": 25,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela estava magoada e falou bem alto:"
+  },
+  {
+   "i": 26,
+   "fala": true,
+   "quem": "fada",
+   "texto": "Quando a princesa fizer quinze anos, vai espetar o dedo num fuso"
+  },
+  {
+   "i": 27,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "gritou a fada zangada."
+  },
+  {
+   "i": 28,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Todo mundo ficou calado."
+  },
+  {
+   "i": 29,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Mas a décima segunda madrinha ainda não tinha dado o presente dela."
+  },
+  {
+   "i": 30,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela chegou perto do berço e falou baixinho:"
+  },
+  {
+   "i": 31,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "Eu não consigo desfazer o que foi dito"
+  },
+  {
+   "i": 32,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha."
+  },
+  {
+   "i": 33,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "Mas consigo mudar. Ela não vai se machucar. Vai só dormir cem anos."
+  },
+  {
+   "i": 34,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O rei quis proteger a filha."
+  },
+  {
+   "i": 35,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Mandou recolher todos os fusos do reino e guardar bem longe."
+  },
+  {
+   "i": 36,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A menina cresceu boa, alegre e cantando como um passarinho, do jeitinho que as fadas tinham desejado."
+  },
+  {
+   "i": 37,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "No dia em que ela fez quinze anos, o rei e a rainha saíram de casa."
+  },
+  {
+   "i": 38,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A princesa ficou sozinha e foi passear pelo castelo."
+  },
+  {
+   "i": 39,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Abriu porta por porta, subiu escada por escada, até chegar numa torre bem alta."
+  },
+  {
+   "i": 40,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Lá em cima havia uma portinha com uma chave enferrujada."
+  },
+  {
+   "i": 41,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela girou a chave."
+  },
+  {
+   "i": 42,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Dentro, uma velhinha fiava linho."
+  },
+  {
+   "i": 43,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "Bom dia, vovó"
+  },
+  {
+   "i": 44,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a princesa."
+  },
+  {
+   "i": 45,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "O que a senhora está fazendo?"
+  },
+  {
+   "i": 46,
+   "fala": true,
+   "quem": "velhinha",
+   "texto": "Estou fiando"
+  },
+  {
+   "i": 47,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu a velhinha."
+  },
+  {
+   "i": 48,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "E o que é isso que roda tão depressa?"
+  },
+  {
+   "i": 49,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a princesa."
+  },
+  {
+   "i": 50,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A princesa esticou a mão para pegar o fuso."
+  },
+  {
+   "i": 51,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Assim que encostou nele, espetou o dedo."
+  },
+  {
+   "i": 52,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Na mesma hora deitou numa cama que estava ali do lado e adormeceu."
+  },
+  {
+   "i": 53,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "E o sono se espalhou pelo castelo inteiro."
+  },
+  {
+   "i": 54,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O rei e a rainha adormeceram."
+  },
+  {
+   "i": 55,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Os cozinheiros adormeceram."
+  },
+  {
+   "i": 56,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Os cavalos adormeceram na estrebaria."
+  },
+  {
+   "i": 57,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Os cachorros adormeceram no pátio."
+  },
+  {
+   "i": 58,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Os pombos adormeceram no telhado."
+  },
+  {
+   "i": 59,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Até o fogo do fogão adormeceu."
+  },
+  {
+   "i": 60,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Até o vento parou."
+  },
+  {
+   "i": 61,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Em volta do castelo começou a crescer uma cerca de espinhos."
+  },
+  {
+   "i": 62,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela cresceu e cresceu, até tapar as janelas e o telhado."
+  },
+  {
+   "i": 63,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "De longe, ninguém enxergava mais nada."
+  },
+  {
+   "i": 64,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Passaram muitos anos."
+  },
+  {
+   "i": 65,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Os avós contavam para os netos que havia um castelo escondido atrás daqueles espinhos."
+  },
+  {
+   "i": 66,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Alguns rapazes tentaram atravessar a cerca, mas os galhos eram grossos demais."
+  },
+  {
+   "i": 67,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Todos desistiam e voltavam para casa."
+  },
+  {
+   "i": 68,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Um dia chegou um príncipe de outro reino."
+  },
+  {
+   "i": 69,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Um pastor contou para ele a história da princesa adormecida."
+  },
+  {
+   "i": 70,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Contou também que ninguém nunca tinha conseguido passar pela cerca."
+  },
+  {
+   "i": 71,
+   "fala": true,
+   "quem": "principe",
+   "texto": "Eu vou lá ver assim mesmo"
+  },
+  {
+   "i": 72,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o príncipe."
+  },
+  {
+   "i": 73,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Mas naquele dia faziam justamente cem anos."
+  },
+  {
+   "i": 74,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Quando o príncipe chegou perto, os espinhos se abriram sozinhos e viraram flores."
+  },
+  {
+   "i": 75,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele passou sem se arranhar, e a cerca se fechou macia atrás dele."
+  },
+  {
+   "i": 76,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "No pátio, os cachorros dormiam."
+  },
+  {
+   "i": 77,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "No telhado, os pombos dormiam."
+  },
+  {
+   "i": 78,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Na cozinha, o cozinheiro dormia com a mão no ar."
+  },
+  {
+   "i": 79,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Estava tudo tão quieto que dava para ouvir a própria respiração."
+  },
+  {
+   "i": 80,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O príncipe subiu a escada da torre e encontrou a princesa."
+  },
+  {
+   "i": 81,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Achou que ela era a coisa mais bonita que já tinha visto e deu um beijo no rosto dela."
+  },
+  {
+   "i": 82,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A princesa abriu os olhos e sorriu para ele."
+  },
+  {
+   "i": 83,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "E o castelo inteiro foi acordando junto."
+  },
+  {
+   "i": 84,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O rei e a rainha acordaram."
+  },
+  {
+   "i": 85,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Os cozinheiros acordaram."
+  },
+  {
+   "i": 86,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Os cavalos acordaram na estrebaria."
+  },
+  {
+   "i": 87,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Os cachorros acordaram no pátio."
+  },
+  {
+   "i": 88,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Os pombos acordaram no telhado."
+  },
+  {
+   "i": 89,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O fogo do fogão voltou a estalar."
+  },
+  {
+   "i": 90,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "E o vento voltou a soprar."
+  },
+  {
+   "i": 91,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Houve uma festa grande, com música até tarde da noite."
+  },
+  {
+   "i": 92,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "E dali em diante todos viveram muito contentes naquele castelo."
+  }
+ ]
+}

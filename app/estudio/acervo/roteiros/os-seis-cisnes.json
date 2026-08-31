@@ -1,0 +1,300 @@
+{
+ "id": "os-seis-cisnes",
+ "titulo": "Os seis cisnes",
+ "elenco": [
+  "rei",
+  "margarida",
+  "sofia",
+  "aurora"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Era uma vez, numa floresta muito grande e cheia de árvores altas, um rei chamado Ricardo."
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O rei Ricardo adorava caçar, mas um dia, ele se perdeu."
+  },
+  {
+   "i": 2,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele procurou e procurou, mas não encontrou o caminho de volta para o seu palácio."
+  },
+  {
+   "i": 3,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Então, ele viu uma velha senhora sentada numa cadeira de balanço."
+  },
+  {
+   "i": 4,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A senhora tinha o cabelo branco e os olhos brilhantes."
+  },
+  {
+   "i": 5,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela se chamava Margarida, e era uma bruxa."
+  },
+  {
+   "i": 6,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 7,
+   "fala": true,
+   "quem": "rei",
+   "texto": "Senhora,"
+  },
+  {
+   "i": 8,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rei Ricardo, —"
+  },
+  {
+   "i": 9,
+   "fala": true,
+   "quem": "rei",
+   "texto": "Será que a senhora pode me ajudar a encontrar o caminho de volta para casa?"
+  },
+  {
+   "i": 10,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 11,
+   "fala": true,
+   "quem": "margarida",
+   "texto": "Claro, meu jovem,"
+  },
+  {
+   "i": 12,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu Margarida, —"
+  },
+  {
+   "i": 13,
+   "fala": true,
+   "quem": "margarida",
+   "texto": "Mas antes, você precisa fazer um favor para mim."
+  },
+  {
+   "i": 14,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 15,
+   "fala": true,
+   "quem": "rei",
+   "texto": "Qual é o favor?"
+  },
+  {
+   "i": 16,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou o rei Ricardo."
+  },
+  {
+   "i": 17,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 18,
+   "fala": true,
+   "quem": "margarida",
+   "texto": "Eu preciso de uma filha,"
+  },
+  {
+   "i": 19,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Margarida, —"
+  },
+  {
+   "i": 20,
+   "fala": true,
+   "quem": "margarida",
+   "texto": "Uma filha linda e inteligente. Se você me der uma filha, eu te mostrarei o caminho de volta para casa."
+  },
+  {
+   "i": 21,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O rei Ricardo ficou surpreso, mas concordou."
+  },
+  {
+   "i": 22,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Margarida então deu à luz uma linda menina chamada Sofia."
+  },
+  {
+   "i": 23,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Sofia era muito bonita, com cabelos dourados e olhos azuis."
+  },
+  {
+   "i": 24,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O rei Ricardo amava Sofia muito."
+  },
+  {
+   "i": 25,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Mas, um dia, uma madrasta má chamada Esmeralda chegou ao palácio."
+  },
+  {
+   "i": 26,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Esmeralda era muito invejosa de Sofia e queria roubar a atenção do rei Ricardo."
+  },
+  {
+   "i": 27,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Esmeralda fez com que Sofia ficasse trancada no sótão."
+  },
+  {
+   "i": 28,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Sofia ficou muito triste."
+  },
+  {
+   "i": 29,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela sentia falta do pai e queria voltar para casa."
+  },
+  {
+   "i": 30,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Então, ela pediu ajuda a uma fada chamada Aurora."
+  },
+  {
+   "i": 31,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 32,
+   "fala": true,
+   "quem": "sofia",
+   "texto": "Fada Aurora,"
+  },
+  {
+   "i": 33,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Sofia, —"
+  },
+  {
+   "i": 34,
+   "fala": true,
+   "quem": "sofia",
+   "texto": "Por favor, me ajude a voltar para casa."
+  },
+  {
+   "i": 35,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 36,
+   "fala": true,
+   "quem": "aurora",
+   "texto": "Claro, Sofia,"
+  },
+  {
+   "i": 37,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu Aurora, —"
+  },
+  {
+   "i": 38,
+   "fala": true,
+   "quem": "aurora",
+   "texto": "Mas você precisa fazer uma coisa para mim. Você precisa costurar seis camisas pequenas para mim, feitas de aster."
+  },
+  {
+   "i": 39,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Sofia costurou as seis camisas com muito carinho."
+  },
+  {
+   "i": 40,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela não podia falar, nem sorrir, mas continuou trabalhando."
+  },
+  {
+   "i": 41,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Depois de seis anos, ela finalmente terminou as camisas."
+  },
+  {
+   "i": 42,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Quando chegou o dia da execução, Sofia foi levada para a fogueira."
+  },
+  {
+   "i": 43,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Quando ela se levantou e o fogo ia ser acendido, seis cisnes voaram para o céu e pousaram sobre ela."
+  },
+  {
+   "i": 44,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Os cisnes eram os irmãos de Sofia, que haviam sido transformados em cisnes por Margarida."
+  },
+  {
+   "i": 45,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Os cisnes a levaram para longe da floresta e a levaram para casa."
+  },
+  {
+   "i": 46,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O rei Ricardo ficou muito feliz em ver Sofia de volta."
+  },
+  {
+   "i": 47,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele e Sofia viveram felizes para sempre."
+  }
+ ]
+}

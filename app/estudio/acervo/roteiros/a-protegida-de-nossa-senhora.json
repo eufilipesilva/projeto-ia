@@ -1,0 +1,221 @@
+{
+ "id": "a-protegida-de-nossa-senhora",
+ "titulo": "A protegida de Nossa Senhora",
+ "elenco": [
+  "virgem",
+  "obedecer",
+  "dedo"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Era uma vez, perto de uma floresta bem grande, um lenhador e sua esposa."
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles tinham uma menina, pequenina, com apenas três aninhos."
+  },
+  {
+   "i": 2,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles não tinham muito pão, nem comida para a menina."
+  },
+  {
+   "i": 3,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Um dia, o lenhador foi cortar lenha na floresta."
+  },
+  {
+   "i": 4,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "De repente, apareceu uma mulher linda, como uma estrela brilhante."
+  },
+  {
+   "i": 5,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela disse: —"
+  },
+  {
+   "i": 6,
+   "fala": true,
+   "quem": "virgem",
+   "texto": "Eu sou a Virgem Maria, mãe do menino Jesus. Você pode me dar sua filha, e eu serei sua mãe e cuidarei dela."
+  },
+  {
+   "i": 7,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O lenhador deu a filha para a Virgem Maria, e ela a levou para o céu."
+  },
+  {
+   "i": 8,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Lá, a menina tinha pão doce e leite com açúcar, e roupas de ouro, e anjinhos brincavam com ela."
+  },
+  {
+   "i": 9,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Quando ela tinha catorze anos, a Virgem Maria disse: —"
+  },
+  {
+   "i": 10,
+   "fala": true,
+   "quem": "obedecer",
+   "texto": "Eu vou viajar, e as chaves das doze portas do céu ficarão com você."
+  },
+  {
+   "i": 11,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A menina prometeu obedecer."
+  },
+  {
+   "i": 12,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela abriu as doze portas, e viu os apóstolos brilhando."
+  },
+  {
+   "i": 13,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A última porta era diferente."
+  },
+  {
+   "i": 14,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela a abriu um pouquinho, e viu a Trindade sentada em um fogo brilhante."
+  },
+  {
+   "i": 15,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela tocou a luz, e seu dedo ficou de ouro!"
+  },
+  {
+   "i": 16,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela ficou com medo, fechou a porta, e correu."
+  },
+  {
+   "i": 17,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela sentia medo, e não conseguia parar."
+  },
+  {
+   "i": 18,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Depois, a Virgem Maria voltou."
+  },
+  {
+   "i": 19,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela perguntou: —"
+  },
+  {
+   "i": 20,
+   "fala": true,
+   "quem": "dedo",
+   "texto": "Você abriu a porta proibida?"
+  },
+  {
+   "i": 21,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A menina disse não, mas o dedo de ouro não sumiu."
+  },
+  {
+   "i": 22,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Depois, a Virgem Maria viu o dedo de ouro e sabia que a menina havia feito um erro."
+  },
+  {
+   "i": 23,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela disse: —"
+  },
+  {
+   "i": 24,
+   "fala": true,
+   "quem": "virgem",
+   "texto": "Você não obedeceu, e mentiu para mim, então você não pode ficar aqui."
+  },
+  {
+   "i": 25,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A menina foi para o deserto, e uma árvore oca se tornou sua casa."
+  },
+  {
+   "i": 26,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela chorou, porque sentia falta do céu e dos anjinhos."
+  },
+  {
+   "i": 27,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Um dia, o rei viu a menina e a levou para o castelo."
+  },
+  {
+   "i": 28,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela tinha roupas bonitas e muito ouro, mas não podia falar."
+  },
+  {
+   "i": 29,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Um ano depois, a Virgem Maria apareceu novamente."
+  },
+  {
+   "i": 30,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela perguntou: —"
+  },
+  {
+   "i": 31,
+   "fala": true,
+   "quem": "virgem",
+   "texto": "Você abriu a porta proibida?"
+  },
+  {
+   "i": 32,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A menina disse não, mas a Virgem Maria levou os dois filhos dela para o céu."
+  },
+  {
+   "i": 33,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A menina ficou muito triste e pediu perdão."
+  },
+  {
+   "i": 34,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A Virgem Maria a perdoou, e deu a ela a felicidade para sempre."
+  }
+ ]
+}

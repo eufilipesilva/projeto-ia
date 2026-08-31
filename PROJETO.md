@@ -120,6 +120,28 @@ identificado: uma etapa de estruturação poética (a Gemma reorganiza a
 transcrição original em versos bem definidos) antes da análise de rima, para
 melhorar a qualidade da paródia gerada.
 
+### 10. Acervo de histórias infantis (ago/2026)
+
+`app/estudio/acervo/`: esteira completa que baixa contos de domínio público do
+Wikisource, adapta para uma faixa etária com a Gemma, detecta as falas por
+personagem e sintetiza com o Contador. 77 contos coletados, 27 roteirizados.
+
+O passo de **adaptação** é validado por regras automáticas (`FORMATO.md`) e o de
+**voz** tem um documento de direção (`ELENCO_VOZES.md`) que descreve como cada
+personagem deve soar antes de qualquer número. Vozes de referência vêm de duas
+fontes: 57 locutores humanos do MLS Portuguese (CC BY 4.0) e blends de
+embeddings do Kokoro, que dão um espaço contínuo de timbre ancorado no pt-BR.
+
+Estado e comandos em `app/estudio/acervo/README.md`. Aberto: a escolha final de
+voz por personagem será manual — o casamento automático por métrica acerta
+altura, corpo e variação, mas não captura carisma.
+
+Vários consertos no `motor_v2.py` nasceram deste trabalho e valem para o
+Contador inteiro: aspas curvas e travessão de início de linha não eram
+reconhecidos (o diálogo virava narração em silêncio), a atribuição embutida na
+fala (`— Estou cansado, disse o burro.`) engolia o narrador, e `_formantes()`
+passou a deslocar formantes sem mexer no pitch — o item 7 do `ROADMAP.md`.
+
 ## Estrutura de diretórios (resumo)
 
 ```

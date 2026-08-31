@@ -1,0 +1,660 @@
+{
+ "id": "os-musicos-de-bremen",
+ "titulo": "Os músicos de Bremen",
+ "elenco": [
+  "burro",
+  "cachorro",
+  "gato",
+  "galo"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": true,
+   "quem": "burro",
+   "texto": "Ei, você está dormindo?"
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o burro, com um sorriso."
+  },
+  {
+   "i": 2,
+   "fala": true,
+   "quem": "burro",
+   "texto": "Estou cansado."
+  },
+  {
+   "i": 3,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o burro."
+  },
+  {
+   "i": 4,
+   "fala": true,
+   "quem": "cachorro",
+   "texto": "Eu também."
+  },
+  {
+   "i": 5,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o cachorro."
+  },
+  {
+   "i": 6,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Que bom."
+  },
+  {
+   "i": 7,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato."
+  },
+  {
+   "i": 8,
+   "fala": true,
+   "quem": "galo",
+   "texto": "Onde estamos?"
+  },
+  {
+   "i": 9,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou o galo."
+  },
+  {
+   "i": 10,
+   "fala": true,
+   "quem": "burro",
+   "texto": "Estamos perto de Bremen."
+  },
+  {
+   "i": 11,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o burro."
+  },
+  {
+   "i": 12,
+   "fala": true,
+   "quem": "cachorro",
+   "texto": "Bremen é uma cidade linda."
+  },
+  {
+   "i": 13,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o cachorro."
+  },
+  {
+   "i": 14,
+   "fala": true,
+   "quem": "gato",
+   "texto": "E tem muitos músicos."
+  },
+  {
+   "i": 15,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato."
+  },
+  {
+   "i": 16,
+   "fala": true,
+   "quem": "galo",
+   "texto": "Que bom."
+  },
+  {
+   "i": 17,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o galo."
+  },
+  {
+   "i": 18,
+   "fala": true,
+   "quem": "burro",
+   "texto": "Vamos lá."
+  },
+  {
+   "i": 19,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o burro."
+  },
+  {
+   "i": 20,
+   "fala": true,
+   "quem": "cachorro",
+   "texto": "Vamos, disse o cachorro."
+  },
+  {
+   "i": 21,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Vamos, disse o gato."
+  },
+  {
+   "i": 22,
+   "fala": true,
+   "quem": "galo",
+   "texto": "Vamos, disse o galo."
+  },
+  {
+   "i": 23,
+   "fala": true,
+   "quem": "burro",
+   "texto": "O que você está fazendo?"
+  },
+  {
+   "i": 24,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou o burro."
+  },
+  {
+   "i": 25,
+   "fala": true,
+   "quem": "cachorro",
+   "texto": "Estou tentando encontrar um lugar para dormir."
+  },
+  {
+   "i": 26,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o cachorro."
+  },
+  {
+   "i": 27,
+   "fala": true,
+   "quem": "gato",
+   "texto": "É difícil encontrar um lugar confortável."
+  },
+  {
+   "i": 28,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato."
+  },
+  {
+   "i": 29,
+   "fala": true,
+   "quem": "galo",
+   "texto": "Concordo, disse o galo."
+  },
+  {
+   "i": 30,
+   "fala": true,
+   "quem": "burro",
+   "texto": "Precisamos de um lugar seguro."
+  },
+  {
+   "i": 31,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o burro."
+  },
+  {
+   "i": 32,
+   "fala": true,
+   "quem": "burro",
+   "texto": "Encontrei um lugar."
+  },
+  {
+   "i": 33,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o burro."
+  },
+  {
+   "i": 34,
+   "fala": true,
+   "quem": "cachorro",
+   "texto": "Onde? perguntou o cachorro."
+  },
+  {
+   "i": 35,
+   "fala": true,
+   "quem": "burro",
+   "texto": "Lá no fundo da floresta."
+  },
+  {
+   "i": 36,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o burro."
+  },
+  {
+   "i": 37,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Vamos lá."
+  },
+  {
+   "i": 38,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato."
+  },
+  {
+   "i": 39,
+   "fala": true,
+   "quem": "galo",
+   "texto": "Vamos, disse o galo."
+  },
+  {
+   "i": 40,
+   "fala": true,
+   "quem": "burro",
+   "texto": "Chegamos a uma casa."
+  },
+  {
+   "i": 41,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o burro."
+  },
+  {
+   "i": 42,
+   "fala": true,
+   "quem": "cachorro",
+   "texto": "É uma casa de ladrões."
+  },
+  {
+   "i": 43,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o cachorro."
+  },
+  {
+   "i": 44,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Vamos entrar."
+  },
+  {
+   "i": 45,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato."
+  },
+  {
+   "i": 46,
+   "fala": true,
+   "quem": "galo",
+   "texto": "Não, disse o galo."
+  },
+  {
+   "i": 47,
+   "fala": true,
+   "quem": "burro",
+   "texto": "É perigoso."
+  },
+  {
+   "i": 48,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o burro."
+  },
+  {
+   "i": 49,
+   "fala": true,
+   "quem": "cachorro",
+   "texto": "Precisamos de um plano."
+  },
+  {
+   "i": 50,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o cachorro."
+  },
+  {
+   "i": 51,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Tenho uma ideia."
+  },
+  {
+   "i": 52,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato."
+  },
+  {
+   "i": 53,
+   "fala": true,
+   "quem": "burro",
+   "texto": "O que é?"
+  },
+  {
+   "i": 54,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou o burro."
+  },
+  {
+   "i": 55,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Vamos assustá-los."
+  },
+  {
+   "i": 56,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato."
+  },
+  {
+   "i": 57,
+   "fala": true,
+   "quem": "cachorro",
+   "texto": "Como? perguntou o cachorro."
+  },
+  {
+   "i": 58,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Vamos cantar."
+  },
+  {
+   "i": 59,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato."
+  },
+  {
+   "i": 60,
+   "fala": true,
+   "quem": "galo",
+   "texto": "Vamos fazer barulho."
+  },
+  {
+   "i": 61,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o galo."
+  },
+  {
+   "i": 62,
+   "fala": true,
+   "quem": "burro",
+   "texto": "Vamos entrar na casa."
+  },
+  {
+   "i": 63,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o burro."
+  },
+  {
+   "i": 64,
+   "fala": true,
+   "quem": "cachorro",
+   "texto": "Vamos, disse o cachorro."
+  },
+  {
+   "i": 65,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Vamos, disse o gato."
+  },
+  {
+   "i": 66,
+   "fala": true,
+   "quem": "galo",
+   "texto": "Vamos, disse o galo."
+  },
+  {
+   "i": 67,
+   "fala": true,
+   "quem": "burro",
+   "texto": "Entramos na casa."
+  },
+  {
+   "i": 68,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o burro."
+  },
+  {
+   "i": 69,
+   "fala": true,
+   "quem": "cachorro",
+   "texto": "É uma mesa cheia de comida."
+  },
+  {
+   "i": 70,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o cachorro."
+  },
+  {
+   "i": 71,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Que bom."
+  },
+  {
+   "i": 72,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato."
+  },
+  {
+   "i": 73,
+   "fala": true,
+   "quem": "galo",
+   "texto": "É delicioso."
+  },
+  {
+   "i": 74,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o galo."
+  },
+  {
+   "i": 75,
+   "fala": true,
+   "quem": "burro",
+   "texto": "Vamos comer."
+  },
+  {
+   "i": 76,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o burro."
+  },
+  {
+   "i": 77,
+   "fala": true,
+   "quem": "cachorro",
+   "texto": "Vamos, disse o cachorro."
+  },
+  {
+   "i": 78,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Vamos, disse o gato."
+  },
+  {
+   "i": 79,
+   "fala": true,
+   "quem": "galo",
+   "texto": "Vamos, disse o galo."
+  },
+  {
+   "i": 80,
+   "fala": true,
+   "quem": "burro",
+   "texto": "Os ladrões fugiram."
+  },
+  {
+   "i": 81,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o burro."
+  },
+  {
+   "i": 82,
+   "fala": true,
+   "quem": "cachorro",
+   "texto": "Que bom."
+  },
+  {
+   "i": 83,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o cachorro."
+  },
+  {
+   "i": 84,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Que alívio."
+  },
+  {
+   "i": 85,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato."
+  },
+  {
+   "i": 86,
+   "fala": true,
+   "quem": "galo",
+   "texto": "Que alegria."
+  },
+  {
+   "i": 87,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o galo."
+  },
+  {
+   "i": 88,
+   "fala": true,
+   "quem": "burro",
+   "texto": "Agora vamos para Bremen."
+  },
+  {
+   "i": 89,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o burro."
+  },
+  {
+   "i": 90,
+   "fala": true,
+   "quem": "cachorro",
+   "texto": "Vamos, disse o cachorro."
+  },
+  {
+   "i": 91,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Vamos, disse o gato."
+  },
+  {
+   "i": 92,
+   "fala": true,
+   "quem": "galo",
+   "texto": "Vamos, disse o galo."
+  },
+  {
+   "i": 93,
+   "fala": true,
+   "quem": "burro",
+   "texto": "Chegamos a Bremen."
+  },
+  {
+   "i": 94,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o burro."
+  },
+  {
+   "i": 95,
+   "fala": true,
+   "quem": "cachorro",
+   "texto": "Que cidade linda."
+  },
+  {
+   "i": 96,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o cachorro."
+  },
+  {
+   "i": 97,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Que música maravilhosa."
+  },
+  {
+   "i": 98,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato."
+  },
+  {
+   "i": 99,
+   "fala": true,
+   "quem": "galo",
+   "texto": "Que alegria cantar."
+  },
+  {
+   "i": 100,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o galo."
+  },
+  {
+   "i": 101,
+   "fala": true,
+   "quem": "burro",
+   "texto": "E viveram felizes para sempre."
+  },
+  {
+   "i": 102,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o burro."
+  },
+  {
+   "i": 103,
+   "fala": true,
+   "quem": "cachorro",
+   "texto": "Sim, disse o cachorro."
+  },
+  {
+   "i": 104,
+   "fala": true,
+   "quem": "gato",
+   "texto": "Com certeza."
+  },
+  {
+   "i": 105,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o gato."
+  },
+  {
+   "i": 106,
+   "fala": true,
+   "quem": "galo",
+   "texto": "Que bom."
+  },
+  {
+   "i": 107,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o galo."
+  }
+ ]
+}

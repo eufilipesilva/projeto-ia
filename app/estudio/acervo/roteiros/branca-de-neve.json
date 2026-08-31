@@ -1,0 +1,816 @@
+{
+ "id": "branca-de-neve",
+ "titulo": "Branca de Neve",
+ "elenco": [
+  "rainha",
+  "espelho",
+  "raina",
+  "principe"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "A rainha costurava à janela"
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 2,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "O inverno estava muito frio"
+  },
+  {
+   "i": 3,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 4,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Ela sentiu uma picada"
+  },
+  {
+   "i": 5,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 6,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "A agulha fez uma pontada"
+  },
+  {
+   "i": 7,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 8,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "A rainha desejou uma menina"
+  },
+  {
+   "i": 9,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 10,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Ela queria uma menina branca"
+  },
+  {
+   "i": 11,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 12,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "E vermelha como um morango"
+  },
+  {
+   "i": 13,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 14,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "E negra como a noite"
+  },
+  {
+   "i": 15,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 16,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "E, de repente, uma menina nasceu"
+  },
+  {
+   "i": 17,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 18,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "A princesa se chamava Branca de Neve"
+  },
+  {
+   "i": 19,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 20,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Ela era linda e brilhante"
+  },
+  {
+   "i": 21,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 22,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "O rei se casou de novo"
+  },
+  {
+   "i": 23,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 24,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Com uma rainha muito orgulhosa"
+  },
+  {
+   "i": 25,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 26,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Ela gostava de brilhar"
+  },
+  {
+   "i": 27,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 28,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Um espelho mágico apareceu"
+  },
+  {
+   "i": 29,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 30,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Ele falava e mostrava tudo"
+  },
+  {
+   "i": 31,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 32,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "A rainha perguntou ao espelho"
+  },
+  {
+   "i": 33,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 34,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 35,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Quem é a mais bonita?"
+  },
+  {
+   "i": 36,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse a rainha."
+  },
+  {
+   "i": 37,
+   "fala": true,
+   "quem": "espelho",
+   "texto": "O espelho respondeu com voz forte"
+  },
+  {
+   "i": 38,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o espelho."
+  },
+  {
+   "i": 39,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 40,
+   "fala": true,
+   "quem": "espelho",
+   "texto": "Branca de Neve é a mais bela!"
+  },
+  {
+   "i": 41,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse o espelho."
+  },
+  {
+   "i": 42,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "A rainha ficou muito triste"
+  },
+  {
+   "i": 43,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 44,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Ela não gostava de Branca de Neve"
+  },
+  {
+   "i": 45,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 46,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Ela contratou um caçador"
+  },
+  {
+   "i": 47,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 48,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Para levar Branca de Neve embora"
+  },
+  {
+   "i": 49,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 50,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Mas o caçador era esperto"
+  },
+  {
+   "i": 51,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 52,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Ele pegou um javali grande"
+  },
+  {
+   "i": 53,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 54,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "E o levou para a rainha"
+  },
+  {
+   "i": 55,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 56,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "A rainha comeu o coração do javali"
+  },
+  {
+   "i": 57,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 58,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Ela pensou que era o coração de Branca de Neve"
+  },
+  {
+   "i": 59,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 60,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Branca de Neve fugiu com os anões"
+  },
+  {
+   "i": 61,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 62,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Eles moravam numa cabana na floresta"
+  },
+  {
+   "i": 63,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 64,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Os anões eram simpáticos e alegres"
+  },
+  {
+   "i": 65,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 66,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Eles cuidavam da cabana"
+  },
+  {
+   "i": 67,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 68,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Um dia, a rainha perguntou ao espelho"
+  },
+  {
+   "i": 69,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 70,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 71,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Quem é a mais bonita agora?"
+  },
+  {
+   "i": 72,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse a rainha."
+  },
+  {
+   "i": 73,
+   "fala": true,
+   "quem": "espelho",
+   "texto": "O espelho respondeu novamente"
+  },
+  {
+   "i": 74,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o espelho."
+  },
+  {
+   "i": 75,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 76,
+   "fala": true,
+   "quem": "espelho",
+   "texto": "Branca de Neve é a mais bela!"
+  },
+  {
+   "i": 77,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse o espelho."
+  },
+  {
+   "i": 78,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "A rainha ficou furiosa"
+  },
+  {
+   "i": 79,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 80,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Ela fez uma maçã doce e vermelha"
+  },
+  {
+   "i": 81,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 82,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "E envenenou a maçã com cuidado"
+  },
+  {
+   "i": 83,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 84,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Ela deu a maçã para Branca de Neve"
+  },
+  {
+   "i": 85,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 86,
+   "fala": true,
+   "quem": "raina",
+   "texto": "Branca de Neve comeu a maçã"
+  },
+  {
+   "i": 87,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a raina."
+  },
+  {
+   "i": 88,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "E adormeceu profundamente"
+  },
+  {
+   "i": 89,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 90,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Os anões ficaram tristes"
+  },
+  {
+   "i": 91,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 92,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Eles enterraram Branca de Neve"
+  },
+  {
+   "i": 93,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 94,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Mas, de noite, ela parecia viva"
+  },
+  {
+   "i": 95,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 96,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Então, eles construíram um esquife de vidro"
+  },
+  {
+   "i": 97,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 98,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Um barco de vidro para levá-la"
+  },
+  {
+   "i": 99,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 100,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Eles colocaram o esquife na montanha"
+  },
+  {
+   "i": 101,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 102,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Pássaros cantavam para ela"
+  },
+  {
+   "i": 103,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 104,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Corujas, corvos e pombas"
+  },
+  {
+   "i": 105,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 106,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Branca de Neve dormia em paz"
+  },
+  {
+   "i": 107,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 108,
+   "fala": true,
+   "quem": "principe",
+   "texto": "Um príncipe viu a cabana"
+  },
+  {
+   "i": 109,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o príncipe."
+  },
+  {
+   "i": 110,
+   "fala": true,
+   "quem": "principe",
+   "texto": "Ele ofereceu ouro para o esquife"
+  },
+  {
+   "i": 111,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o príncipe."
+  },
+  {
+   "i": 112,
+   "fala": true,
+   "quem": "principe",
+   "texto": "Os anões entregaram o esquife"
+  },
+  {
+   "i": 113,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o príncipe."
+  },
+  {
+   "i": 114,
+   "fala": true,
+   "quem": "principe",
+   "texto": "O príncipe tropeçou em um toco"
+  },
+  {
+   "i": 115,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o príncipe."
+  },
+  {
+   "i": 116,
+   "fala": true,
+   "quem": "principe",
+   "texto": "E a maçã venenosa saiu da boca de Branca de Neve"
+  },
+  {
+   "i": 117,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o príncipe."
+  },
+  {
+   "i": 118,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Branca de Neve acordou"
+  },
+  {
+   "i": 119,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 120,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Ela estava viva de novo"
+  },
+  {
+   "i": 121,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 122,
+   "fala": true,
+   "quem": "principe",
+   "texto": "O príncipe a levou para o palácio"
+  },
+  {
+   "i": 123,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o príncipe."
+  },
+  {
+   "i": 124,
+   "fala": true,
+   "quem": "principe",
+   "texto": "Eles se casaram e foram felizes"
+  },
+  {
+   "i": 125,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o príncipe."
+  },
+  {
+   "i": 126,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "A rainha má teve que dançar"
+  },
+  {
+   "i": 127,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 128,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Em sapatos de ferro muito pesados"
+  },
+  {
+   "i": 129,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 130,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "E, no final, ela ficou muito doente"
+  },
+  {
+   "i": 131,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  },
+  {
+   "i": 132,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "E morreu feliz"
+  },
+  {
+   "i": 133,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha."
+  }
+ ]
+}

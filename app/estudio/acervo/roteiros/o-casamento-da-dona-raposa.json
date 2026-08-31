@@ -1,0 +1,949 @@
+{
+ "id": "o-casamento-da-dona-raposa",
+ "titulo": "O casamento da dona raposa",
+ "elenco": [
+  "raposo",
+  "gata",
+  "viuva",
+  "lobo",
+  "senhora"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Era uma vez um raposo muito esperto, com nove rabos."
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele achava que a sua esposa não era uma boa esposa."
+  },
+  {
+   "i": 2,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele pensava que ela estava tentando enganá-lo."
+  },
+  {
+   "i": 3,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 4,
+   "fala": true,
+   "quem": "raposo",
+   "texto": "Eu vou ficar aqui, debaixo do banco, e vou esperar"
+  },
+  {
+   "i": 5,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o raposo."
+  },
+  {
+   "i": 6,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 7,
+   "fala": true,
+   "quem": "raposo",
+   "texto": "Vou ficar quieto, como uma pedra"
+  },
+  {
+   "i": 8,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o raposo."
+  },
+  {
+   "i": 9,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A Senhora Raposa, que era a esposa do raposo, foi até o quarto dela, fechou a porta e ficou com o seu namorado."
+  },
+  {
+   "i": 10,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A Senhorita Gata, que era a criada, estava sentada ao lado do fogão, cozinhando."
+  },
+  {
+   "i": 11,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Quando ela soube que o velho raposo havia"
+  },
+  {
+   "i": 12,
+   "fala": true,
+   "quem": "raposo",
+   "texto": "morrido"
+  },
+  {
+   "i": 13,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "muitos pretendentes começaram a aparecer."
+  },
+  {
+   "i": 14,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A criada ouviu quando alguém bateu na porta da casa e abriu a porta, e era um jovem raposo, que disse: —"
+  },
+  {
+   "i": 15,
+   "fala": true,
+   "quem": "raposo",
+   "texto": "O que você está fazendo agora, Senhorita Gata?"
+  },
+  {
+   "i": 16,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse o raposo."
+  },
+  {
+   "i": 17,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 18,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Eu não estou dormindo, estou acordada"
+  },
+  {
+   "i": 19,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu a gata."
+  },
+  {
+   "i": 20,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 21,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Quero saber o que estou fazendo? Estou preparando uma deliciosa cerveja com manteiga"
+  },
+  {
+   "i": 22,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a gata."
+  },
+  {
+   "i": 23,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 24,
+   "fala": true,
+   "quem": "gata",
+   "texto": "O cavalheiro quer entrar e beber alguma coisa?"
+  },
+  {
+   "i": 25,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a gata."
+  },
+  {
+   "i": 26,
+   "fala": true,
+   "quem": "raposo",
+   "texto": "Não, obrigado, senhorita"
+  },
+  {
+   "i": 27,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o raposo."
+  },
+  {
+   "i": 28,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 29,
+   "fala": true,
+   "quem": "raposo",
+   "texto": "O que a Senhora Raposa está fazendo?"
+  },
+  {
+   "i": 30,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou o raposo."
+  },
+  {
+   "i": 31,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 32,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Ela está sozinha em casa"
+  },
+  {
+   "i": 33,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu a gata."
+  },
+  {
+   "i": 34,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 35,
+   "fala": true,
+   "quem": "gata",
+   "texto": "E está se lamentando"
+  },
+  {
+   "i": 36,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a gata."
+  },
+  {
+   "i": 37,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 38,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Chorando até os olhos ficarem vermelhos"
+  },
+  {
+   "i": 39,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a gata."
+  },
+  {
+   "i": 40,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 41,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Porque o Senhor Raposo morreu"
+  },
+  {
+   "i": 42,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a gata."
+  },
+  {
+   "i": 43,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Então, a gata disse: —"
+  },
+  {
+   "i": 44,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Diga a ela, senhorita, que um jovem raposo está aqui, e gostaria de cortejá-la"
+  },
+  {
+   "i": 45,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a gata."
+  },
+  {
+   "i": 46,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A gata então, subiu as escadas, fazendo trip, trap, trip, trap."
+  },
+  {
+   "i": 47,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela bateu na porta fazendo tap, tap, tap."
+  },
+  {
+   "i": 48,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 49,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Dona Raposa, a senhora está aí dentro?"
+  },
+  {
+   "i": 50,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a gata."
+  },
+  {
+   "i": 51,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 52,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Ó sim, minha gatinha"
+  },
+  {
+   "i": 53,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a gata."
+  },
+  {
+   "i": 54,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 55,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Tem um pretendente lá fora querendo falar com a senhora"
+  },
+  {
+   "i": 56,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a gata."
+  },
+  {
+   "i": 57,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 58,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Diga-me como ele é, minha querida?"
+  },
+  {
+   "i": 59,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a gata."
+  },
+  {
+   "i": 60,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 61,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Ele tem nove rabos belíssimos como o falecido Senhor Raposo?"
+  },
+  {
+   "i": 62,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a gata."
+  },
+  {
+   "i": 63,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 64,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Oh, não"
+  },
+  {
+   "i": 65,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu a gata."
+  },
+  {
+   "i": 66,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 67,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Ele tem somente um"
+  },
+  {
+   "i": 68,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a gata."
+  },
+  {
+   "i": 69,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 70,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Então, não quero conhecê-lo"
+  },
+  {
+   "i": 71,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a gata."
+  },
+  {
+   "i": 72,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A Senhorita desceu as escadas e mandou o pretendente embora."
+  },
+  {
+   "i": 73,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Pouco depois, alguém bate à porta, e um outro raposo estava à porta e queria cortejar a Senhora Raposa."
+  },
+  {
+   "i": 74,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele tinha dois rabos, mas a sua sorte não foi melhor que a do primeiro."
+  },
+  {
+   "i": 75,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "E depois deste, outros também vieram, cada um com um rabo a mais que o anterior, mas todos foram rejeitados, até que finalmente veio um que tinha nove rabos, como o velho Senhor Raposo."
+  },
+  {
+   "i": 76,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Quando a viúva ficou sabendo, ela disse alegremente para a gata: —"
+  },
+  {
+   "i": 77,
+   "fala": true,
+   "quem": "viuva",
+   "texto": "Agora podem abrir bem os portões e as portas"
+  },
+  {
+   "i": 78,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a viúva."
+  },
+  {
+   "i": 79,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 80,
+   "fala": true,
+   "quem": "viuva",
+   "texto": "E coloquem o Senhor Raposo que morreu lá pra fora"
+  },
+  {
+   "i": 81,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a viúva."
+  },
+  {
+   "i": 82,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Mas quando o casamento estava para ser realizado, o velhor Senhor Raposo se mexeu debaixo do banco, e começou a dar cacetadas no sem vergonha, e expulsou a Senhora Raposa e todos para fora de casa."
+  },
+  {
+   "i": 83,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Quando o velho Senhor Raposo havia morrido, o lobo apareceu como pretendente, e bateu na porta, e a gata que, era a criada da Senhora Raposa, abriu a porta para ele."
+  },
+  {
+   "i": 84,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O lobo o cumprimentou e disse: —"
+  },
+  {
+   "i": 85,
+   "fala": true,
+   "quem": "lobo",
+   "texto": "Bom dia, Senhorita Gata de Monte Cristo"
+  },
+  {
+   "i": 86,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o lobo."
+  },
+  {
+   "i": 87,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 88,
+   "fala": true,
+   "quem": "lobo",
+   "texto": "Porque você está sentada aí sozinha?"
+  },
+  {
+   "i": 89,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou o lobo."
+  },
+  {
+   "i": 90,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 91,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Estou fazendo pudim de pão com leite"
+  },
+  {
+   "i": 92,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu a gata."
+  },
+  {
+   "i": 93,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 94,
+   "fala": true,
+   "quem": "gata",
+   "texto": "O cavalheiro gostaria de entrar e comer um pouco?"
+  },
+  {
+   "i": 95,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a gata."
+  },
+  {
+   "i": 96,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 97,
+   "fala": true,
+   "quem": "lobo",
+   "texto": "Não, obrigado, Senhorita Gata"
+  },
+  {
+   "i": 98,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu o lobo."
+  },
+  {
+   "i": 99,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 100,
+   "fala": true,
+   "quem": "lobo",
+   "texto": "A Senhora Raposa não está em casa?"
+  },
+  {
+   "i": 101,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou o lobo."
+  },
+  {
+   "i": 102,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 103,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Ela está no quarto dela lá em cima"
+  },
+  {
+   "i": 104,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu a gata."
+  },
+  {
+   "i": 105,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 106,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Lamentando seu triste destino"
+  },
+  {
+   "i": 107,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a gata."
+  },
+  {
+   "i": 108,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 109,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Chorando dolorosamente suas preocupações"
+  },
+  {
+   "i": 110,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a gata."
+  },
+  {
+   "i": 111,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 112,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Porque o Senhor Raposo não vive mais"
+  },
+  {
+   "i": 113,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a gata."
+  },
+  {
+   "i": 114,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O lobo respondeu: —"
+  },
+  {
+   "i": 115,
+   "fala": true,
+   "quem": "lobo",
+   "texto": "Se ela estiver precisando de um marido agora"
+  },
+  {
+   "i": 116,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o lobo."
+  },
+  {
+   "i": 117,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 118,
+   "fala": true,
+   "quem": "lobo",
+   "texto": "Então, será que ela poderia descer um pouquinho até aqui embaixo?"
+  },
+  {
+   "i": 119,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou o lobo."
+  },
+  {
+   "i": 120,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A gata subiu correndo as escadas, mexendo com o rabo de um lado e de outro."
+  },
+  {
+   "i": 121,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela então chegou na porta do gabinete."
+  },
+  {
+   "i": 122,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Com seus cinco aneis de ouro e bate na porta: —"
+  },
+  {
+   "i": 123,
+   "fala": true,
+   "quem": "gata",
+   "texto": "A senhora está aí dentro, minha boa Senhora Raposa?"
+  },
+  {
+   "i": 124,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a gata."
+  },
+  {
+   "i": 125,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 126,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Se a senhora estiver precisando de um marido agora"
+  },
+  {
+   "i": 127,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a gata."
+  },
+  {
+   "i": 128,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 129,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Então, será que a senhora poderia descer um pouquinho lá embaixo?"
+  },
+  {
+   "i": 130,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a gata."
+  },
+  {
+   "i": 131,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A Senhora Raposa perguntou: —"
+  },
+  {
+   "i": 132,
+   "fala": true,
+   "quem": "senhora",
+   "texto": "Pode me dizer se o cavalheiro está usando meias vermelhas, e possui uma boca pontuda?"
+  },
+  {
+   "i": 133,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a Senhora Raposa."
+  },
+  {
+   "i": 134,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 135,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Sim"
+  },
+  {
+   "i": 136,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu a gata."
+  },
+  {
+   "i": 137,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 138,
+   "fala": true,
+   "quem": "senhora",
+   "texto": "Então, faça com que ele suba até aqui"
+  },
+  {
+   "i": 139,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a Senhora Raposa, e mandou que a criada gata preparasse a festa de casamento."
+  },
+  {
+   "i": 140,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 141,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Varra o quarto e deixe-o o mais limpo que puder"
+  },
+  {
+   "i": 142,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a gata."
+  },
+  {
+   "i": 143,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 144,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Abra a janela e jogue o meu ex-marido que morreu lá pra fora"
+  },
+  {
+   "i": 145,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a gata."
+  },
+  {
+   "i": 146,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 147,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Porque ele trouxe muitos ratos gordos e deliciosos para casa"
+  },
+  {
+   "i": 148,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a gata."
+  },
+  {
+   "i": 149,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 150,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Mas na sua esposa ele nunca pensou"
+  },
+  {
+   "i": 151,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a gata."
+  },
+  {
+   "i": 152,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 153,
+   "fala": true,
+   "quem": "gata",
+   "texto": "Mas comia tudo que caçava"
+  },
+  {
+   "i": 154,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a gata."
+  },
+  {
+   "i": 155,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Então, o casamento foi realizado com o jovem Senhor Raposo, e todos se divertiram e dançaram; e se ainda não tivesse sobrado nada, estariam dançando até agora."
+  }
+ ]
+}

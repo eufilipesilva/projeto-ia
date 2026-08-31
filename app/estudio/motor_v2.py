@@ -211,6 +211,88 @@ def _sussurro(x):
     y = librosa.istft(env * ruido * fase, hop_length=hop, length=len(x)).astype(np.float32)
     return y / (np.max(np.abs(y)) or 1) * 0.8
 
+def _formantes(x, alpha):
+    """Desloca os FORMANTES sem mexer no pitch (item 7 do ROADMAP).
+
+    `_pitch()` é resample puro: muda pitch e formantes juntos, o que dá o efeito
+    "esquilo" — a MESMA voz acelerada, não uma pessoa diferente. O que faz duas
+    vozes soarem como pessoas distintas é o trato vocal: um corpo grande
+    ressoa mais grave, um pequeno mais agudo, independentemente da altura em
+    que a pessoa fala.
+
+    Técnica: separa, no domínio cepstral, o ENVELOPE espectral (baixa
+    quefrência = formantes, a "forma" do trato) da ESTRUTURA FINA (alta
+    quefrência = harmônicos, o pitch). Desloca só o envelope na frequência e
+    recombina. Escolhida em vez do pyworld porque não exige compilador — usa o
+    numpy/librosa que o projeto já tem.
+
+    alpha > 1  trato mais curto: corpo menor, voz de bicho pequeno/criança
+    alpha < 1  trato mais longo: corpo maior, voz de gigante/lobo
+    """
+    if abs(alpha - 1.0) < 1e-3 or len(x) < 2048:
+        return x
+    try:
+        import librosa
+    except Exception:
+        return x
+    n_fft, hop, corte = 1024, 256, 40
+    S = librosa.stft(np.asarray(x, dtype=np.float32), n_fft=n_fft, hop_length=hop)
+    logm = np.log(np.abs(S) + 1e-8)
+    # envelope = cepstro truncado nas primeiras `corte` quefrências
+    cep = np.fft.irfft(logm, n=n_fft, axis=0)
+    cep[corte:n_fft - corte] = 0
+    env = np.fft.rfft(cep, n=n_fft, axis=0).real[:logm.shape[0]]
+    fina = logm - env                      # harmônicos: preservam o pitch
+    # reamostra SÓ o envelope no eixo de frequência
+    k = np.arange(logm.shape[0], dtype=np.float32)
+    origem = np.clip(k / float(alpha), 0, logm.shape[0] - 1)
+    env_w = np.empty_like(env)
+    for c in range(env.shape[1]):
+        env_w[:, c] = np.interp(origem, k, env[:, c])
+    novo = np.exp(env_w + fina) * np.exp(1j * np.angle(S))
+    y = librosa.istft(novo, hop_length=hop, length=len(x)).astype(np.float32)
+    return y / (np.max(np.abs(y)) or 1.0) * (np.max(np.abs(x)) or 1.0)
+
+def _maligno(x, forca=0.6):
+    """Trata a voz de um vilão: subarmônico + escurecimento + aspereza.
+
+    O vocabulário do modo Design não tem "maligno" — só gênero, idade e altura.
+    E formante sozinho dá TAMANHO, não ameaça: um lobo com trato longo soa
+    grande, não perigoso. Ameaça se constrói com três coisas:
+
+      1. subarmônico — uma cópia uma oitava abaixo, misturada POR BAIXO da voz
+         original. É o truque clássico de voz de monstro: o ouvido percebe duas
+         alturas ao mesmo tempo, o que nenhuma garganta humana faz.
+      2. escurecimento — tirar brilho do agudo. Voz opaca soa fechada, sem
+         calor.
+      3. aspereza — um fio de ruído modulado pela própria envolvente da voz,
+         que vira rosnado nas partes fortes e some nas fracas.
+
+    `forca` de 0 a 1. Acima de ~0.75 começa a atrapalhar a inteligibilidade,
+    que numa história para criança pequena importa mais que o susto.
+    """
+    x = np.asarray(x, dtype=np.float32)
+    if forca <= 0 or x.size < 2048:
+        return x
+    pico = float(np.max(np.abs(x))) or 1.0
+    y = x
+    # 1. subarmônico uma oitava abaixo (preserva a duração)
+    try:
+        import librosa
+        grave = librosa.effects.pitch_shift(x, sr=SR, n_steps=-12)
+        n = min(len(x), len(grave))
+        y = x[:n] + np.asarray(grave[:n], dtype=np.float32) * (0.45 * forca)
+    except Exception:
+        pass
+    # 2. escurece o espectro
+    y = _brilho(y, 1.0 - 0.22 * forca)
+    # A camada de ASPEREZA (ruído modulado pela envolvente) foi REMOVIDA: em
+    # voz de TTS ela não lê como rosnado, lê como chiado — defeito de gravação,
+    # não ameaça. É a mesma razão pela qual a referência da Pandora foi
+    # escolhida entre as sem chiado. Ruído aditivo sobre saída sintética
+    # sempre soa como artefato; ameaça precisa vir do timbre da REFERÊNCIA.
+    return (y / (np.max(np.abs(y)) or 1.0) * pico).astype(np.float32)
+
 def _brilho(x, fator):
     if abs(fator - 1.0) < 0.03 or len(x) < 4:
         return x
@@ -614,25 +696,76 @@ def sintetizar_design(instruct, texto, language="pt",
     # OmniVoice fica residente — liberado só quando a Gemma precisa.
     return _saida(wav)
 
-def sintetizar_historia(perfil, texto, ritmo=1.0, sussurro=False,
-                        musica_path=None, vol_fundo=0.03, cauda_fundo=0.0,
-                        progresso=lambda *a: None, vozes_map=None):
-    """`vozes_map` (opcional): dict {NOME: perfil_de_voz} — personagens da
-    história cujo nome está no mapa falam com uma voz SALVA (clone real) em vez
-    da PALETA. O narrador continua sendo a voz da sessão (perfil)."""
+# ── Contador de Histórias ────────────────────────────────────────────────────
+# O pipeline é dividido em DUAS fases independentes, porque cada uma usa um
+# modelo diferente e a GPU de 6 GB não comporta os dois juntos:
+#
+#   Fase 1  roteirizar_historia()  → só Gemma      (rápido, ~segundos)
+#   Fase 2  sintetizar_roteiro()   → só OmniVoice  (lento, ~minuto+)
+#
+# Separar permite: (a) descobrir o ELENCO antes de escolher as vozes, em vez de
+# adivinhar os nomes; (b) CORRIGIR um falante errado e re-sintetizar sem pagar a
+# Gemma de novo; (c) mudar ritmo/fundo/vozes reaproveitando o mesmo roteiro.
+# `sintetizar_historia()` continua existindo como atalho que encadeia as duas.
+
+_NARRADOR = {"narrador", "narradora", "narra", ""}
+
+def _eh_narrador(quem):
+    return _norm_nome(quem) in _NARRADOR or not (quem or "").strip()
+
+def roteirizar_historia(texto, progresso=lambda *a: None):
+    """FASE 1 — quebra o texto em beats e pergunta à Gemma quem fala em cada um.
+    Não carrega o OmniVoice. Devolve uma lista de dicts serializável em JSON,
+    que o frontend pode exibir, editar e devolver para `sintetizar_roteiro()`."""
     beats = _beats_historia(texto)
     if not beats:
-        return np.zeros(1, dtype=np.float32), []
+        return []
     descarregar_omni()  # libera VRAM para a Gemma classificar os beats
-    progresso(0.05, "Lendo a história (quem fala + emoção)...")
+    progresso(0.10, "Lendo a história (quem fala)...")
     tags = _classificar_beats(beats)
     descarregar_gemma()
+    progresso(1.0, "Roteiro pronto.")
+    return [
+        {"i": i, "fala": bool(eh_fala),
+         "quem": ("narrador" if not eh_fala or _eh_narrador(quem)
+                  else (_norm_nome(quem) or "personagem")),
+         "texto": txt}
+        for i, ((eh_fala, txt), (quem, _emo)) in enumerate(zip(beats, tags))
+    ]
+
+def elenco_do_roteiro(roteiro):
+    """Personagens com fala no roteiro (sem o narrador), na ordem de entrada em
+    cena — é o que a interface usa para montar a lista de vozes dinamicamente."""
+    vistos = []
+    for b in roteiro or []:
+        if not b.get("fala"):
+            continue
+        q = _norm_nome(b.get("quem", ""))
+        if q and q not in _NARRADOR and q not in vistos:
+            vistos.append(q)
+    return vistos
+
+def sintetizar_roteiro(perfil, roteiro, ritmo=1.0, sussurro=False,
+                       musica_path=None, vol_fundo=0.03, cauda_fundo=0.0,
+                       progresso=lambda *a: None, vozes_map=None):
+    """FASE 2 — sintetiza um roteiro já classificado (e possivelmente corrigido
+    à mão). Não chama a Gemma.
+
+    `roteiro`: lista de dicts {"fala": bool, "quem": str, "texto": str}.
+    `vozes_map` (opcional): {NOME: perfil_de_voz} — personagens cujo nome está no
+    mapa falam com uma voz SALVA (clone real) em vez da PALETA. O narrador usa
+    sempre a voz da sessão (`perfil`)."""
+    itens = [b for b in (roteiro or []) if (b.get("texto") or "").strip()]
+    if not itens:
+        return np.zeros(1, dtype=np.float32), []
     vozes = {}
     def voz_de(quem):
-        if quem in ("narrador", "narradora", "narra", ""):
+        if _eh_narrador(quem):
             return dict(speed=perfil["base_speed"], P=1.0, narr=True)
-        if quem not in vozes: vozes[quem] = PALETA[len(vozes) % len(PALETA)]
-        v = vozes[quem]; return dict(speed=v["speed"], P=v["P"], narr=False)
+        if quem not in vozes:
+            vozes[quem] = PALETA[len(vozes) % len(PALETA)]
+        v = vozes[quem]
+        return dict(speed=v["speed"], P=v["P"], narr=False)
     m      = carregar_omni()
     prompt = _criar_prompt_voz(m, perfil)
     # Detecta abertura clássica e alonga o primeiro fonema vogal no texto
@@ -651,17 +784,21 @@ def sintetizar_historia(perfil, texto, ritmo=1.0, sussurro=False,
                 return txt[:j] + ch + txt[j:]   # "Era" → "Eera"
         return txt
 
-    primeiro_txt = beats[0][1].strip().lower() if beats else ""
+    primeiro_txt = itens[0]["texto"].strip().lower()
     eh_abertura = any(primeiro_txt.startswith(ab) for ab in _ABERTURAS)
 
     # Vozes salvas por personagem (multi-voz): prompts sob demanda, cacheados
     vmap = {_norm_nome(k): p for k, p in (vozes_map or {}).items() if p}
     prompts_pers: dict = {}
-    cfg    = _cfg(); segs = []; roteiro = []; quem_seg = []
-    for i, ((eh_fala, txt), (quem, emo)) in enumerate(zip(beats, tags)):
-        v = voz_de(quem); d = EMO["neutra"]  # tom fixo — mais estável
+    d = EMO["neutra"]   # tom fixo — a variação por emoção está desligada de propósito
+    cfg    = _cfg(); segs = []; roteiro_out = []; quem_seg = []
+    for i, b in enumerate(itens):
+        quem = "narrador" if _eh_narrador(b.get("quem")) else _norm_nome(b.get("quem"))
+        txt  = b["texto"].strip()
+        v = voz_de(quem)
         qn = _norm_nome(quem)
         prompt_seg = prompt
+        maligno = 0.0
         if v["narr"]:
             speed = v["speed"]; tom = 1.0; vol = float(np.clip(d["vol"], 0.82, 1.08))
         elif qn in vmap:
@@ -670,6 +807,7 @@ def sintetizar_historia(perfil, texto, ritmo=1.0, sussurro=False,
                 prompts_pers[qn] = _criar_prompt_voz(m, pp)
             prompt_seg = prompts_pers[qn]
             speed = pp["base_speed"] * d["s"]; tom = d["p"]; vol = d["vol"]
+            maligno = float(pp.get("maligno") or 0.0)
         else:
             speed = v["speed"] * d["s"]; tom = v["P"] * d["p"]; vol = d["vol"]
         speed *= ritmo
@@ -678,21 +816,35 @@ def sintetizar_historia(perfil, texto, ritmo=1.0, sussurro=False,
             speed *= 0.82                   # velocidade normal de abertura (sem exagero)
         elif i == 0:
             speed *= 0.82
-        elif i == len(beats) - 1:
+        elif i == len(itens) - 1:
             speed *= 0.85
-        progresso(0.10 + 0.85 * i / max(1, len(beats)),
-                  f"Gerando {i+1}/{len(beats)} [{quem}:{emo}]")
+        progresso(0.10 + 0.85 * i / max(1, len(itens)),
+                  f"Gerando {i+1}/{len(itens)} [{quem}]")
         seg = _gerar_um(m, cfg, prompt_seg, txt, speed, tom, vol)
+        if maligno:
+            seg = _maligno(seg, maligno)
         if sussurro:
             seg = _sussurro(seg)
         segs.append(seg)
-        roteiro.append((quem, emo, txt)); quem_seg.append(quem)
+        roteiro_out.append((quem, "neutra", txt)); quem_seg.append(quem)
     # OmniVoice fica residente — liberado só quando a Gemma precisa.
     audio = _montar(segs, quem_seg)
     if musica_path and vol_fundo > 0:
         progresso(0.98, "Misturando áudio de fundo...")
         audio = _misturar_fundo(audio, _carregar_fundo(musica_path, vol_fundo), cauda_fundo)
-    return audio, roteiro
+    return audio, roteiro_out
+
+def sintetizar_historia(perfil, texto, ritmo=1.0, sussurro=False,
+                        musica_path=None, vol_fundo=0.03, cauda_fundo=0.0,
+                        progresso=lambda *a: None, vozes_map=None):
+    """Atalho de uma tacada: roteiriza (Gemma) e sintetiza (OmniVoice) em
+    sequência. Mantido para quem chama o Contador sem passar pela etapa de
+    revisão do roteiro (fluxo antigo)."""
+    roteiro = roteirizar_historia(texto, lambda f, d="": progresso(f * 0.08, d))
+    if not roteiro:
+        return np.zeros(1, dtype=np.float32), []
+    return sintetizar_roteiro(perfil, roteiro, ritmo, sussurro, musica_path,
+                              vol_fundo, cauda_fundo, progresso, vozes_map)
 
 _LOUCURA_CONVIDADOS = [
     "um lobisomem desempregado que não assusta mais ninguém",
@@ -982,24 +1134,38 @@ def _beats_historia(texto):
         bloco = bloco.strip()
         if not bloco:
             continue
-        norm = re.sub(r'[""„«»]', '"', bloco)
+        # Normaliza TODA grafia de aspas dupla para a reta. As curvas (U+201C/
+        # U+201D) estavam FALTANDO nesta classe — havia a aspa reta duplicada no
+        # lugar delas, provavelmente por um editor ter "endireitado" o próprio
+        # código-fonte. Efeito: texto com aspas curvas (o que sai do Word, da web
+        # e da Gemma) não era normalizado, a checagem `'"' in norm` dava falso,
+        # caía no ramo do travessão, não achava travessão nenhum — e a linha
+        # inteira virava narração. Todo o diálogo sumia sem erro nenhum.
+        norm = re.sub(r'["“”„‟«»]', '"', bloco)
         if '"' in norm:
             for i, p in enumerate(norm.split('"')):
                 if i % 2 == 1:
                     p = p.strip()
                     if p: beats.append((True, p))
                 else:
-                    beats += [(False, fr) for fr in _split_frases(p)]
+                    beats += [(False, fr) for fr in _split_frases(p.strip(" ,;:"))]
         else:
-            n2 = norm.replace("—", "–")
-            n2 = re.sub(r"(?<=\s)-(?=\s)", "–", n2)
+            # Normaliza TODAS as grafias de travessão para "–". O hífen no INÍCIO
+            # da linha ("- Vamos? - perguntou ela") é o formato mais comum em
+            # português e ficava de fora: o padrão exigia espaço ANTES do hífen,
+            # que não existe após o strip(). Sem essa normalização a paridade do
+            # split inverte tudo — a fala vira narração e a tag de atribuição
+            # ("perguntou ela") vira fala de personagem.
+            n2 = re.sub(r"[—―‒−]", "–", norm)
+            n2 = re.sub(r"^[-–]\s*", "– ", n2)        # travessão no início da linha
+            n2 = re.sub(r"(?<=\s)-(?=\s)", "–", n2)   # travessão no meio da linha
             if "–" in n2:
                 for i, p in enumerate(n2.split("–")):
                     p = p.strip(" ,;:")
                     if p: beats.append((i % 2 == 1, p))
             else:
                 beats += [(False, fr) for fr in _split_frases(n2)]
-    return beats
+    return _separar_tag_interna(beats)
 
 _ROTULO_RE   = re.compile(r"^\s*([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ .]{0,18}?):\s+(.+)$")
 _FALANTE_BASE = {"apresentador", "apresentadora", "pandora", "narrador", "narradora",
@@ -1044,7 +1210,20 @@ _PRON_SUJ = {"ele","ela","eles","elas","lhe","me","se","te","nos","eu","tu","voc
 _PULAR_NOME = {"perguntar","dizer","falar","responder","contar","gritar","exclamar",
     "rosnar","sussurrar","perguntando","dizendo","tentando","soar","ainda","dia","dias",
     "vez","noite","manha","tarde","hora","momento","instante","entao","depois","logo",
-    "antes","assim","repente","seguida","enquanto","fim","partir"}
+    "antes","assim","repente","seguida","enquanto","fim","partir",
+    # pronomes/advérbios indefinidos: aparecem depois do verbo de fala sem
+    # serem quem falou ("disse tudo", "disse isso", "disse baixinho")
+    "nao","nunca","jamais","nem","sem",
+    # conjunções: "disse mas ..." não tem quem falou depois do verbo
+    "mas","porem","contudo","entretanto","porque","pois","quando","se",
+    "entao","embora","apesar","ou","tambem",
+    # verbos comuns que apareciam como personagem no elenco ("era", "voltou")
+    "era","eram","foi","foram","estava","estavam","tinha","tinham","havia",
+    "vou","vai","vamos","veio","voltou","ficou","fez","viu","olhou","pegou",
+    "chegou","saiu","entrou","correu","parou","comecou","acabou","ouviu",
+    "nada","tudo","algo","isso","aquilo","alguma","alguem","ninguem","mais",
+    "menos","sempre","nunca","tambem","apenas","quase","bem","mal","muito",
+    "pouco","baixinho","alto","sim","agora","ali","aqui","la"}
 
 def _primeiro_nome(palavras):
     for w in palavras:
@@ -1052,6 +1231,9 @@ def _primeiro_nome(palavras):
         if not n: continue
         if n in _PRON_SUJ: return ""
         if n in _ART_PREP or n in _PULAR_NOME: continue
+        # Uma ou duas letras é resto de texto ("e", "fe"), não nome de gente —
+        # e cada um desses criava um personagem com voz própria no elenco.
+        if len(n) < 3: continue
         return n[:16]
     return ""
 
@@ -1059,12 +1241,93 @@ def _falante_da_tag(tag, pos):
     t = (tag or "").strip()
     if pos == "depois":
         m = re.search(r"\b(?:" + _VERBOS_FALA + r")\b\s+(.+)", t, re.IGNORECASE)
-        return _primeiro_nome(re.findall(r"[A-Za-zÀ-ÿ]+", m.group(1))) if m else ""
+        if not m:
+            return ""
+        # Verbo de fala NEGADO não é atribuição: em "A Lila não disse nada", o
+        # que vem depois de "disse" é o objeto da negação, não quem falou —
+        # sem esta guarda, "nada" virava um personagem (com voz própria).
+        antes = t[:m.start()].rstrip().lower()
+        if re.search(r"\b(?:n[ãa]o|nunca|jamais|nem|sem)\s*$", antes):
+            return ""
+        return _primeiro_nome(re.findall(r"[A-Za-zÀ-ÿ]+", m.group(1)))
     m = re.search(r"^(.*?)\b(?:" + _VERBOS_FALA + r")\b", t, re.IGNORECASE)
     trecho = m.group(1) if m else t
     pals = re.findall(r"[A-Za-zÀ-ÿ]+", trecho)
     if any(_ascii1(w) in _PRON_SUJ for w in pals): return ""
     return _primeiro_nome(pals)
+
+_TAG_ANTES = re.compile(r":\s*[-–—]*\s*$")
+
+
+def _tag_vem_antes(prev):
+    """A narração anterior anuncia a fala ("Fulano disse: — ...")?
+
+    Não basta testar `endswith(":")`. Em "O coelhinho disse: — “Abram...", a
+    linha mistura dois-pontos, travessão e aspas: o beat de narração termina em
+    `disse: —`, porque o `strip(" ,;:")` do segmentador não remove o travessão,
+    e o travessão PROTEGE os dois-pontos de serem removidos. O teste ingênuo
+    falhava e a tag — que está ANTES da fala — era procurada depois dela,
+    jogando para o fallback de LLM um caso que a regex já resolvia."""
+    return bool(_TAG_ANTES.search(prev))
+
+
+_TAG_INTERNA = re.compile(
+    # A pontuação antes do verbo pode ser vírgula ("Eu também, disse o gato")
+    # ou o próprio fim da frase falada ("Onde estamos? perguntou o galo").
+    r"[,;?!…]\s*(?:" + _VERBOS_FALA + r")\b\s+(.+?)[.!?]?\s*$", re.IGNORECASE)
+
+
+# O que vem depois do verbo só é atribuição se parecer com um sujeito: artigo +
+# substantivo ("o burro") ou nome próprio ("Lila"). Sem esta guarda, uma fala
+# como "Não sei, respondeu, mas vou tentar" seria cortada em "vou tentar".
+_ATRIB_OK = re.compile(r"^(?:(?:o|a|os|as|um|uma|seu|sua)\s+[a-zà-ÿ]+"
+                       r"|[A-ZÀ-Ý][a-zà-ÿ]+)")
+
+
+def _falante_interno(txt):
+    """Atribuição embutida na PRÓPRIA fala: "Eu também, disse o cachorro."
+
+    É construção comuníssima em português e o segmentador não a separa em dois
+    beats quando não há travessão nem aspas em volta — a linha inteira vira um
+    beat de FALA. Como as camadas de atribuição só olhavam os beats VIZINHOS, o
+    nome ficava invisível bem no meio do texto. Em "Os músicos de Bremen" isso
+    deixava as quatro falas sem falante provado."""
+    m = _TAG_INTERNA.search((txt or "").strip())
+    if not m or not _ATRIB_OK.match(m.group(1).strip()):
+        return ""
+    return _primeiro_nome(re.findall(r"[A-Za-zÀ-ÿ]+", m.group(1)))
+
+
+def _separar_tag_interna(beats):
+    """Separa a atribuição colada na fala em um beat de NARRAÇÃO próprio.
+
+    A Gemma escreve muito "— Estou cansado, disse o burro." (um travessão só)
+    em vez de "— Estou cansado — disse o burro." (dois). Com um travessão, o
+    segmentador manda a linha INTEIRA para um beat de fala — e aí o "disse o
+    burro" é pronunciado com a voz do burro, não do narrador. Em "Os músicos de
+    Bremen" isso deixava 63 dos 64 beats como fala: o narrador sumia da
+    história inteira.
+
+    A atribuição vira um beat de narração logo depois da fala, que é
+    exatamente o que a forma com dois travessões já produzia."""
+    saida = []
+    for eh_fala, txt in beats:
+        alvo = (txt or "").strip()
+        m = _TAG_INTERNA.search(alvo) if eh_fala else None
+        if not m or not _falante_interno(alvo):
+            saida.append((eh_fala, txt))
+            continue
+        fala = alvo[:m.start()].strip()
+        if len(fala.split()) < 2:          # sobra pouco: não vale cortar
+            saida.append((eh_fala, txt))
+            continue
+        pont = alvo[m.start()]
+        saida.append((True, fala + (pont if pont in "?!…" else ".")))
+        narr = alvo[m.start() + 1:].strip(" ,;:")
+        if narr:
+            saida.append((False, narr))
+    return saida
+
 
 def _quem_fala_gemma(beats, i, elenco):
     ini = max(0, i - 8); fim = min(len(beats), i + 3)
@@ -1124,12 +1387,18 @@ def _classificar_beats(beats):
     for i, (eh_fala, _) in enumerate(beats):
         if not eh_fala:
             continue
-        nome = ""
-        if i + 1 < len(beats) and not beats[i + 1][0]:
+        nome = _falante_interno(beats[i][1])
+        if not nome and i + 1 < len(beats) and not beats[i + 1][0]:
             nome = _falante_da_tag(beats[i + 1][1], "depois")
         if not nome and i - 1 >= 0 and not beats[i - 1][0]:
             prev = beats[i - 1][1].rstrip()
-            nome = _falante_da_tag(prev, "antes" if prev.endswith(":") else "depois")
+            nome = _falante_da_tag(prev, "antes" if _tag_vem_antes(prev) else "depois")
+            # Última tentativa na outra direção: "o conde perguntou" traz o nome
+            # ANTES do verbo mas sem dois-pontos, então a heurística acima olha
+            # para depois do verbo, onde não há nada. Tentar os dois lados só
+            # acrescenta informação — se ambos falharem, cai no LLM como antes.
+            if not nome:
+                nome = _falante_da_tag(prev, "antes")
         if nome:
             falante[i] = nome
     elenco = set(falante.values())

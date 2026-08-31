@@ -1,0 +1,246 @@
+{
+ "id": "o-alfaiate-no-ceu",
+ "titulo": "O alfaiate no céu",
+ "elenco": [
+  "bateu",
+  "sao",
+  "alfaiate",
+  "velhaco"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Era uma vez, um dia muito especial, o Senhor Deus estava a descansar."
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele estava a descansar no jardim do paraíso, e levou consigo todos os anjos e santos."
+  },
+  {
+   "i": 2,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Não ficou ninguém no céu, com exceção do bom São Pedro."
+  },
+  {
+   "i": 3,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O Senhor então pediu a São Pedro que ficasse à porta, e que não deixasse ninguém entrar."
+  },
+  {
+   "i": 4,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "São Pedro fez assim, e ficou ali, de vigia, todo o dia."
+  },
+  {
+   "i": 5,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "De repente, bateu na porta!"
+  },
+  {
+   "i": 6,
+   "fala": true,
+   "quem": "bateu",
+   "texto": "disse alguém."
+  },
+  {
+   "i": 7,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eu sou um alfaiate pobre e honesto, e eu quero entrar!"
+  },
+  {
+   "i": 8,
+   "fala": true,
+   "quem": "sao",
+   "texto": "disse a voz suave."
+  },
+  {
+   "i": 9,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse São Pedro."
+  },
+  {
+   "i": 10,
+   "fala": true,
+   "quem": "sao",
+   "texto": "Honesto de verdade, como o ladrão que foge da forca!"
+  },
+  {
+   "i": 11,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse São Pedro."
+  },
+  {
+   "i": 12,
+   "fala": true,
+   "quem": "alfaiate",
+   "texto": "Não poderá entrar no céu. O Senhor me proibiu de deixar qualquer um entrar enquanto ele estiver fora."
+  },
+  {
+   "i": 13,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o alfaiate."
+  },
+  {
+   "i": 14,
+   "fala": true,
+   "quem": "alfaiate",
+   "texto": "Deixa disso, seja misericordioso!"
+  },
+  {
+   "i": 15,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "exclamou o alfaiate."
+  },
+  {
+   "i": 16,
+   "fala": true,
+   "quem": "alfaiate",
+   "texto": "Migalhas que caem da mesa por conta própria não são roubadas, e nem vale a pena falar sobre isso. Veja, estou com os pés muito doloridos, com bolhas, e não consigo caminhar. Apenas me deixe entrar, e eu farei todo o trabalho pesado. Carregarei as crianças, lavarei as roupas delas, lavarei e limparei os bancos onde elas brincaram, e remendarei todas as roupas rasgadas delas."
+  },
+  {
+   "i": 17,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "São Pedro teve que sentar num cantinho atrás da porta, e ficou ali, quieto e sossegado."
+  },
+  {
+   "i": 18,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Quando o Senhor Deus voltou, ele não viu o alfaiate, e tudo correu bem."
+  },
+  {
+   "i": 19,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Mas assim que o Senhor voltou com seus amigos, o alfaiate se levantou, e começou a olhar tudo em todos os lugares."
+  },
+  {
+   "i": 20,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele viu uma cadeira linda, com um escabelo de ouro brilhante."
+  },
+  {
+   "i": 21,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele sentou na cadeira, e viu uma velhinha lavando roupas perto do rio."
+  },
+  {
+   "i": 22,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A velhinha pegou dois véus que estavam ali, sem que ninguém percebesse."
+  },
+  {
+   "i": 23,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O alfaiate ficou muito nervoso, e pegou o escabelo de ouro, e o jogou para baixo, sobre a cabeça da velhinha."
+  },
+  {
+   "i": 24,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Mas ele não conseguiu trazer o escabelo de volta, então ele saiu da cadeira, voltou para a porta, e ficou ali, como se nada tivesse acontecido."
+  },
+  {
+   "i": 25,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Quando o Senhor e São Pedro voltaram, eles não viram o alfaiate, mas quando ele tentou sentar na cadeira, o escabelo não estava mais lá!"
+  },
+  {
+   "i": 26,
+   "fala": true,
+   "quem": "sao",
+   "texto": "O que aconteceu com o escabelo?"
+  },
+  {
+   "i": 27,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou São Pedro."
+  },
+  {
+   "i": 28,
+   "fala": true,
+   "quem": "sao",
+   "texto": "disse o alfaiate alegremente."
+  },
+  {
+   "i": 29,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eu o joguei lá embaixo, numa hora de raiva, sobre uma velhinha que estava roubando véus enquanto lavava roupa."
+  },
+  {
+   "i": 30,
+   "fala": true,
+   "quem": "alfaiate",
+   "texto": "disse o alfaiate."
+  },
+  {
+   "i": 31,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Oh, seu velhaco!"
+  },
+  {
+   "i": 32,
+   "fala": true,
+   "quem": "velhaco",
+   "texto": "disse o Senhor."
+  },
+  {
+   "i": 33,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Se eu fosse julgá-lo como ele julga, como acha que ele teria escapado por tanto tempo?"
+  },
+  {
+   "i": 34,
+   "fala": true,
+   "quem": "alfaiate",
+   "texto": "disse o alfaiate."
+  },
+  {
+   "i": 35,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eu não teria mais cadeiras, bancos, assentos, nada aqui, nem mesmo o garfo de usar no forno, mas teria atirado tudo nos pecadores. De agora em diante, não poderás mais ficar no céu, mas deves sair por aquela porta novamente. E vás para onde quiseres. Ninguém aplica punição aqui, com exceção de mim, que sou o Senhor."
+  },
+  {
+   "i": 36,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "São Pedro teve que expulsar o alfaiate do céu, mas seus pés estavam doloridos e cheios de bolhas, então ele se apoiou num bastão, e foi embora devagar, dizendo"
+  },
+  {
+   "i": 37,
+   "fala": true,
+   "quem": "sao",
+   "texto": "Esperem um pouco"
+  },
+  {
+   "i": 38,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "enquanto os anjos se sentavam de tanto rir."
+  }
+ ]
+}

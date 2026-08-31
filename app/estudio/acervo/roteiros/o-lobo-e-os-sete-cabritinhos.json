@@ -1,0 +1,301 @@
+{
+ "id": "o-lobo-e-os-sete-cabritinhos",
+ "titulo": "O lobo e os sete cabritinhos",
+ "elenco": [
+  "cabrita",
+  "lobo",
+  "voz",
+  "moleiro",
+  "cabritinhos"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 1,
+   "fala": true,
+   "quem": "cabrita",
+   "texto": "Queridos filhinhos, eu preciso ir para a floresta, fiquem atentos com o lobo,"
+  },
+  {
+   "i": 2,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse a cabrita velha."
+  },
+  {
+   "i": 3,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 4,
+   "fala": true,
+   "quem": "lobo",
+   "texto": "Se ele aparecer, ele irá devorar vocês inteirinho com pele e osso."
+  },
+  {
+   "i": 5,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disseram os sete cabritinhos."
+  },
+  {
+   "i": 6,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 7,
+   "fala": true,
+   "quem": "cabrita",
+   "texto": "Querida mãezinha, nós vamos tomar muito cuidado."
+  },
+  {
+   "i": 8,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse a cabrita velha e foi para a floresta."
+  },
+  {
+   "i": 9,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 10,
+   "fala": true,
+   "quem": "voz",
+   "texto": "Abram a porta, queridos filhinhos, a mamãe de vocês chegou,"
+  },
+  {
+   "i": 11,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— gritou uma voz grossa."
+  },
+  {
+   "i": 12,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— Mas os cabritinhos sabiam que era o lobo."
+  },
+  {
+   "i": 13,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 14,
+   "fala": true,
+   "quem": "lobo",
+   "texto": "Nós não abriremos a porta,"
+  },
+  {
+   "i": 15,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "eles gritaram"
+  },
+  {
+   "i": 16,
+   "fala": true,
+   "quem": "lobo",
+   "texto": "você não é a nossa mãe. Ela tem uma voz macia e agradável, mas a tua voz é grossa, você é o lobo!"
+  },
+  {
+   "i": 17,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 18,
+   "fala": true,
+   "quem": "lobo",
+   "texto": "Eu machuquei as minhas patas, será que você poderia esfregar um pouco de massa para mim,"
+  },
+  {
+   "i": 19,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse o lobo."
+  },
+  {
+   "i": 20,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— E quando o padeiro esfregou o pé dele com a massa, ele correu até o moleiro e disse: —"
+  },
+  {
+   "i": 21,
+   "fala": true,
+   "quem": "lobo",
+   "texto": "Espalhe um pouco de farinha de trigo na minha perna para mim."
+  },
+  {
+   "i": 22,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O moleiro pensou consigo mesmo: —"
+  },
+  {
+   "i": 23,
+   "fala": true,
+   "quem": "moleiro",
+   "texto": "O lobo está querendo enganar alguém,"
+  },
+  {
+   "i": 24,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "e se recusou; mas o lobo disse: —"
+  },
+  {
+   "i": 25,
+   "fala": true,
+   "quem": "lobo",
+   "texto": "Se você não fizer isso, eu vou te devorar."
+  },
+  {
+   "i": 26,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Então, o moleiro ficou com medo, e passou farinha de trigo nas patas do lobo."
+  },
+  {
+   "i": 27,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 28,
+   "fala": true,
+   "quem": "voz",
+   "texto": "Abram a porta para mim, crianças, é a mamãe que voltou, e trouxe uma coisinha da floresta para cada um de vocês,"
+  },
+  {
+   "i": 29,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— gritou a voz grossa."
+  },
+  {
+   "i": 30,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— Mas os cabritinhos gritaram: —"
+  },
+  {
+   "i": 31,
+   "fala": true,
+   "quem": "cabritinhos",
+   "texto": "Primeiro nos mostre as suas patas para que possamos saber se você é a nossa querida mãezinha."
+  },
+  {
+   "i": 32,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Então, o lobo colocou as patas pela janela, e quando os cabritinhos viram que as patas eram brancas, eles acreditaram que era verdade, e abriram a porta."
+  },
+  {
+   "i": 33,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 34,
+   "fala": true,
+   "quem": "cabrita",
+   "texto": "Oh, céus, será possível que meus pobres filhinhos que ele engoliu no jantar, podem ainda estar vivos?"
+  },
+  {
+   "i": 35,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse a cabrita velha."
+  },
+  {
+   "i": 36,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Então, o cabritinho foi correndo para casa e trouxe a tesoura, e uma agulha e uma linha, e a cabrita mãe abriu a barriga do monstro, e mal tinha ela feito um corte, e um cabritinho colocou a cabeça para fora, e quando ela continuou cortando, todos os seis saltaram, um depois do outro, e todos eles estavam vivos ainda, e não tinham sofrido nenhum ferimento, pois devido a voracidade o lobo os tinha engolido inteirinhos, sem mastigar."
+  },
+  {
+   "i": 37,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 38,
+   "fala": true,
+   "quem": "cabrita",
+   "texto": "Agora, vamos procurar algumas pedras grandes, e nós encheremos o estômago do lobo mau com elas enquanto ele ainda está dormindo,"
+  },
+  {
+   "i": 39,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse a cabrita velha."
+  },
+  {
+   "i": 40,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Então, os sete cabritinhos trouxeram as pedras até ali rapidamente, e colocaram todas que couberam em seu estômago, e a mamãe cabra costurou o estômago do lobo bem depressa, e então, ele não desconfiou de nada e nem se mexeu nenhuma vez."
+  },
+  {
+   "i": 41,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 42,
+   "fala": true,
+   "quem": "lobo",
+   "texto": "Que grandes estrondos, pareço ouvir, pensei que fossem os seis cabritinhos,"
+  },
+  {
+   "i": 43,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— gritou o lobo quando acordou."
+  },
+  {
+   "i": 44,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "E quando ele chegou no poço, se abaixou para pegar água e ia beber, as enormes pedras o fizeram cair dentro do poço, e não teve jeito, ele acabou se afogando miseravelmente."
+  },
+  {
+   "i": 45,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "—"
+  },
+  {
+   "i": 46,
+   "fala": true,
+   "quem": "lobo",
+   "texto": "O lobo morreu! O lobo morreu! E dançaram a roda da alegria em torno do poço junto com a mãe deles."
+  },
+  {
+   "i": 47,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— gritaram os sete cabritinhos."
+  }
+ ]
+}

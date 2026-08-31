@@ -35,7 +35,10 @@
 | `sintetizar_design(instruct, texto, ...)` | Síntese com voz descrita (sem referência). Abas: Design, Personagem, Trailer (fallback) |
 | `sintetizar_clone_lote(perfil, textos, language, instruct, num_step, guidance_scale, speed_mult, progresso)` | Vários textos com UMA carga do modelo. Usado pela Meditação (segmentos) |
 | `sintetizar_clone_pandora(perfil, texto, speed=0.80, num_step=64)` | Clone com caimento natural no fim das falas (curva da Pandora — NUNCA time-stretch). Usado no Battle |
-| `sintetizar_historia(perfil, texto, ritmo, sussurro, musica_path, vol_fundo, cauda_fundo, progresso, vozes_map=None)` | História completa: detecta beats/falantes/emoções (Gemma) e dá voz a cada personagem. **`vozes_map` {NOME: perfil} = personagem fala com voz SALVA (multi-voz)**; sem mapa, usa PALETA (variações da voz base) |
+| `roteirizar_historia(texto, progresso)` | **FASE 1** do Contador: quebra em beats e usa a **Gemma** para dizer quem fala em cada um. Nao toca no OmniVoice. Devolve lista de dicts `{i, fala, quem, texto}` serializavel em JSON, para revisao/edicao antes de sintetizar |
+| `elenco_do_roteiro(roteiro)` | Personagens com fala (sem o narrador), na ordem de entrada em cena. E o que monta a lista de vozes dinamica na interface |
+| `sintetizar_roteiro(perfil, roteiro, ritmo, sussurro, musica_path, vol_fundo, cauda_fundo, progresso, vozes_map=None)` | **FASE 2** do Contador: sintetiza um roteiro **ja classificado** (e possivelmente corrigido a mao) com o **OmniVoice**, sem chamar a Gemma |
+| `sintetizar_historia(perfil, texto, ritmo, sussurro, musica_path, vol_fundo, cauda_fundo, progresso, vozes_map=None)` | **Atalho** que encadeia `roteirizar_historia` + `sintetizar_roteiro` (fluxo antigo, de uma tacada so). Da voz a cada personagem. **`vozes_map` {NOME: perfil} = personagem fala com voz SALVA (multi-voz)**; sem mapa, usa PALETA (variações da voz base) |
 | `sintetizar_comedia(perfil, texto, ritmo, vol_sfx, vol_plateia, intensidade, abertura_path, vol_abertura, progresso, vozes_map=None)` | Auditório com sonoplastia automática (SFX + plateia). Abas: Comédia, Game Show (duelo usa `vozes_map` pros competidores), Rádio (entrevista) |
 | `_gerar_um(m, cfg, prompt, txt, speed, tom, vol, language)` | A geração unitária de um segmento (todas as sínteses passam aqui) |
 

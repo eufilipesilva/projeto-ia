@@ -1,0 +1,420 @@
+{
+ "id": "o-principe-sapo",
+ "titulo": "O príncipe sapo",
+ "elenco": [
+  "rei",
+  "madrinha",
+  "princesa",
+  "sapo"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Era uma vez, há muito, muito tempo, um rei que amava suas filhas mais do que qualquer coisa."
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele tinha três filhas, todas lindas, como flores no jardim."
+  },
+  {
+   "i": 2,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A mais nova era a mais bela de todas, tão brilhante que parecia ter um pedaço do sol em seu rosto."
+  },
+  {
+   "i": 3,
+   "fala": true,
+   "quem": "rei",
+   "texto": "<Que beleza!>"
+  },
+  {
+   "i": 4,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rei, olhando para a filha."
+  },
+  {
+   "i": 5,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "<Ela é tão linda!>"
+  },
+  {
+   "i": 6,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha mais velha."
+  },
+  {
+   "i": 7,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A princesa adorava brincar com uma bola de ouro."
+  },
+  {
+   "i": 8,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela jogava a bola para o alto e a pegava, muitas vezes na floresta perto do castelo."
+  },
+  {
+   "i": 9,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Um dia, enquanto brincava, a bola de ouro caiu em um poço, bem fundo!"
+  },
+  {
+   "i": 10,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "<Oh, não!>"
+  },
+  {
+   "i": 11,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a princesa, quando viu a bola sumir."
+  },
+  {
+   "i": 12,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "<Que pena!>"
+  },
+  {
+   "i": 13,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha do meio."
+  },
+  {
+   "i": 14,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A princesa ficou muito triste."
+  },
+  {
+   "i": 15,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela encontrou um sapo no poço."
+  },
+  {
+   "i": 16,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O sapo ofereceu ajuda."
+  },
+  {
+   "i": 17,
+   "fala": true,
+   "quem": "sapo",
+   "texto": "<Eu posso te ajudar a pegar a bola!>"
+  },
+  {
+   "i": 18,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o sapo."
+  },
+  {
+   "i": 19,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "<Você faria isso?>"
+  },
+  {
+   "i": 20,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou a princesa."
+  },
+  {
+   "i": 21,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O sapo disse"
+  },
+  {
+   "i": 22,
+   "fala": true,
+   "quem": "sapo",
+   "texto": "<Mas você precisa me prometer algumas coisas!>"
+  },
+  {
+   "i": 23,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o sapo."
+  },
+  {
+   "i": 24,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "<Prometo o que quiser!>"
+  },
+  {
+   "i": 25,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a princesa."
+  },
+  {
+   "i": 26,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O sapo pediu para ser seu amigo, para brincar com ela, para comer na sua mesinha e beber na sua taça."
+  },
+  {
+   "i": 27,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A princesa concordou com tudo."
+  },
+  {
+   "i": 28,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O sapo pegou a bola de ouro e a devolveu para a princesa."
+  },
+  {
+   "i": 29,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "<Que bom!>"
+  },
+  {
+   "i": 30,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a princesa."
+  },
+  {
+   "i": 31,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "<Que alegria!>"
+  },
+  {
+   "i": 32,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha do vestido azul."
+  },
+  {
+   "i": 33,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Mas o sapo não queria ser apenas um amigo."
+  },
+  {
+   "i": 34,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele queria ser seu companheiro de verdade."
+  },
+  {
+   "i": 35,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele pediu para morar no castelo, para comer com ela e dormir na sua cama."
+  },
+  {
+   "i": 36,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A princesa, que era um pouco ingênua, concordou."
+  },
+  {
+   "i": 37,
+   "fala": true,
+   "quem": "princesa",
+   "texto": "<Eu prometo!>"
+  },
+  {
+   "i": 38,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a princesa."
+  },
+  {
+   "i": 39,
+   "fala": true,
+   "quem": "sapo",
+   "texto": "<Que bom!>"
+  },
+  {
+   "i": 40,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o sapo."
+  },
+  {
+   "i": 41,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "No dia seguinte, o sapo pediu para ir para a cama com ela."
+  },
+  {
+   "i": 42,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A princesa ficou muito assustada, mas não disse nada."
+  },
+  {
+   "i": 43,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela se deitou na cama com o sapo, e ele a assustou com suas histórias estranhas."
+  },
+  {
+   "i": 44,
+   "fala": true,
+   "quem": "sapo",
+   "texto": "<Eu sou um rei!>"
+  },
+  {
+   "i": 45,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o sapo."
+  },
+  {
+   "i": 46,
+   "fala": true,
+   "quem": "sapo",
+   "texto": "<Eu sou um mago!>"
+  },
+  {
+   "i": 47,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o sapo."
+  },
+  {
+   "i": 48,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "No dia seguinte, o sapo pediu para ir para o castelo."
+  },
+  {
+   "i": 49,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A princesa concordou, e o sapo se tornou seu companheiro de verdade."
+  },
+  {
+   "i": 50,
+   "fala": true,
+   "quem": "sapo",
+   "texto": "<Que bom!>"
+  },
+  {
+   "i": 51,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o sapo."
+  },
+  {
+   "i": 52,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "<Que alegria!>"
+  },
+  {
+   "i": 53,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha mais velha."
+  },
+  {
+   "i": 54,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Mas o sapo era um sapo muito travesso."
+  },
+  {
+   "i": 55,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele fez coisas ruins com a princesa, e a princesa não conseguia fazer nada para detê-lo."
+  },
+  {
+   "i": 56,
+   "fala": true,
+   "quem": "sapo",
+   "texto": "<Eu quero comer sua comida!>"
+  },
+  {
+   "i": 57,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o sapo."
+  },
+  {
+   "i": 58,
+   "fala": true,
+   "quem": "sapo",
+   "texto": "<Eu quero beber sua bebida!>"
+  },
+  {
+   "i": 59,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o sapo."
+  },
+  {
+   "i": 60,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "No final, o rei percebeu que a princesa estava em perigo."
+  },
+  {
+   "i": 61,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele pediu ajuda a um amigo, que era um homem muito forte."
+  },
+  {
+   "i": 62,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O amigo destruiu o sapo, e a princesa voltou a ser feliz."
+  },
+  {
+   "i": 63,
+   "fala": true,
+   "quem": "rei",
+   "texto": "<Que bom!>"
+  },
+  {
+   "i": 64,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rei."
+  },
+  {
+   "i": 65,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "<Que alívio!>"
+  },
+  {
+   "i": 66,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha do meio."
+  },
+  {
+   "i": 67,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "E assim, a princesa aprendeu que é importante ser cuidadosa com o que promete, e que nem sempre o que parece bom é realmente bom."
+  }
+ ]
+}

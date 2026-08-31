@@ -245,6 +245,73 @@ educativo: o **objetivo final** do projeto. Sobe-se um PDF, a Pandora monta um q
   handler `gerar_comedia` (→ `sintetizar_comedia`): vozes + sonoplastia + plateia + abertura.
 - Dependências: `pypdf` (leitura). `fpdf2` foi instalado só para gerar PDFs de teste.
 
+### 4.15. Contador em duas fases — roteirizar antes de sintetizar (ago/2026)
+
+**Desafio:** classificar (Gemma) e sintetizar (OmniVoice) estavam fundidos numa
+chamada só (`sintetizar_historia`). Três consequências ruins:
+
+1. Não dava para saber o **elenco** antes de gerar — o usuário precisava adivinhar
+   e digitar os nomes dos personagens à mão, em **três campos fixos** no frontend
+   (histórias com 4+ personagens não cabiam).
+2. Um falante classificado errado só se corrigia **regerando tudo** — a Gemma
+   reclassificava a história inteira e o OmniVoice re-sintetizava todos os beats.
+3. Mudar ritmo, volume do fundo ou a voz de um personagem também pagava a Gemma
+   de novo, sem necessidade.
+
+**Solução:** o pipeline foi partido em duas funções independentes, uma por modelo
+(o que também respeita o ciclo de VRAM, já que os dois nunca cabem juntos):
+
+| Fase | Função | Modelo | Custo |
+|---|---|---|---|
+| 1. Roteirizar | `roteirizar_historia(texto)` → lista de dicts JSON | só Gemma | segundos |
+| 2. Sintetizar | `sintetizar_roteiro(perfil, roteiro, ...)` | só OmniVoice | minutos |
+
+`elenco_do_roteiro(roteiro)` extrai os personagens com fala, na ordem de entrada
+em cena — é o que a interface usa para montar a lista de vozes **dinamicamente**,
+sem limite de quantidade. Como os nomes vêm da detecção (e não são digitados),
+o casamento nome ↔ voz nunca falha por erro de digitação.
+
+Rotas: `POST /api/story/script` (fase 1, **não exige sessão de voz** — nada é
+sintetizado ali) e `POST /api/story/render` (fase 2, recebe o roteiro revisado).
+`POST /api/story` continua existindo e encadeia as duas, para o fluxo antigo de
+uma tacada só.
+
+No frontend, a fase 1 produz uma **tabela editável**: um `<select>` de falante e
+um campo de texto por beat. Corrigir ali não custa GPU nenhuma. Editar o texto da
+história invalida o roteiro detectado — senão a fase 2 sintetizaria a versão
+velha silenciosamente.
+
+Infraestrutura: `_executar_tarefa` passou a aceitar um resultado
+`{"dados": ...}` — tarefa que só produz JSON, sem áudio — exposto em
+`GET /api/task/{id}` no campo `dados`.
+
+### 4.16. O bug do travessão no início da linha (ago/2026)
+
+**Sintoma:** em histórias escritas com hífen simples no começo da linha — o
+formato mais comum em português —, a classificação saía **exatamente invertida**:
+a fala do personagem era lida pelo narrador e a tag de atribuição ("perguntou
+Chapeuzinho") ganhava voz de personagem.
+
+**Causa:** `_beats_historia` normalizava hífen para travessão com
+`re.sub(r"(?<=\s)-(?=\s)", "–", n2)`, que exige **espaço antes** do hífen. Depois
+do `.strip()` da linha, o hífen inicial não tem espaço antes e escapava da
+normalização. Só o hífen do meio virava `–`, e o `split("–")` passava a contar a
+paridade a partir do lugar errado:
+
+```
+"- Mamãe, posso ir? - perguntou Chapeuzinho."
+   split →  ["- Mamãe, posso ir?", "perguntou Chapeuzinho."]
+   índice     0 = narração ✗           1 = fala ✗
+```
+
+Com o travessão inicial normalizado, o `split` produz um primeiro elemento vazio
+que realinha a paridade e tudo cai no lugar. A correção também passou a aceitar
+as outras grafias (`—`, `―`, `‒`, `−`) e a limpar pontuação solta no início dos
+trechos de narração colados a falas entre aspas (`", perguntou o lobo."`).
+
+Formatos validados: hífen no início, travessão `–`, travessão longo `—`, aspas e
+narração pura.
+
 ## 5. Onde calibrar (resumo dos números)
 
 | Quero ajustar... | Arquivo / função | Parâmetro |

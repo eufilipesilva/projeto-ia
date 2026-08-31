@@ -1,0 +1,494 @@
+{
+ "id": "a-senhora-trude",
+ "titulo": "A senhora Trude",
+ "elenco": [
+  "lila",
+  "pais",
+  "pai",
+  "mae",
+  "senhora",
+  "trude"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Era uma vez uma menina chamada Lila."
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Lila adorava fazer perguntas."
+  },
+  {
+   "i": 2,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela perguntava"
+  },
+  {
+   "i": 3,
+   "fala": true,
+   "quem": "lila",
+   "texto": "por quê?"
+  },
+  {
+   "i": 4,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "e"
+  },
+  {
+   "i": 5,
+   "fala": true,
+   "quem": "lila",
+   "texto": "como?"
+  },
+  {
+   "i": 6,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "o tempo todo."
+  },
+  {
+   "i": 7,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Seus pais diziam"
+  },
+  {
+   "i": 8,
+   "fala": true,
+   "quem": "pais",
+   "texto": "Lila, pare de perguntar! É cansativo!"
+  },
+  {
+   "i": 9,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "."
+  },
+  {
+   "i": 10,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Mas Lila não conseguia parar."
+  },
+  {
+   "i": 11,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Um dia, Lila ouviu falar da Senhora Trude."
+  },
+  {
+   "i": 12,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Todos diziam que ela era muito estranha."
+  },
+  {
+   "i": 13,
+   "fala": true,
+   "quem": "lila",
+   "texto": "Ela tem coisas esquisitas em sua casa!"
+  },
+  {
+   "i": 14,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "sussurravam."
+  },
+  {
+   "i": 15,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Lila ficou muito curiosa."
+  },
+  {
+   "i": 16,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela foi até a casa da Senhora Trude."
+  },
+  {
+   "i": 17,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Seus pais ficaram muito preocupados."
+  },
+  {
+   "i": 18,
+   "fala": true,
+   "quem": "pai",
+   "texto": "<Não vá, Lila!>"
+  },
+  {
+   "i": 19,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pai."
+  },
+  {
+   "i": 20,
+   "fala": true,
+   "quem": "pai",
+   "texto": "<A Senhora Trude é uma pessoa estranha. Não é seguro para você.>"
+  },
+  {
+   "i": 21,
+   "fala": true,
+   "quem": "mae",
+   "texto": "<Você precisa obedecer, Lila!>"
+  },
+  {
+   "i": 22,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 23,
+   "fala": true,
+   "quem": "mae",
+   "texto": "<É melhor ficar em casa e brincar.>"
+  },
+  {
+   "i": 24,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Mas Lila era teimosa."
+  },
+  {
+   "i": 25,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela amava fazer perguntas e queria saber o que a Senhora Trude estava fazendo."
+  },
+  {
+   "i": 26,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Então, Lila foi até a casa da Senhora Trude."
+  },
+  {
+   "i": 27,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A porta estava rangendo. A Senhora Trude estava na porta, sorrindo."
+  },
+  {
+   "i": 28,
+   "fala": true,
+   "quem": "senhora",
+   "texto": "<Olá, Lila!>"
+  },
+  {
+   "i": 29,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a Senhora Trude."
+  },
+  {
+   "i": 30,
+   "fala": true,
+   "quem": "senhora",
+   "texto": "<Eu estava esperando por você!>"
+  },
+  {
+   "i": 31,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Lila começou a olhar ao redor. Ela viu um gato preto."
+  },
+  {
+   "i": 32,
+   "fala": true,
+   "quem": "lila",
+   "texto": "<Senhora Trude, o que é isso?>"
+  },
+  {
+   "i": 33,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou Lila."
+  },
+  {
+   "i": 34,
+   "fala": true,
+   "quem": "senhora",
+   "texto": "<É meu gato, Listrado!>"
+  },
+  {
+   "i": 35,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a Senhora Trude."
+  },
+  {
+   "i": 36,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Lila viu um cachorro verde."
+  },
+  {
+   "i": 37,
+   "fala": true,
+   "quem": "lila",
+   "texto": "<E o que é isso?>"
+  },
+  {
+   "i": 38,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou Lila."
+  },
+  {
+   "i": 39,
+   "fala": true,
+   "quem": "senhora",
+   "texto": "<É meu cachorro, Verde!>"
+  },
+  {
+   "i": 40,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu a Senhora Trude."
+  },
+  {
+   "i": 41,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Lila viu um homem com roupas sujas de sangue."
+  },
+  {
+   "i": 42,
+   "fala": true,
+   "quem": "lila",
+   "texto": "<E o que é isso?>"
+  },
+  {
+   "i": 43,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou Lila."
+  },
+  {
+   "i": 44,
+   "fala": true,
+   "quem": "senhora",
+   "texto": "<É o meu ajudante, Sangue!>"
+  },
+  {
+   "i": 45,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu a Senhora Trude."
+  },
+  {
+   "i": 46,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Lila viu uma figura escura na janela."
+  },
+  {
+   "i": 47,
+   "fala": true,
+   "quem": "lila",
+   "texto": "<Senhora Trude, o que é isso?>"
+  },
+  {
+   "i": 48,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou Lila."
+  },
+  {
+   "i": 49,
+   "fala": true,
+   "quem": "senhora",
+   "texto": "<É o demônio!>"
+  },
+  {
+   "i": 50,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a Senhora Trude."
+  },
+  {
+   "i": 51,
+   "fala": true,
+   "quem": "senhora",
+   "texto": "<Ele veio me visitar!>"
+  },
+  {
+   "i": 52,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "De repente, a Senhora Trude pegou Lila e a levou para uma sala escura."
+  },
+  {
+   "i": 53,
+   "fala": true,
+   "quem": "senhora",
+   "texto": "<Agora você vai ficar aqui!>"
+  },
+  {
+   "i": 54,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a Senhora Trude."
+  },
+  {
+   "i": 55,
+   "fala": true,
+   "quem": "senhora",
+   "texto": "<Você vai me ajudar a iluminar este lugar!>"
+  },
+  {
+   "i": 56,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A Senhora Trude começou a cantar uma música estranha."
+  },
+  {
+   "i": 57,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A música ficou mais alta e mais alta."
+  },
+  {
+   "i": 58,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Lila começou a brilhar!"
+  },
+  {
+   "i": 59,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela brilhava e brilhava!"
+  },
+  {
+   "i": 60,
+   "fala": true,
+   "quem": "senhora",
+   "texto": "<Uau!>"
+  },
+  {
+   "i": 61,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a Senhora Trude."
+  },
+  {
+   "i": 62,
+   "fala": true,
+   "quem": "senhora",
+   "texto": "<Você é muito brilhante!>"
+  },
+  {
+   "i": 63,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Lila ficou muito quente."
+  },
+  {
+   "i": 64,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela começou a se sentir estranha."
+  },
+  {
+   "i": 65,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela não conseguia mais se mover."
+  },
+  {
+   "i": 66,
+   "fala": true,
+   "quem": "lila",
+   "texto": "<Senhora Trude, eu estou me sentindo mal!>"
+  },
+  {
+   "i": 67,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Lila."
+  },
+  {
+   "i": 68,
+   "fala": true,
+   "quem": "senhora",
+   "texto": "<Não se preocupe!>"
+  },
+  {
+   "i": 69,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a Senhora Trude."
+  },
+  {
+   "i": 70,
+   "fala": true,
+   "quem": "senhora",
+   "texto": "<Você vai ficar bem!>"
+  },
+  {
+   "i": 71,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Mas Lila não ficou bem. Ela ficou em chamas! A Senhora Trude riu."
+  },
+  {
+   "i": 72,
+   "fala": true,
+   "quem": "senhora",
+   "texto": "<Pelo menos você está brilhando!>"
+  },
+  {
+   "i": 73,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a Senhora Trude."
+  },
+  {
+   "i": 74,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "E assim, Lila se foi. Seus pais ficaram muito tristes. Eles aprenderam uma lição importante."
+  },
+  {
+   "i": 75,
+   "fala": true,
+   "quem": "trude",
+   "texto": "<Nunca, nunca, nunca vá visitar pessoas estranhas!>"
+  },
+  {
+   "i": 76,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disseram eles."
+  },
+  {
+   "i": 77,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "E a Senhora Trude continuou a brilhar, e a cantar sua música estranha."
+  },
+  {
+   "i": 78,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela sempre se aqueceu perto do fogo, e sempre disse"
+  },
+  {
+   "i": 79,
+   "fala": true,
+   "quem": "trude",
+   "texto": "Pelo menos uma vez na vida, você ilumina brilhantemente."
+  }
+ ]
+}

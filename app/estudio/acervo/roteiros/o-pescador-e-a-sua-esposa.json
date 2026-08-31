@@ -1,0 +1,935 @@
+{
+ "id": "o-pescador-e-a-sua-esposa",
+ "titulo": "O pescador e a sua esposa",
+ "elenco": [
+  "pescador",
+  "linguado",
+  "esposa"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "O pescador viu um peixinho"
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 2,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Um linguado"
+  },
+  {
+   "i": 3,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 4,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Ele estava brilhando, brilhando!"
+  },
+  {
+   "i": 5,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 6,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Que engraçado!"
+  },
+  {
+   "i": 7,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 8,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Eu quero ir para casa"
+  },
+  {
+   "i": 9,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 10,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Ir para casa?"
+  },
+  {
+   "i": 11,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 12,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Sim, sim, para a água!"
+  },
+  {
+   "i": 13,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 14,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Mas você é um peixinho!"
+  },
+  {
+   "i": 15,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 16,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Por favor, solte-me!"
+  },
+  {
+   "i": 17,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 18,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Tudo bem, tudo bem"
+  },
+  {
+   "i": 19,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 20,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Mas espere!"
+  },
+  {
+   "i": 21,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 22,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Quando você sair da água, vai deixar um rastro!"
+  },
+  {
+   "i": 23,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 24,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Nossa, que rastro!"
+  },
+  {
+   "i": 25,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pescador."
+  },
+  {
+   "i": 26,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Que estranho!"
+  },
+  {
+   "i": 27,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pescador."
+  },
+  {
+   "i": 28,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Parece sangue!"
+  },
+  {
+   "i": 29,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pescador."
+  },
+  {
+   "i": 30,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Precisamos de algo bom"
+  },
+  {
+   "i": 31,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pescador."
+  },
+  {
+   "i": 32,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Que tal um desejo?"
+  },
+  {
+   "i": 33,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pescador."
+  },
+  {
+   "i": 34,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Com o linguado?"
+  },
+  {
+   "i": 35,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pescador."
+  },
+  {
+   "i": 36,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Boa ideia!"
+  },
+  {
+   "i": 37,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 38,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Eu desejo uma cabana!"
+  },
+  {
+   "i": 39,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pescador."
+  },
+  {
+   "i": 40,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Uma cabana linda!"
+  },
+  {
+   "i": 41,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 42,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Pronto!"
+  },
+  {
+   "i": 43,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 44,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Uma cabana nova!"
+  },
+  {
+   "i": 45,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pescador."
+  },
+  {
+   "i": 46,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Essa cabana é feia!"
+  },
+  {
+   "i": 47,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pescador."
+  },
+  {
+   "i": 48,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Eu desejo um castelo!"
+  },
+  {
+   "i": 49,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pescador."
+  },
+  {
+   "i": 50,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Um castelo grandão!"
+  },
+  {
+   "i": 51,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 52,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Agora sim!"
+  },
+  {
+   "i": 53,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pescador."
+  },
+  {
+   "i": 54,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Eu não quero mais nada"
+  },
+  {
+   "i": 55,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 56,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Que estranho!"
+  },
+  {
+   "i": 57,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 58,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Eu quero um castelo!"
+  },
+  {
+   "i": 59,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 60,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Um castelo enorme!"
+  },
+  {
+   "i": 61,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 62,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Pronto!"
+  },
+  {
+   "i": 63,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 64,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Esse castelo é muito grande!"
+  },
+  {
+   "i": 65,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pescador."
+  },
+  {
+   "i": 66,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Eu desejo ser rainha!"
+  },
+  {
+   "i": 67,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pescador."
+  },
+  {
+   "i": 68,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Uma rainha feliz!"
+  },
+  {
+   "i": 69,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 70,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Isso mesmo!"
+  },
+  {
+   "i": 71,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pescador."
+  },
+  {
+   "i": 72,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Eu não quero ser rainha!"
+  },
+  {
+   "i": 73,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 74,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Que confusão!"
+  },
+  {
+   "i": 75,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 76,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Eu desejo ser rei!"
+  },
+  {
+   "i": 77,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 78,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Um rei poderoso!"
+  },
+  {
+   "i": 79,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 80,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Tudo certo!"
+  },
+  {
+   "i": 81,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 82,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Agora somos rei e rainha!"
+  },
+  {
+   "i": 83,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 84,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Que legal!"
+  },
+  {
+   "i": 85,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 86,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Eu quero que minha esposa seja rainha!"
+  },
+  {
+   "i": 87,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 88,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Ela é a rainha!"
+  },
+  {
+   "i": 89,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 90,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Isso!"
+  },
+  {
+   "i": 91,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 92,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Eu quero ser imperatriz!"
+  },
+  {
+   "i": 93,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pescador."
+  },
+  {
+   "i": 94,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Uma imperatriz linda!"
+  },
+  {
+   "i": 95,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 96,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Pode ser!"
+  },
+  {
+   "i": 97,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 98,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Imperatriz agora!"
+  },
+  {
+   "i": 99,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pescador."
+  },
+  {
+   "i": 100,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Eu quero ser papa!"
+  },
+  {
+   "i": 101,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pescador."
+  },
+  {
+   "i": 102,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Um papa sábio!"
+  },
+  {
+   "i": 103,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 104,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Sim, sim!"
+  },
+  {
+   "i": 105,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 106,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Papa agora!"
+  },
+  {
+   "i": 107,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pescador."
+  },
+  {
+   "i": 108,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Eu não quero ser papa!"
+  },
+  {
+   "i": 109,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 110,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Que confusão!"
+  },
+  {
+   "i": 111,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 112,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Eu desejo ser como Deus!"
+  },
+  {
+   "i": 113,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 114,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Um Deus poderoso!"
+  },
+  {
+   "i": 115,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 116,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Isso!"
+  },
+  {
+   "i": 117,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 118,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Eu não quero ser Deus!"
+  },
+  {
+   "i": 119,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 120,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Que horror!"
+  },
+  {
+   "i": 121,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 122,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Eu quero que a esposa seja rainha!"
+  },
+  {
+   "i": 123,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 124,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Ela é a rainha!"
+  },
+  {
+   "i": 125,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 126,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "E eu sou o rei!"
+  },
+  {
+   "i": 127,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 128,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Eu quero ser rainha!"
+  },
+  {
+   "i": 129,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pescador."
+  },
+  {
+   "i": 130,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Uma rainha feliz!"
+  },
+  {
+   "i": 131,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 132,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Isso!"
+  },
+  {
+   "i": 133,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 134,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Rainha agora!"
+  },
+  {
+   "i": 135,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pescador."
+  },
+  {
+   "i": 136,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Eu quero ser como Deus!"
+  },
+  {
+   "i": 137,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pescador."
+  },
+  {
+   "i": 138,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Um Deus poderoso!"
+  },
+  {
+   "i": 139,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 140,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Sim!"
+  },
+  {
+   "i": 141,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  },
+  {
+   "i": 142,
+   "fala": true,
+   "quem": "esposa",
+   "texto": "Deus agora!"
+  },
+  {
+   "i": 143,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a esposa do pescador."
+  },
+  {
+   "i": 144,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Eu não quero ser Deus!"
+  },
+  {
+   "i": 145,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 146,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Que estranho!"
+  },
+  {
+   "i": 147,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 148,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Eu quero ir embora!"
+  },
+  {
+   "i": 149,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 150,
+   "fala": true,
+   "quem": "pescador",
+   "texto": "Adeus linguado!"
+  },
+  {
+   "i": 151,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pescador."
+  },
+  {
+   "i": 152,
+   "fala": true,
+   "quem": "linguado",
+   "texto": "Adeus!"
+  },
+  {
+   "i": 153,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o linguado."
+  }
+ ]
+}

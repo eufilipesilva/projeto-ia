@@ -1,0 +1,526 @@
+{
+ "id": "rapunzel",
+ "titulo": "Rapunzel",
+ "elenco": [
+  "mae",
+  "pai"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": true,
+   "quem": "mae",
+   "texto": "A velha mulher queria um filho"
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 2,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Sim, ela esperava muito"
+  },
+  {
+   "i": 3,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 4,
+   "fala": true,
+   "quem": "pai",
+   "texto": "Mas o jardim era muito alto"
+  },
+  {
+   "i": 5,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o pai."
+  },
+  {
+   "i": 6,
+   "fala": true,
+   "quem": "mae",
+   "texto": "E a feiticeira era muito esperta"
+  },
+  {
+   "i": 7,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 8,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Ela não gostava de ser incomodada"
+  },
+  {
+   "i": 9,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 10,
+   "fala": true,
+   "quem": "mae",
+   "texto": "A mulher queria um bebê"
+  },
+  {
+   "i": 11,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 12,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Ela olhava para o rapôncio"
+  },
+  {
+   "i": 13,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 14,
+   "fala": true,
+   "quem": "mae",
+   "texto": "E o rapôncio era verde e doce"
+  },
+  {
+   "i": 15,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 16,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Ela queria comer o rapôncio"
+  },
+  {
+   "i": 17,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 18,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Isso a deixava muito triste"
+  },
+  {
+   "i": 19,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 20,
+   "fala": true,
+   "quem": "mae",
+   "texto": "O marido fez algo muito bom"
+  },
+  {
+   "i": 21,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 22,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Ele pulou o muro alto"
+  },
+  {
+   "i": 23,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 24,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Ele pegou o rapôncio com cuidado"
+  },
+  {
+   "i": 25,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 26,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Ele deu o rapôncio para a esposa"
+  },
+  {
+   "i": 27,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 28,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Ela comeu e ficou feliz"
+  },
+  {
+   "i": 29,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 30,
+   "fala": true,
+   "quem": "mae",
+   "texto": "A feiticeira ficou muito zangada"
+  },
+  {
+   "i": 31,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 32,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Ela disse que o homem ia sofrer"
+  },
+  {
+   "i": 33,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 34,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Mas a mãe e o pai eram muito gentis"
+  },
+  {
+   "i": 35,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 36,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Eles fizeram um acordo com a feiticeira"
+  },
+  {
+   "i": 37,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 38,
+   "fala": true,
+   "quem": "mae",
+   "texto": "A feiticeira queria o bebê"
+  },
+  {
+   "i": 39,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 40,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Mas ela queria um nome bonito"
+  },
+  {
+   "i": 41,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 42,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Eles chamaram o bebê de Rapunzel"
+  },
+  {
+   "i": 43,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 44,
+   "fala": true,
+   "quem": "mae",
+   "texto": "A feiticeira levou Rapunzel para longe"
+  },
+  {
+   "i": 45,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 46,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Rapunzel cresceu em uma torre alta"
+  },
+  {
+   "i": 47,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 48,
+   "fala": true,
+   "quem": "mae",
+   "texto": "A feiticeira a prendia lá"
+  },
+  {
+   "i": 49,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 50,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— Ela gritava"
+  },
+  {
+   "i": 51,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Rapunzel, Rapunzel!"
+  },
+  {
+   "i": 52,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse a mãe."
+  },
+  {
+   "i": 53,
+   "fala": true,
+   "quem": "mae",
+   "texto": "E as tranças de Rapunzel caíam"
+  },
+  {
+   "i": 54,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 55,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Um príncipe ouviu a voz"
+  },
+  {
+   "i": 56,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 57,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Ele queria conhecer Rapunzel"
+  },
+  {
+   "i": 58,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 59,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Ele procurou a porta da torre"
+  },
+  {
+   "i": 60,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 61,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Mas ele não encontrou nada"
+  },
+  {
+   "i": 62,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 63,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Ele voltou todos os dias"
+  },
+  {
+   "i": 64,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 65,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— Ele gritava"
+  },
+  {
+   "i": 66,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Rapunzel, Rapunzel!"
+  },
+  {
+   "i": 67,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse a mãe."
+  },
+  {
+   "i": 68,
+   "fala": true,
+   "quem": "mae",
+   "texto": "E as tranças de Rapunzel caíam"
+  },
+  {
+   "i": 69,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 70,
+   "fala": true,
+   "quem": "mae",
+   "texto": "A feiticeira estava muito zangada"
+  },
+  {
+   "i": 71,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 72,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Ela cortou as tranças de Rapunzel"
+  },
+  {
+   "i": 73,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 74,
+   "fala": true,
+   "quem": "mae",
+   "texto": "E Rapunzel ficou sozinha"
+  },
+  {
+   "i": 75,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 76,
+   "fala": true,
+   "quem": "mae",
+   "texto": "O príncipe pulou da torre"
+  },
+  {
+   "i": 77,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 78,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Ele se machucou com os espinhos"
+  },
+  {
+   "i": 79,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 80,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Mas ele encontrou Rapunzel no deserto"
+  },
+  {
+   "i": 81,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 82,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Eles se amaram muito"
+  },
+  {
+   "i": 83,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  },
+  {
+   "i": 84,
+   "fala": true,
+   "quem": "mae",
+   "texto": "E eles viveram felizes para sempre"
+  },
+  {
+   "i": 85,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe."
+  }
+ ]
+}

@@ -1,0 +1,346 @@
+{
+ "id": "a-noiva-do-coelhinho",
+ "titulo": "A noiva do coelhinho",
+ "elenco": [
+  "lila",
+  "coelhinho"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Era uma vez uma menina chamada Lila e sua mãe."
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles moravam numa casa linda, com um jardim cheio de repolhos grandes e verdes."
+  },
+  {
+   "i": 2,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Um coelhinho pequeno e branco também vivia ali."
+  },
+  {
+   "i": 3,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— Lila, — disse a mãe, —"
+  },
+  {
+   "i": 4,
+   "fala": true,
+   "quem": "lila",
+   "texto": "Você precisa mandar o coelhinho embora do jardim. Ele está comendo todos os nossos repolhos!"
+  },
+  {
+   "i": 5,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— Ei, coelhinho — disse Lila, —"
+  },
+  {
+   "i": 6,
+   "fala": true,
+   "quem": "coelhinho",
+   "texto": "Você está comendo todos os nossos repolhos verdes! Isso não está certo!"
+  },
+  {
+   "i": 7,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— Venha cá, Lila — disse o coelhinho, —"
+  },
+  {
+   "i": 8,
+   "fala": true,
+   "quem": "coelhinho",
+   "texto": "Sente no meu rabo macio e vamos juntos para a minha toca, que é bem quentinha!"
+  },
+  {
+   "i": 9,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Lila não queria ir."
+  },
+  {
+   "i": 10,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "No dia seguinte, o coelhinho apareceu de novo."
+  },
+  {
+   "i": 11,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele estava comendo mais repolhos!"
+  },
+  {
+   "i": 12,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— Ei, coelhinho — disse Lila, —"
+  },
+  {
+   "i": 13,
+   "fala": true,
+   "quem": "coelhinho",
+   "texto": "Você continua comendo todos os nossos repolhos! Por favor, pare!"
+  },
+  {
+   "i": 14,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— Venha cá, Lila — disse o coelhinho, —"
+  },
+  {
+   "i": 15,
+   "fala": true,
+   "quem": "coelhinho",
+   "texto": "Sente no meu rabo macio e vamos juntos para a minha toca, que é bem quentinha!"
+  },
+  {
+   "i": 16,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Lila ainda não queria ir."
+  },
+  {
+   "i": 17,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "No terceiro dia, o coelhinho voltou, e ele estava comendo os últimos repolhos!"
+  },
+  {
+   "i": 18,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— Coelhinho — disse Lila, —"
+  },
+  {
+   "i": 19,
+   "fala": true,
+   "quem": "coelhinho",
+   "texto": "Você está comendo todos os nossos repolhos! Por favor, vá embora!"
+  },
+  {
+   "i": 20,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— Venha cá, Lila — disse o coelhinho, —"
+  },
+  {
+   "i": 21,
+   "fala": true,
+   "quem": "coelhinho",
+   "texto": "Sente no meu rabo macio e vamos juntos para a minha toca, que é bem quentinha!"
+  },
+  {
+   "i": 22,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Lila finalmente sentou-se no rabo do coelhinho."
+  },
+  {
+   "i": 23,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O coelhinho a levou para a sua toca, que era um lugar aconchegante e cheio de feno."
+  },
+  {
+   "i": 24,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— Agora — disse o coelhinho, —"
+  },
+  {
+   "i": 25,
+   "fala": true,
+   "quem": "coelhinho",
+   "texto": "Eu quero que você prepare para mim repolho verde e grãos de milho, e eu irei chamar os convidados para o meu casamento!"
+  },
+  {
+   "i": 26,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Então, muitos coelhos vieram para o casamento."
+  },
+  {
+   "i": 27,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Um corvo grande estava lá como o padre, para casar o coelhinho com a Lila."
+  },
+  {
+   "i": 28,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Uma raposa estava lá como a sacristã."
+  },
+  {
+   "i": 29,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O altar estava embaixo de um arco-íris colorido!"
+  },
+  {
+   "i": 30,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Mas a Lila estava triste."
+  },
+  {
+   "i": 31,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela estava sozinha."
+  },
+  {
+   "i": 32,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O coelhinho chegou e disse: —"
+  },
+  {
+   "i": 33,
+   "fala": true,
+   "quem": "coelhinho",
+   "texto": "Abram as portas, Abram as portas, os convidados do casamento estão felizes!"
+  },
+  {
+   "i": 34,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A Lila não disse nada."
+  },
+  {
+   "i": 35,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela começou a chorar."
+  },
+  {
+   "i": 36,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O coelhinho foi embora."
+  },
+  {
+   "i": 37,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Depois, ele voltou e disse: —"
+  },
+  {
+   "i": 38,
+   "fala": true,
+   "quem": "coelhinho",
+   "texto": "Tirem as tampas, tirem as tampas, os convidados estão com fome!"
+  },
+  {
+   "i": 39,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A Lila também não disse nada."
+  },
+  {
+   "i": 40,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela continuou a chorar."
+  },
+  {
+   "i": 41,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O coelhinho foi embora."
+  },
+  {
+   "i": 42,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele voltou mais uma vez e disse: —"
+  },
+  {
+   "i": 43,
+   "fala": true,
+   "quem": "coelhinho",
+   "texto": "Tirem as tampas, tirem as tampas, os convidados estão esperando!"
+  },
+  {
+   "i": 44,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A Lila não disse nada, e o coelhinho foi embora."
+  },
+  {
+   "i": 45,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Então, ela fez uma boneca de palha com suas roupas."
+  },
+  {
+   "i": 46,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela deu para a boneca uma colher para mexer no milho, e colocou a boneca perto do caldeirão."
+  },
+  {
+   "i": 47,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O coelhinho voltou e bateu na cabeça da boneca até que a touca dela caiu."
+  },
+  {
+   "i": 48,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O coelhinho viu que não era a Lila que estava casando."
+  },
+  {
+   "i": 49,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele ficou muito triste e foi embora."
+  },
+  {
+   "i": 50,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— Lila — disse o coelhinho, —"
+  },
+  {
+   "i": 51,
+   "fala": true,
+   "quem": "coelhinho",
+   "texto": "Eu vou embora, porque não tenho noiva!"
+  },
+  {
+   "i": 52,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A Lila sorriu."
+  },
+  {
+   "i": 53,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela abraçou o coelhinho."
+  },
+  {
+   "i": 54,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles foram todos brincar no jardim, e a Lila e o coelhinho foram os melhores amigos."
+  },
+  {
+   "i": 55,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "E viveram felizes para sempre."
+  }
+ ]
+}

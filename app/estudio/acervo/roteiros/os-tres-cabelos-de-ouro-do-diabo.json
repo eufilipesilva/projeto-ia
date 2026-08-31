@@ -1,0 +1,661 @@
+{
+ "id": "os-tres-cabelos-de-ouro-do-diabo",
+ "titulo": "Os três cabelos de ouro do diabo",
+ "elenco": [
+  "rei",
+  "barqueiro",
+  "mae",
+  "formiga",
+  "diabo"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": true,
+   "quem": "rei",
+   "texto": "O rei está procurando ouro"
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rei."
+  },
+  {
+   "i": 2,
+   "fala": true,
+   "quem": "barqueiro",
+   "texto": "Ele encontrou um barqueiro"
+  },
+  {
+   "i": 3,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o barqueiro."
+  },
+  {
+   "i": 4,
+   "fala": true,
+   "quem": "barqueiro",
+   "texto": "O barqueiro quer ajudar"
+  },
+  {
+   "i": 5,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o barqueiro."
+  },
+  {
+   "i": 6,
+   "fala": true,
+   "quem": "barqueiro",
+   "texto": "O barqueiro oferece uma viagem"
+  },
+  {
+   "i": 7,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o barqueiro."
+  },
+  {
+   "i": 8,
+   "fala": true,
+   "quem": "rei",
+   "texto": "O rei aceita a oferta"
+  },
+  {
+   "i": 9,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rei."
+  },
+  {
+   "i": 10,
+   "fala": true,
+   "quem": "barqueiro",
+   "texto": "O barqueiro tem um barco"
+  },
+  {
+   "i": 11,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o barqueiro."
+  },
+  {
+   "i": 12,
+   "fala": true,
+   "quem": "barqueiro",
+   "texto": "O barco leva até a outra margem"
+  },
+  {
+   "i": 13,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o barqueiro."
+  },
+  {
+   "i": 14,
+   "fala": true,
+   "quem": "barqueiro",
+   "texto": "O rei entra no barco"
+  },
+  {
+   "i": 15,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o barqueiro."
+  },
+  {
+   "i": 16,
+   "fala": true,
+   "quem": "barqueiro",
+   "texto": "O rei começa a levar pessoas"
+  },
+  {
+   "i": 17,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o barqueiro."
+  },
+  {
+   "i": 18,
+   "fala": true,
+   "quem": "barqueiro",
+   "texto": "Ele leva um homem"
+  },
+  {
+   "i": 19,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o barqueiro."
+  },
+  {
+   "i": 20,
+   "fala": true,
+   "quem": "barqueiro",
+   "texto": "Ele leva uma mulher"
+  },
+  {
+   "i": 21,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o barqueiro."
+  },
+  {
+   "i": 22,
+   "fala": true,
+   "quem": "barqueiro",
+   "texto": "Ele leva um menino pequeno"
+  },
+  {
+   "i": 23,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o barqueiro."
+  },
+  {
+   "i": 24,
+   "fala": true,
+   "quem": "barqueiro",
+   "texto": "O menino está dentro da caixa"
+  },
+  {
+   "i": 25,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o barqueiro."
+  },
+  {
+   "i": 26,
+   "fala": true,
+   "quem": "barqueiro",
+   "texto": "O barqueiro faz perguntas"
+  },
+  {
+   "i": 27,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o barqueiro."
+  },
+  {
+   "i": 28,
+   "fala": true,
+   "quem": "barqueiro",
+   "texto": "Ele pergunta o que o menino quer"
+  },
+  {
+   "i": 29,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o barqueiro."
+  },
+  {
+   "i": 30,
+   "fala": true,
+   "quem": "barqueiro",
+   "texto": "Ele pergunta o que o menino sabe"
+  },
+  {
+   "i": 31,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o barqueiro."
+  },
+  {
+   "i": 32,
+   "fala": true,
+   "quem": "barqueiro",
+   "texto": "Ele pergunta por que o menino remeia"
+  },
+  {
+   "i": 33,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o barqueiro."
+  },
+  {
+   "i": 34,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— O barqueiro diz"
+  },
+  {
+   "i": 35,
+   "fala": true,
+   "quem": "barqueiro",
+   "texto": "A resposta vem depois"
+  },
+  {
+   "i": 36,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse o barqueiro."
+  },
+  {
+   "i": 37,
+   "fala": true,
+   "quem": "rei",
+   "texto": "O rei está pensando"
+  },
+  {
+   "i": 38,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rei."
+  },
+  {
+   "i": 39,
+   "fala": true,
+   "quem": "rei",
+   "texto": "O rei está tentando entender"
+  },
+  {
+   "i": 40,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rei."
+  },
+  {
+   "i": 41,
+   "fala": true,
+   "quem": "rei",
+   "texto": "O rei continua a remar"
+  },
+  {
+   "i": 42,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rei."
+  },
+  {
+   "i": 43,
+   "fala": true,
+   "quem": "barqueiro",
+   "texto": "O rei chega a um lugar estranho"
+  },
+  {
+   "i": 44,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o barqueiro."
+  },
+  {
+   "i": 45,
+   "fala": true,
+   "quem": "barqueiro",
+   "texto": "Ele vê uma porta grande"
+  },
+  {
+   "i": 46,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o barqueiro."
+  },
+  {
+   "i": 47,
+   "fala": true,
+   "quem": "barqueiro",
+   "texto": "A porta leva para o inferno"
+  },
+  {
+   "i": 48,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o barqueiro."
+  },
+  {
+   "i": 49,
+   "fala": true,
+   "quem": "barqueiro",
+   "texto": "Uma mulher está sentada lá"
+  },
+  {
+   "i": 50,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o barqueiro."
+  },
+  {
+   "i": 51,
+   "fala": true,
+   "quem": "mae",
+   "texto": "A mulher é a mãe do diabo"
+  },
+  {
+   "i": 52,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe do diabo."
+  },
+  {
+   "i": 53,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Ela tem cabelos de ouro"
+  },
+  {
+   "i": 54,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe do diabo."
+  },
+  {
+   "i": 55,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Ela quer três cabelos de ouro"
+  },
+  {
+   "i": 56,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe do diabo."
+  },
+  {
+   "i": 57,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Ela transforma o rei em formiga"
+  },
+  {
+   "i": 58,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe do diabo."
+  },
+  {
+   "i": 59,
+   "fala": true,
+   "quem": "formiga",
+   "texto": "A formiga pensa muito"
+  },
+  {
+   "i": 60,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a formiga."
+  },
+  {
+   "i": 61,
+   "fala": true,
+   "quem": "formiga",
+   "texto": "Ela pergunta sobre a fonte seca"
+  },
+  {
+   "i": 62,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a formiga."
+  },
+  {
+   "i": 63,
+   "fala": true,
+   "quem": "formiga",
+   "texto": "Ela pergunta sobre a macieira sem folhas"
+  },
+  {
+   "i": 64,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a formiga."
+  },
+  {
+   "i": 65,
+   "fala": true,
+   "quem": "formiga",
+   "texto": "Ela pergunta sobre o barqueiro"
+  },
+  {
+   "i": 66,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a formiga."
+  },
+  {
+   "i": 67,
+   "fala": true,
+   "quem": "mae",
+   "texto": "A mãe do diabo fica brava"
+  },
+  {
+   "i": 68,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe do diabo."
+  },
+  {
+   "i": 69,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Ela diz que as perguntas são difíceis"
+  },
+  {
+   "i": 70,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe do diabo."
+  },
+  {
+   "i": 71,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Ela pede silêncio"
+  },
+  {
+   "i": 72,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe do diabo."
+  },
+  {
+   "i": 73,
+   "fala": true,
+   "quem": "diabo",
+   "texto": "O diabo volta e come carne"
+  },
+  {
+   "i": 74,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o diabo."
+  },
+  {
+   "i": 75,
+   "fala": true,
+   "quem": "diabo",
+   "texto": "O diabo repreende o rei"
+  },
+  {
+   "i": 76,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o diabo."
+  },
+  {
+   "i": 77,
+   "fala": true,
+   "quem": "diabo",
+   "texto": "Ele fala sobre sonhos e desejos"
+  },
+  {
+   "i": 78,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o diabo."
+  },
+  {
+   "i": 79,
+   "fala": true,
+   "quem": "diabo",
+   "texto": "Ele fala sobre um sapo no poço"
+  },
+  {
+   "i": 80,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o diabo."
+  },
+  {
+   "i": 81,
+   "fala": true,
+   "quem": "diabo",
+   "texto": "O diabo está com muita fome"
+  },
+  {
+   "i": 82,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o diabo."
+  },
+  {
+   "i": 83,
+   "fala": true,
+   "quem": "mae",
+   "texto": "A mãe do diabo arranca os cabelos de ouro"
+  },
+  {
+   "i": 84,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe do diabo."
+  },
+  {
+   "i": 85,
+   "fala": true,
+   "quem": "rei",
+   "texto": "O rei volta a ser o rei"
+  },
+  {
+   "i": 86,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rei."
+  },
+  {
+   "i": 87,
+   "fala": true,
+   "quem": "barqueiro",
+   "texto": "O barqueiro dá um conselho"
+  },
+  {
+   "i": 88,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o barqueiro."
+  },
+  {
+   "i": 89,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— Ele diz"
+  },
+  {
+   "i": 90,
+   "fala": true,
+   "quem": "barqueiro",
+   "texto": "Coloque o remo na mão de quem precisa"
+  },
+  {
+   "i": 91,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse o barqueiro."
+  },
+  {
+   "i": 92,
+   "fala": true,
+   "quem": "rei",
+   "texto": "O rei segue o conselho"
+  },
+  {
+   "i": 93,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rei."
+  },
+  {
+   "i": 94,
+   "fala": true,
+   "quem": "rei",
+   "texto": "Ele mata o rato na macieira"
+  },
+  {
+   "i": 95,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rei."
+  },
+  {
+   "i": 96,
+   "fala": true,
+   "quem": "rei",
+   "texto": "Ele mata o sapo no poço"
+  },
+  {
+   "i": 97,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rei."
+  },
+  {
+   "i": 98,
+   "fala": true,
+   "quem": "rei",
+   "texto": "O rei volta para casa"
+  },
+  {
+   "i": 99,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rei."
+  },
+  {
+   "i": 100,
+   "fala": true,
+   "quem": "rei",
+   "texto": "O rei conta sobre o ouro"
+  },
+  {
+   "i": 101,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rei."
+  },
+  {
+   "i": 102,
+   "fala": true,
+   "quem": "rei",
+   "texto": "Ele diz que o ouro estava no rio"
+  },
+  {
+   "i": 103,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rei."
+  },
+  {
+   "i": 104,
+   "fala": true,
+   "quem": "rei",
+   "texto": "O rei está feliz"
+  },
+  {
+   "i": 105,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rei."
+  },
+  {
+   "i": 106,
+   "fala": true,
+   "quem": "rei",
+   "texto": "O rei e sua esposa são felizes"
+  },
+  {
+   "i": 107,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rei."
+  }
+ ]
+}

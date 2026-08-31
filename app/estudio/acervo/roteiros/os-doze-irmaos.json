@@ -1,0 +1,600 @@
+{
+ "id": "os-doze-irmaos",
+ "titulo": "Os doze irmãos",
+ "elenco": [
+  "rei",
+  "rainha",
+  "benjamin",
+  "madrasta"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": true,
+   "quem": "rei",
+   "texto": "O rei está triste"
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rei Alberto."
+  },
+  {
+   "i": 2,
+   "fala": true,
+   "quem": "rei",
+   "texto": "Ele quer caixões para seus filhos"
+  },
+  {
+   "i": 3,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "continuou o rei Alberto."
+  },
+  {
+   "i": 4,
+   "fala": true,
+   "quem": "rei",
+   "texto": "Doze caixões, um para cada menino"
+  },
+  {
+   "i": 5,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "explicou o rei Alberto."
+  },
+  {
+   "i": 6,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Ele quer que eles estejam sempre prontos"
+  },
+  {
+   "i": 7,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha Margarida."
+  },
+  {
+   "i": 8,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Eu sinto um aperto no coração"
+  },
+  {
+   "i": 9,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "lamentou a rainha Margarida."
+  },
+  {
+   "i": 10,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "É que os meninos não vão crescer muito"
+  },
+  {
+   "i": 11,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha Margarida."
+  },
+  {
+   "i": 12,
+   "fala": true,
+   "quem": "benjamin",
+   "texto": "Benjamin, meu filho, por que você está tão triste?"
+  },
+  {
+   "i": 13,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou Benjamin."
+  },
+  {
+   "i": 14,
+   "fala": true,
+   "quem": "benjamin",
+   "texto": "Eu não sei, papai"
+  },
+  {
+   "i": 15,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu Benjamin."
+  },
+  {
+   "i": 16,
+   "fala": true,
+   "quem": "benjamin",
+   "texto": "É que a mamãe está preocupada"
+  },
+  {
+   "i": 17,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Benjamin."
+  },
+  {
+   "i": 18,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "A mamãe quer que todos estejam seguros"
+  },
+  {
+   "i": 19,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "explicou a rainha Margarida."
+  },
+  {
+   "i": 20,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Mas os caixões são para quando eles não estão mais aqui"
+  },
+  {
+   "i": 21,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha Margarida."
+  },
+  {
+   "i": 22,
+   "fala": true,
+   "quem": "benjamin",
+   "texto": "Isso é muito triste"
+  },
+  {
+   "i": 23,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Benjamin."
+  },
+  {
+   "i": 24,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "A mamãe quer que a gente vá para a floresta"
+  },
+  {
+   "i": 25,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha Margarida."
+  },
+  {
+   "i": 26,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "E seguir as instruções da velha fada"
+  },
+  {
+   "i": 27,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "explicou a rainha Margarida."
+  },
+  {
+   "i": 28,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Ela vai nos mostrar o caminho"
+  },
+  {
+   "i": 29,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha Margarida."
+  },
+  {
+   "i": 30,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "A fada tem uma bandeira mágica"
+  },
+  {
+   "i": 31,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha Margarida."
+  },
+  {
+   "i": 32,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Se a bandeira ficar vermelha, é que os meninos não vão voltar"
+  },
+  {
+   "i": 33,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "explicou a rainha Margarida."
+  },
+  {
+   "i": 34,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "A fada é muito importante"
+  },
+  {
+   "i": 35,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha Margarida."
+  },
+  {
+   "i": 36,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Ela vai nos ajudar a entender tudo"
+  },
+  {
+   "i": 37,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha Margarida."
+  },
+  {
+   "i": 38,
+   "fala": true,
+   "quem": "rei",
+   "texto": "Vamos para a cabana da fada"
+  },
+  {
+   "i": 39,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rei Alberto."
+  },
+  {
+   "i": 40,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "A cabana é um pouco assustadora"
+  },
+  {
+   "i": 41,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha Margarida."
+  },
+  {
+   "i": 42,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Mas a fada é muito gentil"
+  },
+  {
+   "i": 43,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha Margarida."
+  },
+  {
+   "i": 44,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "A fada nos dá um presente"
+  },
+  {
+   "i": 45,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha Margarida."
+  },
+  {
+   "i": 46,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Um barril de madeira para a menina"
+  },
+  {
+   "i": 47,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha Margarida."
+  },
+  {
+   "i": 48,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Para ela se proteger"
+  },
+  {
+   "i": 49,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha Margarida."
+  },
+  {
+   "i": 50,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "A fada faz uma brincadeira"
+  },
+  {
+   "i": 51,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha Margarida."
+  },
+  {
+   "i": 52,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Ela transforma os irmãos em corvos"
+  },
+  {
+   "i": 53,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "explicou a rainha Margarida."
+  },
+  {
+   "i": 54,
+   "fala": true,
+   "quem": "benjamin",
+   "texto": "Os corvos são muito bonitos"
+  },
+  {
+   "i": 55,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Benjamin."
+  },
+  {
+   "i": 56,
+   "fala": true,
+   "quem": "benjamin",
+   "texto": "Mas eles não podem voltar para casa"
+  },
+  {
+   "i": 57,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Benjamin."
+  },
+  {
+   "i": 58,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "A velha fada diz que a menina pode salvar os irmãos"
+  },
+  {
+   "i": 59,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha Margarida."
+  },
+  {
+   "i": 60,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Se ela se sentar na árvore e ficar muda"
+  },
+  {
+   "i": 61,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "explicou a rainha Margarida."
+  },
+  {
+   "i": 62,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Por sete anos, a fada vai libertá-los"
+  },
+  {
+   "i": 63,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha Margarida."
+  },
+  {
+   "i": 64,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "A menina se senta na árvore"
+  },
+  {
+   "i": 65,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha Margarida."
+  },
+  {
+   "i": 66,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "E fica muda por sete anos"
+  },
+  {
+   "i": 67,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha Margarida."
+  },
+  {
+   "i": 68,
+   "fala": true,
+   "quem": "rei",
+   "texto": "O rei a leva para o palácio"
+  },
+  {
+   "i": 69,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rei Alberto."
+  },
+  {
+   "i": 70,
+   "fala": true,
+   "quem": "madrasta",
+   "texto": "A madrasta má fala mal da rainha"
+  },
+  {
+   "i": 71,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrasta."
+  },
+  {
+   "i": 72,
+   "fala": true,
+   "quem": "madrasta",
+   "texto": "Ela diz que a rainha é má"
+  },
+  {
+   "i": 73,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrasta."
+  },
+  {
+   "i": 74,
+   "fala": true,
+   "quem": "rei",
+   "texto": "A rainha é condenada à fogueira"
+  },
+  {
+   "i": 75,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o rei Alberto."
+  },
+  {
+   "i": 76,
+   "fala": true,
+   "quem": "benjamin",
+   "texto": "Mas os corvos voltam"
+  },
+  {
+   "i": 77,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Benjamin."
+  },
+  {
+   "i": 78,
+   "fala": true,
+   "quem": "benjamin",
+   "texto": "Eles libertam os irmãos"
+  },
+  {
+   "i": 79,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Benjamin."
+  },
+  {
+   "i": 80,
+   "fala": true,
+   "quem": "benjamin",
+   "texto": "A fogueira é apagada"
+  },
+  {
+   "i": 81,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Benjamin."
+  },
+  {
+   "i": 82,
+   "fala": true,
+   "quem": "benjamin",
+   "texto": "E os irmãos abraçam a rainha"
+  },
+  {
+   "i": 83,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Benjamin."
+  },
+  {
+   "i": 84,
+   "fala": true,
+   "quem": "benjamin",
+   "texto": "A menina pode falar de novo"
+  },
+  {
+   "i": 85,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Benjamin."
+  },
+  {
+   "i": 86,
+   "fala": true,
+   "quem": "benjamin",
+   "texto": "Ela ajuda a mamãe com as tarefas"
+  },
+  {
+   "i": 87,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Benjamin."
+  },
+  {
+   "i": 88,
+   "fala": true,
+   "quem": "benjamin",
+   "texto": "E a mamãe fica muito feliz"
+  },
+  {
+   "i": 89,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Benjamin."
+  },
+  {
+   "i": 90,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "A menina é muito esperta"
+  },
+  {
+   "i": 91,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha Margarida."
+  },
+  {
+   "i": 92,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "E muito gentil"
+  },
+  {
+   "i": 93,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha Margarida."
+  },
+  {
+   "i": 94,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "Ela faz amigos com todos"
+  },
+  {
+   "i": 95,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha Margarida."
+  },
+  {
+   "i": 96,
+   "fala": true,
+   "quem": "rainha",
+   "texto": "E a vida fica muito mais feliz"
+  },
+  {
+   "i": 97,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a rainha Margarida."
+  }
+ ]
+}

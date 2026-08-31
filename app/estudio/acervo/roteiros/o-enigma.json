@@ -1,0 +1,637 @@
+{
+ "id": "o-enigma",
+ "titulo": "O enigma",
+ "elenco": [
+  "criado",
+  "principe",
+  "menina",
+  "madrasta",
+  "madrinha"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": true,
+   "quem": "criado",
+   "texto": "O príncipe estava perdido"
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o criado Pedro."
+  },
+  {
+   "i": 2,
+   "fala": true,
+   "quem": "principe",
+   "texto": "Ele não sabia onde estava"
+  },
+  {
+   "i": 3,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o príncipe Miguel."
+  },
+  {
+   "i": 4,
+   "fala": true,
+   "quem": "menina",
+   "texto": "A floresta era muito escura"
+  },
+  {
+   "i": 5,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a menina Clara."
+  },
+  {
+   "i": 6,
+   "fala": true,
+   "quem": "madrasta",
+   "texto": "E ele estava com medo"
+  },
+  {
+   "i": 7,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrasta, a princesa."
+  },
+  {
+   "i": 8,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "Ela era muito esperta"
+  },
+  {
+   "i": 9,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha mais velha."
+  },
+  {
+   "i": 10,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "Mas também muito, muito, muito orgulhosa"
+  },
+  {
+   "i": 11,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha do meio."
+  },
+  {
+   "i": 12,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "Ela não queria ouvir"
+  },
+  {
+   "i": 13,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha do vestido azul."
+  },
+  {
+   "i": 14,
+   "fala": true,
+   "quem": "criado",
+   "texto": "Ela pensava sozinha"
+  },
+  {
+   "i": 15,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o criado."
+  },
+  {
+   "i": 16,
+   "fala": true,
+   "quem": "principe",
+   "texto": "E isso a atrapalhava"
+  },
+  {
+   "i": 17,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o príncipe."
+  },
+  {
+   "i": 18,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "A menina Clara era bondosa"
+  },
+  {
+   "i": 19,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha mais velha."
+  },
+  {
+   "i": 20,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "Ela ajudava a todos"
+  },
+  {
+   "i": 21,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha do meio."
+  },
+  {
+   "i": 22,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "Mas a princesa não a ouvia"
+  },
+  {
+   "i": 23,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha do vestido azul."
+  },
+  {
+   "i": 24,
+   "fala": true,
+   "quem": "criado",
+   "texto": "Ela não entendia"
+  },
+  {
+   "i": 25,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o criado."
+  },
+  {
+   "i": 26,
+   "fala": true,
+   "quem": "principe",
+   "texto": "E isso a deixava triste"
+  },
+  {
+   "i": 27,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o príncipe."
+  },
+  {
+   "i": 28,
+   "fala": true,
+   "quem": "criado",
+   "texto": "Eles encontraram uma casa"
+  },
+  {
+   "i": 29,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o criado."
+  },
+  {
+   "i": 30,
+   "fala": true,
+   "quem": "principe",
+   "texto": "A casa era pequena e estranha"
+  },
+  {
+   "i": 31,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o príncipe."
+  },
+  {
+   "i": 32,
+   "fala": true,
+   "quem": "menina",
+   "texto": "A dona da casa era velha"
+  },
+  {
+   "i": 33,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a menina Clara."
+  },
+  {
+   "i": 34,
+   "fala": true,
+   "quem": "madrasta",
+   "texto": "E ela parecia triste"
+  },
+  {
+   "i": 35,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrasta, a princesa."
+  },
+  {
+   "i": 36,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "Ela não queria que eles ficassem"
+  },
+  {
+   "i": 37,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha mais velha."
+  },
+  {
+   "i": 38,
+   "fala": true,
+   "quem": "principe",
+   "texto": "Mas eles precisavam de abrigo"
+  },
+  {
+   "i": 39,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o príncipe."
+  },
+  {
+   "i": 40,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "A casa tinha um fogo"
+  },
+  {
+   "i": 41,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha do meio."
+  },
+  {
+   "i": 42,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "E um cheiro estranho"
+  },
+  {
+   "i": 43,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha do vestido azul."
+  },
+  {
+   "i": 44,
+   "fala": true,
+   "quem": "criado",
+   "texto": "Eles dormiram na casa"
+  },
+  {
+   "i": 45,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o criado."
+  },
+  {
+   "i": 46,
+   "fala": true,
+   "quem": "principe",
+   "texto": "E sonharam com coisas estranhas"
+  },
+  {
+   "i": 47,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o príncipe."
+  },
+  {
+   "i": 48,
+   "fala": true,
+   "quem": "criado",
+   "texto": "Na manhã seguinte"
+  },
+  {
+   "i": 49,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o criado."
+  },
+  {
+   "i": 50,
+   "fala": true,
+   "quem": "principe",
+   "texto": "Eles encontraram um cavalo"
+  },
+  {
+   "i": 51,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o príncipe."
+  },
+  {
+   "i": 52,
+   "fala": true,
+   "quem": "menina",
+   "texto": "O cavalo estava morto"
+  },
+  {
+   "i": 53,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a menina Clara."
+  },
+  {
+   "i": 54,
+   "fala": true,
+   "quem": "madrasta",
+   "texto": "E havia veneno no cavalo"
+  },
+  {
+   "i": 55,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrasta, a princesa."
+  },
+  {
+   "i": 56,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "O veneno era muito forte"
+  },
+  {
+   "i": 57,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha mais velha."
+  },
+  {
+   "i": 58,
+   "fala": true,
+   "quem": "principe",
+   "texto": "E ele fez o cavalo morrer"
+  },
+  {
+   "i": 59,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o príncipe."
+  },
+  {
+   "i": 60,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "O criado estava muito triste"
+  },
+  {
+   "i": 61,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha do meio."
+  },
+  {
+   "i": 62,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "Ele queria ajudar"
+  },
+  {
+   "i": 63,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha do vestido azul."
+  },
+  {
+   "i": 64,
+   "fala": true,
+   "quem": "criado",
+   "texto": "Mas ele não sabia o que fazer"
+  },
+  {
+   "i": 65,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o criado."
+  },
+  {
+   "i": 66,
+   "fala": true,
+   "quem": "criado",
+   "texto": "Eles encontraram uma estalagem"
+  },
+  {
+   "i": 67,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o criado."
+  },
+  {
+   "i": 68,
+   "fala": true,
+   "quem": "principe",
+   "texto": "A estalagem era muito barulhenta"
+  },
+  {
+   "i": 69,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o príncipe."
+  },
+  {
+   "i": 70,
+   "fala": true,
+   "quem": "menina",
+   "texto": "E tinha muitos estranhos"
+  },
+  {
+   "i": 71,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a menina Clara."
+  },
+  {
+   "i": 72,
+   "fala": true,
+   "quem": "madrasta",
+   "texto": "Eles comeram sopa"
+  },
+  {
+   "i": 73,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrasta, a princesa."
+  },
+  {
+   "i": 74,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "A sopa tinha corvo"
+  },
+  {
+   "i": 75,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha mais velha."
+  },
+  {
+   "i": 76,
+   "fala": true,
+   "quem": "principe",
+   "texto": "E o corvo tinha veneno"
+  },
+  {
+   "i": 77,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o príncipe."
+  },
+  {
+   "i": 78,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "O veneno matou a todos"
+  },
+  {
+   "i": 79,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha do meio."
+  },
+  {
+   "i": 80,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "A princesa não sabia o que fazer"
+  },
+  {
+   "i": 81,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha do vestido azul."
+  },
+  {
+   "i": 82,
+   "fala": true,
+   "quem": "criado",
+   "texto": "Ela não entendia o que estava acontecendo"
+  },
+  {
+   "i": 83,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o criado."
+  },
+  {
+   "i": 84,
+   "fala": true,
+   "quem": "principe",
+   "texto": "Ela estava muito confusa"
+  },
+  {
+   "i": 85,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o príncipe."
+  },
+  {
+   "i": 86,
+   "fala": true,
+   "quem": "criado",
+   "texto": "Então, um homem inteligente apareceu"
+  },
+  {
+   "i": 87,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o criado."
+  },
+  {
+   "i": 88,
+   "fala": true,
+   "quem": "principe",
+   "texto": "Ele resolveu o enigma"
+  },
+  {
+   "i": 89,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o príncipe."
+  },
+  {
+   "i": 90,
+   "fala": true,
+   "quem": "menina",
+   "texto": "O enigma era sobre um corvo"
+  },
+  {
+   "i": 91,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a menina Clara."
+  },
+  {
+   "i": 92,
+   "fala": true,
+   "quem": "madrasta",
+   "texto": "E um cavalo morto"
+  },
+  {
+   "i": 93,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrasta, a princesa."
+  },
+  {
+   "i": 94,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "E doze assassinos"
+  },
+  {
+   "i": 95,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha mais velha."
+  },
+  {
+   "i": 96,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "O enigma era muito difícil"
+  },
+  {
+   "i": 97,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha do meio."
+  },
+  {
+   "i": 98,
+   "fala": true,
+   "quem": "madrinha",
+   "texto": "Mas o homem inteligente o resolveu"
+  },
+  {
+   "i": 99,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a madrinha do vestido azul."
+  },
+  {
+   "i": 100,
+   "fala": true,
+   "quem": "criado",
+   "texto": "E ele ganhou a princesa"
+  },
+  {
+   "i": 101,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o criado."
+  },
+  {
+   "i": 102,
+   "fala": true,
+   "quem": "principe",
+   "texto": "E eles viveram felizes para sempre"
+  },
+  {
+   "i": 103,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o príncipe."
+  }
+ ]
+}

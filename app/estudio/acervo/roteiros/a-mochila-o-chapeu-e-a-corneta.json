@@ -1,0 +1,640 @@
+{
+ "id": "a-mochila-o-chapeu-e-a-corneta",
+ "titulo": "A mochila, o chapéu e a corneta",
+ "elenco": [
+  "irmao",
+  "lenhador"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Você está com muito frio"
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão mais velho."
+  },
+  {
+   "i": 2,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Sim, estamos famintos"
+  },
+  {
+   "i": 3,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão do meio."
+  },
+  {
+   "i": 4,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Precisamos encontrar algo brilhante"
+  },
+  {
+   "i": 5,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão mais novo."
+  },
+  {
+   "i": 6,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Os três irmãos estavam muito tristes."
+  },
+  {
+   "i": 7,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles moravam numa casinha pequena."
+  },
+  {
+   "i": 8,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A casinha era feita de barro."
+  },
+  {
+   "i": 9,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A comida era pouca."
+  },
+  {
+   "i": 10,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles estavam com muita fome."
+  },
+  {
+   "i": 11,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Vamos procurar uma colina de prata"
+  },
+  {
+   "i": 12,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão mais velho."
+  },
+  {
+   "i": 13,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Uma colina de prata? Que ideia brilhante!"
+  },
+  {
+   "i": 14,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão do meio."
+  },
+  {
+   "i": 15,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Vamos lá!"
+  },
+  {
+   "i": 16,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão mais novo, correndo."
+  },
+  {
+   "i": 17,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles correram e correram."
+  },
+  {
+   "i": 18,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Correram até encontrar uma colina cheia de pedras brilhantes."
+  },
+  {
+   "i": 19,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "As pedras eram prateadas!"
+  },
+  {
+   "i": 20,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Olha! Olha! Encontramos prata!"
+  },
+  {
+   "i": 21,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão mais velho, pulando de alegria."
+  },
+  {
+   "i": 22,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Que maravilha! Que sorte a nossa!"
+  },
+  {
+   "i": 23,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão do meio, sorrindo."
+  },
+  {
+   "i": 24,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Vamos levar um pouco de prata para casa"
+  },
+  {
+   "i": 25,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão mais novo, carregando uma pedra."
+  },
+  {
+   "i": 26,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Vamos procurar uma colina de ouro"
+  },
+  {
+   "i": 27,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão do meio."
+  },
+  {
+   "i": 28,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Sim, ouro! Isso vai ajudar a nossa família"
+  },
+  {
+   "i": 29,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão mais velho."
+  },
+  {
+   "i": 30,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Vamos lá!"
+  },
+  {
+   "i": 31,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão mais novo, seguindo os irmãos."
+  },
+  {
+   "i": 32,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles procuraram e procuraram."
+  },
+  {
+   "i": 33,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Procuraram por muito tempo."
+  },
+  {
+   "i": 34,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "E, de repente, encontraram uma colina cheia de pedras douradas!"
+  },
+  {
+   "i": 35,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Olha! Olha! Encontramos ouro!"
+  },
+  {
+   "i": 36,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão do meio, pulando de alegria."
+  },
+  {
+   "i": 37,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Que maravilha! Que sorte a nossa!"
+  },
+  {
+   "i": 38,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão mais velho, sorrindo."
+  },
+  {
+   "i": 39,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Vamos levar um pouco de ouro para casa"
+  },
+  {
+   "i": 40,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão mais novo, carregando uma pedra."
+  },
+  {
+   "i": 41,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Eu vou continuar a procurar"
+  },
+  {
+   "i": 42,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão mais novo."
+  },
+  {
+   "i": 43,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Cuidado, não se perca na floresta"
+  },
+  {
+   "i": 44,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão mais velho."
+  },
+  {
+   "i": 45,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Eu prometo voltar logo"
+  },
+  {
+   "i": 46,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão do meio."
+  },
+  {
+   "i": 47,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O irmão mais novo correu para dentro da floresta."
+  },
+  {
+   "i": 48,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele correu e correu."
+  },
+  {
+   "i": 49,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Correu por muito tempo."
+  },
+  {
+   "i": 50,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele se perdeu!"
+  },
+  {
+   "i": 51,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A floresta era muito grande e escura."
+  },
+  {
+   "i": 52,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Que susto!"
+  },
+  {
+   "i": 53,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão mais novo, assustado."
+  },
+  {
+   "i": 54,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Calma, você vai encontrar o caminho"
+  },
+  {
+   "i": 55,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão mais velho."
+  },
+  {
+   "i": 56,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Eu vou te ajudar a voltar"
+  },
+  {
+   "i": 57,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão do meio."
+  },
+  {
+   "i": 58,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "De repente, o irmão mais novo viu uma mesa."
+  },
+  {
+   "i": 59,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A mesa estava cheia de comida gostosa."
+  },
+  {
+   "i": 60,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Havia pão, queijo e frutas."
+  },
+  {
+   "i": 61,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Que bom!"
+  },
+  {
+   "i": 62,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão mais novo, faminto."
+  },
+  {
+   "i": 63,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Não coma tudo de uma vez"
+  },
+  {
+   "i": 64,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão mais velho."
+  },
+  {
+   "i": 65,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Coma com calma"
+  },
+  {
+   "i": 66,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão do meio."
+  },
+  {
+   "i": 67,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O irmão mais novo pegou um pano para cobrir a mesa."
+  },
+  {
+   "i": 68,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O pano era macio e brilhante."
+  },
+  {
+   "i": 69,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Que pano bonito"
+  },
+  {
+   "i": 70,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão mais novo."
+  },
+  {
+   "i": 71,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Cuidado para não sujar"
+  },
+  {
+   "i": 72,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão mais velho."
+  },
+  {
+   "i": 73,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Não jogue o pano fora"
+  },
+  {
+   "i": 74,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão do meio."
+  },
+  {
+   "i": 75,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O pano tinha um poder mágico!"
+  },
+  {
+   "i": 76,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Se o irmão mais novo pedisse comida, o pano criava comida a pedido."
+  },
+  {
+   "i": 77,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele fez um bolo delicioso!"
+  },
+  {
+   "i": 78,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Que delícia!"
+  },
+  {
+   "i": 79,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão mais novo, comendo o bolo."
+  },
+  {
+   "i": 80,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Cuidado com o que você pede"
+  },
+  {
+   "i": 81,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão mais velho."
+  },
+  {
+   "i": 82,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Não peça comida demais"
+  },
+  {
+   "i": 83,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão do meio."
+  },
+  {
+   "i": 84,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O irmão mais novo guardou o pano com muito cuidado."
+  },
+  {
+   "i": 85,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele encontrou um lenhador fazendo carvão e comendo batatas."
+  },
+  {
+   "i": 86,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Olá, senhor lenhador"
+  },
+  {
+   "i": 87,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão mais novo."
+  },
+  {
+   "i": 88,
+   "fala": true,
+   "quem": "lenhador",
+   "texto": "Olá, rapaz"
+  },
+  {
+   "i": 89,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o lenhador."
+  },
+  {
+   "i": 90,
+   "fala": true,
+   "quem": "lenhador",
+   "texto": "Você quer comer batatas?"
+  },
+  {
+   "i": 91,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou o lenhador."
+  },
+  {
+   "i": 92,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O lenhador ofereceu comida ao viajante."
+  },
+  {
+   "i": 93,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O viajante usou o pano para preparar a comida."
+  },
+  {
+   "i": 94,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O lenhador trocou o pano por um saco cheio de batatas."
+  },
+  {
+   "i": 95,
+   "fala": true,
+   "quem": "irmao",
+   "texto": "Que bom!"
+  },
+  {
+   "i": 96,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o irmão mais novo, feliz."
+  },
+  {
+   "i": 97,
+   "fala": true,
+   "quem": "lenhador",
+   "texto": "Obrigado, senhor lenhador"
+  },
+  {
+   "i": 98,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o lenhador."
+  },
+  {
+   "i": 99,
+   "fala": true,
+   "quem": "lenhador",
+   "texto": "Que a sorte te acompanhe"
+  },
+  {
+   "i": 100,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o lenhador."
+  },
+  {
+   "i": 101,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O viajante usou o saco e seus soldados para recuperar o pano."
+  },
+  {
+   "i": 102,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele encontrou outro lenhador fazendo sopa e comendo pão."
+  },
+  {
+   "i": 103,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O viajante comeu com o lenhador e usou o chapéu mágico."
+  },
+  {
+   "i": 104,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O chapéu fez os canhões dispararem!"
+  }
+ ]
+}

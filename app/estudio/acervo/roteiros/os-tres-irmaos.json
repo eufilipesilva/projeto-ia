@@ -1,0 +1,260 @@
+{
+ "id": "os-tres-irmaos",
+ "titulo": "Os três irmãos",
+ "elenco": [
+  "filhos",
+  "filho",
+  "pai",
+  "lebre",
+  "nobre",
+  "professor"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Era uma vez, em uma casinha aconchegante, três irmãos muito queridos."
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles amavam o pai e a casa onde moravam."
+  },
+  {
+   "i": 2,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Um dia, o pai ficou muito doente e, um dia, ele partiu para um lugar especial."
+  },
+  {
+   "i": 3,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele disse aos filhos"
+  },
+  {
+   "i": 4,
+   "fala": true,
+   "quem": "filhos",
+   "texto": "Agora, vocês vão ficar juntos na casa. Mas cada um de vocês precisa escolher uma coisa para fazer, para ajudar a família e a casa."
+  },
+  {
+   "i": 5,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O filho mais velho pensou"
+  },
+  {
+   "i": 6,
+   "fala": true,
+   "quem": "filho",
+   "texto": "Eu vou ser ferreiro! Vou fazer ferramentas e ajudar a consertar as coisas."
+  },
+  {
+   "i": 7,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse o filho mais velho."
+  },
+  {
+   "i": 8,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O filho do meio disse"
+  },
+  {
+   "i": 9,
+   "fala": true,
+   "quem": "filho",
+   "texto": "Eu vou ser barbeiro! Vou cortar o cabelo das pessoas e deixar todos bem apresentáveis."
+  },
+  {
+   "i": 10,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse o filho do meio."
+  },
+  {
+   "i": 11,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O filho mais novo disse"
+  },
+  {
+   "i": 12,
+   "fala": true,
+   "quem": "filho",
+   "texto": "Eu vou ser professor de esgrima! Vou ensinar a lutar e ser forte!"
+  },
+  {
+   "i": 13,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse o filho mais novo."
+  },
+  {
+   "i": 14,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Cada um seguiu para uma cidade diferente para aprender."
+  },
+  {
+   "i": 15,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O ferreiro aprendeu a fazer coisas muito fortes com metal."
+  },
+  {
+   "i": 16,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O barbeiro aprendeu a fazer a barba de todos com cuidado."
+  },
+  {
+   "i": 17,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O professor de esgrima aprendeu a se mover rápido e forte."
+  },
+  {
+   "i": 18,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Depois de muito tempo, eles voltaram para casa."
+  },
+  {
+   "i": 19,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles estavam animados para mostrar o que tinham aprendido."
+  },
+  {
+   "i": 20,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O pai perguntou"
+  },
+  {
+   "i": 21,
+   "fala": true,
+   "quem": "pai",
+   "texto": "Então, quem fez o melhor trabalho?"
+  },
+  {
+   "i": 22,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "De repente, uma lebre branca correu pelo campo!"
+  },
+  {
+   "i": 23,
+   "fala": true,
+   "quem": "lebre",
+   "texto": "gritou o barbeiro. Ele pegou um balde e sabão e começou a fazer espuma para a lebre. Ele limpou o bigode da lebre enquanto ela corria muito rápido."
+  },
+  {
+   "i": 24,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Então, um nobre chegou em sua carruagem, correndo bem rápido."
+  },
+  {
+   "i": 25,
+   "fala": true,
+   "quem": "nobre",
+   "texto": "disse o ferreiro. Ele correu atrás da carruagem e trocou as ferraduras do cavalo, sem parar a carruagem."
+  },
+  {
+   "i": 26,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O professor de esgrima disse"
+  },
+  {
+   "i": 27,
+   "fala": true,
+   "quem": "professor",
+   "texto": "Eu vou mostrar o que sei!"
+  },
+  {
+   "i": 28,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "E ele começou a girar a espada muito rápido, mesmo com a chuva forte caindo."
+  },
+  {
+   "i": 29,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A chuva não molhou ele!"
+  },
+  {
+   "i": 30,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O pai ficou muito impressionado."
+  },
+  {
+   "i": 31,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "— disse o pai."
+  },
+  {
+   "i": 32,
+   "fala": true,
+   "quem": "pai",
+   "texto": "Você é o melhor! A casa é sua!"
+  },
+  {
+   "i": 33,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Os irmãos ficaram felizes."
+  },
+  {
+   "i": 34,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles eram amigos e se amavam muito."
+  },
+  {
+   "i": 35,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles continuaram a trabalhar juntos e a ajudar uns aos outros."
+  },
+  {
+   "i": 36,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Com o tempo, eles ficaram velhos e cansados."
+  },
+  {
+   "i": 37,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Um deles ficou doente e morreu."
+  },
+  {
+   "i": 38,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Os outros dois irmãos também ficaram doentes e morreram pouco depois."
+  },
+  {
+   "i": 39,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Eles estavam muito felizes por terem sido bons amigos e terem se amado tanto."
+  },
+  {
+   "i": 40,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "E assim, eles foram enterrados juntos, na mesma sepultura, para sempre."
+  }
+ ]
+}

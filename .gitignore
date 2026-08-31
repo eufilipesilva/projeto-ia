@@ -59,7 +59,26 @@ _Arquivo_Morto/
 # Repositório de terceiros clonado (seed-vc, ~2.5GB, não é código do projeto)
 app/laboratorios/seed-vc/
 
+# Wheels de instalação baixados (torch/torchvision/torchaudio, ~5GB)
+app/laboratorios/wheels_tmp/
+*.whl
+
 # Áudios de laboratório / triagem (centenas de arquivos)
 app/laboratorios/pandora_triagem/
 app/laboratorios/refs_humanas/*.wav
 app/laboratorios/*.wav
+
+# ── Acervo de histórias (ago/2026) ──────────────────────────────────────────
+# Corpus MLS Portuguese baixado (2,4 GB + extração) — refazível com o link
+# registrado em acervo/README.md
+app/laboratorios/mls_pt/
+
+# Áudio gerado e vozes de referência: todos regeráveis pelos módulos do acervo
+# (banco_vozes.py, importar_corpus.py, sintetizar.py). O que precisa versionar
+# é a RECEITA, não o wav.
+app/estudio/acervo/audios/
+app/estudio/acervo/vozes_corpus/
+app/estudio/acervo/vozes_personagens/*/
+!app/estudio/acervo/vozes_personagens/mapa.json
+app/estudio/acervo/_inventario_vozes.json
+app/estudio/acervo/_log_*.txt

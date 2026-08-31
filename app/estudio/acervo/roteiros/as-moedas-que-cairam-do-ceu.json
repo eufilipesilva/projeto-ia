@@ -1,0 +1,415 @@
+{
+ "id": "as-moedas-que-cairam-do-ceu",
+ "titulo": "As moedas que cairam do céu",
+ "elenco": [
+  "mae",
+  "lila",
+  "menino",
+  "senhora",
+  "homem"
+ ],
+ "roteiro": [
+  {
+   "i": 0,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Era uma vez uma menina chamada Lila."
+  },
+  {
+   "i": 1,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Lila vivia numa casinha pequena."
+  },
+  {
+   "i": 2,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A casinha era simples e um pouco velha."
+  },
+  {
+   "i": 3,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Seus pais já não estavam mais lá."
+  },
+  {
+   "i": 4,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Lila era muito esperta e gentil."
+  },
+  {
+   "i": 5,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela adorava ajudar os outros."
+  },
+  {
+   "i": 6,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Que bom que você está aqui"
+  },
+  {
+   "i": 7,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe mais velha de Lila."
+  },
+  {
+   "i": 8,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Que você tenha muita alegria"
+  },
+  {
+   "i": 9,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe do meio de Lila."
+  },
+  {
+   "i": 10,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Que você sempre sorria"
+  },
+  {
+   "i": 11,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe do vestido vermelho de Lila."
+  },
+  {
+   "i": 12,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Um dia, Lila estava brincando perto do rio."
+  },
+  {
+   "i": 13,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela viu um menino sozinho."
+  },
+  {
+   "i": 14,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O menino parecia triste."
+  },
+  {
+   "i": 15,
+   "fala": true,
+   "quem": "lila",
+   "texto": "O que aconteceu?"
+  },
+  {
+   "i": 16,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou Lila."
+  },
+  {
+   "i": 17,
+   "fala": true,
+   "quem": "menino",
+   "texto": "Eu perdi meu brinquedo favorito"
+  },
+  {
+   "i": 18,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "respondeu o menino."
+  },
+  {
+   "i": 19,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Lila pensou um pouco."
+  },
+  {
+   "i": 20,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela pegou um pedaço de madeira e fez um pequeno barco."
+  },
+  {
+   "i": 21,
+   "fala": true,
+   "quem": "lila",
+   "texto": "Aqui, use este"
+  },
+  {
+   "i": 22,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Lila."
+  },
+  {
+   "i": 23,
+   "fala": true,
+   "quem": "lila",
+   "texto": "Talvez ele te ajude a se divertir."
+  },
+  {
+   "i": 24,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O menino sorriu."
+  },
+  {
+   "i": 25,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele agradeceu a Lila."
+  },
+  {
+   "i": 26,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Mais tarde, Lila encontrou uma senhora que precisava de ajuda."
+  },
+  {
+   "i": 27,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A senhora estava com dificuldades para carregar suas compras."
+  },
+  {
+   "i": 28,
+   "fala": true,
+   "quem": "lila",
+   "texto": "Posso te ajudar a carregar?"
+  },
+  {
+   "i": 29,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "perguntou Lila."
+  },
+  {
+   "i": 30,
+   "fala": true,
+   "quem": "senhora",
+   "texto": "Sim, por favor"
+  },
+  {
+   "i": 31,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a senhora."
+  },
+  {
+   "i": 32,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Juntas, elas levaram as compras para casa da senhora."
+  },
+  {
+   "i": 33,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "A senhora ficou muito feliz."
+  },
+  {
+   "i": 34,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela deu a Lila um pequeno presente."
+  },
+  {
+   "i": 35,
+   "fala": true,
+   "quem": "senhora",
+   "texto": "Que você tenha muita saúde"
+  },
+  {
+   "i": 36,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a senhora."
+  },
+  {
+   "i": 37,
+   "fala": true,
+   "quem": "senhora",
+   "texto": "Que você seja sempre feliz"
+  },
+  {
+   "i": 38,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a senhora do chapéu florido de Lila."
+  },
+  {
+   "i": 39,
+   "fala": true,
+   "quem": "senhora",
+   "texto": "Que você encontre muitos amigos"
+  },
+  {
+   "i": 40,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a senhora do colar de pérolas de Lila."
+  },
+  {
+   "i": 41,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Um dia, Lila viu um homem que não tinha onde dormir."
+  },
+  {
+   "i": 42,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele estava frio e com fome."
+  },
+  {
+   "i": 43,
+   "fala": true,
+   "quem": "lila",
+   "texto": "Eu posso te oferecer um lugar na minha casa"
+  },
+  {
+   "i": 44,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse Lila."
+  },
+  {
+   "i": 45,
+   "fala": true,
+   "quem": "homem",
+   "texto": "Sim, por favor"
+  },
+  {
+   "i": 46,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o homem."
+  },
+  {
+   "i": 47,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Lila convidou o homem para ficar."
+  },
+  {
+   "i": 48,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela deu a ele comida e um lugar quente para dormir."
+  },
+  {
+   "i": 49,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "O homem ficou muito grato."
+  },
+  {
+   "i": 50,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ele ajudou Lila a fazer muitas coisas."
+  },
+  {
+   "i": 51,
+   "fala": true,
+   "quem": "homem",
+   "texto": "Que você tenha uma vida feliz"
+  },
+  {
+   "i": 52,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o homem."
+  },
+  {
+   "i": 53,
+   "fala": true,
+   "quem": "homem",
+   "texto": "Que você sempre seja bondoso"
+  },
+  {
+   "i": 54,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o homem do casaco azul de Lila."
+  },
+  {
+   "i": 55,
+   "fala": true,
+   "quem": "homem",
+   "texto": "Que você nunca desista dos seus sonhos"
+  },
+  {
+   "i": 56,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse o homem do lenço vermelho de Lila."
+  },
+  {
+   "i": 57,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Lila continuou sendo uma menina gentil e ajudando os outros."
+  },
+  {
+   "i": 58,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela sempre sorria e fazia o bem."
+  },
+  {
+   "i": 59,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "E, com o tempo, Lila se tornou muito feliz."
+  },
+  {
+   "i": 60,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "Ela aprendeu que ajudar os outros também a faz feliz."
+  },
+  {
+   "i": 61,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Que você tenha muita sorte"
+  },
+  {
+   "i": 62,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe mais velha de Lila."
+  },
+  {
+   "i": 63,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Que você seja uma luz para todos"
+  },
+  {
+   "i": 64,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe do meio de Lila."
+  },
+  {
+   "i": 65,
+   "fala": true,
+   "quem": "mae",
+   "texto": "Que você espalhe amor por onde for"
+  },
+  {
+   "i": 66,
+   "fala": false,
+   "quem": "narrador",
+   "texto": "disse a mãe do vestido dourado de Lila."
+  }
+ ]
+}
