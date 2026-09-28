@@ -1,0 +1,44 @@
+diff --git a/src/live_portrait_wmg_pipeline.py b/src/live_portrait_wmg_pipeline.py
+index bc6460c..39b4cd7 100644
+--- a/src/live_portrait_wmg_pipeline.py
++++ b/src/live_portrait_wmg_pipeline.py
+@@ -90,6 +90,13 @@ class LivePortraitPipeline(object):
+         if inf_cfg.flag_pasteback and inf_cfg.flag_do_crop and inf_cfg.flag_stitching:
+             mask_ori_float = prepare_paste_back(inf_cfg.mask_crop, crop_info['M_c2o'], dsize=(source_rgb_lst[0].shape[1], source_rgb_lst[0].shape[0]))
+ 
++        # grava cada quadro direto no disco (evita estourar a RAM em áudios longos)
++        mkdir(args.output_dir)
++        temp_video = osp.join(args.output_dir, f'{basename(args.reference)}_{basename(args.audio)}_temp.mp4')
++        import imageio
++        writer = imageio.get_writer(temp_video, fps=inf_cfg.output_fps, format='mp4', codec='libx264',
++                                    ffmpeg_params=['-crf', '18'], pixelformat='yuv420p', macro_block_size=2)
++
+         ######## animate ########
+         for i in track(range(n_frames), description='🚀Animating Image with Generated Motions...', total=n_frames):
+             x_d_i_info = driving_template_dct['motion'][i]
+@@ -174,20 +181,13 @@ class LivePortraitPipeline(object):
+             x_d_i_new = x_s + (x_d_i_new - x_s) * inf_cfg.driving_multiplier
+             out = self.live_portrait_wrapper.warp_decode(f_s, x_s, x_d_i_new)
+             I_p_i = self.live_portrait_wrapper.parse_output(out['out'])[0]
+-            I_p_lst.append(I_p_i)
+-
+             if inf_cfg.flag_pasteback and inf_cfg.flag_do_crop and inf_cfg.flag_stitching:
+                 # TODO: the paste back procedure is slow, considering optimize it using multi-threading or GPU
+-                I_p_pstbk = paste_back(I_p_i, crop_info['M_c2o'], source_rgb_lst[0], mask_ori_float)
+-                I_p_pstbk_lst.append(I_p_pstbk)
++                writer.append_data(paste_back(I_p_i, crop_info['M_c2o'], source_rgb_lst[0], mask_ori_float))
++            else:
++                writer.append_data(I_p_i)
+ 
+-        # save the animated result
+-        mkdir(args.output_dir)
+-        temp_video = osp.join(args.output_dir, f'{basename(args.reference)}_{basename(args.audio)}_temp.mp4')
+-        if I_p_pstbk_lst is not None and len(I_p_pstbk_lst) > 0:
+-            images2video(I_p_pstbk_lst, wfp=temp_video, fps=inf_cfg.output_fps)
+-        else:
+-            images2video(I_p_lst, wfp=temp_video, fps=inf_cfg.output_fps)
++        writer.close()
+         final_video = osp.join(args.output_dir, f'{basename(args.reference)}_{basename(args.audio)}.mp4')
+         add_audio_to_video(temp_video, args.audio, final_video)
+         return final_video
+\ No newline at end of file

@@ -228,13 +228,21 @@ async def _salvar_upload(up, suffix):
 @app.get("/api/status")
 def status():
     import urllib.request, json as _json
-    resultado = {"omnivoice": "ok" if motor._OMNI is not None else "não carregado", "gemma": "?"}
+    resultado = {"omnivoice": "ok" if motor._MODEL is not None else "não carregado", "gemma": "?"}
     try:
         req = urllib.request.urlopen("http://127.0.0.1:11434/api/tags", timeout=3)
         resultado["gemma"] = "ollama ok"
     except Exception as e:
         resultado["gemma"] = f"ollama erro: {e}"
     return resultado
+
+@app.post("/api/gpu/liberar")
+def gpu_liberar():
+    """Descarrega OmniVoice e Gemma da placa para outro programa usar a GPU (ex.: fiscal de cenas).
+    Eles voltam a carregar sozinhos no próximo uso."""
+    motor.descarregar_omni()
+    motor.descarregar_gemma()
+    return {"ok": True}
 
 _vozes_cache: "list | None" = None
 _vozes_cache_mtime: float = -1.0

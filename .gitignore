@@ -82,3 +82,12 @@ app/estudio/acervo/vozes_personagens/*/
 !app/estudio/acervo/vozes_personagens/mapa.json
 app/estudio/acervo/_inventario_vozes.json
 app/estudio/acervo/_log_*.txt
+
+# Estúdio de Animação (27-28/09/2026)
+cache/
+# ferramentas de terceiros: clones com pesos de dezenas de GB (reinstalar: ferramentas/terceiros/README.md)
+ferramentas/JoyVASA/
+ferramentas/MuseTalk/
+ferramentas/syncnet/
+# modelo baixado do Hugging Face (1,2 GB)
+ferramentas/visemas/modelos/

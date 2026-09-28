@@ -1,0 +1,17 @@
+diff --git a/musetalk/models/unet.py b/musetalk/models/unet.py
+index 575e79a..fe054b0 100755
+--- a/musetalk/models/unet.py
++++ b/musetalk/models/unet.py
+@@ -41,8 +41,10 @@ class UNet():
+             self.device = device
+         else:
+             self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+-        weights = torch.load(model_path) if torch.cuda.is_available() else torch.load(model_path, map_location=self.device)
+-        self.model.load_state_dict(weights)
++        # carrega na RAM (não direto na GPU): em placa de 6 GB o fp32 de 3,4 GB estoura antes do .half()
++        # mmap + assign: usa o arquivo direto do disco, sem duplicar 3,4 GB na RAM (16 GB + paginacao pequena)
++        weights = torch.load(model_path, map_location="cpu", mmap=True)
++        self.model.load_state_dict(weights, assign=True)
+         if use_float16:
+             self.model = self.model.half()
+         self.model.to(self.device)
