@@ -69,13 +69,29 @@ def escrever_ass(proj, linha, W, H, caminho):
     margem_l, margem_r = (int(70 * esc), int(150 * esc)) if vertical else (int(80 * esc), int(80 * esc))
     max_chars = int(leg.get("max_caracteres", 22 if vertical else 40))
     quem_todos = sorted({f["quem"] for f in linha["falas"]})
+    magico = leg.get("tema") == "magico"
+    ouro, roxo = cor_ass(leg.get("cor_brilho", "FFD95A")), cor_ass(leg.get("cor_contorno", "3B1A5E"))
     estilos = []
     for q in quem_todos:
         c = cor_ass(cores.get(q, "FFE27A"))
-        estilos.append(f"Style: {q},{fonte},{tam},{c},&H00FFFFFF,&H00201010,&H96000000,-1,0,0,0,100,100,1,0,1,{6 * esc:.1f},{3 * esc:.1f},2,"
-                       f"{margem_l},{margem_r},{margem_v},1")
-    estilos.append(f"Style: Titulo,{fonte},{int(tam * 1.35)},&H00FFFFFF,&H00FFFFFF,&H00201010,&H96000000,-1,0,0,0,"
-                   f"100,100,2,0,1,{8 * esc:.1f},{4 * esc:.1f},8,60,60,{int(0.12 * H)},1")
+        if magico:
+            # tema mágico/lúdico: letra branca que "acende" em dourado ao ser dita, contorno roxo, e atrás um
+            # halo desfocado na cor do personagem (a cor continua dizendo quem fala)
+            estilos.append(f"Style: {q},{fonte},{tam},{ouro},&H00FFFFFF,{roxo},&H783B1A5E,-1,0,0,0,100,100,1,0,1,"
+                           f"{6 * esc:.1f},{3.5 * esc:.1f},2,{margem_l},{margem_r},{margem_v},1")
+            estilos.append(f"Style: {q}_halo,{fonte},{tam},{c},{c},{c},&H00000000,-1,0,0,0,100,100,1,0,1,"
+                           f"{16 * esc:.1f},0,2,{margem_l},{margem_r},{margem_v},1")
+        else:
+            estilos.append(f"Style: {q},{fonte},{tam},{c},&H00FFFFFF,&H00201010,&H96000000,-1,0,0,0,100,100,1,0,1,{6 * esc:.1f},{3 * esc:.1f},2,"
+                           f"{margem_l},{margem_r},{margem_v},1")
+    if magico:
+        estilos.append(f"Style: Titulo,{fonte},{int(tam * 1.4)},{ouro},{ouro},{roxo},&H783B1A5E,-1,0,0,0,"
+                       f"100,100,2,0,1,{7 * esc:.1f},{4 * esc:.1f},8,60,60,{int(0.12 * H)},1")
+        estilos.append(f"Style: Titulo_halo,{fonte},{int(tam * 1.4)},&H00FFB3E6,&H00FFB3E6,&H00FFB3E6,&H00000000,"
+                       f"-1,0,0,0,100,100,2,0,1,{18 * esc:.1f},0,8,60,60,{int(0.12 * H)},1")
+    else:
+        estilos.append(f"Style: Titulo,{fonte},{int(tam * 1.35)},&H00FFFFFF,&H00FFFFFF,&H00201010,&H96000000,-1,0,0,0,"
+                       f"100,100,2,0,1,{8 * esc:.1f},{4 * esc:.1f},8,60,60,{int(0.12 * H)},1")
     cab = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}
@@ -90,9 +106,17 @@ Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour,
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
     ev = []
+    # entrada com "pulinho" contido: cresce de 88% até 104% e assenta em 100% (sem pulsar depois)
+    pulo = "\\fscx88\\fscy88\\t(0,200,\\fscx104\\fscy104)\\t(200,340,\\fscx100\\fscy100)"
+    estrela = "{\\c" + ouro + "\\3c" + roxo + "}✦{\\r}"
     if proj.get("titulo"):
-        ev.append(f"Dialogue: 1,{ts(0.2)},{ts(float(proj.get('titulo_duracao', 3.2)))},Titulo,,0,0,0,,"
-                  f"{{\\fad(300,400)}}{proj['titulo']}")
+        t0, t1 = ts(0.2), ts(float(proj.get("titulo_duracao", 3.2)))
+        if magico:
+            ev.append(f"Dialogue: 0,{t0},{t1},Titulo_halo,,0,0,0,,{{\\fad(400,500)\\blur{12 * esc:.0f}\\alpha&H80&{pulo}}}"
+                      f"✦ {proj['titulo']} ✦")
+            ev.append(f"Dialogue: 1,{t0},{t1},Titulo,,0,0,0,,{{\\fad(400,500){pulo}}}{estrela} {proj['titulo']} {estrela}")
+        else:
+            ev.append(f"Dialogue: 1,{t0},{t1},Titulo,,0,0,0,,{{\\fad(300,400)}}{proj['titulo']}")
     grupos = [(f["quem"], g) for f in linha["falas"] for g in linhas_legenda(f["palavras"], max_chars)]
     for k, (quem, g) in enumerate(grupos):
         ini, fim = g[0]["t0"] - 0.10, g[-1]["t1"] + 0.30
@@ -102,7 +126,14 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         for j, w in enumerate(g):
             d = (g[j + 1]["t0"] if j + 1 < len(g) else w["t1"]) - w["t0"]
             partes.append(f"{{\\kf{max(1, round(d * 100))}}}{w['w']} ")
-        ev.append(f"Dialogue: 0,{ts(ini)},{ts(fim)},{quem},,0,0,0,,{{\\fad(90,120)}}" + "".join(partes).rstrip())
+        if magico:
+            texto = " ".join(w["w"] for w in g)
+            ev.append(f"Dialogue: 0,{ts(ini)},{ts(fim)},{quem}_halo,,0,0,0,,"
+                      f"{{\\fad(150,150)\\blur{10 * esc:.0f}\\alpha&H58&{pulo}}}✦ {texto} ✦")
+            ev.append(f"Dialogue: 1,{ts(ini)},{ts(fim)},{quem},,0,0,0,,{{\\fad(150,150){pulo}}}{estrela} "
+                      + "".join(partes).rstrip() + f" {estrela}")
+        else:
+            ev.append(f"Dialogue: 0,{ts(ini)},{ts(fim)},{quem},,0,0,0,,{{\\fad(90,120)}}" + "".join(partes).rstrip())
     Path(caminho).write_text(cab + "\n".join(ev) + "\n", encoding="utf-8")
 
 
@@ -140,7 +171,9 @@ def main():
     ap.add_argument("pasta"); ap.add_argument("--rascunho", action="store_true")
     a = ap.parse_args()
     pasta = Path(a.pasta).resolve()
-    proj = json.loads((pasta / "projeto.json").read_text(encoding="utf-8"))
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import projeto as P
+    proj = P.carregar(pasta)                        # resolve elenco, estilo, música e o início de cada plano
     linha = json.loads((pasta / proj["linha_do_tempo"]).read_text(encoding="utf-8"))
     W, H = proj.get("formato", [1080, 1920])
     FPS = int(proj.get("fps", 30))
@@ -235,6 +268,13 @@ def main():
                 print(f"  {f}/{n}", flush=True)
     ff.stdin.close(); ff.wait()
     audio_mix.unlink(missing_ok=True)
+    # créditos para a descrição do vídeo (música com licença que exige crédito, fonte, aviso de IA)
+    cred = [f"{proj.get('titulo', '')}", ""]
+    if proj.get("musica", {}).get("credito"):
+        cred.append(f"Música: {proj['musica']['credito']}")
+    cred += ["Fonte das legendas: Fredoka (SIL Open Font License)",
+             "Imagens e vozes geradas com inteligência artificial."]
+    (pasta / "creditos.txt").write_text("\n".join(cred) + "\n", encoding="utf-8")
     print("pronto:", saida)
 
 

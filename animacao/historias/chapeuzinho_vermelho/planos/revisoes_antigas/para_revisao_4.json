@@ -1,0 +1,86 @@
+[
+ {
+  "plano": "p04",
+  "mostra": "close-up of the mother speaking tenderly, holding the basket",
+  "correcao_pedida": "the mother alone, head and shoulders close-up, a single hair bun at the back of her head, both hands holding the wicker basket in front of her, cottage in the background, no other people",
+  "personagens": [
+   "mae"
+  ],
+  "cenario": "casa",
+  "candidatos": [
+   "p04_s1871054199.png",
+   "p04_s914236820.png"
+  ]
+ },
+ {
+  "plano": "p08",
+  "mostra": "the wolf peeks from behind a big tree while the girl picks flowers, unaware",
+  "correcao_pedida": "the wolf hides behind a big tree trunk, only his head and one paw peeking out; in the foreground the girl kneels picking flowers with her back turned to him, unaware; the wolf has exactly one tail",
+  "personagens": [
+   "chapeu",
+   "lobo"
+  ],
+  "cenario": "floresta",
+  "candidatos": [
+   "p08_s1427941042.png",
+   "p08_s165501411.png"
+  ]
+ },
+ {
+  "plano": "p23",
+  "mostra": "the girl enters the bedroom with her basket and looks at 'grandma' in the bed",
+  "correcao_pedida": "the disguised wolf lies in the bed under the quilt up to his chest, only his face with nightcap and glasses visible, the girl stands at the foot of the bed holding the basket with one hand",
+  "personagens": [
+   "chapeu",
+   "lobo_disf"
+  ],
+  "cenario": "quarto_vovo",
+  "candidatos": [
+   "p23_s1792388207.png",
+   "p23_s1919440455.png"
+  ]
+ },
+ {
+  "plano": "p30",
+  "mostra": "cartoon chase: the wolf runs after the girl around the bedroom",
+  "correcao_pedida": "wide shot, the girl runs across the bedroom floor laughing, the disguised wolf runs behind her on two legs, arms forward, exactly one tail, both characters fully on the floor, away from the bed",
+  "personagens": [
+   "lobo_disf",
+   "chapeu"
+  ],
+  "cenario": "quarto_vovo",
+  "candidatos": [
+   "p30_s1643007483.png",
+   "p30_s1671565229.png"
+  ]
+ },
+ {
+  "plano": "p35",
+  "mostra": "the woodsman stands at the door pointing at the sleeping wolf, surprised",
+  "correcao_pedida": "the woodsman standing at the doorway points in surprise at ONE wolf wearing grandma's pink floral dress and bonnet, lying asleep on the floor with eyes closed; only one wolf in the scene, the wolf has exactly one tail, the woodsman has no tail",
+  "personagens": [
+   "cacador",
+   "lobo_disf"
+  ],
+  "cenario": "quarto_vovo",
+  "candidatos": [
+   "p35_s507411417.png",
+   "p35_s633824339.png"
+  ]
+ },
+ {
+  "plano": "p40",
+  "mostra": "the three put round stones into a sack next to the sleeping wolf, playful",
+  "correcao_pedida": "inside grandma's bedroom, the girl (no glasses), grandma and the woodsman kneel and drop round grey stones into an open burlap sack with their hands, smiling playfully; one wolf in a pink dress sleeps on the floor beside them",
+  "personagens": [
+   "chapeu",
+   "vovo",
+   "cacador"
+  ],
+  "cenario": "quarto_vovo",
+  "candidatos": [
+   "p40_s1537737538.png",
+   "p40_s1766200465.png"
+  ]
+ }
+]

@@ -1,0 +1,17 @@
+{
+ "id": "casa_pedra_vovo",
+ "descricao": "grandma's small stone cottage in a forest clearing, wooden door, smoke from the chimney, empty scene with no people and no animals",
+ "estilo": "livro_aquarela",
+ "origem": {
+  "historia": "chapeuzinho_vermelho",
+  "nome_na_historia": "casa_vovo",
+  "arquivo_original": "cena_casa_vovo_s145806088.png",
+  "motor": "klein (FLUX.2 klein 4B, 4 passos)",
+  "semente": 145806088,
+  "tamanho": [
+   768,
+   1344
+  ],
+  "data": "2026-09-28"
+ }
+}

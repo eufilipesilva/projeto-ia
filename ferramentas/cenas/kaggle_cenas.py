@@ -100,11 +100,20 @@ def gerar_lote(itens, destino, motor="qwen", passos=None, dtype="fp16", limite_s
     res_p = next(saida.rglob("resultado.json"), None)
     resultado = json.loads(res_p.read_text()) if res_p else {}
     arquivos = []
+    por_nome = {f"{it['nome']}_s{int(s)}.png": (it, int(s)) for it in itens for s in it["sementes"]}
     for png in saida.rglob("*.png"):
         if png.name in resultado.get("invalidas", []):
             continue
         dst = destino / png.name
         shutil.copy2(png, dst); arquivos.append(dst)
+        # manifesto de reprodução: tudo o que é preciso para gerar esta mesma imagem de novo
+        if png.name in por_nome:
+            it, s = por_nome[png.name]
+            (destino / (png.stem + ".json")).write_text(json.dumps({
+                "semente": s, "prompt": it["prompt"], "referencias": [str(x) for x in it["imagens"]],
+                "largura": it.get("largura"), "altura": it.get("altura"), "motor": motor, "passos": passos,
+                "dtype": dtype, "gerado_em": time.strftime("%Y-%m-%d %H:%M")}, ensure_ascii=False, indent=1),
+                encoding="utf-8")
     print(f"kaggle: {'ok' if ok else 'FALHOU'} em {(time.time() - t) / 60:.0f} min, {len(arquivos)} imagem(ns) válidas"
           + (f", {len(resultado.get('invalidas', []))} inválidas" if resultado.get("invalidas") else ""), flush=True)
     if not ok and not arquivos:

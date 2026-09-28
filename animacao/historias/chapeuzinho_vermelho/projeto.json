@@ -1,0 +1,553 @@
+{
+ "titulo": "Chapeuzinho Vermelho",
+ "titulo_duracao": 3.0,
+ "formato": [
+  1080,
+  1920
+ ],
+ "fps": 30,
+ "roteiro": "roteiro.txt",
+ "audio": "audio.wav",
+ "linha_do_tempo": "linha_do_tempo.json",
+ "saida": "chapeuzinho.mp4",
+ "estilo": {
+  "biblioteca": "livro_aquarela"
+ },
+ "legenda": {
+  "cores": {
+   "narra": "C9A7FF"
+  }
+ },
+ "personagens": {
+  "chapeu": {
+   "elenco": "chapeuzinho"
+  },
+  "mae": {
+   "elenco": "mae_chapeuzinho"
+  },
+  "vovo": {
+   "elenco": "vovo"
+  },
+  "lobo": {
+   "elenco": "lobo_mau"
+  },
+  "lobo_disf": {
+   "elenco": "lobo_mau_disfarcado"
+  },
+  "cacador": {
+   "elenco": "cacador"
+  }
+ },
+ "cenarios": {
+  "casa": {
+   "elenco": "casa_vila"
+  },
+  "bosque": {
+   "elenco": "bosque_florido"
+  },
+  "floresta": {
+   "elenco": "floresta"
+  },
+  "casa_vovo": {
+   "elenco": "casa_pedra_vovo"
+  },
+  "quarto_vovo": {
+   "elenco": "quarto_vovo"
+  }
+ },
+ "planos": [
+  {
+   "id": "p01",
+   "imagem": "planos/p01.png",
+   "cenario": "casa",
+   "personagens": [
+    "chapeu",
+    "mae"
+   ],
+   "prompt": "the girl in her red cape stands happily in front of the cottage next to her mother",
+   "checar": "chapeu",
+   "linha": 0
+  },
+  {
+   "id": "p02",
+   "imagem": "planos/p02.png",
+   "cenario": "casa",
+   "personagens": [
+    "chapeu"
+   ],
+   "prompt": "close-up portrait of the smiling girl wearing her red hooded cape",
+   "checar": "chapeu",
+   "linha": 1
+  },
+  {
+   "id": "p03",
+   "imagem": "planos/p03.png",
+   "cenario": "casa",
+   "personagens": [
+    "mae",
+    "chapeu"
+   ],
+   "prompt": "at the cottage door the mother hands the girl a wicker basket full of sweets",
+   "checar": "chapeu",
+   "linha": 2
+  },
+  {
+   "id": "p04",
+   "imagem": "planos/p04.png",
+   "cenario": "casa",
+   "personagens": [
+    "mae"
+   ],
+   "prompt": "close-up of the mother speaking tenderly, holding the basket",
+   "checar": "mae",
+   "linha": 3
+  },
+  {
+   "id": "p05",
+   "imagem": "planos/p05.png",
+   "cenario": "casa",
+   "personagens": [
+    "mae",
+    "chapeu"
+   ],
+   "prompt": "the mother on the left points to a dark forest path and a sunny flowery path, the girl on the right listens",
+   "checar": "mae",
+   "linha": 4
+  },
+  {
+   "id": "p06",
+   "imagem": "planos/p06.png",
+   "cenario": "bosque",
+   "personagens": [
+    "chapeu"
+   ],
+   "prompt": "the girl skips happily along the sunny path, singing, basket on her arm",
+   "checar": "chapeu",
+   "linha": 5
+  },
+  {
+   "id": "p07",
+   "imagem": "planos/p07.png",
+   "cenario": "bosque",
+   "personagens": [
+    "chapeu"
+   ],
+   "prompt": "the girl kneels to pick colorful wildflowers",
+   "checar": "chapeu",
+   "linha": 6
+  },
+  {
+   "id": "p08",
+   "imagem": "planos/p08.png",
+   "cenario": "floresta",
+   "personagens": [
+    "chapeu",
+    "lobo"
+   ],
+   "prompt": "the wolf peeks from behind a big tree while the girl picks flowers, unaware",
+   "checar": "chapeu",
+   "linha": 7
+  },
+  {
+   "id": "p09",
+   "imagem": "planos/p09.png",
+   "cenario": "floresta",
+   "personagens": [
+    "chapeu",
+    "lobo"
+   ],
+   "prompt": "the girl smiles at the polite wolf, not scared at all",
+   "checar": "chapeu",
+   "linha": 8
+  },
+  {
+   "id": "p10",
+   "imagem": "planos/p10.png",
+   "cenario": "floresta",
+   "personagens": [
+    "lobo"
+   ],
+   "prompt": "close-up of the wolf greeting politely with a sly smile, hat in hand",
+   "checar": "estilo",
+   "linha": 9
+  },
+  {
+   "id": "p11",
+   "imagem": "planos/p11.png",
+   "cenario": "floresta",
+   "personagens": [
+    "chapeu"
+   ],
+   "prompt": "close-up of the girl answering cheerfully",
+   "checar": "chapeu",
+   "linha": 10
+  },
+  {
+   "id": "p12",
+   "imagem": "planos/p10.png",
+   "linha": 11
+  },
+  {
+   "id": "p13",
+   "imagem": "planos/p11.png",
+   "linha": 12
+  },
+  {
+   "id": "p14",
+   "imagem": "planos/p14.png",
+   "cenario": "floresta",
+   "personagens": [
+    "lobo",
+    "chapeu"
+   ],
+   "prompt": "the wolf points toward the dark forest path with a sly grin, the girl looks",
+   "checar": "chapeu",
+   "linha": 13
+  },
+  {
+   "id": "p15",
+   "imagem": "planos/p15.png",
+   "cenario": "floresta",
+   "personagens": [
+    "chapeu"
+   ],
+   "prompt": "the girl hesitates at a fork in the path, finger on her chin, doubtful",
+   "checar": "chapeu",
+   "linha": 15
+  },
+  {
+   "id": "p16",
+   "imagem": "planos/p16.png",
+   "cenario": "bosque",
+   "personagens": [
+    "lobo"
+   ],
+   "prompt": "the wolf runs fast along the sunny path, tongue out",
+   "checar": "estilo",
+   "linha": 16
+  },
+  {
+   "id": "p17",
+   "imagem": "planos/p17.png",
+   "cenario": "casa_vovo",
+   "personagens": [
+    "lobo"
+   ],
+   "prompt": "the wolf knocks on the wooden door of grandma's cottage",
+   "checar": "estilo",
+   "linha": 17
+  },
+  {
+   "id": "p18",
+   "imagem": "planos/p18.png",
+   "cenario": "quarto_vovo",
+   "personagens": [
+    "vovo"
+   ],
+   "prompt": "grandma sitting in her bed, looking toward the door, asking who is there",
+   "checar": "vovo",
+   "linha": 18
+  },
+  {
+   "id": "p19",
+   "imagem": "planos/p19.png",
+   "cenario": "casa_vovo",
+   "personagens": [
+    "lobo"
+   ],
+   "prompt": "close-up of the wolf at the door speaking in a sweet fake voice, paw near his mouth",
+   "checar": "estilo",
+   "linha": 19
+  },
+  {
+   "id": "p20",
+   "imagem": "planos/p18.png",
+   "linha": 20
+  },
+  {
+   "id": "p21",
+   "imagem": "planos/p21.png",
+   "cenario": "quarto_vovo",
+   "personagens": [
+    "lobo"
+   ],
+   "prompt": "cartoon gag: the wolf with a huge round belly next to an empty bed, a nightcap on the floor, gentle and not scary",
+   "checar": "estilo",
+   "linha": 21
+  },
+  {
+   "id": "p22",
+   "imagem": "planos/p22.png",
+   "cenario": "quarto_vovo",
+   "personagens": [
+    "lobo_disf"
+   ],
+   "prompt": "the disguised wolf lies in grandma's bed under the quilt, waiting",
+   "checar": "estilo",
+   "linha": 22
+  },
+  {
+   "id": "p23",
+   "imagem": "planos/p23.png",
+   "cenario": "quarto_vovo",
+   "personagens": [
+    "chapeu"
+   ],
+   "prompt": "add the girl in her red hooded cape standing at the foot of the bed, holding her basket and looking at the one lying in the bed",
+   "checar": "chapeu",
+   "base": "p22",
+   "linha": 23
+  },
+  {
+   "id": "p24",
+   "imagem": "planos/p24.png",
+   "cenario": "quarto_vovo",
+   "personagens": [
+    "chapeu"
+   ],
+   "prompt": "close-up of the girl, curious, asking a question",
+   "checar": "chapeu",
+   "linha": 24
+  },
+  {
+   "id": "p25",
+   "imagem": "planos/p25.png",
+   "cenario": "quarto_vovo",
+   "personagens": [
+    "lobo_disf"
+   ],
+   "prompt": "close-up of the disguised wolf in bed with very big ears poking out of the nightcap",
+   "checar": "estilo",
+   "linha": 25
+  },
+  {
+   "id": "p26",
+   "imagem": "planos/p24.png",
+   "linha": 26
+  },
+  {
+   "id": "p27",
+   "imagem": "planos/p25.png",
+   "linha": 27
+  },
+  {
+   "id": "p28",
+   "imagem": "planos/p28.png",
+   "cenario": "quarto_vovo",
+   "personagens": [
+    "chapeu"
+   ],
+   "prompt": "close-up of the girl a bit scared, hands near her face",
+   "checar": "chapeu",
+   "linha": 28
+  },
+  {
+   "id": "p29",
+   "imagem": "planos/p29.png",
+   "cenario": "quarto_vovo",
+   "personagens": [
+    "lobo_disf"
+   ],
+   "prompt": "the disguised wolf jumps out of the bed, arms wide, big cartoon grin, funny not scary",
+   "checar": "estilo",
+   "linha": 29
+  },
+  {
+   "id": "p30",
+   "imagem": "planos/p30.png",
+   "cenario": "quarto_vovo",
+   "personagens": [
+    "lobo_disf",
+    "chapeu"
+   ],
+   "prompt": "cartoon chase: the wolf runs after the girl around the bedroom",
+   "checar": "chapeu",
+   "linha": 30
+  },
+  {
+   "id": "p31",
+   "imagem": "planos/p31.png",
+   "cenario": "quarto_vovo",
+   "personagens": [
+    "lobo_disf"
+   ],
+   "prompt": "the wolf trips on the rug and falls on the floor, little stars around his head",
+   "checar": "estilo",
+   "linha": 31
+  },
+  {
+   "id": "p32",
+   "imagem": "planos/p32.png",
+   "cenario": "quarto_vovo",
+   "personagens": [
+    "chapeu"
+   ],
+   "prompt": "the girl hides inside the big wardrobe, peeking through the gap",
+   "checar": "chapeu",
+   "linha": 32
+  },
+  {
+   "id": "p33",
+   "imagem": "planos/p33.png",
+   "cenario": "quarto_vovo",
+   "personagens": [
+    "lobo_disf"
+   ],
+   "prompt": "the wolf sleeps on the floor snoring, big Zzz bubbles",
+   "checar": "estilo",
+   "linha": 33
+  },
+  {
+   "id": "p34",
+   "imagem": "planos/p34.png",
+   "cenario": "casa_vovo",
+   "personagens": [
+    "cacador"
+   ],
+   "prompt": "the woodsman walks past the cottage window and stops, hand at his ear, listening",
+   "checar": "cacador",
+   "linha": 34
+  },
+  {
+   "id": "p35",
+   "imagem": "planos/p35.png",
+   "cenario": "quarto_vovo",
+   "personagens": [
+    "cacador"
+   ],
+   "prompt": "add the woodsman standing at the bedroom doorway, pointing in surprise at the one sleeping on the floor",
+   "checar": "cacador",
+   "base": "p33",
+   "linha": 36
+  },
+  {
+   "id": "p36",
+   "imagem": "planos/p36.png",
+   "cenario": "quarto_vovo",
+   "personagens": [
+    "chapeu"
+   ],
+   "prompt": "add the girl in her red hooded cape stepping out of the open wardrobe and talking to the woodsman",
+   "checar": "chapeu",
+   "base": "p35",
+   "linha": 38,
+   "composicao": {
+    "sobre": "planos/tentativas/p36_sem_lobo.png",
+    "origem": "planos/p35.png",
+    "caixa": [
+     40,
+     782,
+     720,
+     1170
+    ],
+    "posicao": [
+     530,
+     1295
+    ],
+    "escala": 0.6,
+    "espelhar": true,
+    "motivo": "o gerador punha a menina em cima do lobo deitado; recortar e colar é determinístico"
+   }
+  },
+  {
+   "id": "p37",
+   "imagem": "planos/p37.png",
+   "cenario": "quarto_vovo",
+   "personagens": [
+    "vovo",
+    "cacador"
+   ],
+   "prompt": "grandma, safe and smiling, is helped up by the woodsman next to the sleeping wolf, gentle, no injuries",
+   "checar": "vovo",
+   "linha": 39
+  },
+  {
+   "id": "p38",
+   "imagem": "planos/p38.png",
+   "cenario": "quarto_vovo",
+   "personagens": [
+    "chapeu",
+    "vovo"
+   ],
+   "prompt": "the girl and grandma hug happily",
+   "checar": "chapeu",
+   "linha": 40
+  },
+  {
+   "id": "p39",
+   "imagem": "planos/p39.png",
+   "cenario": "quarto_vovo",
+   "personagens": [
+    "cacador"
+   ],
+   "prompt": "close-up of the woodsman scratching his beard, thinking",
+   "checar": "cacador",
+   "linha": 41
+  },
+  {
+   "id": "p40",
+   "imagem": "planos/p40.png",
+   "cenario": "quarto_vovo",
+   "personagens": [
+    "chapeu",
+    "vovo",
+    "cacador"
+   ],
+   "prompt": "the three put round stones into a sack next to the sleeping wolf, playful",
+   "checar": "chapeu",
+   "linha": 42
+  },
+  {
+   "id": "p41",
+   "imagem": "planos/p41.png",
+   "cenario": "floresta",
+   "personagens": [
+    "lobo"
+   ],
+   "prompt": "cartoon: the wolf tumbles down, dizzy with stars around his head, comedic",
+   "checar": "estilo",
+   "linha": 43
+  },
+  {
+   "id": "p42",
+   "imagem": "planos/p42.png",
+   "cenario": "casa_vovo",
+   "personagens": [
+    "chapeu",
+    "vovo",
+    "cacador"
+   ],
+   "prompt": "everyone cheers happily in front of grandma's cottage",
+   "checar": "chapeu",
+   "linha": 44
+  },
+  {
+   "id": "p43",
+   "imagem": "planos/p43.png",
+   "cenario": "casa_vovo",
+   "personagens": [
+    "chapeu",
+    "vovo"
+   ],
+   "prompt": "the girl and grandma sit on the porch eating sweets from the basket, sunset",
+   "checar": "chapeu",
+   "linha": 45
+  },
+  {
+   "id": "p44",
+   "imagem": "planos/p44.png",
+   "cenario": "casa",
+   "personagens": [
+    "chapeu",
+    "mae"
+   ],
+   "prompt": "back home, the girl hugs her mother and promises to always listen to her",
+   "checar": "chapeu",
+   "linha": 46
+  }
+ ],
+ "musica": {
+  "biblioteca": "fairytale_waltz",
+  "volume_db": -22
+ }
+}

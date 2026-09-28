@@ -1,0 +1,173 @@
+[
+ {
+  "plano": "p16",
+  "mostra": "the wolf runs fast along the sunny path, tongue out",
+  "cenario": "bosque",
+  "personagens": [
+   "lobo"
+  ],
+  "candidatos": [
+   "p16_s1479249861.png",
+   "p16_s203330130.png"
+  ],
+  "gravar_como": "planos/p16.png"
+ },
+ {
+  "plano": "p17",
+  "mostra": "the wolf knocks on the wooden door of grandma's cottage",
+  "cenario": "casa_vovo",
+  "personagens": [
+   "lobo"
+  ],
+  "candidatos": [
+   "p17_s1389703179.png",
+   "p17_s242652124.png"
+  ],
+  "gravar_como": "planos/p17.png"
+ },
+ {
+  "plano": "p18",
+  "mostra": "grandma sitting in her bed, looking toward the door, asking who is there",
+  "cenario": "quarto_vovo",
+  "personagens": [
+   "vovo"
+  ],
+  "candidatos": [
+   "p18_s1824214495.png",
+   "p18_s419999481.png"
+  ],
+  "gravar_como": "planos/p18.png"
+ },
+ {
+  "plano": "p19",
+  "mostra": "close-up of the wolf at the door speaking in a sweet fake voice, paw near his mouth",
+  "cenario": "casa_vovo",
+  "personagens": [
+   "lobo"
+  ],
+  "candidatos": [
+   "p19_s1790443516.png",
+   "p19_s907123021.png"
+  ],
+  "gravar_como": "planos/p19.png"
+ },
+ {
+  "plano": "p21",
+  "mostra": "cartoon gag: the wolf with a huge round belly next to an empty bed, a nightcap on the floor, gentle and not scary",
+  "cenario": "quarto_vovo",
+  "personagens": [
+   "lobo"
+  ],
+  "candidatos": [
+   "p21_s1101304923.png",
+   "p21_s1266063485.png"
+  ],
+  "gravar_como": "planos/p21.png"
+ },
+ {
+  "plano": "p22",
+  "mostra": "the disguised wolf lies in grandma's bed under the quilt, waiting",
+  "cenario": "quarto_vovo",
+  "personagens": [
+   "lobo_disf"
+  ],
+  "candidatos": [
+   "p22_s1535632142.png",
+   "p22_s462205767.png"
+  ],
+  "gravar_como": "planos/p22.png"
+ },
+ {
+  "plano": "p23",
+  "mostra": "the girl enters the bedroom with her basket and looks at 'grandma' in the bed",
+  "cenario": "quarto_vovo",
+  "personagens": [
+   "chapeu",
+   "lobo_disf"
+  ],
+  "candidatos": [
+   "p23_s1008213183.png",
+   "p23_s1625150739.png"
+  ],
+  "gravar_como": "planos/p23.png"
+ },
+ {
+  "plano": "p24",
+  "mostra": "close-up of the girl, curious, asking a question",
+  "cenario": "quarto_vovo",
+  "personagens": [
+   "chapeu"
+  ],
+  "candidatos": [
+   "p24_s1266339167.png",
+   "p24_s683894037.png"
+  ],
+  "gravar_como": "planos/p24.png"
+ },
+ {
+  "plano": "p25",
+  "mostra": "close-up of the disguised wolf in bed with very big ears poking out of the nightcap",
+  "cenario": "quarto_vovo",
+  "personagens": [
+   "lobo_disf"
+  ],
+  "candidatos": [
+   "p25_s574382669.png",
+   "p25_s616139751.png"
+  ],
+  "gravar_como": "planos/p25.png"
+ },
+ {
+  "plano": "p28",
+  "mostra": "close-up of the girl a bit scared, hands near her face",
+  "cenario": "quarto_vovo",
+  "personagens": [
+   "chapeu"
+  ],
+  "candidatos": [
+   "p28_s20660887.png",
+   "p28_s523018225.png"
+  ],
+  "gravar_como": "planos/p28.png"
+ },
+ {
+  "plano": "p29",
+  "mostra": "the disguised wolf jumps out of the bed, arms wide, big cartoon grin, funny not scary",
+  "cenario": "quarto_vovo",
+  "personagens": [
+   "lobo_disf"
+  ],
+  "candidatos": [
+   "p29_s2072779038.png",
+   "p29_s617835232.png"
+  ],
+  "gravar_como": "planos/p29.png"
+ },
+ {
+  "plano": "p30",
+  "mostra": "cartoon chase: the wolf runs after the girl around the bedroom",
+  "cenario": "quarto_vovo",
+  "personagens": [
+   "lobo_disf",
+   "chapeu"
+  ],
+  "candidatos": [
+   "p30_s137066413.png",
+   "p30_s825314477.png"
+  ],
+  "gravar_como": "planos/p30.png"
+ },
+ {
+  "plano": "p31",
+  "mostra": "the wolf trips on the rug and falls on the floor, little stars around his head",
+  "cenario": "quarto_vovo",
+  "personagens": [
+   "lobo_disf"
+  ],
+  "candidatos": [
+   "p31_s1320998027.png",
+   "p31_s225430688.png"
+  ],
+  "gravar_como": "planos/p31.png"
+ }
+]

@@ -1,0 +1,12 @@
+{
+  "etapa": "planos",
+  "parte": 8,
+  "revisado_em": "2026-09-28",
+  "escolhas": {},
+  "reprovadas": [
+    {"imagem": "p36_s1108766942.png", "problema": "menina colocada EM CIMA do lobo (sentada sobre o corpo dele), só um pé visível; a camisola do lobo virou mancha transparente; guarda-roupa continua fechado, ela não sai dele", "refazer_com": "the girl stands on the floor to the right of the wardrobe, in front of the open wardrobe door, full body visible with two legs and two feet, well apart from the sleeping wolf"},
+    {"imagem": "p36_s1177699230.png", "problema": "o corpo do lobo foi apagado: sobram cabeça, uma manga/pata solta no chão e pernas+cauda separadas grudadas no pé da cama (lobo desmembrado); a capa da menina tem mangas; guarda-roupa fechado", "refazer_com": "keep the wolf exactly as in the original, whole body in the pink nightgown; the girl stands on the floor next to the open wardrobe, sleeveless red cape over white blouse"},
+    {"imagem": "p36_s1643010168.png", "problema": "menina fundida no corpo do lobo (sai de dentro da camisola dele, uma perna só visível, mão apoiada na touca do lobo); guarda-roupa fechado, ela não sai dele", "refazer_com": "the girl stands on the floor between the wardrobe and the woodsman, not touching the wolf, full body with two legs and two feet, wardrobe door open behind her"}
+  ],
+  "duvidosas": []
+}

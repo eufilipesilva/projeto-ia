@@ -1,0 +1,68 @@
+[
+ {
+  "plano": "p23",
+  "mostra": "the girl stands at the foot of the bed holding her basket and looks at 'grandma'; the disguised wolf lies IN the bed under the quilt up to his chest, only his face with nightcap and glasses visible",
+  "personagens": [
+   "chapeu",
+   "lobo_disf"
+  ],
+  "cenario": "quarto_vovo",
+  "sem_referencia": [
+   "lobo_disf"
+  ],
+  "candidatos": [
+   "p23_s2064616636.png",
+   "p23_s996418444.png"
+  ]
+ },
+ {
+  "plano": "p35",
+  "mostra": "the woodsman stands at the doorway pointing in surprise at the disguised wolf, who lies asleep on the floor with eyes closed",
+  "personagens": [
+   "cacador",
+   "lobo_disf"
+  ],
+  "cenario": "quarto_vovo",
+  "sem_referencia": [
+   "lobo_disf"
+  ],
+  "candidatos": [
+   "p35_s1637797469.png",
+   "p35_s497702477.png"
+  ]
+ },
+ {
+  "plano": "p36",
+  "mostra": "the girl comes out of the open wardrobe and tells the woodsman what happened, while the disguised wolf keeps sleeping on the floor in the background",
+  "personagens": [
+   "chapeu",
+   "cacador",
+   "lobo_disf"
+  ],
+  "cenario": "quarto_vovo",
+  "sem_referencia": [
+   "lobo_disf"
+  ],
+  "candidatos": [
+   "p36_s1741954383.png",
+   "p36_s2078170154.png"
+  ]
+ },
+ {
+  "plano": "p38",
+  "mostra": "the girl and grandma hug happily, the disguised wolf still asleep on the floor in the background",
+  "personagens": [
+   "chapeu",
+   "vovo",
+   "lobo_disf"
+  ],
+  "cenario": "quarto_vovo",
+  "sem_referencia": [
+   "lobo_disf"
+  ],
+  "candidatos": [
+   "p38_s1866276667.png",
+   "p38_s1984923560.png"
+  ]
+ }
+]

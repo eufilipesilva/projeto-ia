@@ -1,0 +1,16 @@
+{
+ "id": "livro_aquarela",
+ "nome": "Livro ilustrado em aquarela",
+ "texto": "Children's picture book illustration, soft watercolor and colored pencil textures, warm gentle colors, clean friendly shapes, expressive cute characters, correct anatomy, vertical composition, no text, no letters.",
+ "tema_legenda": "magico",
+ "fonte_legenda": "Fredoka Legenda",
+ "tamanho_plano": [
+  768,
+  1344
+ ],
+ "motor": "klein",
+ "usado_em": [
+  "chapeuzinho_vermelho"
+ ],
+ "criado": "2026-09-28"
+}

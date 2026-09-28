@@ -1,0 +1,176 @@
+[
+ {
+  "plano": "p01",
+  "mostra": "the girl in her red cape stands happily in front of the cottage next to her mother",
+  "cenario": "casa",
+  "personagens": [
+   "chapeu",
+   "mae"
+  ],
+  "candidatos": [
+   "p01_s1350201532.png"
+  ],
+  "gravar_como": "planos/p01.png"
+ },
+ {
+  "plano": "p02",
+  "mostra": "close-up portrait of the smiling girl wearing her red hooded cape",
+  "cenario": "casa",
+  "personagens": [
+   "chapeu"
+  ],
+  "candidatos": [
+   "p02_s1640705460.png",
+   "p02_s763570404.png"
+  ],
+  "gravar_como": "planos/p02.png"
+ },
+ {
+  "plano": "p03",
+  "mostra": "at the cottage door the mother hands the girl a wicker basket full of sweets",
+  "cenario": "casa",
+  "personagens": [
+   "mae",
+   "chapeu"
+  ],
+  "candidatos": [
+   "p03_s1819956440.png",
+   "p03_s609441898.png"
+  ],
+  "gravar_como": "planos/p03.png"
+ },
+ {
+  "plano": "p04",
+  "mostra": "close-up of the mother speaking tenderly, holding the basket",
+  "cenario": "casa",
+  "personagens": [
+   "mae"
+  ],
+  "candidatos": [
+   "p04_s905766028.png",
+   "p04_s913242650.png"
+  ],
+  "gravar_como": "planos/p04.png"
+ },
+ {
+  "plano": "p05",
+  "mostra": "the mother on the left points to a dark forest path and a sunny flowery path, the girl on the right listens",
+  "cenario": "casa",
+  "personagens": [
+   "mae",
+   "chapeu"
+  ],
+  "candidatos": [
+   "p05_s1191612422.png",
+   "p05_s2112410302.png"
+  ],
+  "gravar_como": "planos/p05.png"
+ },
+ {
+  "plano": "p06",
+  "mostra": "the girl skips happily along the sunny path, singing, basket on her arm",
+  "cenario": "bosque",
+  "personagens": [
+   "chapeu"
+  ],
+  "candidatos": [
+   "p06_s295044916.png",
+   "p06_s695161088.png"
+  ],
+  "gravar_como": "planos/p06.png"
+ },
+ {
+  "plano": "p07",
+  "mostra": "the girl kneels to pick colorful wildflowers",
+  "cenario": "bosque",
+  "personagens": [
+   "chapeu"
+  ],
+  "candidatos": [
+   "p07_s1507948174.png",
+   "p07_s434189775.png"
+  ],
+  "gravar_como": "planos/p07.png"
+ },
+ {
+  "plano": "p08",
+  "mostra": "the wolf peeks from behind a big tree while the girl picks flowers, unaware",
+  "cenario": "floresta",
+  "personagens": [
+   "chapeu",
+   "lobo"
+  ],
+  "candidatos": [
+   "p08_s1823870699.png",
+   "p08_s612994411.png"
+  ],
+  "gravar_como": "planos/p08.png"
+ },
+ {
+  "plano": "p09",
+  "mostra": "the girl smiles at the polite wolf, not scared at all",
+  "cenario": "floresta",
+  "personagens": [
+   "chapeu",
+   "lobo"
+  ],
+  "candidatos": [
+   "p09_s1664167033.png",
+   "p09_s1784426729.png"
+  ],
+  "gravar_como": "planos/p09.png"
+ },
+ {
+  "plano": "p10",
+  "mostra": "close-up of the wolf greeting politely with a sly smile, hat in hand",
+  "cenario": "floresta",
+  "personagens": [
+   "lobo"
+  ],
+  "candidatos": [
+   "p10_s26356463.png",
+   "p10_s840073983.png"
+  ],
+  "gravar_como": "planos/p10.png"
+ },
+ {
+  "plano": "p11",
+  "mostra": "close-up of the girl answering cheerfully",
+  "cenario": "floresta",
+  "personagens": [
+   "chapeu"
+  ],
+  "candidatos": [
+   "p11_s2142776299.png",
+   "p11_s475647970.png"
+  ],
+  "gravar_como": "planos/p11.png"
+ },
+ {
+  "plano": "p14",
+  "mostra": "the wolf points toward the dark forest path with a sly grin, the girl looks",
+  "cenario": "floresta",
+  "personagens": [
+   "lobo",
+   "chapeu"
+  ],
+  "candidatos": [
+   "p14_s1622321204.png",
+   "p14_s549801590.png"
+  ],
+  "gravar_como": "planos/p14.png"
+ },
+ {
+  "plano": "p15",
+  "mostra": "the girl hesitates at a fork in the path, finger on her chin, doubtful",
+  "cenario": "floresta",
+  "personagens": [
+   "chapeu"
+  ],
+  "candidatos": [
+   "p15_s1565244764.png",
+   "p15_s1645221830.png"
+  ],
+  "gravar_como": "planos/p15.png"
+ }
+]

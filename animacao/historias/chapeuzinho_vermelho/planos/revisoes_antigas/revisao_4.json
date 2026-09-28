@@ -1,0 +1,42 @@
+{
+ "etapa": "planos",
+ "parte": 4,
+ "revisado_em": "2026-09-28",
+ "escolhas": {
+  "p04": "p04_s1871054199.png",
+  "p08": "p08_s165501411.png",
+  "p30": "p30_s1643007483.png",
+  "p40": "p40_s1766200465.png"
+ },
+ "reprovadas": [
+  {
+   "plano": "p23",
+   "imagem": "p23.png",
+   "problema": "nas duas versões a menina aparece com uma cauda cinza de lobo saindo de trás da saia; em s1919440455 ela também está de óculos e com vestido rosa floral (roupa da vovó/lobo) em vez da saia azul",
+   "refazer_com": "the girl in red hood, white blouse and blue skirt, no glasses, no tail, human child only, stands at the foot of the bed holding the basket; the disguised wolf's tail is hidden under the quilt"
+  },
+  {
+   "plano": "p35",
+   "imagem": "p35.png",
+   "problema": "as duas versões têm DOIS lobos: um lobo de vestido rosa dormindo no chão e outro lobo de vestido rosa, touca e óculos em pé apontando junto com o caçador",
+   "refazer_com": "only two characters: the woodsman standing at the doorway pointing, and a single sleeping wolf in pink floral dress lying on the floor; no one else standing in the room, empty space next to the wardrobe"
+  }
+ ],
+ "duvidosas": [
+  {
+   "plano": "p08",
+   "imagem": "p08_s165501411.png",
+   "problema": "anatomia limpa (lobo com 1 cauda, 2 braços, 2 pernas; menina ajoelhada de costas colhendo flores), mas o lobo está em pé ao lado da árvore, corpo inteiro visível, em vez de só a cabeça e uma pata espiando; capa da menina parece um casaquinho com mangas; há uma florzinha com carinha no chão à direita. A outra versão (s1427941042) foi descartada: a MENINA tem uma cauda de lobo saindo das costas."
+  },
+  {
+   "plano": "p30",
+   "imagem": "p30_s1643007483.png",
+   "problema": "anatomia limpa (lobo disfarçado com 1 cauda, 2 braços, 2 pernas no chão; menina rindo, 2 braços e 2 pernas), mas o lobo corre bem rente ao pé da cama, não 'longe da cama'. A outra versão (s1671565229) tem o lobo parecendo sentado/flutuando sobre a cama, pernas confusas."
+  },
+  {
+   "plano": "p40",
+   "imagem": "p40_s1766200465.png",
+   "problema": "anatomia limpa, menina sem óculos, lobo cinza com 1 cauda e vestido rosa dormindo; porém o lobo está pequeno (tamanho de cachorro) e as mãos seguram a boca do saco mais do que jogam pedras. A outra versão (s1537737538) tem o lobo ruivo/raposa (fora da ficha) e o chapéu do caçador com duas penas."
+  }
+ ]
+}

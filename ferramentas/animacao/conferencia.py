@@ -35,6 +35,23 @@ def folha(imagens, saida, colunas=4, largura=420):
     return saida
 
 
+def detalhes(imagens, pasta_saida, largura=900):
+    """Para cada imagem, grava a metade de cima e a de baixo AMPLIADAS (<nome>_cima.jpg, <nome>_baixo.jpg):
+    na imagem inteira, pés, mãos e caudas ficam pequenos demais. (28/09/2026: um caçador de três pernas passou
+    pelo revisor porque ele só olhou a imagem inteira.)"""
+    pasta_saida = Path(pasta_saida); pasta_saida.mkdir(parents=True, exist_ok=True)
+    feitos = []
+    for p in map(Path, imagens):
+        im = Image.open(p).convert("RGB")
+        w, h = im.size
+        for nome, caixa in (("cima", (0, 0, w, int(h * 0.55))), ("baixo", (0, int(h * 0.45), w, h))):
+            c = im.crop(caixa)
+            c = c.resize((largura, int(largura * c.height / c.width)), Image.LANCZOS)
+            dst = pasta_saida / f"{p.stem}_{nome}.jpg"
+            c.save(dst, quality=90); feitos.append(dst)
+    return feitos
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("entradas", nargs="+"); ap.add_argument("--saida", default="folha_conferencia.jpg")

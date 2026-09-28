@@ -16,7 +16,7 @@ Defeitos que ele pega (vistos na oração a São Alex, 27/09/2026):
 Normalmente não se chama o fiscal direto: o gerador da oração já usa (motor klein no Kaggle, 2 versões por cena, até 3 rodadas).
 
 ```powershell
-cd "C:\Users\Filipe Pereira\Downloads\Animação\cenas"
+cd "F:\Projeto IA\animacao\historias\oracao_sao_alex\cenas"
 & "F:\Projeto IA\.venv_omni\Scripts\python.exe" gerar_oracao.py --refazer o01_invocacao o05_malware o07_amem
 ```
 

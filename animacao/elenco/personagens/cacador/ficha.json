@@ -1,0 +1,20 @@
+{
+ "id": "cacador",
+ "descricao": "a friendly bearded woodsman with a green hat with a feather, brown jacket and red checkered shirt, carrying a lantern",
+ "humano": true,
+ "anatomia": "2 braços, 2 pernas, sem cauda",
+ "cor_legenda": "8FE3A0",
+ "estilo": "livro_aquarela",
+ "origem": {
+  "historia": "chapeuzinho_vermelho",
+  "nome_na_historia": "cacador",
+  "arquivo_original": "pers_cacador_s1768103701.png",
+  "motor": "klein (FLUX.2 klein 4B, 4 passos)",
+  "semente": 1768103701,
+  "tamanho": [
+   768,
+   1344
+  ],
+  "data": "2026-09-28"
+ }
+}

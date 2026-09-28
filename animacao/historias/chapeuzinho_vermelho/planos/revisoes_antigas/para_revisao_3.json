@@ -1,0 +1,181 @@
+[
+ {
+  "plano": "p32",
+  "mostra": "the girl hides inside the big wardrobe, peeking through the gap",
+  "cenario": "quarto_vovo",
+  "personagens": [
+   "chapeu"
+  ],
+  "candidatos": [
+   "p32_s493364007.png",
+   "p32_s969966148.png"
+  ],
+  "gravar_como": "planos/p32.png"
+ },
+ {
+  "plano": "p33",
+  "mostra": "the wolf sleeps on the floor snoring, big Zzz bubbles",
+  "cenario": "quarto_vovo",
+  "personagens": [
+   "lobo_disf"
+  ],
+  "candidatos": [
+   "p33_s1656828898.png",
+   "p33_s938175107.png"
+  ],
+  "gravar_como": "planos/p33.png"
+ },
+ {
+  "plano": "p34",
+  "mostra": "the woodsman walks past the cottage window and stops, hand at his ear, listening",
+  "cenario": "casa_vovo",
+  "personagens": [
+   "cacador"
+  ],
+  "candidatos": [
+   "p34_s2060667503.png",
+   "p34_s903983578.png"
+  ],
+  "gravar_como": "planos/p34.png"
+ },
+ {
+  "plano": "p35",
+  "mostra": "the woodsman stands at the door pointing at the sleeping wolf, surprised",
+  "cenario": "quarto_vovo",
+  "personagens": [
+   "cacador",
+   "lobo_disf"
+  ],
+  "candidatos": [
+   "p35_s1411401452.png",
+   "p35_s2063458454.png"
+  ],
+  "gravar_como": "planos/p35.png"
+ },
+ {
+  "plano": "p36",
+  "mostra": "the girl comes out of the wardrobe and tells the woodsman what happened",
+  "cenario": "quarto_vovo",
+  "personagens": [
+   "chapeu",
+   "cacador"
+  ],
+  "candidatos": [
+   "p36_s1292078542.png",
+   "p36_s1688833368.png"
+  ],
+  "gravar_como": "planos/p36.png"
+ },
+ {
+  "plano": "p37",
+  "mostra": "grandma, safe and smiling, is helped up by the woodsman next to the sleeping wolf, gentle, no injuries",
+  "cenario": "quarto_vovo",
+  "personagens": [
+   "vovo",
+   "cacador"
+  ],
+  "candidatos": [
+   "p37_s1207530678.png",
+   "p37_s1432487046.png"
+  ],
+  "gravar_como": "planos/p37.png"
+ },
+ {
+  "plano": "p38",
+  "mostra": "the girl and grandma hug happily",
+  "cenario": "quarto_vovo",
+  "personagens": [
+   "chapeu",
+   "vovo"
+  ],
+  "candidatos": [
+   "p38_s418757760.png",
+   "p38_s834453276.png"
+  ],
+  "gravar_como": "planos/p38.png"
+ },
+ {
+  "plano": "p39",
+  "mostra": "close-up of the woodsman scratching his beard, thinking",
+  "cenario": "quarto_vovo",
+  "personagens": [
+   "cacador"
+  ],
+  "candidatos": [
+   "p39_s1578798863.png",
+   "p39_s1720842892.png"
+  ],
+  "gravar_como": "planos/p39.png"
+ },
+ {
+  "plano": "p40",
+  "mostra": "the three put round stones into a sack next to the sleeping wolf, playful",
+  "cenario": "quarto_vovo",
+  "personagens": [
+   "chapeu",
+   "vovo",
+   "cacador"
+  ],
+  "candidatos": [
+   "p40_s1880598128.png",
+   "p40_s439319249.png"
+  ],
+  "gravar_como": "planos/p40.png"
+ },
+ {
+  "plano": "p41",
+  "mostra": "cartoon: the wolf tumbles down, dizzy with stars around his head, comedic",
+  "cenario": "floresta",
+  "personagens": [
+   "lobo"
+  ],
+  "candidatos": [
+   "p41_s1701936079.png",
+   "p41_s2029647001.png"
+  ],
+  "gravar_como": "planos/p41.png"
+ },
+ {
+  "plano": "p42",
+  "mostra": "everyone cheers happily in front of grandma's cottage",
+  "cenario": "casa_vovo",
+  "personagens": [
+   "chapeu",
+   "vovo",
+   "cacador"
+  ],
+  "candidatos": [
+   "p42_s1591238595.png",
+   "p42_s1807642913.png"
+  ],
+  "gravar_como": "planos/p42.png"
+ },
+ {
+  "plano": "p43",
+  "mostra": "the girl and grandma sit on the porch eating sweets from the basket, sunset",
+  "cenario": "casa_vovo",
+  "personagens": [
+   "chapeu",
+   "vovo"
+  ],
+  "candidatos": [
+   "p43_s1144729147.png",
+   "p43_s638511283.png"
+  ],
+  "gravar_como": "planos/p43.png"
+ },
+ {
+  "plano": "p44",
+  "mostra": "back home, the girl hugs her mother and promises to always listen to her",
+  "cenario": "casa",
+  "personagens": [
+   "chapeu",
+   "mae"
+  ],
+  "candidatos": [
+   "p44_s1684027872.png",
+   "p44_s805648454.png"
+  ],
+  "gravar_como": "planos/p44.png"
+ }
+]

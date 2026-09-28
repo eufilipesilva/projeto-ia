@@ -1,0 +1,118 @@
+[
+ {
+  "plano": "p17",
+  "mostra": "the wolf knocks on the wooden door of grandma's cottage",
+  "correcao_pedida": "grandma's small stone cottage is fully visible; the wolf knocks on the cottage's own front door, which is set into the stone wall of the cottage; no separate or freestanding door; no other characters",
+  "problema_anterior": "porta solta na floresta, não é da casa",
+  "personagens": [
+   "lobo"
+  ],
+  "cenario": "casa_vovo",
+  "candidatos": [
+   "p17_s38259399.png",
+   "p17_s996747172.png"
+  ]
+ },
+ {
+  "plano": "p23",
+  "mostra": "the girl enters the bedroom with her basket and looks at 'grandma' in the bed",
+  "correcao_pedida": "the girl in red hood, white blouse and blue skirt, no glasses, no tail, human child only, stands at the foot of the bed holding the basket; the disguised wolf lies in bed under the quilt up to his chest, his tail hidden under the quilt",
+  "problema_anterior": "cauda de lobo na menina (2 rodadas)",
+  "personagens": [
+   "chapeu",
+   "lobo_disf"
+  ],
+  "cenario": "quarto_vovo",
+  "candidatos": [
+   "p23_s1252617496.png",
+   "p23_s638902834.png"
+  ]
+ },
+ {
+  "plano": "p28",
+  "mostra": "close-up of the girl a bit scared, hands near her face",
+  "correcao_pedida": "inside grandma's bedroom, the bed with patchwork quilt and the big wardrobe clearly visible behind her; red hooded cape without sleeves, as in the character sheet",
+  "problema_anterior": "fundo branco, sem o quarto",
+  "personagens": [
+   "chapeu"
+  ],
+  "cenario": "quarto_vovo",
+  "candidatos": [
+   "p28_s222836297.png",
+   "p28_s49802197.png"
+  ]
+ },
+ {
+  "plano": "p34",
+  "mostra": "the woodsman walks past the cottage window and stops, hand at his ear, listening",
+  "correcao_pedida": "the woodsman stands still next to the cottage window, feet side by side, exactly two legs and two boots, one hand cupped at his ear, listening",
+  "problema_anterior": "caçador com três pernas",
+  "personagens": [
+   "cacador"
+  ],
+  "cenario": "casa_vovo",
+  "candidatos": [
+   "p34_s1281996984.png",
+   "p34_s720308105.png"
+  ]
+ },
+ {
+  "plano": "p35",
+  "mostra": "the woodsman stands at the door pointing at the sleeping wolf, surprised",
+  "correcao_pedida": "only two characters: the woodsman standing at the doorway pointing, and a single sleeping wolf in pink floral dress lying on the floor; no one else in the room",
+  "problema_anterior": "dois lobos (2 rodadas)",
+  "personagens": [
+   "cacador",
+   "lobo_disf"
+  ],
+  "cenario": "quarto_vovo",
+  "candidatos": [
+   "p35_s1958209060.png",
+   "p35_s2022991213.png"
+  ]
+ },
+ {
+  "plano": "p36",
+  "mostra": "the girl comes out of the wardrobe and tells the woodsman what happened",
+  "correcao_pedida": "inside grandma's bedroom with a wooden floor, the bed with patchwork quilt and the wardrobe visible; the girl steps out of the open wardrobe and talks to the woodsman; each person has exactly two legs",
+  "problema_anterior": "chão de grama, sem cama",
+  "personagens": [
+   "chapeu",
+   "cacador"
+  ],
+  "cenario": "quarto_vovo",
+  "candidatos": [
+   "p36_s1781687918.png",
+   "p36_s289929328.png"
+  ]
+ },
+ {
+  "plano": "p37",
+  "mostra": "grandma, safe and smiling, is helped up by the woodsman next to the sleeping wolf, gentle, no injuries",
+  "correcao_pedida": "inside grandma's bedroom with a wooden floor and the bed visible; grandma smiling, helped up by the woodsman; the wolf in pink floral dress sleeps on the floor; exactly two legs each person",
+  "problema_anterior": "chão de grama, sem cama",
+  "personagens": [
+   "vovo",
+   "cacador"
+  ],
+  "cenario": "quarto_vovo",
+  "candidatos": [
+   "p37_s540357124.png",
+   "p37_s974207579.png"
+  ]
+ },
+ {
+  "plano": "p39",
+  "mostra": "close-up of the woodsman scratching his beard, thinking",
+  "correcao_pedida": "inside grandma's bedroom, the bed and wardrobe behind him; close-up of the woodsman scratching his beard, thinking",
+  "problema_anterior": "caçador na floresta, fora do quarto",
+  "personagens": [
+   "cacador"
+  ],
+  "cenario": "quarto_vovo",
+  "candidatos": [
+   "p39_s1231777098.png",
+   "p39_s1414965171.png"
+  ]
+ }
+]

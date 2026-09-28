@@ -1,0 +1,40 @@
+{
+ "etapa": "planos",
+ "parte": 3,
+ "revisado_em": "2026-09-28",
+ "escolhas": {
+  "p32": "p32_s493364007.png",
+  "p33": "p33_s1656828898.png",
+  "p34": "p34_s903983578.png",
+  "p36": "p36_s1292078542.png",
+  "p37": "p37_s1207530678.png",
+  "p38": "p38_s834453276.png",
+  "p39": "p39_s1720842892.png",
+  "p41": "p41_s2029647001.png",
+  "p42": "p42_s1591238595.png",
+  "p43": "p43_s638511283.png",
+  "p44": "p44_s1684027872.png"
+ },
+ "reprovadas": [
+  {
+   "imagem": "p35.png",
+   "plano": "p35",
+   "problema": "s1411401452: lobo duplicado (um lobo disfarçado de pé e acordado + outro lobo cinza dormindo no chão). s2063458454: lobo acordado de pé (não dorme) e uma cauda cinza saindo de trás do caçador.",
+   "refazer_com": "the woodsman standing at the doorway points in surprise at ONE wolf wearing grandma's pink floral dress and bonnet, lying asleep on the floor with eyes closed; only one wolf in the scene, the wolf has exactly one tail, the woodsman has no tail"
+  },
+  {
+   "imagem": "p40.png",
+   "plano": "p40",
+   "problema": "s1880598128: a menina aparece de óculos (não bate com a ficha) e só a vovó segura o saco. s439319249: ao ar livre (não é o quarto da vovó), ninguém coloca pedras no saco (todos parados), chapéu do caçador com duas penas.",
+   "refazer_com": "inside grandma's bedroom, the girl (no glasses), grandma and the woodsman kneel and drop round grey stones into an open burlap sack with their hands, smiling playfully; one wolf in a pink dress sleeps on the floor beside them"
+  }
+ ],
+ "duvidosas": [
+  {"plano": "p36", "nota": "Escolhida s1292078542: anatomia ok, mas a menina está diante de uma porta, não saindo do guarda-roupa; o chão do quarto tem grama (nas duas versões). Aceitável."},
+  {"plano": "p37", "nota": "Escolhida s1207530678: anatomia ok, vovó sem ferimentos, mas o lobo dormindo é um lobo realista de quatro patas, sem o vestido rosa da ficha lobo_disf; o fundo mistura quarto com grama. A outra (s1432487046) tem uma cauda cinza saindo das costas da vovó e duas penas no chapéu: descartada."},
+  {"plano": "p38", "nota": "Escolhida s834453276 (capa igual à ficha). A s418757760 veste a menina com casaco vermelho de mangas em vez da capa. No abraço os braços se cruzam; contei um visível de cada personagem, plausível."},
+  {"plano": "p39", "nota": "Escolhida s1720842892. A s1578798863 tem TRÊS mãos (duas saindo do lado esquerdo: uma no lampião e outra na barba, mais a direita na barba): descartada. Cenário das duas é floresta, não o quarto da vovó; num close tolerável."},
+  {"plano": "p41", "nota": "Escolhida s2029647001 (lobo desequilibrado no ar, 1 cauda, 2 pernas, 2 braços, estrelas), mas a expressão é de sorriso maroto, não de tontura. A s1701936079 mostra o lobo de pé, firme, sem cair."},
+  {"plano": "p42", "nota": "Descartada s1807642913: a vovó sumiu e a menina ficou com óculos e cabelo grisalho (fusão das duas)."}
+ ]
+}

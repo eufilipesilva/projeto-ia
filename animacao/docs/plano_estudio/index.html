@@ -1,0 +1,861 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Estúdio de Animação da Pandora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --paper:#F3F4F8; --surface:#FFFFFF; --sunk:#E8E9F1;
+  --ink:#1F1C33; --ink-2:#4A4862; --muted:#6B6A80; --rule:#D5D5E2;
+  --accent:#5B3F8F; --accent-soft:#ECE6F6; --gold:#9A6E1C; --gold-soft:#F6EEDB;
+  --ok:#2E7D5B; --ok-soft:#E1F1E9; --warn:#A86A12; --warn-soft:#FBF0DC; --bad:#B03A3A; --bad-soft:#F8E3E3;
+  --night1:#1B1830; --night2:#2B2350; --star:#F1D38B;
+  --display:"Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", Consolas, "Courier New", monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --paper:#13121D; --surface:#1B1A29; --sunk:#232236;
+    --ink:#E9E7F2; --ink-2:#C4C1D8; --muted:#9A98B2; --rule:#34324A;
+    --accent:#B9A3EC; --accent-soft:#2C2447; --gold:#E4B85C; --gold-soft:#332A17;
+    --ok:#6FCBA0; --ok-soft:#173127; --warn:#E8B25A; --warn-soft:#352813; --bad:#EE8A8A; --bad-soft:#3A1C1F;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --paper:#13121D; --surface:#1B1A29; --sunk:#232236;
+  --ink:#E9E7F2; --ink-2:#C4C1D8; --muted:#9A98B2; --rule:#34324A;
+  --accent:#B9A3EC; --accent-soft:#2C2447; --gold:#E4B85C; --gold-soft:#332A17;
+  --ok:#6FCBA0; --ok-soft:#173127; --warn:#E8B25A; --warn-soft:#352813; --bad:#EE8A8A; --bad-soft:#3A1C1F;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+.shell{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1240px;margin:0 auto;padding-inline:24px;gap:48px}
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);align-self:start;max-height:100vh;overflow:auto;padding-block:40px 24px}
+nav.toc .brand{font-family:var(--display);font-size:1.35rem;font-weight:600;line-height:1.15;margin:0 0 4px}
+nav.toc .sub{font-size:.78rem;color:var(--muted);margin:0 0 20px}
+nav.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:2px;counter-reset:c}
+nav.toc li{counter-increment:c}
+nav.toc a{display:grid;grid-template-columns:2.1em 1fr;padding:5px 8px;border-radius:6px;color:var(--ink-2);text-decoration:none;font-size:.88rem;line-height:1.35}
+nav.toc a::before{content:counter(c,decimal-leading-zero);font:500 .75rem/1.6 var(--mono);color:var(--gold)}
+nav.toc a:hover{background:var(--sunk);color:var(--ink)}
+
+main{padding-block:40px 80px;min-width:0}
+.hero{position:relative;overflow:hidden;border-radius:14px;background:linear-gradient(160deg,var(--night1),var(--night2));color:#EDEAF8;padding:44px 40px 36px;margin-bottom:48px}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero > *{position:relative}
+.hero .eyebrow{font:500 .72rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--star)}
+.hero h1{font-family:var(--display);font-weight:600;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.02;margin:14px 0 14px;text-wrap:balance}
+.hero p{max-width:60ch;color:#CFCBE6;margin:0 0 20px}
+.hero dl{display:flex;flex-wrap:wrap;gap:10px 28px;margin:0;font-size:.82rem}
+.hero dt{font:500 .68rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#9C95C4;margin-bottom:4px}
+.hero dd{margin:0;color:#F2EFFC}
+
+section{margin-bottom:64px;scroll-margin-top:24px}
+section > header{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--rule);padding-bottom:10px;margin-bottom:22px}
+section > header .n{font:500 .8rem/1 var(--mono);color:var(--gold)}
+h2{font-family:var(--display);font-weight:600;font-size:2rem;line-height:1.1;margin:0;text-wrap:balance}
+h3{font-family:var(--display);font-weight:600;font-size:1.4rem;line-height:1.2;margin:32px 0 10px;text-wrap:balance}
+h4{font:600 .78rem/1.3 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:22px 0 8px}
+p,ul,ol{max-width:70ch}
+p{margin:0 0 14px}
+ul,ol{padding-left:1.25em;margin:0 0 14px}
+li{margin-bottom:5px}
+strong{font-weight:600}
+code,.mono{font-family:var(--mono);font-size:.86em}
+code{background:var(--sunk);padding:1px 5px;border-radius:4px}
+.lead{font-size:1.1rem;color:var(--ink-2)}
+
+.verdict{border-left:3px solid var(--accent);background:var(--accent-soft);padding:18px 22px;border-radius:0 10px 10px 0;margin:0 0 22px;max-width:74ch}
+.verdict p:last-child{margin:0}
+.note{font-size:.9rem;color:var(--muted);max-width:70ch}
+.callout{background:var(--gold-soft);border:1px solid color-mix(in srgb,var(--gold) 30%,transparent);border-radius:10px;padding:14px 18px;margin:18px 0;max-width:74ch;font-size:.95rem}
+.callout strong{color:var(--gold)}
+
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:18px 20px}
+.card h3{margin-top:0}
+.card p:last-child,.card ul:last-child{margin-bottom:0}
+.tag{display:inline-block;font:500 .7rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:4px 7px;border-radius:4px;background:var(--sunk);color:var(--ink-2);margin:0 4px 4px 0}
+
+.tbl{overflow-x:auto;margin:10px 0 22px;border:1px solid var(--rule);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:640px}
+th,td{text-align:left;vertical-align:top;padding:9px 12px;border-bottom:1px solid var(--rule)}
+th{font:600 .72rem/1.3 var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--sunk)}
+tr:last-child td{border-bottom:0}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.pill{display:inline-block;font:600 .7rem/1 var(--body);padding:4px 8px;border-radius:999px;white-space:nowrap}
+.ok{background:var(--ok-soft);color:var(--ok)} .warn{background:var(--warn-soft);color:var(--warn)} .bad{background:var(--bad-soft);color:var(--bad)} .info{background:var(--accent-soft);color:var(--accent)}
+
+figure{margin:18px 0 26px}
+figure .fig{overflow-x:auto;background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:16px;color:var(--ink)}
+figure svg{display:block;max-width:100%;height:auto;min-width:760px}
+figcaption{font-size:.85rem;color:var(--muted);margin-top:8px;max-width:74ch}
+
+.board{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin:12px 0 24px}
+.panel{background:var(--surface);border:1px solid var(--rule);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.panel .frame{aspect-ratio:16/9;max-width:100%;background:linear-gradient(170deg,var(--night1),var(--night2));color:#DAD5F2;padding:10px 12px;font-size:.78rem;line-height:1.4;display:flex;flex-direction:column;justify-content:space-between}
+.panel .frame .tc{font:500 .68rem/1 var(--mono);color:var(--star);letter-spacing:.06em}
+.panel .frame .cam{font:500 .68rem/1.3 var(--mono);color:#A9A2D6}
+.panel .txt{padding:10px 12px;font-size:.82rem;color:var(--ink-2)}
+.panel .txt b{color:var(--ink);font-weight:600}
+
+.phases{display:grid;gap:14px}
+.phase{display:grid;grid-template-columns:86px minmax(0,1fr);gap:18px;background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:16px 20px}
+.phase .id{font-family:var(--display);font-size:2.2rem;font-weight:600;line-height:1;color:var(--accent)}
+.phase .id small{display:block;font:500 .68rem/1.4 var(--mono);color:var(--muted);margin-top:6px;letter-spacing:.04em}
+.phase h3{margin:0 0 6px}
+.phase p,.phase ul{margin-bottom:8px}
+.phase .done{font-size:.86rem;color:var(--ok)}
+
+.pc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.pc .card h4{margin-top:0}
+.pc .pro h4{color:var(--ok)} .pc .con h4{color:var(--bad)}
+
+.looks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.look .sw{display:flex;gap:6px;margin:8px 0 10px}
+.look .sw span{width:26px;height:26px;border-radius:50%;border:1px solid var(--rule)}
+.prompt{font:400 .76rem/1.5 var(--mono);background:var(--sunk);border-radius:6px;padding:10px;color:var(--ink-2);white-space:pre-wrap;word-break:break-word}
+
+footer{border-top:1px solid var(--rule);padding-top:18px;font-size:.82rem;color:var(--muted)}
+
+@media (max-width: 960px){
+  .shell{grid-template-columns:1fr;gap:0}
+  nav.toc{position:static;max-height:none;padding-block:24px 0}
+  nav.toc ol{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid3,.looks{grid-template-columns:1fr 1fr}
+}
+@media (max-width: 620px){
+  .shell{padding-inline:16px}
+  .hero{padding:32px 22px 26px}
+  .grid2,.grid3,.looks,.pc{grid-template-columns:1fr}
+  nav.toc ol{grid-template-columns:1fr}
+  .phase{grid-template-columns:1fr;gap:6px}
+}
+@media print{
+  @page{size:A4;margin:16mm 14mm}
+  body{background:#fff;font-size:10.5pt}
+  .shell{display:block;max-width:none;padding:0}
+  nav.toc{position:static;max-height:none;padding:0;break-after:page}
+  nav.toc ol{grid-template-columns:1fr}
+  .hero{break-inside:avoid;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hero canvas{display:none}
+  section{break-before:page;margin-bottom:0}
+  section#resumo{break-before:auto}
+  .card,.phase,.panel,.verdict,.callout,figure,tr{break-inside:avoid}
+  .tbl,figure .fig{overflow:visible}
+  table{min-width:0;font-size:8.6pt}
+  figure svg{min-width:0}
+  .panel .frame,.pill,.tag,th{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+
+<nav class="toc" aria-label="Sumário">
+  <p class="brand">Estúdio de Animação da Pandora</p>
+  <p class="sub">Diagnóstico e plano · set/2026</p>
+  <ol>
+    <li><a href="#resumo">Resumo e veredito</a></li>
+    <li><a href="#diagnostico">Diagnóstico da operação</a></li>
+    <li><a href="#visao">O que o estúdio vai produzir</a></li>
+    <li><a href="#exemplos">Capacidade criativa e exemplos</a></li>
+    <li><a href="#pipeline">Como um vídeo é feito</a></li>
+    <li><a href="#ferramentas">Ferramentas escolhidas</a></li>
+    <li><a href="#vozes">As vozes que já temos</a></li>
+    <li><a href="#pandora">Consistência e a Pandora</a></li>
+    <li><a href="#vram">VRAM, RAM e disco</a></li>
+    <li><a href="#integracao">Integração com o Estúdio Web</a></li>
+    <li><a href="#roadmap">Roadmap em fases</a></li>
+    <li><a href="#tempos">Tempos de render</a></li>
+    <li><a href="#proscontras">Prós, contras e riscos</a></li>
+    <li><a href="#decisoes">Decisões pendentes</a></li>
+    <li><a href="#fontes">Fontes</a></li>
+  </ol>
+</nav>
+
+<main>
+
+<div class="hero">
+  <canvas id="ceu" aria-hidden="true"></canvas>
+  <span class="eyebrow">Plano diretor · Estúdio de Voz → Estúdio de Animação</span>
+  <h1>Estúdio de Animação da Pandora</h1>
+  <p>Diagnóstico completo da operação atual e o plano para transformar as vozes que já temos em histórias ilustradas animadas, com a Pandora ganhando rosto. Tudo local, grátis e scriptável em Python, dentro de uma RTX 2060 de 6 GB.</p>
+  <dl>
+    <div><dt>Estilo padrão</dt><dd>Livro ilustrado animado</dd></div>
+    <div><dt>Público</dt><dd>Histórias infantis · Pandora · uso pessoal</dd></div>
+    <div><dt>Orçamento de disco</dt><dd>~20–28 GB no F:</dd></div>
+    <div><dt>Custo</dt><dd>R$ 0</dd></div>
+  </dl>
+</div>
+
+<!-- 1 -->
+<section id="resumo">
+  <header><span class="n">01</span><h2>Resumo e veredito</h2></header>
+  <div class="verdict">
+    <p><strong>Dá para fazer, e o estúdio atual é uma ótima base.</strong> A parte mais difícil de um estúdio de animação, que é ter vozes boas e consistentes para dezenas de personagens, já está resolvida. O que falta é a camada visual: gerar ilustrações consistentes, dar movimento a elas e sincronizar tudo com o áudio.</p>
+  </div>
+  <p>A recomendação central é tratar o <strong>áudio como relógio mestre</strong>. O motor de voz gera a história como hoje, mas passa a anotar o instante em que cada fala começa e termina. A partir dessa linha do tempo, cada cena recebe uma ilustração gerada por IA (SDXL), que ganha vida com movimento de câmera, profundidade falsa em camadas (parallax 2.5D), partículas de luz e legendas que acendem palavra por palavra.</p>
+  <p>Esse caminho foi escolhido porque cabe na máquina. Modelos que geram vídeo "de verdade" (Wan, FramePack, LTX) até rodam em 6 GB com truques, mas levam de 10 a 30 minutos para cada 5 segundos e mudam a roupa dos personagens de um clipe para outro. Numa história infantil de 5 minutos isso seria inviável. Ilustração + câmera + camadas produz um resultado bonito, consistente e renderiza em cerca de meia hora por episódio.</p>
+  <h4>Em números</h4>
+  <div class="tbl"><table>
+    <thead><tr><th>Item</th><th>Hoje</th><th>Depois do plano</th></tr></thead>
+    <tbody>
+      <tr><td>Saídas do estúdio</td><td>Só áudio (.wav)</td><td>Áudio + vídeo MP4 16:9 e 9:16</td></tr>
+      <tr><td>Contos prontos para animar</td><td class="num">27 roteiros · 1 áudio completo</td><td>Os 27, com ilustrações e legenda</td></tr>
+      <tr><td>Vozes de personagem</td><td class="num">48 + 7 Kokoro + Pandora</td><td>As mesmas, cada uma com uma ficha visual</td></tr>
+      <tr><td>Pandora</td><td>Voz e personalidade, sem rosto</td><td>Retrato falante com visemas e cabeça animada</td></tr>
+      <tr><td>Tempo por episódio de 5 min</td><td>—</td><td class="num">~25–40 min de render (estimativa)</td></tr>
+      <tr><td>Disco novo</td><td>—</td><td class="num">~20 GB essenciais + ~8,5 GB opcionais</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Os tempos e consumos de VRAM citados vêm de documentação e relatos da comunidade. Nada disso foi medido ainda nesta máquina. A fase F0 do roadmap existe justamente para medir antes de construir.</p>
+</section>
+
+<!-- 2 -->
+<section id="diagnostico">
+  <header><span class="n">02</span><h2>Diagnóstico da operação atual</h2></header>
+  <p class="lead">O que existe hoje, o que serve para animação e o que atrapalha.</p>
+
+  <h3>Máquina</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Componente</th><th>Valor</th><th>Situação</th><th>Impacto na animação</th></tr></thead>
+    <tbody>
+      <tr><td>GPU</td><td class="num">RTX 2060 · 6 GB</td><td><span class="pill warn">Limite</span></td><td>Arquitetura Turing: fp16 funciona bem, mas não há bf16 nem FP8 nativos. Modelos novos distribuídos em bf16/FP8 rodam mais lentos ou precisam de conversão. SDXL em fp16 é o ponto doce.</td></tr>
+      <tr><td>RAM</td><td class="num">16 GB</td><td><span class="pill warn">Limite</span></td><td>Descarta Wan 14B e Qwen-Image-Edit (dependem de 32 GB para o offload). SDXL (~7 GB em RAM ao carregar) cabe.</td></tr>
+      <tr><td>CPU</td><td class="num">i5-8400 · 6 núcleos</td><td><span class="pill ok">Ok</span></td><td>Suficiente para compor quadros e codificar H.264. A montagem final é a etapa mais longa depois da geração de imagens.</td></tr>
+      <tr><td>Disco C:</td><td class="num">2 GB livres</td><td><span class="pill bad">Crítico</span></td><td>O cache do Hugging Face mora em C:. O primeiro download de modelo trava o sistema. Precisa ser movido antes de tudo.</td></tr>
+      <tr><td>Disco F:</td><td class="num">61 GB livres</td><td><span class="pill ok">Ok</span></td><td>Recebe ferramentas, modelos e saídas de vídeo.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Software instalado</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Peça</th><th>Estado</th><th>Serve para animação?</th></tr></thead>
+    <tbody>
+      <tr><td><code>.venv_omni</code> (Python 3.14, torch 2.11 cu128)</td><td><span class="pill ok">Em uso</span></td><td>Continua dono do áudio. Não recebe ferramentas de imagem: Python 3.14 ainda não é suportado por boa parte delas.</td></tr>
+      <tr><td>Python 3.11 solto em <code>AppData\Local\Programs</code></td><td><span class="pill info">Parado</span></td><td>Base ideal para um venv novo de animação (<code>.venv_anim</code>).</td></tr>
+      <tr><td>ffmpeg 8.1 (winget)</td><td><span class="pill ok">Pronto</span></td><td>Montagem, legendas, codificação. Já provado no vídeo do St. Alex.</td></tr>
+      <tr><td>faster-whisper 1.2</td><td><span class="pill ok">Pronto</span></td><td>Tempo de cada palavra para legenda karaokê e boca. Já usado com <code>word_timestamps=True</code> em <code>parodia.py</code>.</td></tr>
+      <tr><td>Ollama + gemma3:4b</td><td><span class="pill ok">Pronto</span></td><td>Divide o roteiro em cenas e escreve os prompts das ilustrações.</td></tr>
+      <tr><td>diffusers 0.29</td><td><span class="pill warn">Sem modelos</span></td><td>Instalado, mas sem nenhum modelo baixado. O plano usa ComfyUI em vez dele.</td></tr>
+      <tr><td>ComfyUI, SD, OpenCV, moviepy, Blender</td><td><span class="pill bad">Ausentes</span></td><td>Tudo a instalar no <code>.venv_anim</code>.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>O Estúdio Web</h3>
+  <p><code>app/estudio/estudio_web.py</code> (FastAPI, porta 5008) tem 11 abas em 5 grupos: Essencial (clone, design), Produção (contador de histórias, comédia, game show, trailer), Imersão (meditação, rádio), Avançado (battle, personagem) e Experimental (canto). Todas as tarefas pesadas passam por uma <strong>fila com um único worker</strong> (<code>_run_task</code> → <code>_worker_loop</code>), criada para evitar o segfault de CUDA com threads diferentes. Esse padrão é exatamente o que a animação precisa: uma coisa por vez na GPU.</p>
+  <p>Limitação: <code>_executar_tarefa</code> só sabe devolver áudio. O vídeo vai precisar de um tipo de retorno novo e uma rota para servir o MP4.</p>
+
+  <h3>O motor de voz</h3>
+  <p><code>motor_v2.py</code> gera cada fala como um array separado (24 kHz, mono) e junta tudo em <code>_montar</code> e <code>_montar_comedia</code> com pausas fixas: 0,09 s entre falas do mesmo personagem, 0,24 s na troca de personagem, 0,12 s em volta de efeitos. <strong>O momento em que cada fala começa é conhecido nesse ponto, mas é jogado fora.</strong> Recuperar isso é a mudança mais importante do plano e custa poucas linhas.</p>
+
+  <h3>Acervo de histórias</h3>
+  <p>77 contos coletados do Wikisource, <strong>27 roteirizados</strong> no formato <code>{i, fala, quem, texto}</code>, o mesmo que <code>/api/story/render</code> usa. Só <em>Os Músicos de Bremen</em> tem áudio completo. A esteira está parada na escolha manual de vozes. Para animação isso é bom: os roteiros já separam narrador e personagem, que é a informação necessária para decidir quem aparece em cada cena.</p>
+
+  <h3>Pontos de atenção encontrados</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Achado</th><th>Gravidade</th><th>O que fazer</th></tr></thead>
+    <tbody>
+      <tr><td>Disco C: com 2 GB e cache de modelos nele</td><td><span class="pill bad">Alta</span></td><td>Definir <code>HF_HOME</code> em F: e mover o cache existente (fase F0).</td></tr>
+      <tr><td>Nenhum timestamp de fala</td><td><span class="pill bad">Alta</span></td><td>Timeline em <code>_montar</code> (fase F1).</td></tr>
+      <tr><td>A Pandora não tem aparência descrita em lugar nenhum</td><td><span class="pill warn">Média</span></td><td>Escolher um dos três visuais propostos no capítulo 08.</td></tr>
+      <tr><td>Duas Pandoras: serena em <code>pandora_personalidade.md</code>, debochada no agente <code>diretor-criativo</code></td><td><span class="pill warn">Média</span></td><td>Alinhar o agente à Pandora serena (sua escolha).</td></tr>
+      <tr><td><code>DOCUMENTACAO.md</code> descreve o Gradio antigo (porta 5006)</td><td><span class="pill info">Baixa</span></td><td>Atualizar junto com a aba nova.</td></tr>
+      <tr><td><code>/api/status</code> quebrado (<code>_OMNI</code> → <code>_MODEL</code>)</td><td><span class="pill ok">Resolvido</span></td><td>Corrigido nesta sessão; vale ao reiniciar o servidor.</td></tr>
+      <tr><td>Pastas <code>raina</code> e <code>rainha</code> duplicadas nas vozes do acervo</td><td><span class="pill info">Baixa</span></td><td>Unificar ao criar as fichas visuais.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 3 -->
+<section id="visao">
+  <header><span class="n">03</span><h2>O que o estúdio vai produzir</h2></header>
+  <p>Três linhas de produção, todas saindo do mesmo pipeline. Muda só a receita de cada uma.</p>
+  <div class="grid3">
+    <div class="card">
+      <span class="tag">Linha 1</span>
+      <h3>Livro Animado do Acervo</h3>
+      <p>Os 27 contos viram vídeos de 3 a 8 minutos. Narrador + vozes de personagem, 8 a 15 ilustrações por conto, câmera lenta, parallax, legenda karaokê. Formato 16:9.</p>
+      <p class="note">Principal linha. Reaproveita 100% da esteira do acervo.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Linha 2</span>
+      <h3>Pandora Anfitriã</h3>
+      <p>A Pandora aparece como retrato falante: abre e fecha os contos, apresenta a meditação, comenta o Battle, dá boa-noite. Começa com visemas (boca por fonema) e evolui para cabeça animada.</p>
+      <p class="note">Dá identidade ao canal e liga todos os programas.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Linha 3</span>
+      <h3>Oficina de Memes e Presentes</h3>
+      <p>Uma imagem + um áudio viram vídeo em minutos, como o St. Alex. Evolui para cartões falados, homenagens e piadas internas com legenda e efeitos.</p>
+      <p class="note">A mais rápida e a porta de entrada: já funciona hoje.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="exemplos">
+  <header><span class="n">04</span><h2>Capacidade criativa e exemplos</h2></header>
+  <p>Exemplos concretos do que o estúdio poderia produzir, pensados com o agente <em>diretor-criativo</em> do projeto e ajustados à máquina.</p>
+  <p>Todos seguem a mesma regra de viabilidade: ilustrações SDXL geradas uma por vez, movimento e partículas só na CPU, retrato falante por visemas e, no máximo, um clipe de vídeo de IA de 2–4 s por episódio, gerado uma vez e reaproveitado.</p>
+
+  <h3>Infantis · acervo</h3>
+  <div class="grid2">
+    <div class="card"><span class="tag">16:9 · 6–12 min</span><h3>Era Uma Vez, à Luz de Velas</h3><p>A série principal. Cada conto roteirizado vira livro ilustrado com 8–14 ilustrações. Estreia com <em>Os Músicos de Bremen</em>, <em>O Lobo e os Sete Cabritinhos</em> e <em>O Príncipe Sapo</em>.</p><p class="note">Vozes: narrador + personagens do <code>mapa.json</code>. Visual: parallax em 3 camadas, poeira dourada, karaokê, página que vira entre cenas.</p></div>
+    <div class="card"><span class="tag">9:16 · 60–90 s</span><h3>Conto de Bolso</h3><p>Versão relâmpago de um conto (Rapunzel, O Gato e o Rato, A Duração da Vida) em 8–10 frases condensadas do texto adaptado. Fecha com "a história completa está no canal".</p><p class="note">5 ilustrações verticais, zoom pulsado a cada frase, karaokê grande no centro. É a vitrine.</p></div>
+    <div class="card"><span class="tag">16:9 · 8 min · interativo</span><h3>Conta Comigo: Os Sete Cabritinhos</h3><p>O conto com pausas para a criança contar junto: "quantos cabritinhos se esconderam?". Os números aparecem desenhados na tela, com um silêncio para ela responder.</p><p class="note">Recurso educativo é só texto e brilho procedural sobre as mesmas ilustrações. Nenhuma imagem extra.</p></div>
+    <div class="card"><span class="tag">16:9 · 5–7 min</span><h3>Hora de Dormir</h3><p><em>As Moedas que Caíram do Céu</em> em ritmo lento (speed 0,85–0,90). As cores escurecem cena a cena e o fim é um céu estrelado com 20 s de silêncio. Serve também para <em>O Avô e o Netinho</em>.</p><p class="note">O formato mais barato: a sensação vem de cor e partícula (estrelas que viram moedas), só dissolves, legenda discreta.</p></div>
+  </div>
+
+  <h3>Pandora anfitriã</h3>
+  <div class="grid3">
+    <div class="card"><span class="tag">16:9 · 40 s + 40 s</span><h3>O Observatório da Pandora</h3><p>Abertura e encerramento acoplados a qualquer conto. Ela recebe as crianças numa sacada sob as estrelas, apresenta o conto e, no fim, comenta a lição sem sermão: "eu, particularmente, acho que o burro foi o mais sensato de todos".</p><p class="note">Cenário e retrato feitos uma vez; em cada episódio só muda o áudio.</p></div>
+    <div class="card"><span class="tag">9:16 ou 16:9 · 2–3 min</span><h3>Constelações de Bolso</h3><p>A Pandora ensina a achar o Cruzeiro do Sul, as Três Marias, o Escorpião. Os fatos vêm de uma ficha que você confere; a Gemma só reescreve no tom dela.</p><p class="note">Céu 100% desenhado por código, linhas que se traçam sozinhas. Só o retrato usa SDXL.</p></div>
+    <div class="card"><span class="tag">16:9 · 3 min</span><h3>Correio da Meia-Noite</h3><p>A Pandora lê uma "carta" (uma pergunta sua ou da família) e responde com humor seco e carinho. "Por que o céu é escuro se tem tanta estrela?"</p><p class="note">Na prática, o <code>eris_pandora.py</code> virando vídeo: envelope com lacre violeta, carta em caligrafia.</p></div>
+  </div>
+
+  <h3>Pessoais · memes · presentes</h3>
+  <div class="grid3">
+    <div class="card"><span class="tag">9:16 · 60 s</span><h3>Santos Improváveis</h3><p>A série do St. Alex: Santa Wi-Fi das Conexões Perdidas, São Backup dos Arquivos Não Salvos, Nossa Senhora da Reunião que Podia Ser um E-mail. Oração, ladainha curta e "graça alcançada".</p><p class="note">1 vitral por episódio, raios de luz procedurais, zoom de baixo para cima. Fórmula já testada.</p></div>
+    <div class="card"><span class="tag">16:9 · 2 min</span><h3>Lenda de Aniversário</h3><p>O aniversariante vira herói de um conto de Grimm "perdido": "e então Marcos, o Alfaiate, costurou o céu inteiro". A Pandora narra e, no fim, sai do livro para dar os parabéns.</p><p class="note">A pessoa é descrita no prompt, não clonada de foto: sem deepfake.</p></div>
+    <div class="card"><span class="tag">16:9 · 90 s</span><h3>A Tapeçaria do Deploy</h3><p>Crônica épica medieval de um desastre de TI no estilo da Tapeçaria de Bayeux: "no ano da graça de 2026, o servidor caiu às 17h58 de uma sexta-feira".</p><p class="note">Uma única imagem ultra-larga (outpainting em 4 pedaços) e uma panorâmica contínua. O formato mais barato por minuto.</p></div>
+  </div>
+
+  <h3>Storyboard · Os Músicos de Bremen</h3>
+  <p class="note">Cerca de 8 min. Vozes: NARRADOR, BURRO, CÃO, GATO, GALO. Códigos de tempo aproximados para um conto de 8 minutos.</p>
+  <div class="board">
+    <div class="panel"><div class="frame"><span class="tc">CENA 01 · 00:00–00:48</span><span>Estradinha de terra ao amanhecer, burro com saco nas costas, moinho ao fundo.</span><span class="cam">parallax 3 camadas · travelling lateral · poeira dourada</span></div><div class="txt"><b>Narrador:</b> "Um burro velho e cansado decidiu partir para Bremen e ser músico da cidade."</div></div>
+    <div class="panel"><div class="frame"><span class="tc">CENA 02 · 00:48–01:40</span><span>Cão magro deitado à beira da estrada, o burro inclinado para ele.</span><span class="cam">zoom-in suave · karaokê</span></div><div class="txt"><b>Burro:</b> "Venha comigo, amigo cão, em Bremen sempre se precisa de músicos."</div></div>
+    <div class="panel"><div class="frame"><span class="tc">CENA 03 · 01:40–02:35</span><span>Gato no muro com cara de poucos amigos; agora são três viajantes.</span><span class="cam">Ken Burns diagonal · piscada procedural</span></div><div class="txt"><b>Gato:</b> "Quem vai ficar alegre quando está com a corda no pescoço?"</div></div>
+    <div class="panel"><div class="frame"><span class="tc">CENA 04 · 02:35–03:20</span><span>Galo empoleirado no portão, peito estufado, céu de fim de tarde.</span><span class="cam">tremor de câmera 0,3 s no grito</span></div><div class="txt"><b>Galo:</b> "Cocoricó! Amanhã querem me pôr na sopa!"</div></div>
+    <div class="panel"><div class="frame"><span class="tc">CENA 05 · 03:20–04:30</span><span>Floresta azul-noite, uma janelinha âmbar ao longe entre as árvores.</span><span class="cam">parallax profundo 4 camadas · vaga-lumes · push-in lento</span></div><div class="txt"><b>Narrador:</b> "Na floresta escura, viram uma luz ao longe."</div></div>
+    <div class="panel"><div class="frame"><span class="tc">CENA 06 · 04:30–05:30</span><span>Os quatro empilhados (burro, cão, gato, galo) espiando pela janela.</span><span class="cam">zoom-out revela a pilha · segura 2 s</span></div><div class="txt"><b>Narrador:</b> "Pela janela, viram ladrões à mesa, cheia de comida."</div></div>
+    <div class="panel"><div class="frame"><span class="tc">CENA 07 · 05:30–06:40</span><span>A pilha atravessa a janela; ladrões fogem em silhueta.</span><span class="cam">4 cortes rápidos · clarão branco</span></div><div class="txt"><b>Todos:</b> "Ióóó!" · "Au, au!" · "Miau!" · "Cocoricó!" (falados, não cantados)</div></div>
+    <div class="panel"><div class="frame"><span class="tc">CENA 08 · 06:40–08:00</span><span>Casinha iluminada à noite, os quatro na janela, céu estrelado.</span><span class="cam">afastamento lento · estrelas · fade para a Pandora</span></div><div class="txt"><b>Narrador:</b> "E os quatro gostaram tanto da casa que nunca mais saíram de lá."</div></div>
+  </div>
+
+  <h3>Storyboard · Constelações de Bolso: o Cruzeiro do Sul</h3>
+  <p class="note">2 min 30 s, 16:9. Só a Pandora fala. Fatos: cinco estrelas principais, a quinta é a Intrometida (Épsilon Crucis); prolongar o braço maior ~4,5 vezes leva perto do polo sul celeste.</p>
+  <div class="board">
+    <div class="panel"><div class="frame"><span class="tc">CENA 01 · 00:00–00:15</span><span>Retrato da Pandora na sacada, céu atrás.</span><span class="cam">retrato falante · cintilar</span></div><div class="txt">"Boa noite, pequenos observadores. Hoje eu vou te ensinar a achar o sul usando só o céu."</div></div>
+    <div class="panel"><div class="frame"><span class="tc">CENA 02 · 00:15–00:32</span><span>Céu procedural em tela cheia, ainda sem desenho.</span><span class="cam">zoom lento · 4 estrelas pulsam</span></div><div class="txt">"Procure uma cruz pequena e brilhante. Ela se chama Cruzeiro do Sul."</div></div>
+    <div class="panel"><div class="frame"><span class="tc">CENA 03 · 00:32–00:55</span><span>Linhas da cruz se traçam sozinhas; rótulo "Intrometida".</span><span class="cam">traço animado · piscada forte na 5ª estrela</span></div><div class="txt">"São quatro estrelas nas pontas, e uma quinta, menorzinha, meio fora do lugar. O nome dela é Intrometida."</div></div>
+    <div class="panel"><div class="frame"><span class="tc">CENA 04 · 00:55–01:05</span><span>Pandora de sobrancelha arqueada, sorriso de canto.</span><span class="cam">corte para o retrato</span></div><div class="txt">"Um nome perfeito para quem se mete onde não foi chamada."</div></div>
+    <div class="panel"><div class="frame"><span class="tc">CENA 05 · 01:05–01:30</span><span>Seta prateada que se estende do Cruzeiro em 4 marcações e meia.</span><span class="cam">seta cresce por etapas</span></div><div class="txt">"Agora pegue o braço mais comprido da cruz e estique para baixo, umas quatro vezes e meia."</div></div>
+    <div class="panel"><div class="frame"><span class="tc">CENA 06 · 01:30–01:50</span><span>Horizonte com silhueta de morros; a letra S acende.</span><span class="cam">tilt-down do céu ao horizonte</span></div><div class="txt">"Onde a linha termina, olhe direto para o horizonte. Ali é o sul."</div></div>
+    <div class="panel"><div class="frame"><span class="tc">CENA 07 · 01:50–02:10</span><span>Círculo azul da bandeira do Brasil com o Cruzeiro em destaque.</span><span class="cam">dissolve céu → bandeira, estrelas coincidem</span></div><div class="txt">"Essa mesma cruz está na bandeira do Brasil. Confira da próxima vez."</div></div>
+    <div class="panel"><div class="frame"><span class="tc">CENA 08 · 02:10–02:30</span><span>Pandora olhando para cima; estrela cadente.</span><span class="cam">estrela cadente procedural · fade · assinatura</span></div><div class="txt">"Quando se sentir perdido, lembre: o céu sempre sabe o caminho. Durmam sob boas estrelas."</div></div>
+  </div>
+  <p class="note">Efeitos sonoros além do básico (vidro quebrando, sino, órgão, toque cristalino) ainda não foram localizados em <code>sonoplastia/</code> e talvez precisem ser gravados ou baixados de acervos livres.</p>
+</section>
+
+<!-- 5 -->
+<section id="pipeline">
+  <header><span class="n">05</span><h2>Como um vídeo é feito</h2></header>
+  <p>O pipeline tem sete etapas. A regra que torna tudo possível em 6 GB: <strong>só um modelo ocupa a GPU por vez</strong>, e cada um sai antes do próximo entrar. A faixa de baixo do diagrama mostra quem está na placa de vídeo em cada etapa.</p>
+  <figure>
+    <div class="fig">
+    <svg viewBox="0 0 1060 330" role="img" aria-label="Pipeline em sete etapas, do roteiro ao MP4, com a GPU ocupada por um modelo de cada vez: Gemma, OmniVoice, SDXL e Depth Anything, e as etapas finais só na CPU.">
+      <defs>
+        <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker>
+      </defs>
+      <g font-family="IBM Plex Sans, Segoe UI, sans-serif" fill="currentColor">
+        <!-- caixas -->
+        <g fill="none" stroke="currentColor" stroke-width="1.2">
+          <rect x="10" y="40" width="130" height="78" rx="8"/>
+          <rect x="162" y="40" width="130" height="78" rx="8"/>
+          <rect x="314" y="40" width="130" height="78" rx="8"/>
+          <rect x="466" y="40" width="130" height="78" rx="8" stroke="#8A6BC7" stroke-width="2"/>
+          <rect x="618" y="40" width="130" height="78" rx="8"/>
+          <rect x="770" y="40" width="130" height="78" rx="8"/>
+          <rect x="922" y="40" width="128" height="78" rx="8"/>
+        </g>
+        <g font-size="13" font-weight="600" text-anchor="middle">
+          <text x="75" y="68">Roteiro</text>
+          <text x="227" y="68">Cenas</text>
+          <text x="379" y="68">Áudio + timeline</text>
+          <text x="531" y="68">Ilustrações</text>
+          <text x="683" y="68">Movimento</text>
+          <text x="835" y="68">Legendas</text>
+          <text x="986" y="68">Montagem</text>
+        </g>
+        <g font-size="11" text-anchor="middle" opacity=".75">
+          <text x="75" y="88">acervo JSON</text><text x="75" y="103">ou Contador</text>
+          <text x="227" y="88">Gemma divide</text><text x="227" y="103">+ prompts</text>
+          <text x="379" y="88">OmniVoice</text><text x="379" y="103">t0/t1 por fala</text>
+          <text x="531" y="88">SDXL via</text><text x="531" y="103">ComfyUI</text>
+          <text x="683" y="88">câmera, parallax,</text><text x="683" y="103">partículas</text>
+          <text x="835" y="88">karaokê .ass</text><text x="835" y="103">por palavra</text>
+          <text x="986" y="88">ffmpeg</text><text x="986" y="103">→ MP4</text>
+        </g>
+        <!-- setas com rótulos -->
+        <g stroke="currentColor" stroke-width="1.2" marker-end="url(#seta)">
+          <line x1="140" y1="79" x2="160" y2="79"/>
+          <line x1="292" y1="79" x2="312" y2="79"/>
+          <line x1="444" y1="79" x2="464" y2="79"/>
+          <line x1="596" y1="79" x2="616" y2="79"/>
+          <line x1="748" y1="79" x2="768" y2="79"/>
+          <line x1="900" y1="79" x2="920" y2="79"/>
+        </g>
+        <g font-size="10.5" text-anchor="middle" opacity=".8">
+          <text x="151" y="30">falas</text>
+          <text x="303" y="30">cenas.json</text>
+          <text x="455" y="30">wav + tempos</text>
+          <text x="607" y="30">PNG 1344×768</text>
+          <text x="759" y="30">quadros</text>
+          <text x="911" y="30">.ass</text>
+        </g>
+        <!-- arco: timeline alimenta legendas e montagem -->
+        <path d="M379,118 C379,150 835,150 835,120" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#seta)"/>
+        <text x="607" y="146" font-size="10.5" text-anchor="middle" opacity=".8">timeline de falas (relógio mestre)</text>
+
+        <!-- faixa GPU -->
+        <text x="10" y="196" font-size="11" font-weight="600" letter-spacing="1">QUEM ESTÁ NA GPU (6 GB)</text>
+        <line x1="10" y1="206" x2="1050" y2="206" stroke="currentColor" stroke-width=".6" opacity=".4"/>
+        <g font-size="11" text-anchor="middle">
+          <rect x="162" y="216" width="130" height="40" rx="5" fill="#8A6BC7" fill-opacity=".22" stroke="#8A6BC7"/>
+          <text x="227" y="234" font-weight="600">Gemma 3 4B</text><text x="227" y="249" opacity=".8">~3,3 GB</text>
+          <rect x="314" y="216" width="130" height="40" rx="5" fill="#8A6BC7" fill-opacity=".22" stroke="#8A6BC7"/>
+          <text x="379" y="234" font-weight="600">OmniVoice</text><text x="379" y="249" opacity=".8">~3 GB</text>
+          <rect x="466" y="216" width="130" height="40" rx="5" fill="#C99A3A" fill-opacity=".3" stroke="#C99A3A"/>
+          <text x="531" y="234" font-weight="600">SDXL fp16</text><text x="531" y="249" opacity=".8">~5–5,5 GB</text>
+          <rect x="618" y="216" width="130" height="40" rx="5" fill="#8A6BC7" fill-opacity=".22" stroke="#8A6BC7"/>
+          <text x="683" y="234" font-weight="600">Depth + BiRefNet</text><text x="683" y="249" opacity=".8">&lt;1,5 GB</text>
+          <rect x="770" y="216" width="280" height="40" rx="5" fill="none" stroke="currentColor" stroke-dasharray="3 3" opacity=".7"/>
+          <text x="910" y="240" opacity=".8">só CPU · GPU livre</text>
+          <rect x="10" y="216" width="130" height="40" rx="5" fill="none" stroke="currentColor" stroke-dasharray="3 3" opacity=".7"/>
+          <text x="75" y="240" opacity=".8">só CPU</text>
+        </g>
+        <g font-size="10" text-anchor="middle" opacity=".85">
+          <text x="303" y="280">descarrega</text><text x="303" y="293">keep_alive 0</text>
+          <text x="455" y="280">descarrega</text><text x="455" y="293">descarregar_omni()</text>
+          <text x="607" y="280">libera</text><text x="607" y="293">POST /free</text>
+        </g>
+        <g stroke="currentColor" stroke-width="1">
+          <line x1="303" y1="258" x2="303" y2="268"/><line x1="455" y1="258" x2="455" y2="268"/><line x1="607" y1="258" x2="607" y2="268"/>
+        </g>
+      </g>
+    </svg>
+    </div>
+    <figcaption>O áudio é gerado antes das imagens porque define a duração de cada cena. A linha tracejada é a timeline de falas, que alimenta as legendas e a montagem. O SDXL é o único modelo que usa quase toda a placa, por isso roda sozinho num processo separado (ComfyUI).</figcaption>
+  </figure>
+
+  <h3>Etapa por etapa</h3>
+  <h4>1 · Roteiro</h4>
+  <p>Entra um roteiro do acervo (<code>acervo/roteiros/&lt;id&gt;.json</code>), um texto do Contador de Histórias, um roteiro de Comédia ou só "imagem + áudio" na Oficina. Nada muda na forma de escrever.</p>
+  <h4>2 · Cenas</h4>
+  <p>A Gemma agrupa as falas em cenas (uma ilustração cada, em média a cada 20–35 s) e escreve, para cada cena, um prompt visual em inglês, o enquadramento e o movimento de câmera. Ela recebe a <strong>Bíblia Visual</strong> (capítulo 08) para que o lobo seja sempre o mesmo lobo. Sai um <code>cenas.json</code> que você pode revisar antes de gastar GPU, igual ao fluxo em duas fases do Contador (<code>/api/story/script</code> → <code>/api/story/render</code>).</p>
+  <h4>3 · Áudio + timeline</h4>
+  <p>O motor atual sintetiza as falas. A novidade é que <code>_montar</code> passa a devolver também uma lista <code>[(quem, t0, t1, texto, emoção)]</code>. Com o texto e o tempo de cada fala conhecidos, o faster-whisper acha o instante exato de cada palavra dentro da fala, o que alimenta legenda e boca.</p>
+  <h4>4 · Ilustrações</h4>
+  <p>O ComfyUI roda sem interface, como um servidor local. O Python manda o prompt por HTTP e recebe o PNG. SDXL em fp16 com uma LoRA de poucos passos (DMD2 ou Lightning, 6–8 passos) gera cada imagem em ~10 s. O IP-Adapter usa a folha de referência do personagem para manter rosto, cores e roupa. Gera-se em 1344×768 e amplia-se para 1920×1080 com Real-ESRGAN.</p>
+  <h4>5 · Movimento</h4>
+  <p>Três camadas de vida sem vídeo de IA: <strong>câmera</strong> (zoom lento, panorâmica, foco em personagem, decidida pela Gemma); <strong>parallax 2.5D</strong> (o Depth Anything estima a profundidade, o BiRefNet recorta o personagem e o fundo se move mais devagar que a frente); <strong>partículas</strong> procedurais em numpy (estrelas cintilando, vaga-lumes, neve, poeira dourada). A transição entre cenas é um fade ou um "virar de página".</p>
+  <h4>6 · Legendas</h4>
+  <p>Arquivo <code>.ass</code> com efeito karaokê (<code>\k</code>): a palavra acende quando é falada. Cor por personagem, fonte grande e arredondada para crianças. Pode ser ligada ou desligada.</p>
+  <h4>7 · Montagem</h4>
+  <p>O ffmpeg junta quadros, áudio, música de fundo e legenda em MP4 H.264. Mesma técnica do vídeo do St. Alex, com mais camadas. Saídas em 16:9 (YouTube, TV) e 9:16 (Reels, Status) a partir do mesmo material.</p>
+</section>
+
+<!-- 6 -->
+<section id="ferramentas">
+  <header><span class="n">06</span><h2>Ferramentas escolhidas</h2></header>
+  <p>Critérios: grátis, local, controlável por Python sem abrir janela, e que caiba na RTX 2060 com 16 GB de RAM. Como o uso é pessoal e infantil sem fins comerciais, licenças "não comerciais" são aceitáveis, mas estão marcadas.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Etapa</th><th>Ferramenta</th><th>Licença</th><th>VRAM</th><th>Disco</th><th>Na RTX 2060</th></tr></thead>
+    <tbody>
+      <tr><td>Cenas e prompts</td><td>Gemma 3 4B (Ollama)</td><td>Gemma ToU</td><td class="num">~3,3 GB</td><td class="num">já instalado</td><td><span class="pill ok">Em uso</span></td></tr>
+      <tr><td>Voz</td><td>OmniVoice + decoradores</td><td>—</td><td class="num">~3 GB</td><td class="num">já instalado</td><td><span class="pill ok">Em uso</span></td></tr>
+      <tr><td>Motor de imagem</td><td>ComfyUI headless (API HTTP)</td><td>GPL-3</td><td class="num">—</td><td class="num">~5 GB c/ venv</td><td><span class="pill ok">Roda</span></td></tr>
+      <tr><td>Ilustração</td><td>SDXL fp16 com checkpoint ilustrativo + VAE fp16-fix</td><td>OpenRAIL++</td><td class="num">~5–5,5 GB</td><td class="num">~7 GB</td><td><span class="pill ok">Roda</span></td></tr>
+      <tr><td>Velocidade</td><td>LoRA DMD2 / SDXL-Lightning (4–8 passos)</td><td>Apache / OpenRAIL</td><td class="num">+0,2 GB</td><td class="num">~0,8 GB</td><td><span class="pill ok">Roda</span></td></tr>
+      <tr><td>Consistência</td><td>IP-Adapter Plus SDXL + CLIP ViT-H</td><td>Apache</td><td class="num">+0,8 GB</td><td class="num">~3,5 GB</td><td><span class="pill warn">No limite</span></td></tr>
+      <tr><td>Pose/composição</td><td>ControlNet SDXL (depth/openpose)</td><td>Apache</td><td class="num">+1 GB</td><td class="num">~2,5 GB</td><td><span class="pill warn">Opcional</span></td></tr>
+      <tr><td>Ampliação</td><td>Real-ESRGAN (x4plus / anime)</td><td>BSD-3</td><td class="num">&lt;1 GB</td><td class="num">0,1 GB</td><td><span class="pill ok">Roda</span></td></tr>
+      <tr><td>Profundidade</td><td>Depth Anything V2 Small</td><td>Apache</td><td class="num">&lt;1 GB</td><td class="num">0,1 GB</td><td><span class="pill ok">Roda</span></td></tr>
+      <tr><td>Recorte</td><td>BiRefNet</td><td>MIT</td><td class="num">~1 GB</td><td class="num">0,9 GB</td><td><span class="pill ok">Roda</span></td></tr>
+      <tr><td>Tempo das palavras</td><td>faster-whisper (word_timestamps)</td><td>MIT</td><td class="num">0 (CPU)</td><td class="num">já instalado</td><td><span class="pill ok">Em uso</span></td></tr>
+      <tr><td>Boca (visemas)</td><td>Rhubarb Lip Sync <code>--recognizer phonetic</code></td><td>MIT</td><td class="num">0 (CPU)</td><td class="num">0,1 GB</td><td><span class="pill ok">Roda</span></td></tr>
+      <tr><td>Cabeça viva</td><td>LivePortrait + JoyVASA</td><td>MIT · InsightFace NC</td><td class="num">~2–4 GB</td><td class="num">~2 GB</td><td><span class="pill warn">Testar</span></td></tr>
+      <tr><td>Boca realista</td><td>MuseTalk 1.5</td><td>MIT</td><td class="num">~4 GB</td><td class="num">~3 GB</td><td><span class="pill warn">Alternativa</span></td></tr>
+      <tr><td>Legendas e montagem</td><td>ffmpeg 8.1 + pysubs2 + numpy/OpenCV</td><td>LGPL / MIT</td><td class="num">0</td><td class="num">já instalado</td><td><span class="pill ok">Pronto</span></td></tr>
+      <tr><td>Momentos mágicos</td><td>Wan 2.1 T2V/I2V 1.3B (GGUF, 480p)</td><td>Apache</td><td class="num">~5–6 GB</td><td class="num">~6 GB</td><td><span class="pill warn">Opcional, lento</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Descartadas e por quê</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Ferramenta</th><th>Motivo</th></tr></thead>
+    <tbody>
+      <tr><td>FramePack (HunyuanVideo)</td><td>Roda em 6 GB, mas os pesos ocupam ~30 GB (estoura o orçamento) e cada segundo de vídeo leva minutos numa 2060.</td></tr>
+      <tr><td>Wan 2.2 14B, LTX-2, HunyuanVideo 1.5</td><td>Precisam de 32 GB de RAM para o offload ou mais de 8 GB de VRAM.</td></tr>
+      <tr><td>Qwen-Image-Edit (Q4)</td><td>Melhor ferramenta de consistência em 2026, mas o modelo de 20B precisa de mais RAM que os 16 GB disponíveis. Voltar a ela se a RAM subir para 32 GB.</td></tr>
+      <tr><td>Flux Dev / Kontext, Z-Image</td><td>Distribuídos em bf16/FP8, que a Turing não acelera. Ficam para um teste isolado na F0.</td></tr>
+      <tr><td>Hallo 1/2/3, EchoMimic v3, Sonic, LatentSync 1.6</td><td>Pedem de 8 a 24 GB ou só rodam em Linux.</td></tr>
+      <tr><td>Wav2Lip, SadTalker</td><td>Qualidade datada (boca borrada, cabeça rígida). O retrato com visemas fica mais bonito e consistente.</td></tr>
+      <tr><td>Blender, Live2D/Inochi2D, OpenToonz</td><td>Exigem trabalho em interface gráfica. Você prefere tudo em Python.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 7 -->
+<section id="vozes">
+  <header><span class="n">07</span><h2>As vozes que já temos</h2></header>
+  <p class="lead">As vozes são o maior patrimônio do projeto. O estúdio de animação não mexe nelas: ele as escuta e desenha em cima.</p>
+
+  <h3>Inventário</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Grupo</th><th>Quantidade</th><th>Onde</th><th>Uso na animação</th></tr></thead>
+    <tbody>
+      <tr><td>Pandora (referência limpa <code>pandora007</code>)</td><td class="num">1 + 11 emoções</td><td><code>laboratorios/vozes_custom</code>, <code>refs_pandora</code></td><td>Anfitriã com rosto. O "caimento" no fim das falas vira gesto: a cabeça baixa levemente, os olhos fecham devagar.</td></tr>
+      <tr><td>Personagens dos contos</td><td class="num">48</td><td><code>acervo/vozes_personagens</code></td><td>Cada um ganha uma ficha visual ligada à voz.</td></tr>
+      <tr><td>Galeria Kokoro</td><td class="num">7</td><td><code>estudio/vozes</code></td><td>Narradores e personagens avulsos.</td></tr>
+      <tr><td>Locutores MLS</td><td class="num">57</td><td><code>acervo/vozes_corpus</code></td><td>Reserva para personagens novos.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Seis regras para tratar as vozes</h3>
+  <ol>
+    <li><strong>O áudio manda no tempo.</strong> A duração de cada cena vem da fala. Nunca se estica nem se corta o áudio para caber na imagem; a imagem é que se adapta. Isso respeita a lição do caimento da Pandora: nada de time-stretch.</li>
+    <li><strong>Voz e rosto andam juntos.</strong> O <code>mapa.json</code> das vozes ganha um campo <code>visual</code> com a ficha do personagem (descrição, cores, imagem de referência, semente). Quem escolhe a voz do lobo escolhe o lobo.</li>
+    <li><strong>O texto já é conhecido.</strong> Como o estúdio sabe exatamente o que foi dito, o alinhamento palavra a palavra é mais preciso que uma transcrição cega. O Rhubarb também aceita o texto da fala para melhorar a boca.</li>
+    <li><strong>Emoção vira expressão.</strong> As 21 emoções do dicionário <code>EMO</code> mapeiam para poucos rostos: neutra, sorriso, riso, triste, surpresa, bravo, sussurro. Tensão também vira câmera: um zoom lento para dentro.</li>
+    <li><strong>Sonoplastia vira efeito visual.</strong> Os efeitos de <code>sonoplastia/</code> que a Comédia já escolhe (trovão, porta, risada) disparam efeitos na imagem: clarão, tremor, confete.</li>
+    <li><strong>Um modelo por vez na GPU.</strong> Todo o áudio é gerado antes de qualquer imagem. Isso mantém o ciclo de VRAM Gemma → OmniVoice que já funciona e acrescenta o SDXL no fim.</li>
+  </ol>
+
+  <h3>Como a boca acompanha a voz</h3>
+  <div class="grid2">
+    <div class="card">
+      <h4>Nível 1 · Visemas (padrão)</h4>
+      <p>A partir do retrato, geram-se 6 a 9 versões da boca (fechada, A, E, O, U, M/B/P, F/V…) por inpainting no próprio SDXL. O Rhubarb diz qual boca usar em cada centésimo de segundo e o compositor troca o recorte. Piscadas e respiração são procedurais.</p>
+      <p><span class="tag">0 GB na renderização</span><span class="tag">consistência total</span><span class="tag">estilo desenho</span></p>
+    </div>
+    <div class="card">
+      <h4>Nível 2 · Cabeça viva</h4>
+      <p>JoyVASA transforma o áudio em movimento de rosto e cabeça, e o LivePortrait aplica esse movimento no retrato. Funciona com ilustrações e até animais. Mais natural, mais pesado.</p>
+      <p><span class="tag">~2–4 GB</span><span class="tag">cabeça se mexe</span><span class="tag">testar na F4</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="pandora">
+  <header><span class="n">08</span><h2>Consistência de personagem e a Pandora</h2></header>
+  <p>O maior problema de qualquer animação com IA é o personagem mudar de uma cena para outra. O plano ataca isso em quatro camadas, da mais barata à mais forte.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Camada</th><th>Como funciona</th><th>Quando entra</th></tr></thead>
+    <tbody>
+      <tr><td>Bíblia Visual</td><td>Arquivo por personagem com descrição fixa ("burro cinza de orelhas longas, lenço vermelho, olhos castanhos gentis"), paleta e estilo. A Gemma sempre copia o trecho literal para o prompt, nunca reinventa.</td><td>F2</td></tr>
+      <tr><td>Folha de personagem</td><td>Uma imagem de referência aprovada por você, gerada uma vez com várias poses.</td><td>F2</td></tr>
+      <tr><td>IP-Adapter</td><td>Cada cena recebe a folha de referência como "imagem guia", além do texto.</td><td>F2</td></tr>
+      <tr><td>LoRA de personagem</td><td>Um mini-treino sobre 15–30 imagens aprovadas. Mais forte, mas só para quem aparece muito: a Pandora e talvez 3 ou 4 personagens recorrentes. Treinar SDXL em 6 GB é possível mas lento; SD1.5 é tranquilo.</td><td>F5</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Propostas de visual para a Pandora serena</h3>
+  <p>A Pandora ainda não tem aparência definida. As três propostas partem da persona de <code>pandora_personalidade.md</code>: elegante, altiva, humor seco, melancolia gentil, céu noturno.</p>
+  <div class="looks">
+    <div class="card look">
+      <span class="tag">A · versão de gala</span>
+      <h3>Sacerdotisa da Meia-Noite</h3>
+      <div class="sw"><span style="background:#15121C"></span><span style="background:#4B2C7A"></span><span style="background:#C9C8D6"></span><span style="background:#B9A0E0"></span></div>
+      <p>Cabelo negro muito longo com reflexos violeta, olhos ametista. Vestido preto de gola alta com bordado prateado, tiara fina de prata com pedra lilás. Sacada de mármore escuro sob as estrelas.</p>
+      <p class="note">Expressões: sorriso de canto, sobrancelha arqueada, olhar ao céu, olhos fechados serenos.</p>
+      <div class="prompt">storybook illustration, front-facing portrait of an elegant serene young woman, very long straight black hair with violet highlights, calm amethyst eyes, subtle closed-mouth smile, high-collared black gown with delicate silver embroidery, thin silver circlet with a small lilac gem, dark marble balcony under a starry night sky, soft moonlight rim light, painterly gouache texture, muted violet and silver palette, children's book art, centered</div>
+    </div>
+    <div class="card look">
+      <span class="tag">B · recomendada como anfitriã</span>
+      <h3>Astrônoma do Véu</h3>
+      <div class="sw"><span style="background:#141B3F"></span><span style="background:#F1EBDD"></span><span style="background:#D6B56A"></span><span style="background:#8FA3B8"></span></div>
+      <p>Cabelo escuro numa trança longa e solta com grampos em forma de estrela, olhos cinza-azulados. Capa azul-meia-noite bordada com constelações em dourado pálido, astrolábio no pescoço. Observatório de madeira com luneta de latão.</p>
+      <p class="note">Casa com o céu, as constelações e o educativo. Expressões: curiosa, orgulhosa, contemplativa, piscadela.</p>
+      <div class="prompt">children's book illustration, front-facing portrait of a serene elegant woman astronomer, long dark hair in a loose braid with tiny star-shaped pins, gentle grey-blue eyes, closed-mouth warm smile, midnight-blue cloak embroidered with golden constellations, brass astrolabe pendant, wooden observatory with a brass telescope and open dome showing the night sky, candle light and moonlight, soft watercolor and ink, centered</div>
+    </div>
+    <div class="card look">
+      <span class="tag">C · variante para memes</span>
+      <h3>Dama de Vitral</h3>
+      <div class="sw"><span style="background:#5E2A4F"></span><span style="background:#D9912F"></span><span style="background:#2446A0"></span><span style="background:#2B2B2B"></span></div>
+      <p>Cabelo negro ondulado com halo de lua crescente, olhos violeta, vestido ameixa art nouveau. Moldura de vitral com rosácea de estrelas. Conversa com o St. Alex e os Santos Improváveis.</p>
+      <p class="note">Expressões: solene, benevolente, ironia contida, olhos baixos.</p>
+      <div class="prompt">art nouveau stained glass style portrait, front-facing serene elegant woman, flowing wavy black hair framed by a crescent moon halo, violet eyes, closed-mouth composed expression, plum colored draped gown, ornamental border with star rose window, lead lines, luminous backlight through glass, plum amber and cobalt palette, symmetrical</div>
+    </div>
+  </div>
+  <p class="note">Negativo comum: <code>lowres, blurry, extra fingers, deformed hands, open mouth, teeth, text, watermark, 3d render, photo</code>. O retrato-base é sempre frontal e de boca fechada, porque é dele que saem os sprites de boca. A personagem é original: o prompt não cita a franquia de Cavaleiros do Zodíaco, para que ela tenha identidade própria.</p>
+
+  <h3>Identidade visual da casa</h3>
+  <ul>
+    <li><strong>Paleta de dois mundos.</strong> A Pandora vive no frio: azul-meia-noite <code>#0E1330</code>, violeta <code>#5B3A8C</code>, prata-lua <code>#D9D6E8</code>. Os contos vivem no quente: âmbar de vela <code>#E8A33D</code>. A passagem de um para o outro é o "portal" de cada episódio.</li>
+    <li><strong>Tipografia.</strong> Títulos em Cormorant Garamond. Legendas infantis em Atkinson Hyperlegible ou Nunito, grandes e com contorno escuro; a palavra falada acende em âmbar (em prata nos memes).</li>
+    <li><strong>Vinheta de 5 s.</strong> Uma caixinha escura se abre (a caixa de Pandora, em versão boa) e dela sobe poeira de estrelas que se organiza no título. É o lugar do único clipe de IA reaproveitado.</li>
+    <li><strong>Assinatura.</strong> Encerramento fixo "Durmam sob boas estrelas" (para adultos, "Até a próxima noite"). Logo: constelação de 5 pontos em forma de caixa entreaberta, desenhada no céu no último quadro.</li>
+    <li><strong>Ritmo.</strong> Nos infantis, nada de cortes secos: dissolves, parallax lento, 6–10 s por ilustração, partículas discretas. Nos memes pode tudo: zoom dramático, rufar, tremor. E a regra sagrada do estúdio vale aqui também: ninguém canta; concerto, oração e ladainha são sempre falados.</li>
+  </ul>
+</section>
+
+<!-- 9 -->
+<section id="vram">
+  <header><span class="n">09</span><h2>VRAM, RAM e disco</h2></header>
+  <h3>Regras de operação</h3>
+  <ul>
+    <li><strong>ComfyUI num processo separado.</strong> O Estúdio Web continua dono do áudio no <code>.venv_omni</code>. O ComfyUI roda no <code>.venv_anim</code> (Python 3.11) e é chamado por HTTP. Quando termina, o estúdio pede <code>POST /free</code> com <code>unload_models</code>, e a VRAM volta limpa. Isso evita misturar CUDA de dois torch no mesmo processo, a mesma lição do segfault de threads.</li>
+    <li><strong>Nunca matar à força</strong> um processo com CUDA ativo (a lição do <code>Stop-Process -Force</code> que deixa contextos fantasmas). O ComfyUI é desligado pela própria API.</li>
+    <li><strong>Esperar a VRAM cair</strong> antes de cada carga, reaproveitando <code>_esperar_vram_livre</code> do <code>motor_v2</code>.</li>
+    <li><strong>RAM de 16 GB:</strong> fechar navegador pesado durante a geração de imagens. O SDXL ocupa ~7 GB de RAM ao carregar.</li>
+    <li><strong>Turing:</strong> tudo em fp16, com o VAE <em>sdxl-vae-fp16-fix</em> (o VAE original do SDXL gera imagem preta em fp16).</li>
+  </ul>
+
+  <h3>Orçamento de disco (F:)</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Item</th><th>Tamanho</th><th>Tipo</th></tr></thead>
+    <tbody>
+      <tr><td><code>.venv_anim</code> + ComfyUI + torch cu128</td><td class="num">~5,0 GB</td><td>Essencial</td></tr>
+      <tr><td>Checkpoint SDXL ilustrativo (fp16) + VAE fp16-fix</td><td class="num">~7,0 GB</td><td>Essencial</td></tr>
+      <tr><td>LoRA DMD2 / Lightning</td><td class="num">~0,8 GB</td><td>Essencial</td></tr>
+      <tr><td>IP-Adapter Plus + CLIP ViT-H</td><td class="num">~3,5 GB</td><td>Essencial</td></tr>
+      <tr><td>Real-ESRGAN, Depth Anything Small, BiRefNet, Rhubarb</td><td class="num">~1,2 GB</td><td>Essencial</td></tr>
+      <tr><td>LivePortrait + JoyVASA</td><td class="num">~2,0 GB</td><td>Essencial (F4)</td></tr>
+      <tr><td>ControlNet SDXL depth/openpose</td><td class="num">~2,5 GB</td><td>Opcional</td></tr>
+      <tr><td>Wan 2.1 1.3B GGUF + codificador de texto</td><td class="num">~6,0 GB</td><td>Opcional</td></tr>
+      <tr><td><strong>Total</strong></td><td class="num"><strong>~19,5 GB essencial · ~28 GB com opcionais</strong></td><td></td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout"><strong>Antes de qualquer download:</strong> definir a variável <code>HF_HOME=F:\Projeto IA\cache\huggingface</code> e mover para lá o cache atual de <code>C:\Users\Filipe Pereira\.cache\huggingface</code>. Com 2 GB livres em C:, o primeiro modelo baixado travaria o Windows.</div>
+  <p class="note">Vídeos também ocupam espaço: um episódio de 5 min em 1080p fica entre 150 e 300 MB, e os quadros intermediários (PNG) são apagados ao final.</p>
+</section>
+
+<!-- 10 -->
+<section id="integracao">
+  <header><span class="n">10</span><h2>Integração com o Estúdio Web</h2></header>
+  <p>A animação entra como um módulo novo, sem mexer nos arquivos intocáveis (<code>motor.py</code> e <code>estudio.py</code> originais).</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Onde</th><th>O que muda</th></tr></thead>
+    <tbody>
+      <tr><td><code>app/estudio/animacao/</code> (novo)</td><td><code>cenas.py</code> (Gemma → cenas.json), <code>timeline.py</code> (tempos de fala e palavra), <code>comfy.py</code> (cliente HTTP do ComfyUI, sobe e desliga o servidor), <code>camera.py</code> (Ken Burns, parallax, partículas), <code>retrato.py</code> (visemas, piscadas, LivePortrait), <code>legendas.py</code> (.ass karaokê), <code>montar.py</code> (ffmpeg), <code>biblia/</code> (fichas visuais).</td></tr>
+      <tr><td><code>motor_v2.py</code></td><td><code>_montar</code> e <code>_montar_comedia</code> ganham um parâmetro opcional para devolver também a timeline. O comportamento atual não muda.</td></tr>
+      <tr><td><code>estudio_web.py</code></td><td>Rotas <code>/api/anim/cenas</code> (fase 1, revisar), <code>/api/anim/render</code> (fase 2, gerar), <code>/api/anim/oficina</code> (imagem + áudio). <code>_executar_tarefa</code> passa a aceitar <code>{"video": caminho}</code>, servido por <code>/api/task/{id}/video</code>. Tudo pela mesma fila de worker único.</td></tr>
+      <tr><td><code>static/index.html</code></td><td>Aba "Animação" no grupo Produção: escolher conto do acervo ou texto livre, revisar as cenas em miniatura, gerar, assistir no player.</td></tr>
+      <tr><td><code>acervo/vozes_personagens/mapa.json</code></td><td>Campo <code>visual</code> por personagem.</td></tr>
+      <tr><td><code>.claude/agents/</code></td><td>Agente novo <strong>diretor-de-arte</strong> (Bíblia Visual, prompts de cena, storyboard) e o <strong>diretor-criativo</strong> alinhado à Pandora serena e ao formato de cenas.</td></tr>
+    </tbody>
+  </table></div>
+  <p>A CLI também funciona sem o web, como o acervo já faz hoje: <code>python -m animacao.render --conto os-musicos-de-bremen</code>.</p>
+</section>
+
+<!-- 11 -->
+<section id="roadmap">
+  <header><span class="n">11</span><h2>Roadmap em fases</h2></header>
+  <p>Cada fase entrega algo que funciona sozinho. Dá para parar em qualquer uma e já ter ganho.</p>
+  <div class="phases">
+    <div class="phase">
+      <div class="id">F0<small>1 sessão</small></div>
+      <div>
+        <h3>Preparar o terreno</h3>
+        <ul>
+          <li>Mover o cache do Hugging Face para F: e definir <code>HF_HOME</code>.</li>
+          <li>Criar <code>.venv_anim</code> (Python 3.11), instalar ComfyUI, baixar SDXL + VAE fp16-fix + DMD2.</li>
+          <li>Medir: tempo por imagem, VRAM de pico, RAM de pico, se <code>/free</code> devolve a VRAM.</li>
+        </ul>
+        <p class="done">Pronto quando: uma ilustração 1344×768 sai em menos de 30 s pela API e a VRAM volta a zero depois.</p>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="id">F1<small>1–2 sessões</small></div>
+      <div>
+        <h3>Livro animado mínimo</h3>
+        <ul>
+          <li>Timeline de falas em <code>_montar</code>.</li>
+          <li>Montador com Ken Burns, fade entre cenas, legenda simples e trilha.</li>
+          <li>Imagens ainda escolhidas à mão (ou geradas uma a uma no ComfyUI).</li>
+        </ul>
+        <p class="done">Pronto quando: <em>Os Músicos de Bremen</em> vira um MP4 com 8 ilustrações trocando no momento certo da narração.</p>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="id">F2<small>2–3 sessões</small></div>
+      <div>
+        <h3>Diretor de cenas e Bíblia Visual</h3>
+        <ul>
+          <li>Gemma divide o roteiro em cenas e escreve prompts.</li>
+          <li>Fichas visuais dos personagens de 3 contos, folhas de referência aprovadas por você, IP-Adapter.</li>
+          <li>Agente diretor-de-arte criado.</li>
+        </ul>
+        <p class="done">Pronto quando: 3 contos saem de ponta a ponta com o mesmo personagem reconhecível em todas as cenas.</p>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="id">F3<small>2 sessões</small></div>
+      <div>
+        <h3>Acabamento de cinema</h3>
+        <ul>
+          <li>Parallax 2.5D com Depth Anything + BiRefNet.</li>
+          <li>Partículas (estrelas, vaga-lumes, neve), efeitos ligados à sonoplastia.</li>
+          <li>Legenda karaokê palavra por palavra, vinheta de abertura, versão 9:16.</li>
+        </ul>
+        <p class="done">Pronto quando: um episódio assistido de ponta a ponta não parece "slideshow".</p>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="id">F4<small>2–3 sessões</small></div>
+      <div>
+        <h3>A Pandora ganha rosto</h3>
+        <ul>
+          <li>Você escolhe o visual. Folha de personagem e sprites de boca e olhos.</li>
+          <li>Retrato com visemas (Rhubarb) nas aberturas e encerramentos.</li>
+          <li>Teste de LivePortrait + JoyVASA para a cabeça viva.</li>
+        </ul>
+        <p class="done">Pronto quando: a Pandora apresenta um conto em 20 s com a boca em sincronia com a voz.</p>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="id">F5<small>contínuo</small></div>
+      <div>
+        <h3>Aba no Estúdio Web e extras</h3>
+        <ul>
+          <li>Aba "Animação", rotas, player de vídeo, revisão de cenas em miniatura.</li>
+          <li>Oficina de Memes com modelos prontos (vitral, cartão, homenagem).</li>
+          <li>Opcionais: LoRA da Pandora, "momentos mágicos" com Wan 1.3B, animar os 27 contos em lote durante a madrugada.</li>
+        </ul>
+        <p class="done">Pronto quando: você anima um conto pela interface, sem abrir o terminal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 -->
+<section id="tempos">
+  <header><span class="n">12</span><h2>Tempos de render estimados</h2></header>
+  <p>Episódio de referência: conto de 5 minutos, 12 cenas, 2 tentativas de ilustração por cena, 1080p a 30 fps. <strong>São estimativas</strong> a partir de números publicados para placas parecidas. A F0 substitui por medições reais.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Etapa</th><th>Onde roda</th><th>Tempo</th></tr></thead>
+    <tbody>
+      <tr><td>Cenas e prompts (Gemma)</td><td>GPU</td><td class="num">~1 min</td></tr>
+      <tr><td>Áudio de 5 min (OmniVoice, com carga)</td><td>GPU</td><td class="num">~3–5 min</td></tr>
+      <tr><td>24 ilustrações SDXL (8 passos) + carga do modelo</td><td>GPU</td><td class="num">~5–7 min</td></tr>
+      <tr><td>Ampliação Real-ESRGAN (12 escolhidas)</td><td>GPU</td><td class="num">~1–2 min</td></tr>
+      <tr><td>Profundidade e recorte</td><td>GPU</td><td class="num">~1 min</td></tr>
+      <tr><td>Composição de ~9.000 quadros + codificação</td><td>CPU</td><td class="num">~10–20 min</td></tr>
+      <tr><td><strong>Total</strong></td><td></td><td class="num"><strong>~25–40 min</strong></td></tr>
+    </tbody>
+  </table></div>
+  <div class="grid3">
+    <div class="card"><h4>Oficina (imagem + áudio)</h4><p class="mono">~1–3 min</p><p class="note">Hoje, sem instalar nada.</p></div>
+    <div class="card"><h4>Pandora 30 s com visemas</h4><p class="mono">~1–2 min</p><p class="note">Depois que os sprites existem.</p></div>
+    <div class="card"><h4>Momento mágico Wan 1.3B, 5 s</h4><p class="mono">~10–20 min</p><p class="note">Por isso é raro e opcional.</p></div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section id="proscontras">
+  <header><span class="n">13</span><h2>Prós, contras e riscos</h2></header>
+  <div class="pc">
+    <div class="card pro">
+      <h4>A favor</h4>
+      <ul>
+        <li>As vozes, que são a parte mais difícil, já estão prontas e aprovadas.</li>
+        <li>27 roteiros esperando, no formato certo.</li>
+        <li>Custo zero, tudo local, sem depender de serviço externo.</li>
+        <li>Livro animado é o formato mais estável em GPU pequena: consistente e previsível.</li>
+        <li>Cada fase entrega algo usável sozinha.</li>
+        <li>Reaproveita a fila, o ciclo de VRAM e os padrões do estúdio.</li>
+        <li>O mesmo pipeline serve às três linhas (contos, Pandora, memes).</li>
+      </ul>
+    </div>
+    <div class="card con">
+      <h4>Contra</h4>
+      <ul>
+        <li>Não é "desenho animado de verdade": personagens não andam nem correm pela cena, exceto nos raros momentos com Wan.</li>
+        <li>Render de meia hora por episódio: produção em lote de madrugada.</li>
+        <li>Mais um venv e ~20 a 28 GB de disco.</li>
+        <li>Consistência de personagem exige sua curadoria nas folhas de referência.</li>
+        <li>16 GB de RAM impedem os melhores modelos de 2026 (Qwen-Edit, Wan 14B).</li>
+        <li>Mais uma peça para manter (ComfyUI e seus modelos mudam rápido).</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Riscos e como mitigar</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Risco</th><th>Chance</th><th>Mitigação</th></tr></thead>
+    <tbody>
+      <tr><td>Disco C: lotar durante instalação</td><td><span class="pill bad">Alta</span></td><td>F0 começa movendo o cache e apontando pip/HF para F:.</td></tr>
+      <tr><td>Personagem mudar entre cenas</td><td><span class="pill warn">Média</span></td><td>Bíblia Visual + IP-Adapter + revisão de cenas antes do render; LoRA para recorrentes.</td></tr>
+      <tr><td>Mãos e anatomia estranhas no SDXL</td><td><span class="pill warn">Média</span></td><td>Estilo livro infantil (formas simples), 2 tentativas por cena, enquadramentos que evitam mãos.</td></tr>
+      <tr><td>Imagens assustadoras para crianças (lobo, bruxa)</td><td><span class="pill warn">Média</span></td><td>Estilo e prompt negativo fixos na Bíblia Visual: "gentil, aquarela, sem sangue, sem sombras duras".</td></tr>
+      <tr><td>Rhubarb entender mal o português</td><td><span class="pill warn">Média</span></td><td>Modo fonético + texto conhecido; alternativa: visemas derivados dos tempos de palavra do whisper.</td></tr>
+      <tr><td>LivePortrait falhar em rosto ilustrado</td><td><span class="pill info">Baixa</span></td><td>O nível 1 (visemas) não depende dele.</td></tr>
+      <tr><td>RAM estourar (erro 1455 do Windows)</td><td><span class="pill warn">Média</span></td><td>Processos separados por etapa; nunca whisper + SDXL no mesmo processo.</td></tr>
+      <tr><td>Instalação quebrar no Windows (mmcv etc.)</td><td><span class="pill info">Baixa</span></td><td>MuseTalk é só alternativa; o caminho principal evita dependências difíceis.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 14 -->
+<section id="decisoes">
+  <header><span class="n">14</span><h2>Decisões pendentes</h2></header>
+  <ol>
+    <li><strong>Visual da Pandora:</strong> qual das três propostas do capítulo 08, ou uma mistura.</li>
+    <li><strong>Estilo das ilustrações dos contos:</strong> aquarela de livro infantil, guache, recorte de papel ou lápis de cor. Define o checkpoint SDXL. A F0 pode gerar a mesma cena nos quatro estilos para você escolher.</li>
+    <li><strong>Formato principal:</strong> 16:9 para TV e YouTube ou 9:16 para celular. O pipeline gera os dois, mas a composição é pensada para um.</li>
+    <li><strong>Legenda:</strong> sempre ligada (ajuda crianças que estão aprendendo a ler) ou opcional.</li>
+    <li><strong>Primeiro conto piloto:</strong> <em>Os Músicos de Bremen</em> (já tem áudio) é o candidato natural.</li>
+  </ol>
+</section>
+
+<!-- 15 -->
+<section id="fontes">
+  <header><span class="n">15</span><h2>Fontes</h2></header>
+  <p class="note">Pesquisa feita em setembro de 2026. Números de VRAM e tempo vêm destas páginas e ainda precisam ser confirmados na RTX 2060.</p>
+  <ul class="note">
+    <li>ComfyUI — API do servidor: docs.comfy.org/development/comfyui-server/comms_overview</li>
+    <li>SDXL VAE fp16-fix: huggingface.co/madebyollin/sdxl-vae-fp16-fix</li>
+    <li>Depth Anything V2 (licenças por tamanho): github.com/DepthAnything/Depth-Anything-V2</li>
+    <li>BiRefNet: github.com/ZhengPeng7/BiRefNet</li>
+    <li>Real-ESRGAN: github.com/xinntao/Real-ESRGAN</li>
+    <li>Rhubarb Lip Sync: github.com/DanielSWolf/rhubarb-lip-sync</li>
+    <li>LivePortrait: github.com/KwaiVGI/LivePortrait · JoyVASA via github.com/warmshao/FasterLivePortrait</li>
+    <li>MuseTalk: github.com/TMElyralab/MuseTalk</li>
+    <li>Wan 2.1/2.2: huggingface.co/Wan-AI · Wan2GP: github.com/deepbeepmeep/Wan2GP</li>
+    <li>FramePack: github.com/lllyasviel/FramePack</li>
+    <li>Qwen-Image-Edit em pouca VRAM: nunchaku.tech/docs</li>
+    <li>MFA vs WhisperX (alinhamento): arxiv.org/pdf/2606.18466</li>
+    <li>Comparativo de lip-sync 2026: instavar.com/research/ai-video/open-source-lip-sync-models</li>
+    <li>Guia de GPU para vídeo local 2026: willitrunai.com/blog/video-generation-gpu-guide-2026</li>
+  </ul>
+  <footer>
+    <p>Diagnóstico feito sobre o repositório <code>F:\Projeto IA</code> (branch acervo-historias) e esta máquina, em 26/09/2026. Nenhuma ferramenta nova foi instalada para escrever este plano.</p>
+  </footer>
+</section>
+
+</main>
+</div>
+
+<script>
+(function(){
+  var c=document.getElementById('ceu'); if(!c) return;
+  var x=c.getContext('2d'), s=[], dpr=Math.min(window.devicePixelRatio||1,2), w,h;
+  var calmo=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function tam(){ var r=c.getBoundingClientRect(); w=r.width; h=r.height; c.width=w*dpr; c.height=h*dpr; x.setTransform(dpr,0,0,dpr,0,0);
+    s=[]; var n=Math.round(w*h/2600); for(var i=0;i<n;i++) s.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.2+.3,f:Math.random()*6.28,v:Math.random()*.02+.005}); }
+  function desenha(t){ x.clearRect(0,0,w,h); for(var i=0;i<s.length;i++){ var p=s[i]; var a=calmo?.6:(.35+.45*Math.sin(p.f+t*p.v*.06)); x.globalAlpha=a; x.fillStyle='#F1D38B'; x.beginPath(); x.arc(p.x,p.y,p.r,0,6.283); x.fill(); } x.globalAlpha=1; if(!calmo) requestAnimationFrame(desenha); }
+  tam(); window.addEventListener('resize',tam); requestAnimationFrame(desenha);
+})();
+</script>
+</body>
+</html>

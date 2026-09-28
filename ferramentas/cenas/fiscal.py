@@ -210,19 +210,33 @@ def fiscalizar_lote(cenas, padroes=(), nota_rapida=8):
                 v = dict(arquivo=Path(c).name, aprovada=False, nota=0, problemas="sem padrão utilizável", modo=usado)
             else:
                 cand = r[0] if usado == "rosto" else ler_rgb(c)
-                detalhes, nota, fantasma, rabisco = _julgar(cand, refs, PERGUNTA if usado == "rosto" else PERGUNTA_ESTILO,
-                                                            nota_rapida)
-                v = dict(arquivo=Path(c).name, aprovada=not fantasma and not rabisco and nota >= NOTA_MINIMA,
-                         nota=round(nota, 1), traco_fantasma=fantasma, rabiscado=rabisco, modo=usado,
-                         rosto_px=r[1] if r is not None else 0,
-                         problemas=" | ".join(str(x["problems"]) for x in detalhes if x.get("problems")),
-                         consultas=len(detalhes), detalhes=detalhes)
+                try:
+                    detalhes, nota, fantasma, rabisco = _julgar(
+                        cand, refs, PERGUNTA if usado == "rosto" else PERGUNTA_ESTILO, nota_rapida)
+                    v = dict(arquivo=Path(c).name, aprovada=not fantasma and not rabisco and nota >= NOTA_MINIMA,
+                             nota=round(nota, 1), traco_fantasma=fantasma, rabiscado=rabisco, modo=usado,
+                             rosto_px=r[1] if r is not None else 0,
+                             problemas=" | ".join(str(x["problems"]) for x in detalhes if x.get("problems")),
+                             consultas=len(detalhes), detalhes=detalhes)
+                except Exception as e:
+                    # o juiz às vezes não responde (fica "pensando" e devolve vazio): uma imagem sem veredito
+                    # não pode derrubar a rodada inteira
+                    v = dict(arquivo=Path(c).name, aprovada=False, sem_veredito=True, nota=0, modo=usado,
+                             problemas=f"juiz sem resposta: {str(e)[:120]}")
             saida[nome]["vereditos"].append(v)
-            print(f"  {v['arquivo']}: {'APROVADA' if v['aprovada'] else 'reprovada'}  ({usado}) nota {v['nota']}  "
-                  f"{v['problemas'][:140]}", file=sys.stderr, flush=True)
+            print(f"  {v['arquivo']}: {'APROVADA' if v['aprovada'] else 'SEM VEREDITO' if v.get('sem_veredito') else 'reprovada'}"
+                  f"  ({usado}) nota {v['nota']}  {v['problemas'][:140]}", file=sys.stderr, flush=True)
             if v["aprovada"]:
                 saida[nome]["aprovada"] = str(c)
                 break
+        if not saida[nome]["aprovada"]:
+            # nenhuma aprovada mas alguma ficou sem veredito (falha do juiz, não defeito): entra a primeira delas,
+            # marcada, e o revisor visual (agente revisor-cenas) confere depois
+            sem = [v for v in saida[nome]["vereditos"] if v.get("sem_veredito")]
+            if sem:
+                c = next(x for x in cfg["candidatos"] if Path(x).name == sem[0]["arquivo"])
+                saida[nome].update(aprovada=str(c), sem_fiscal=True)
+                print(f"  {nome}: entra {sem[0]['arquivo']} SEM FISCAL (confira na revisão)", file=sys.stderr, flush=True)
     return saida
 
 

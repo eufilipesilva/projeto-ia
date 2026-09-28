@@ -1,0 +1,23 @@
+{"etapa": "fichas", "revisado_em": "2026-09-28",
+ "escopo": "rodada 2: somente pers_mae_* e pers_lobo_disf_* direto em fichas\\opcoes (rodada1 ignorada)",
+ "reprovadas": [],
+ "duvidosas": [
+  {"imagem": "pers_mae_s354555078.png", "problema": "anatomia ok (2 braços, 2 mãos, 2 pernas), mas o rosto é o mais infantil dos três: bochechas redondas, olhos grandes, cara de adolescente. O corpo tem proporção de adulta (cerca de 6 cabeças). Cabelo em dois coques laterais em vez de um coque baixo.", "refazer_com": "mature woman in her thirties, adult face with defined jaw and cheekbones, hair in a single low bun at the nape"}
+ ],
+ "aprovadas": [
+  "pers_lobo_disf_s2106417222.png",
+  "pers_lobo_disf_s244212450.png",
+  "pers_lobo_disf_s425022486.png",
+  "pers_lobo_disf_s926957493.png",
+  "pers_mae_s131340382.png",
+  "pers_mae_s2075360196.png"
+ ],
+ "observacoes": {
+  "lobo_disf": "Nas 4 opções a anatomia está certa: 2 braços, 2 mãos, 2 pernas e EXATAMENTE 1 cauda saindo por trás, do lado direito da imagem. Olhos amarelos, óculos redondos e vestido rosa florido com gola de renda aparecem em todas. Só a s926957493 tem uma touca de renda de verdade, que cobre a cabeça e deixa as orelhas para fora. Nas outras três há só uma tiara/faixa de renda. Nenhuma repete o sorriso com dentes nem as sobrancelhas franzidas da ficha lobo.png: todas têm sorriso fechado e olhar semicerrado. O olhar ainda é esperto e combina com o disfarce. A roupa parece mais um vestido de dia do que uma camisola.",
+  "mae": "As três opções são adultas no corpo, com cerca de 6 cabeças de altura contra cerca de 3,2 da menina em chapeu.png, pescoço e ombros de adulta. Todas têm vestido verde e avental creme. As mãos têm dedos normais e não há membro sobrando. A s2075360196 é a única com um coque baixo único, visível atrás da cabeça, como pede a descrição, e tem o rosto mais maduro. A s131340382 também passa (clavículas marcadas, rosto de moça), mas o cabelo parece ter dois coques laterais."
+ },
+ "sugestoes_fichas": {
+  "mae": "pers_mae_s2075360196.png",
+  "lobo_disf": "pers_lobo_disf_s926957493.png"
+ }
+}

@@ -91,3 +91,15 @@ ferramentas/MuseTalk/
 ferramentas/syncnet/
 # modelo baixado do Hugging Face (1,2 GB)
 ferramentas/visemas/modelos/
+
+# Estúdio de Animação — histórias (28/09/2026): textos e JSON vão para o git; imagens/vídeos de trabalho não
+# (faça cópia da pasta animacao\ num serviço de nuvem). As fichas do elenco\ vão para o git.
+animacao/historias/**/*.png
+animacao/historias/**/*.jpg
+animacao/historias/**/fontes/
+animacao/historias/**/legenda*.ass
+animacao/historias/**/planos/detalhes/
+animacao/historias/**/fiscal_log.jsonl
+animacao/historias/*/cenas/revisao/
+# trilhas livres do catálogo (licença permite redistribuir; necessárias para reproduzir os vídeos)
+!animacao/musicas/*.mp3

@@ -1,0 +1,20 @@
+{
+ "id": "mae_chapeuzinho",
+ "descricao": "the girl's mother, a kind ADULT woman about 30 years old, tall and slender with adult body proportions, clearly a grown-up much taller than a 7-year-old child, chestnut hair in a low bun, green dress and cream apron",
+ "humano": true,
+ "anatomia": "2 braços, 2 pernas, sem cauda",
+ "cor_legenda": "FFB3D9",
+ "estilo": "livro_aquarela",
+ "origem": {
+  "historia": "chapeuzinho_vermelho",
+  "nome_na_historia": "mae",
+  "arquivo_original": "pers_mae_s2075360196.png",
+  "motor": "klein (FLUX.2 klein 4B, 4 passos)",
+  "semente": 2075360196,
+  "tamanho": [
+   768,
+   1344
+  ],
+  "data": "2026-09-28"
+ }
+}

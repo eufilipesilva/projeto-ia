@@ -1,0 +1,47 @@
+[narra:curiosidade] Chapeuzinho Vermelho era uma linda menina que morava em uma bela casa com a sua mãe.
+[narra:ternura] A menina sempre usava uma capa e um pequeno chapéu na cor vermelha.
+[narra:neutra] Um belo dia, sua mãe pediu para que Chapeuzinho fosse levar uma cesta de doces para a vovó.
+[mae:ternura] Chapeuzinho, por favor, leve esta linda cesta de doces para a sua avó.
+[mae:serenidade] Mas evite o caminho da floresta, pois ele é muito perigoso. Escolha o caminho do bosque, e não fale com estranhos.
+[narra:alegria] Chapeuzinho amava a sua avó e saiu rapidinho de casa, cantando de alegria.
+[narra:alegria] Ela queria fazer uma surpresa para a vovó, e começou a colher as flores que encontrava no caminho.
+[narra:suspense] A menina estava distraída com as flores, quando deu de cara com o lobo mau.
+[narra:neutra] Chapeuzinho não sabia que aquele era o lobo malvado, por isso não se assustou e nem sentiu medo.
+[lobo:neutra] Bom dia, Chapeuzinho Vermelho.
+[chapeu:alegria] Bom dia!
+[lobo:curiosidade] Onde você está indo assim tão cedinho?
+[chapeu:ternura] Vou visitar a minha vovozinha, que está muito doente.
+[narra:neutra] O lobo, muito esperto, disse a ela:
+[lobo:curiosidade] Por que você não vai pela floresta? É o caminho mais rápido para a casa da sua avó.
+[narra:suspense] Ela ficou em dúvida, porque não gostava de desobedecer a sua mãe, mas resolveu seguir o conselho do lobo.
+[narra:neutra] Enquanto Chapeuzinho seguia pela floresta, o lobo correu rapidinho pelo caminho do bosque.
+[narra:neutra] O lobo chegou na casa da vovozinha e bateu na porta.
+[vovo:curiosidade] Quem está aí?
+[lobo_disf:ternura] Sou eu, a Chapeuzinho Vermelho.
+[vovo:ternura] Entre, minha querida, a porta está aberta.
+[narra:surpresa] O lobo foi entrando e, de uma só vez, engoliu a vovozinha inteira!
+[narra:neutra] Depois vestiu as roupas dela e ficou esperando a Chapeuzinho Vermelho.
+[narra:neutra] Chegando na casa, a menina encontrou o lobo e perguntou:
+[chapeu:curiosidade] Vovó! Por que as suas orelhas estão tão grandes?
+[lobo_disf:ternura] É para te ouvir melhor.
+[chapeu:curiosidade] Vovó! Para que esses olhos tão grandes?
+[lobo_disf:ternura] É para te ver melhor.
+[chapeu:medo] Credo, vovó! Por que a senhora está com essa boca tão grande?
+[lobo:empolgacao] É para te comer!
+[narra:medo] Dizendo isso, o lobo começou a correr atrás da Chapeuzinho!
+[narra:neutra] Depois de um tempo, ele tropeçou e caiu no chão.
+[narra:suspense] Enquanto isso, a menina se escondeu dentro de um armário.
+[narra:serenidade] O lobo resolveu dar uma cochilada e começou a roncar.
+[narra:curiosidade] Um caçador que passava por ali escutou:
+[cacador:curiosidade] Que ronco esquisito é esse?
+[narra:neutra] Ele entrou e encontrou o lobo mau:
+[cacador:surpresa] Ah! É você que está aí, seu malvado!
+[narra:neutra] Chapeuzinho apareceu e contou toda a história para o caçador.
+[narra:neutra] Aproveitando que o lobo dormia, eles abriram a barriga dele e tiraram a vovozinha de dentro.
+[narra:alegria] As duas se abraçaram, muito felizes!
+[cacador:curiosidade] E agora, o que faremos com esse malvado?
+[narra:neutra] Os três resolveram encher a barriga do lobo de pedras.
+[narra:suspense] Quando o lobo acordou, tentou fugir, mas caiu e nunca mais levantou.
+[narra:alegria] Todos ficaram aliviados e felizes!
+[narra:ternura] O caçador foi embora, e as duas se sentaram na varanda para saborear os doces.
+[narra:serenidade] E a Chapeuzinho prometeu nunca mais desobedecer a sua mãezinha. Fim.

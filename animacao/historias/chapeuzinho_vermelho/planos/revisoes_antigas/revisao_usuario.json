@@ -1,0 +1,54 @@
+{
+ "etapa": "planos",
+ "fonte": "Filipe + conferência (28/09/2026)",
+ "reprovadas": [
+  {
+   "plano": "p17",
+   "imagem": "p17.png",
+   "problema": "porta solta na floresta, não é da casa",
+   "refazer_com": "grandma's small stone cottage is fully visible; the wolf knocks on the cottage's own front door, which is set into the stone wall of the cottage; no separate or freestanding door; no other characters"
+  },
+  {
+   "plano": "p28",
+   "imagem": "p28.png",
+   "problema": "fundo branco, sem o quarto",
+   "refazer_com": "inside grandma's bedroom, the bed with patchwork quilt and the big wardrobe clearly visible behind her; red hooded cape without sleeves, as in the character sheet"
+  },
+  {
+   "plano": "p34",
+   "imagem": "p34.png",
+   "problema": "caçador com três pernas",
+   "refazer_com": "the woodsman stands still next to the cottage window, feet side by side, exactly two legs and two boots, one hand cupped at his ear, listening"
+  },
+  {
+   "plano": "p36",
+   "imagem": "p36.png",
+   "problema": "chão de grama, sem cama",
+   "refazer_com": "inside grandma's bedroom with a wooden floor, the bed with patchwork quilt and the wardrobe visible; the girl steps out of the open wardrobe and talks to the woodsman; each person has exactly two legs"
+  },
+  {
+   "plano": "p37",
+   "imagem": "p37.png",
+   "problema": "chão de grama, sem cama",
+   "refazer_com": "inside grandma's bedroom with a wooden floor and the bed visible; grandma smiling, helped up by the woodsman; the wolf in pink floral dress sleeps on the floor; exactly two legs each person"
+  },
+  {
+   "plano": "p39",
+   "imagem": "p39.png",
+   "problema": "caçador na floresta, fora do quarto",
+   "refazer_com": "inside grandma's bedroom, the bed and wardrobe behind him; close-up of the woodsman scratching his beard, thinking"
+  },
+  {
+   "plano": "p23",
+   "imagem": "p23.png",
+   "problema": "cauda de lobo na menina (2 rodadas)",
+   "refazer_com": "the girl in red hood, white blouse and blue skirt, no glasses, no tail, human child only, stands at the foot of the bed holding the basket; the disguised wolf lies in bed under the quilt up to his chest, his tail hidden under the quilt"
+  },
+  {
+   "plano": "p35",
+   "imagem": "p35.png",
+   "problema": "dois lobos (2 rodadas)",
+   "refazer_com": "only two characters: the woodsman standing at the doorway pointing, and a single sleeping wolf in pink floral dress lying on the floor; no one else in the room"
+  }
+ ]
+}

@@ -1,0 +1,52 @@
+[
+ {
+  "plano": "p23",
+  "mostra": "add the girl in her red hooded cape standing at the foot of the bed, holding her basket and looking at the one lying in the bed",
+  "edita_o_plano_aprovado": "p22",
+  "personagens_acrescentados": [
+   "chapeu"
+  ],
+  "candidatos": [
+   "p23_s1159633771.png",
+   "p23_s998183885.png"
+  ]
+ },
+ {
+  "plano": "p35",
+  "mostra": "add the woodsman standing at the bedroom doorway, pointing in surprise at the one sleeping on the floor",
+  "edita_o_plano_aprovado": "p33",
+  "personagens_acrescentados": [
+   "cacador"
+  ],
+  "candidatos": [
+   "p35_s1482450446.png",
+   "p35_s2020702287.png"
+  ]
+ },
+ {
+  "plano": "p36",
+  "mostra": "add the girl and the woodsman standing near the wardrobe, the girl telling him what happened",
+  "edita_o_plano_aprovado": "p33",
+  "personagens_acrescentados": [
+   "chapeu",
+   "cacador"
+  ],
+  "candidatos": [
+   "p36_s2059790533.png",
+   "p36_s581488215.png"
+  ]
+ },
+ {
+  "plano": "p38",
+  "mostra": "add the girl and her grandma hugging happily near the window",
+  "edita_o_plano_aprovado": "p33",
+  "personagens_acrescentados": [
+   "chapeu",
+   "vovo"
+  ],
+  "candidatos": [
+   "p38_s677696626.png",
+   "p38_s681125761.png"
+  ]
+ }
+]

@@ -11,7 +11,13 @@ cena da oração e caudas duplas no lobo da Chapeuzinho. Você é a garantia. Es
 
 ## O que receber
 
-O pedido indica uma pasta de projeto (ex.: `C:\Users\Filipe Pereira\Downloads\Animação\chapeuzinho`) e a etapa:
+As histórias ficam em `F:\Projeto IA\animacao\historias\<nome>\`. Na etapa **planos**, a esteira grava a lista do
+que revisar em `planos\para_revisao.json` (plano, o que deve mostrar, personagens, base, candidatos) e os recortes
+ampliados em `planos\detalhes\`; grave o resultado como `planos\revisao_N.json` (com "escolhas" e "reprovadas").
+Personagens podem vir do elenco compartilhado (`F:\Projeto IA\animacao\elenco\`): a ficha e o `ficha.json` com a
+anatomia esperada estão lá.
+
+O pedido indica uma pasta de projeto (ex.: `F:\Projeto IA\animacao\historias\chapeuzinho_vermelho`) e a etapa:
 - **fichas**: `fichas\folha_conferencia.jpg` (todas as opções numeradas) e as imagens em `fichas\opcoes\`;
 - **planos**: `planos\folha_conferencia.jpg` e as imagens em `planos\`; o `projeto.json` diz o que cada plano deveria mostrar.
 
@@ -19,10 +25,19 @@ O pedido indica uma pasta de projeto (ex.: `C:\Users\Filipe Pereira\Downloads\An
 
 1. Abra a folha de conferência com Read para ter a visão geral.
 2. **Abra cada imagem individualmente com Read** (a folha é pequena demais para mãos e dedos). Não pule nenhuma.
-3. Em cada personagem visível, siga **cada braço do ombro até a mão**, conte mãos, dedos, pernas, caudas, orelhas.
-4. Compare com o que deveria haver:
-   - pessoas: 2 braços (um de cada lado), 2 mãos com até 5 dedos, 2 pernas;
-   - animais antropomórficos (lobo): 2 braços, 2 pernas, **1 cauda**;
+3. **Abra também os recortes ampliados** `<nome>_cima.jpg` e `<nome>_baixo.jpg` quando o pedido indicar a pasta
+   deles (gerados por `conferencia.detalhes`). É OBRIGATÓRIO contar pernas e pés no recorte de baixo: em
+   28/09/2026 um caçador de TRÊS PERNAS (andando, com uma bota a mais) passou porque só a imagem inteira foi vista.
+   Em cada personagem visível, siga **cada braço do ombro até a mão**, conte mãos, dedos, **pernas e pés**, caudas,
+   orelhas. Pose de caminhada é onde mais aparece perna extra.
+   Confira também o **contexto**: o cenário pedido está lá (ex.: cena no quarto tem que mostrar o quarto, com chão
+   de madeira e a cama; porta de casa tem que fazer parte da parede da casa, não ficar solta na paisagem).
+4. Compare com o que deveria haver. **O motor serve para qualquer história**: leia no `projeto.json` da pasta
+   os personagens (campos `descricao`, `humano`, `especie` e `anatomia`) e cobre a anatomia de CADA um
+   conforme estiver ali. Sem o campo `anatomia`, use o padrão:
+   - pessoas: 2 braços (um de cada lado), 2 mãos com até 5 dedos, 2 pernas, sem cauda;
+   - animais antropomórficos: 2 braços, 2 pernas e o que a espécie tem (em geral 1 cauda), nunca duplicado;
+   - cada personagem aparece UMA vez por cena, a menos que o plano diga o contrário;
    - cenários (fichas de cenário): **sem pessoas nem animais**, a menos que o `projeto.json` peça;
    - idade e tamanho coerentes com a descrição (a mãe é adulta e mais alta que a menina de 7 anos);
    - planos: personagens iguais às fichas escolhidas (roupa, cabelo, cores), e a ação do `prompt` do plano;

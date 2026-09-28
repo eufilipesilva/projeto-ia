@@ -55,8 +55,11 @@ def rodar_klein():
     with torch.no_grad():
         for it in job["itens"]:
             embeds[it["nome"]] = te.encode_prompt(prompt=it["prompt"], device=torch.device("cuda:0"))[0].cpu()
-    del te; torch.cuda.empty_cache()
-    marca("prompts codificados")
+    # libera o codificador DE VERDADE: sem o gc, ele ficava na placa 0 e o gerador dela estourava a memória
+    # (28/09/2026: a placa 0 morreu na 1ª imagem e a placa 1 fez as 77 sozinha, em 81 min)
+    import gc
+    te.text_encoder.to("cpu"); del te; gc.collect(); torch.cuda.empty_cache()
+    marca(f"prompts codificados; placa 0 com {torch.cuda.memory_allocated(0) / 1e9:.1f} GB ocupados")
 
     def carregar(gpu):
         p = Flux2KleinPipeline.from_pretrained(fonte, text_encoder=None, tokenizer=None, torch_dtype=DT)
@@ -93,10 +96,18 @@ def rodar_klein():
             except queue.Empty:
                 return
             ti = time.time()
-            with torch.no_grad():
-                img = p(image=imgs, prompt=None, prompt_embeds=embeds[nome_it].to(f"cuda:{gpu}"), height=H, width=W,
-                        num_inference_steps=job.get("passos", 4), guidance_scale=1.0,
-                        generator=torch.Generator("cpu").manual_seed(int(s))).images[0]
+            try:
+                with torch.no_grad():
+                    img = p(image=imgs, prompt=None, prompt_embeds=embeds[nome_it].to(f"cuda:{gpu}"), height=H,
+                            width=W, num_inference_steps=job.get("passos", 4), guidance_scale=1.0,
+                            generator=torch.Generator("cpu").manual_seed(int(s))).images[0]
+            except Exception as e:
+                # esta placa falhou (ex.: memória): devolve a tarefa para a outra placa e sai
+                tarefas.put((nome_it, imgs, W, H, s))
+                with trava:
+                    log.setdefault("erros", []).append({"gpu": gpu, "erro": str(e)[:300]})
+                    marca(f"placa {gpu} saiu: {str(e)[:120]}")
+                return
             a = np.asarray(img, np.float32)
             nome = f"{nome_it}_s{s}.png"
             img.save(f"{SAIDA}/{nome}")

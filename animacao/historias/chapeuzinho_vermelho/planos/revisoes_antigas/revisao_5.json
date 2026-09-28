@@ -1,0 +1,32 @@
+{
+ "etapa": "planos",
+ "parte": 5,
+ "revisado_em": "2026-09-28",
+ "escolhas": {
+  "p17": "p17_s996747172.png",
+  "p28": "p28_s49802197.png",
+  "p34": "p34_s720308105.png",
+  "p36": "p36_s289929328.png",
+  "p37": "p37_s974207579.png",
+  "p39": "p39_s1414965171.png"
+ },
+ "reprovadas": [
+  {"imagem": "p17_s38259399.png", "plano": "p17", "problema": "DOIS lobos de colete na porta, segurando as mãos um do outro (personagem duplicado)"},
+  {"imagem": "p23_s1252617496.png", "plano": "p23", "problema": "o lobo disfarçado está de pé ao lado da cama (não deitado) e há outra figura (boneca/bebê de touca) deitada na cama; a menina está certa (sem cauda, 2 braços, 2 pernas)", "refazer_com": "the disguised wolf is the ONLY one in the bed, lying under the patchwork quilt pulled up to his chest, only his head with nightcap and glasses on the pillow, tail hidden; the girl stands alone at the foot of the bed holding the basket; nobody standing next to the bed, no dolls or other figures in the bed"},
+  {"imagem": "p23_s638902834.png", "plano": "p23", "problema": "igual à outra: lobo disfarçado de pé ao lado da cama com a cauda à mostra e outra figura de touca rosa deitada na cama; menina ok (sem cauda, 2 pernas)", "refazer_com": "the disguised wolf is the ONLY one in the bed, lying under the patchwork quilt pulled up to his chest, only his head with nightcap and glasses on the pillow, tail hidden; the girl stands alone at the foot of the bed holding the basket; nobody standing next to the bed, no dolls or other figures in the bed"},
+  {"imagem": "p35_s1958209060.png", "plano": "p35", "problema": "DOIS lobos de novo (3a rodada): um de camisola e touca de pé tocando o dedo do caçador e outro de camisola dormindo no tapete", "refazer_com": "exactly ONE wolf in the whole picture: the wolf in the pink floral nightgown lies asleep on the rug; the woodsman stands alone in the doorway pointing down at him, surprised; nobody else standing in the room"},
+  {"imagem": "p35_s2022991213.png", "plano": "p35", "problema": "DOIS lobos de novo: lobo de touca e óculos de pé apontando para o caçador + lobo de camisola dormindo no chão", "refazer_com": "exactly ONE wolf in the whole picture: the wolf in the pink floral nightgown lies asleep on the rug; the woodsman stands alone in the doorway pointing down at him, surprised; nobody else standing in the room"},
+  {"imagem": "p37_s540357124.png", "plano": "p37", "problema": "dois bichos dormindo no chão (um branco de camisola rosa + um lobo cinza sem roupa) e a bota do caçador pisando no lobo"},
+  {"imagem": "p39_s1231777098.png", "plano": "p39", "problema": "as duas mãos estão na barba e a lanterna fica pendurada no ar, sem mão segurando (objeto solto)"}
+ ],
+ "planos_reprovados": {
+  "p23": "as duas candidatas falharam: o lobo não está na cama e aparece uma terceira figura deitada",
+  "p35": "as duas candidatas falharam: dois lobos (3a rodada seguida). Sugestão: não passar a ficha do lobo_disf de pé como referência neste plano (ela puxa um lobo em pé extra); usar só a do caçador e descrever o lobo dormindo no texto"
+ },
+ "duvidosas": [
+  {"imagem": "p17_s996747172.png", "problema": "a porta fica num pórtico de pedra com telhado próprio na frente da casa; parece colado à casa (telhados se encontram), não solto. Lobo segura a maçaneta em vez de bater; aprovei assim mesmo"},
+  {"imagem": "p36_s289929328.png", "problema": "a menina não está saindo do guarda-roupa (está ao lado da cama); o guarda-roupa aparece entreaberto atrás do caçador. Anatomia ok; aprovei por ser a mais próxima"},
+  {"imagem": "p37_s974207579.png", "problema": "o lobo dormindo está mais pardo/marrom que o cinza da ficha; anatomia ok (1 cauda)"}
+ ],
+ "aprovadas": ["p17_s996747172.png", "p28_s49802197.png", "p28_s222836297.png", "p34_s720308105.png", "p34_s1281996984.png", "p36_s289929328.png", "p36_s1781687918.png", "p37_s974207579.png", "p39_s1414965171.png"]
+}

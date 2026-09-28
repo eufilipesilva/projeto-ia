@@ -1,0 +1,22 @@
+{
+ "id": "lobo_mau_disfarcado",
+ "descricao": "the SAME tall grey wolf from the reference image (same face, yellow eyes and sly grin, exactly one tail) in disguise, wearing a white lace nightcap, round glasses and a pink flowered nightgown",
+ "humano": false,
+ "especie": "wolf",
+ "anatomia": "2 braços, 2 pernas, 1 cauda",
+ "cor_legenda": "B8A6FF",
+ "derivado_de": "lobo_mau",
+ "estilo": "livro_aquarela",
+ "origem": {
+  "historia": "chapeuzinho_vermelho",
+  "nome_na_historia": "lobo_disf",
+  "arquivo_original": "pers_lobo_disf_s926957493.png",
+  "motor": "klein (FLUX.2 klein 4B, 4 passos)",
+  "semente": 926957493,
+  "tamanho": [
+   768,
+   1344
+  ],
+  "data": "2026-09-28"
+ }
+}

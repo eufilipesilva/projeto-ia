@@ -1,0 +1,22 @@
+{
+ "id": "lobo_mau",
+ "descricao": "the Big Bad Wolf, a tall anthropomorphic grey wolf standing on two legs, bushy tail, yellow eyes, sly toothy grin, wearing a patched brown vest, exactly ONE tail",
+ "humano": false,
+ "especie": "wolf",
+ "anatomia": "2 braços, 2 pernas, 1 cauda",
+ "cor_legenda": "8FB8FF",
+ "estilo": "livro_aquarela",
+ "origem": {
+  "historia": "chapeuzinho_vermelho",
+  "nome_na_historia": "lobo",
+  "arquivo_original": "pers_lobo_s81540637.png",
+  "motor": "klein (FLUX.2 klein 4B, 4 passos)",
+  "semente": 81540637,
+  "tamanho": [
+   768,
+   1344
+  ],
+  "data": "2026-09-28"
+ },
+ "nota": "3 das 4 opções da 1ª rodada tinham duas caudas; esta é a única com uma"
+}

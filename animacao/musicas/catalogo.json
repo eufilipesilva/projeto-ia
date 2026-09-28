@@ -1,0 +1,13 @@
+{
+ "fairytale_waltz": {
+  "arquivo": "fairytale_waltz.mp3",
+  "titulo": "Fairytale Waltz",
+  "autor": "Kevin MacLeod",
+  "fonte": "https://incompetech.com/music/royalty-free/music.html",
+  "licenca": "CC BY 3.0",
+  "credito": "Fairytale Waltz Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 3.0 License",
+  "clima": "valsa de conto de fadas, calma e misteriosa",
+  "duracao_s": 99,
+  "volume_db": -22
+ }
+}

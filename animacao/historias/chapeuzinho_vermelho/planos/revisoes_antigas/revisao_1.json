@@ -1,0 +1,39 @@
+{
+ "etapa": "planos",
+ "parte": 1,
+ "revisado_em": "2026-09-28",
+ "escolhas": {
+  "p01": "p01_s1350201532.png",
+  "p02": "p02_s763570404.png",
+  "p03": "p03_s1819956440.png",
+  "p05": "p05_s2112410302.png",
+  "p06": "p06_s695161088.png",
+  "p07": "p07_s434189775.png",
+  "p09": "p09_s1664167033.png",
+  "p10": "p10_s26356463.png",
+  "p11": "p11_s2142776299.png",
+  "p14": "p14_s549801590.png",
+  "p15": "p15_s1645221830.png"
+ },
+ "reprovadas": [
+  {
+   "imagem": "p04.png",
+   "plano": "p04",
+   "problema": "s905766028: coque de cabelo duplicado (um segundo coque solto flutuando sobre o ombro esquerdo), fundo branco; s913242650: aparece uma segunda criança de camiseta azul que não é a Chapeuzinho, abraçada pela mãe",
+   "refazer_com": "the mother alone, head and shoulders close-up, a single hair bun at the back of her head, both hands holding the wicker basket in front of her, cottage in the background, no other people"
+  },
+  {
+   "imagem": "p08.png",
+   "plano": "p08",
+   "problema": "ação errada nas duas: o lobo está de pé no caminho, à vista, e a menina olha para ele (não está escondido nem ela distraída) - fica igual ao p09. Em s1823870699 há ainda uma forma cinza atrás do ombro do lobo junto ao tronco que pode ser uma segunda cauda. Se precisar de reserva, s612994411 tem anatomia limpa (1 cauda, 2 braços)",
+   "refazer_com": "the wolf hides behind a big tree trunk, only his head and one paw peeking out; in the foreground the girl kneels picking flowers with her back turned to him, unaware; the wolf has exactly one tail"
+  }
+ ],
+ "duvidosas": [
+  {"plano": "p02", "nota": "nenhuma versão é close-up (corpo inteiro); s1640705460 é praticamente a ficha em fundo branco. Escolhida s763570404 (com cenário), anatomia ok"},
+  {"plano": "p05", "nota": "mãe aponta e menina escuta, mas só há um caminho (não há o contraste caminho escuro x caminho florido) e o cenário é bosque, não a casa. Anatomia ok"},
+  {"plano": "p07", "nota": "a menina está ajoelhada, mas com as mãos no colo, não colhendo flores. Anatomia ok"},
+  {"plano": "p10", "nota": "não é close-up (corpo inteiro), mas chapéu na mão e sorriso maroto ok; 1 cauda, 2 braços"},
+  {"plano": "p15", "nota": "dedo no queixo ok, mas não há bifurcação clara no caminho; há uma pequena criatura rosada com carinha no mato à direita (também em p11_s475647970 e p14_s1622321204) - detalhe mínimo"}
+ ]
+}

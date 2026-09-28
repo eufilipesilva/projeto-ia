@@ -1,0 +1,53 @@
+{
+  "etapa": "planos",
+  "parte": 7,
+  "revisado_em": "2026-09-28",
+  "escolhas": {
+    "p23": "p23_s998183885.png",
+    "p35": "p35_s1482450446.png"
+  },
+  "aprovadas": [
+    "p23_s998183885.png",
+    "p23_s1159633771.png",
+    "p35_s1482450446.png",
+    "p35_s2020702287.png"
+  ],
+  "reprovadas": [
+    {
+      "imagem": "p36_s2059790533.png",
+      "plano": "p36",
+      "problema": "o lobo SUMIU (a edição sobre p33 apagou o lobo dormindo no chão); o chão de madeira virou piso de ladrilho e a cama perdeu o pé. Anatomia da menina e do caçador está ok (2 braços, 2 pernas cada)",
+      "refazer_com": "keep the sleeping wolf on the floor exactly as in the base image; place the girl and the woodsman standing beside the wardrobe on the right, behind the wolf; keep the wooden floor"
+    },
+    {
+      "imagem": "p36_s581488215.png",
+      "plano": "p36",
+      "problema": "o lobo SUMIU de novo e o chão virou ladrilho; o caçador tem TRÊS mãos: uma segura a lanterna, e do braço esquerdo saem duas (uma no peito e outra pendurada abaixo do punho)",
+      "refazer_com": "keep the sleeping wolf on the floor as in the base image; woodsman holds the lantern in one hand and his other arm hangs relaxed at his side, exactly two hands; keep the wooden floor"
+    },
+    {
+      "imagem": "p38_s677696626.png",
+      "plano": "p38",
+      "problema": "a vovó foi fundida no corpo do lobo: o camisolão rosa do lobo sumiu e as patas traseiras e a cauda cinza do lobo saem por trás da saia da vovó (pessoa com cauda/patas de lobo); a capa vermelha da menina virou casaco de mangas",
+      "refazer_com": "keep the sleeping wolf in its pink nightgown on the floor untouched; the girl in her red hooded cape and the grandma, with her own two feet in brown shoes, hug by the window on the left, fully separate from the wolf"
+    },
+    {
+      "imagem": "p38_s681125761.png",
+      "plano": "p38",
+      "problema": "mesma fusão, pior: a vovó está ajoelhada SOBRE as patas traseiras do lobo, sem pés humanos visíveis, com a cauda do lobo saindo da saia; corpo rosa do lobo sumiu; menina com casaco de mangas em vez da capa",
+      "refazer_com": "keep the sleeping wolf in its pink nightgown on the floor untouched; the girl in her red hooded cape and the grandma, standing on her own two feet in brown shoes, hug by the window on the left, fully separate from the wolf"
+    }
+  ],
+  "duvidosas": [
+    {
+      "imagem": "p35_s1482450446.png",
+      "plano": "p35",
+      "observacao": "aprovada, mas: o quarto não tem porta, então o caçador ficou em pé na frente do guarda-roupa (não na porta) e aponta mais para a janela/cabeceira do que para o lobo; pernas do caçador ficam quase todas escondidas atrás do lobo (só uma perna de jeans aparece, sem membro extra). Os 'Z' de sono do p33 sumiram (melhor assim). Lobo único, igual e no mesmo lugar."
+    },
+    {
+      "imagem": "p35_s2020702287.png",
+      "plano": "p35",
+      "observacao": "sem erro de anatomia, mesmas ressalvas da s1482450446; tem uma mancha/sombra marrom estranha na porta direita do guarda-roupa, por isso ficou como segunda opção."
+    }
+  ]
+}

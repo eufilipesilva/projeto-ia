@@ -1,0 +1,20 @@
+{
+ "id": "vovo",
+ "descricao": "a sweet elderly grandmother with white hair, round glasses, a white lace nightcap and a pink shawl",
+ "humano": true,
+ "anatomia": "2 braços, 2 pernas, sem cauda",
+ "cor_legenda": "FFD27F",
+ "estilo": "livro_aquarela",
+ "origem": {
+  "historia": "chapeuzinho_vermelho",
+  "nome_na_historia": "vovo",
+  "arquivo_original": "pers_vovo_s2007245735.png",
+  "motor": "klein (FLUX.2 klein 4B, 4 passos)",
+  "semente": 2007245735,
+  "tamanho": [
+   768,
+   1344
+  ],
+  "data": "2026-09-28"
+ }
+}

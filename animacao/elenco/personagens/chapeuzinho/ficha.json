@@ -1,0 +1,20 @@
+{
+ "id": "chapeuzinho",
+ "descricao": "Little Red Riding Hood, a cheerful 7-year-old girl with rosy cheeks, big brown eyes and short wavy chestnut hair, wearing a bright red hooded cape over a white blouse and a blue skirt",
+ "humano": true,
+ "anatomia": "2 braços, 2 pernas, sem cauda",
+ "cor_legenda": "FF6B6B",
+ "estilo": "livro_aquarela",
+ "origem": {
+  "historia": "chapeuzinho_vermelho",
+  "nome_na_historia": "chapeu",
+  "arquivo_original": "pers_chapeu_s1473191091.png",
+  "motor": "klein (FLUX.2 klein 4B, 4 passos)",
+  "semente": 1473191091,
+  "tamanho": [
+   768,
+   1344
+  ],
+  "data": "2026-09-28"
+ }
+}

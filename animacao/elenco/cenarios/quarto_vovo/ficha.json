@@ -1,0 +1,18 @@
+{
+ "id": "quarto_vovo",
+ "descricao": "grandma's cozy bedroom with a wooden bed and patchwork quilt, a big wardrobe, lace curtains, empty scene with no people and no animals",
+ "estilo": "livro_aquarela",
+ "origem": {
+  "historia": "chapeuzinho_vermelho",
+  "nome_na_historia": "quarto_vovo",
+  "arquivo_original": "cena_quarto_vovo_s1955476137.png",
+  "motor": "klein (FLUX.2 klein 4B, 4 passos)",
+  "semente": 1955476137,
+  "tamanho": [
+   768,
+   1344
+  ],
+  "data": "2026-09-28"
+ },
+ "nota": "a ficha tem dois bonecos com rosto na cama (revisor, 28/09): trocar por uma sem bonecos"
+}

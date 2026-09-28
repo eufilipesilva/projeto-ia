@@ -1,0 +1,47 @@
+{
+ "etapa": "planos",
+ "parte": 2,
+ "revisado_em": "2026-09-28",
+ "escolhas": {
+  "p16": "p16_s1479249861.png",
+  "p17": "p17_s242652124.png",
+  "p18": "p18_s419999481.png",
+  "p19": "p19_s1790443516.png",
+  "p21": "p21_s1101304923.png",
+  "p22": "p22_s1535632142.png",
+  "p24": "p24_s1266339167.png",
+  "p25": "p25_s574382669.png",
+  "p28": "p28_s523018225.png",
+  "p29": "p29_s617835232.png",
+  "p31": "p31_s225430688.png"
+ },
+ "reprovadas": [
+  {
+   "imagem": "p23.png",
+   "plano": "p23",
+   "problema": "nas duas versoes o lobo disfarcado esta EM PE ao lado da cama, com a cauda a mostra, e nao deitado na cama como 'vovo' (quebra a continuidade com p22/p25); anatomia ok",
+   "refazer_com": "the disguised wolf lies in the bed under the quilt up to his chest, only his face with nightcap and glasses visible, the girl stands at the foot of the bed holding the basket with one hand"
+  },
+  {
+   "imagem": "p30.png",
+   "plano": "p30",
+   "problema": "s137066413: lobo com DUAS caudas (uma junto a cabeceira, outra embaixo perto da cama); s825314477: sem perseguicao, lobo ajoelhado na cama e a menina sentada no pe da cama",
+   "refazer_com": "wide shot, the girl runs across the bedroom floor laughing, the disguised wolf runs behind her on two legs, arms forward, exactly one tail, both characters fully on the floor, away from the bed"
+  }
+ ],
+ "descartes": [
+  {"imagem": "p18_s1824214495.png", "motivo": "balao de fala com texto 'who is sthere'"},
+  {"imagem": "p19_s907123021.png", "motivo": "lobo com duas caudas (uma de cada lado) e balao de fala"},
+  {"imagem": "p21_s1266063485.png", "motivo": "cama nao esta vazia: dois bonecos/rostos deitados nela"},
+  {"imagem": "p22_s462205767.png", "motivo": "lobo deitado por cima da colcha, nao debaixo dela"},
+  {"imagem": "p24_s683894037.png", "motivo": "tres maos: uma levantada com o dedo e duas pendendo ao lado da saia"},
+  {"imagem": "p25_s616139751.png", "motivo": "cauda saindo de tras do pescoco/ombro"},
+  {"imagem": "p31_s1320998027.png", "motivo": "tres maos: punho no tapete, outra mao no tapete e uma terceira no quadril"}
+ ],
+ "duvidosas": [
+  {"plano": "p17", "nota": "nas duas versoes ha uma figurinha pequena de vestido azul (crianca/boneca) ao fundo, perto da casa, e a porta parece solta entre as arvores em vez de ser a porta da casa. Escolhi s242652124 (mao aberta batendo, anatomia ok, 1 cauda); se incomodar, refazer com 'no other characters in the background, the door is part of the cottage wall'."},
+  {"plano": "p28", "nota": "as duas versoes saem com fundo liso (sem o quarto da vovo) e a capa virou casaquinho de manga. Anatomia ok (duas maos no rosto). Escolhi s523018225 pelo fundo em tom quente."},
+  {"plano": "quarto_vovo (ficha de cenario)", "nota": "a ficha fichas\\quarto_vovo.png tem dois bonecos com rosto deitados na cama; eles aparecem em p24, p29 e nas variantes de p21 e leem como gente na cama (confunde a historia: vovo ja foi engolida). Recomendo regerar a ficha do cenario com 'empty bed, no dolls, no people' ou apagar os bonecos."},
+  {"plano": "p31", "nota": "escolhida s225430688: uma cauda enrolada (a pelagem cinza atras do quadril e o comeco da mesma cauda), estrelinhas perto da cabeca mas mais do lado direito que em volta."}
+ ]
+}

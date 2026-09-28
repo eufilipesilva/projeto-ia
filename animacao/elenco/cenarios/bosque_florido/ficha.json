@@ -1,0 +1,17 @@
+{
+ "id": "bosque_florido",
+ "descricao": "a sunny meadow path full of colorful wildflowers and butterflies, empty scene with no people and no animals",
+ "estilo": "livro_aquarela",
+ "origem": {
+  "historia": "chapeuzinho_vermelho",
+  "nome_na_historia": "bosque",
+  "arquivo_original": "cena_bosque_s1363190838.png",
+  "motor": "klein (FLUX.2 klein 4B, 4 passos)",
+  "semente": 1363190838,
+  "tamanho": [
+   768,
+   1344
+  ],
+  "data": "2026-09-28"
+ }
+}
